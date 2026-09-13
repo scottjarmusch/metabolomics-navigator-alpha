@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inspecting and interpreting results | Metabolomics Navigator</title>
+  <meta name="description" content="Once data have been processed, researchers need to inspect signals, analyze variation across samples, and interpret results in biological context. An interactive viewer, a statistical platform, and a collection of downstream applications provide different kinds of support.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/interpretation/">
+  <meta property="og:site_name" content="Metabolomics Navigator">
+  <meta property="og:title" content="Inspecting and interpreting results | Metabolomics Navigator">
+  <meta property="og:description" content="Once data have been processed, researchers need to inspect signals, analyze variation across samples, and interpret results in biological context. An interactive viewer, a statistical platform, and a collection of downstream applications provide different kinds of support.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/interpretation/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Inspecting and interpreting results | Metabolomics Navigator">
+  <meta name="twitter:description" content="Once data have been processed, researchers need to inspect signals, analyze variation across samples, and interpret results in biological context. An interactive viewer, a statistical platform, and a collection of downstream applications provide different kinds of support.">
+  
+  <meta name="theme-color" content="#faf9f5">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body class="page-guide"><aside style="padding:12px;text-align:center;background:#f2e9cc;color:#183f42">Alpha review snapshot · Not the live site · <a href="https://scottjarmusch.github.io/metabolomics-navigator/">Visit the live Navigator</a></aside>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner section-wrap">
+      <a class="brand" href="/metabolomics-navigator-alpha/" aria-label="Metabolomics Navigator home">
+        <svg class="brand-logo" width="60" height="26" viewBox="0 0 100 44" aria-hidden="true">
+          <path class="brand-chrom" d="M2 34h14l4-24 4 26 4-18 4 20h16" />
+          <g class="brand-network">
+            <line x1="48" y1="12" x2="61" y2="8" />
+            <line x1="48" y1="12" x2="56" y2="22" />
+            <line x1="61" y1="8" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="67" y2="31" />
+            <line x1="67" y1="31" x2="80" y2="26" />
+            <circle cx="48" cy="12" r="3.2" />
+            <circle cx="61" cy="8" r="3.2" />
+            <circle cx="56" cy="22" r="3.2" />
+            <circle cx="72" cy="14" r="3.2" />
+            <circle cx="67" cy="31" r="3.2" />
+            <circle cx="80" cy="26" r="3.2" />
+          </g>
+        </svg>
+        <span class="brand-text">
+          <strong><span>Metabolomics</span> <span class="accent">Navigator</span></strong>
+          <small>Tools, strategies &amp; workflow guidance for metabolomics</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="/metabolomics-navigator-alpha/" aria-current="page">Guide</a>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/ask/">Ask Navigator</a>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a class="nav-submit" href="/metabolomics-navigator-alpha/submit/">Contribute</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+<div class="section-wrap category-layout">
+ <aside class="category-sidebar"><nav aria-label="Explore by task"><h2>Explore by task</h2><a href="/metabolomics-navigator-alpha/guide/data-processing/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 5h16M4 12h16M4 19h16"/><circle cx="8" cy="5" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="19" r="2"/>
+
+</svg>
+<span>Data processing</span></a><a href="/metabolomics-navigator-alpha/guide/annotation/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/>
+
+</svg>
+<span>Molecular annotation</span></a><a href="/metabolomics-navigator-alpha/guide/spectral-analysis/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m6 7 11 4M6 7l4 12m7-8-7 8"/><circle cx="5" cy="6" r="3"/><circle cx="18" cy="11" r="3"/><circle cx="10" cy="20" r="2"/>
+
+</svg>
+<span>Spectral analysis</span></a><a href="/metabolomics-navigator-alpha/guide/public-data/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>
+
+</svg>
+<span>Public-data search</span></a><a href="/metabolomics-navigator-alpha/guide/reference-resources/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M5 3h10l4 4v14H5zM14 3v5h5M8 12h8M8 16h5"/>
+
+</svg>
+<span>Data &amp; references</span></a><a href="/metabolomics-navigator-alpha/guide/interpretation/" aria-current="page">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Interpretation</span></a><a href="/metabolomics-navigator-alpha/guide/spatial-metabolomics/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Spatial metabolomics</span></a><a href="/metabolomics-navigator-alpha/guide/metabologenomics/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Metabologenomics</span></a><a href="/metabolomics-navigator-alpha/guide/microbial-maldi/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Microbial MALDI profiling</span></a></nav><a class="all-tools-link" href="/metabolomics-navigator-alpha/tools/">Search all 128 resources →</a></aside>
+ <article class="category-content"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Guide</a><span>›</span><span>Interpretation</span></nav><header class="category-intro"><span class="category-icon">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+</span><h1>Inspecting and interpreting results</h1><p>Inspect signals and interpret study results.</p></header>
+ <details class="category-guidance"><summary>How to choose a resource</summary><p>Once data have been processed, researchers need to inspect signals, analyze variation across samples, and interpret results in biological context. An interactive viewer, a statistical platform, and a collection of downstream applications provide different kinds of support.</p><p>Start with your study design and the form of your input data. Preserve sample identifiers, preprocessing decisions, and analysis settings when moving between tools.</p></details>
+ 
+ <div class="category-list-heading"><h2>Tools & resources</h2><span>25 entries</span></div>
+ <ul class="category-resources"><li><a href="/metabolomics-navigator-alpha/tools/gnps-dashboard/"><div class="resource-heading"><h3>GNPS Dashboard</h3><span class="resource-access">Free web service</span></div><p>A browser-based interactive viewer for raw and public mass-spectrometry data, chromatograms, spectra, quantitative traces, and GNPS-associated datasets without requiring local analysis software.</p><span class="resource-bottom">Interactive raw-data inspection<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/metaboanalyst/"><div class="resource-heading"><h3>MetaboAnalyst</h3><span class="resource-access">Free web service</span></div><p>A web platform and associated R package for metabolomics data processing, statistical analysis, visualization, functional interpretation, and multi-omics integration.</p><span class="resource-bottom">Statistics &amp; pathway analysis<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/metaboapps/"><div class="resource-heading"><h3>MetaboApps</h3><span class="resource-access">Free web service</span></div><p>A modular collection of browser-based downstream analysis applications that extend GNPS2 results with targeted interpretation, statistics, metadata, and domain-specific readouts.</p><span class="resource-bottom">Downstream analysis apps<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/metaboanalystr/"><div class="resource-heading"><h3>MetaboAnalystR</h3><span class="resource-access">Open source</span></div><p>Run metabolomics processing, statistics and functional interpretation through R.</p><span class="resource-bottom">Scripted metabolomics analysis<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/mummichog/"><div class="resource-heading"><h3>mummichog</h3><span class="resource-access">Source available with restrictions</span></div><p>Generate pathway and network hypotheses from untargeted metabolomics feature tables.</p><span class="resource-bottom">Pathway hypotheses from features<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/metabosignal/"><div class="resource-heading"><h3>MetaboSignal</h3><span class="resource-access">Open source</span></div><p>Explore relationships between genes and metabolites in combined metabolic and signaling networks.</p><span class="resource-bottom">Connect metabolic and signaling networks<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/metaboshiny/"><div class="resource-heading"><h3>MetaboShiny</h3><span class="resource-access">Source available with restrictions</span></div><p>Explore mass-spectrometry metabolomics tables through an R/Shiny interface.</p><span class="resource-bottom">Interactive feature-table exploration<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/noreva/"><div class="resource-heading"><h3>NOREVA</h3><span class="resource-access">Free web service</span></div><p>Normalize metabolomics data and compare the performance of alternative normalization strategies.</p><span class="resource-bottom">Compare normalization strategies<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/stattarget/"><div class="resource-heading"><h3>statTarget</h3><span class="resource-access">Open source</span></div><p>Correct signal drift and analyze molecular-profile data from single- or multi-batch studies.</p><span class="resource-bottom">QC correction and statistics<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/metabodiff/"><div class="resource-heading"><h3>MetaboDiff</h3><span class="resource-access">Source available with restrictions</span></div><p>Perform differential metabolomics analysis and explore metabolic correlation modules in R.</p><span class="resource-bottom">Differential metabolites and correlations<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/lipidr/"><div class="resource-heading"><h3>lipidr</h3><span class="resource-access">Open source</span></div><p>Analyze lipid abundance tables and test patterns across lipid classes and structural properties.</p><span class="resource-bottom">Lipid statistics and set enrichment<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/workflow4metabolomics/"><div class="resource-heading"><h3>Workflow4Metabolomics</h3><span class="resource-access">Free web service</span></div><p>Create and share metabolomics processing and analysis workflows in a Galaxy environment.</p><span class="resource-bottom">Shareable Galaxy workflows<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/tidymass/"><div class="resource-heading"><h3>TidyMass</h3><span class="resource-access">Open source</span></div><p>Connect LC-MS processing, quality control, annotation and interpretation through an R package ecosystem.</p><span class="resource-bottom">Connected LC-MS workflows in R<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/omicspls/"><div class="resource-heading"><h3>OmicsPLS</h3><span class="resource-access">Open source</span></div><p>Separate shared and dataset-specific variation when integrating two omics data matrices.</p><span class="resource-bottom">Integrate paired omics datasets<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/ropls/"><div class="resource-heading"><h3>ropls</h3><span class="resource-access">Open source</span></div><p>Fit and assess multivariate PCA, PLS and OPLS models for omics data in R.</p><span class="resource-bottom">PCA, PLS and OPLS models<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/drug-readout/"><div class="resource-heading"><h3>GNPS2 Drug Readout</h3><span class="resource-access">Free web service</span></div><p>Annotate GNPS2 feature-based networking results with drug and drug-metabolite context for exposure-oriented interpretation.</p><span class="resource-bottom">Inspect drug-associated annotations<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/food-readout/"><div class="resource-heading"><h3>GNPS2 Food Readout</h3><span class="resource-access">Free web service</span></div><p>Annotate molecular features with dietary and food-ontology context to explore potential food-derived exposures.</p><span class="resource-bottom">Explore food-associated signals<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/cmmc-dashboard/"><div class="resource-heading"><h3>CMMC Dashboard</h3><span class="resource-access">Free web service</span></div><p>Visualize CMMC enrichment results alongside feature abundances, metadata and molecular-network information.</p><span class="resource-bottom">Microbial metabolite context dashboard<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/lion-web/"><div class="resource-heading"><h3>LION/web</h3><span class="resource-access">Free web service</span></div><p>Web-based lipid ontology enrichment tool that connects lipid lists or rankings to chemical, biophysical, cellular and functional lipid properties.</p><span class="resource-bottom">Lipid ontology enrichment<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/biopan/"><div class="resource-heading"><h3>BioPAN</h3><span class="resource-access">Free web service</span></div><p>LIPID MAPS web tool for exploring changes in mammalian lipid pathways and predicting relative reaction or enzyme activity from quantitative lipidomics data.</p><span class="resource-bottom">Mammalian lipid pathway changes<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/lipidsig/"><div class="resource-heading"><h3>LipidSig</h3><span class="resource-access">Free web service</span></div><p>Explore lipid abundance tables through statistical analysis, lipid characteristics, enrichment and network visualizations.</p><span class="resource-bottom">Statistical analysis<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/lipid-mini-on/"><div class="resource-heading"><h3>Lipid Mini-On</h3><span class="resource-access">Open source</span></div><p>Group lipid names into ontology terms and test enrichment using a locally run Shiny interface.</p><span class="resource-bottom">Pathway and biological interpretation<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/graphia/"><div class="resource-heading"><h3>Graphia</h3><span class="resource-access">Open source</span></div><p>Graph exploration and correlation-network analysis for processed MS metabolomics tables and existing networks.</p><span class="resource-bottom">Explore correlation graphs<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/metscape/"><div class="resource-heading"><h3>MetScape</h3><span class="resource-access">Access model unclear</span></div><p>Cytoscape app for interpreting identified metabolites and expression data in metabolic and correlation networks.</p><span class="resource-bottom">Map metabolites into metabolic networks<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/ramp-db/"><div class="resource-heading"><h3>RaMP-DB</h3><span class="resource-access">Open source</span></div><p>Integrated metabolite, gene/protein, reaction, ontology and pathway resource for metabolomics and multi-omics pathway analysis.</p><span class="resource-bottom">Query and enrich pathway references<span aria-hidden="true">↗</span></span></a></li></ul>
+ </article>
+</div>
+</main>
+  <footer class="site-footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <strong>Metabolomics Navigator</strong>
+        <p>An open scientific resource for metabolomics tools, analytical strategies and workflow guidance.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a href="/metabolomics-navigator-alpha/governance/">Governance</a>
+        <a href="/metabolomics-navigator-alpha/privacy/">Privacy</a>
+        <a href="https://github.com/scottjarmusch/metabolomics-navigator">GitHub repository</a>
+      </div>
+      <div>
+        <h2>Data</h2>
+        <a href="/metabolomics-navigator-alpha/tool-data.json">Tool data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/strategy-data.json">Strategy data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+  </footer>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+</body>
+</html>

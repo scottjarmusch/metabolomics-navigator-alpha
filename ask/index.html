@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ask Navigator · Alpha | Metabolomics Navigator</title>
+  <meta name="description" content="Preview the planned guided metabolomics workflow builder, grounded in the Navigator catalogue.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://scottjarmusch.github.io/metabolomics-navigator-alpha/ask/">
+  <meta property="og:site_name" content="Metabolomics Navigator">
+  <meta property="og:title" content="Ask Navigator · Alpha | Metabolomics Navigator">
+  <meta property="og:description" content="Preview the planned guided metabolomics workflow builder, grounded in the Navigator catalogue.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://scottjarmusch.github.io/metabolomics-navigator-alpha/ask/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ask Navigator · Alpha | Metabolomics Navigator">
+  <meta name="twitter:description" content="Preview the planned guided metabolomics workflow builder, grounded in the Navigator catalogue.">
+  
+  <meta name="theme-color" content="#faf9f5">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/ask-navigator.css?v=8344c5bfd26b">
+</head>
+<body class="page-ask"><aside style="padding:12px;text-align:center;background:#f2e9cc;color:#183f42">Alpha review snapshot · Not the live site · <a href="https://scottjarmusch.github.io/metabolomics-navigator/">Visit the live Navigator</a></aside>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner section-wrap">
+      <a class="brand" href="/metabolomics-navigator-alpha/" aria-label="Metabolomics Navigator home">
+        <svg class="brand-logo" width="60" height="26" viewBox="0 0 100 44" aria-hidden="true">
+          <path class="brand-chrom" d="M2 34h14l4-24 4 26 4-18 4 20h16" />
+          <g class="brand-network">
+            <line x1="48" y1="12" x2="61" y2="8" />
+            <line x1="48" y1="12" x2="56" y2="22" />
+            <line x1="61" y1="8" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="67" y2="31" />
+            <line x1="67" y1="31" x2="80" y2="26" />
+            <circle cx="48" cy="12" r="3.2" />
+            <circle cx="61" cy="8" r="3.2" />
+            <circle cx="56" cy="22" r="3.2" />
+            <circle cx="72" cy="14" r="3.2" />
+            <circle cx="67" cy="31" r="3.2" />
+            <circle cx="80" cy="26" r="3.2" />
+          </g>
+        </svg>
+        <span class="brand-text">
+          <strong><span>Metabolomics</span> <span class="accent">Navigator</span></strong>
+          <small>Tools, strategies &amp; workflow guidance for metabolomics</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="/metabolomics-navigator-alpha/">Guide</a>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/ask/" aria-current="page">Ask Navigator</a>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a class="nav-submit" href="/metabolomics-navigator-alpha/submit/">Contribute</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+<header class="page-hero compact"><div class="section-wrap"><p class="eyebrow">ASK NAVIGATOR · SHARED ALPHA</p><h1>Build a workflow from what you already have.</h1><p>A guided LC-MS planning conversation. Choose one step at a time, understand the alternatives, and keep an exportable plan.</p></div></header>
+<div id="ask-builder" class="ask-preview section-wrap" data-base="/metabolomics-navigator-alpha/" data-export-base="https://scottjarmusch.github.io/metabolomics-navigator/" data-version="8344c5bfd26b">
+<section class="ask-decision" aria-label="Workflow conversation">
+<p class="note">Alpha scope: untargeted LC-MS and processed LC-MS tables. <a href="/metabolomics-navigator-alpha/guide/spatial-metabolomics/">Imaging MS</a>, <a href="/metabolomics-navigator-alpha/guide/data-processing/">GC-MS and other acquisition modes</a> remain in the guides while their planning routes are reviewed.</p>
+<noscript><style>#ask-load, #workflow-panel { display:none; }</style><p>This workflow builder needs JavaScript. You can still <a href="/metabolomics-navigator-alpha/tools/">browse the complete catalogue</a>.</p></noscript>
+<p id="ask-load" role="status">Loading the curated planning rules…</p>
+<div id="ask-entry"></div>
+<div id="ask-controls" hidden><button type="button" id="ask-start-over">Choose a different starting point (start over)</button><button type="button" id="ask-back">Back one choice</button><button type="button" id="ask-reset">Reset plan</button></div>
+<div id="ask-history" aria-label="Your choices"></div><div id="ask-question" class="ask-question"></div>
+</section>
+<aside class="ask-workflow" id="workflow-panel" aria-labelledby="workflow-title"><details id="workflow-details" open>
+<summary><span id="workflow-title">Your workflow</span> <span id="workflow-count">· 0 choices</span></summary>
+<p class="note">Outputs are planned, not generated. No data are uploaded and choices are kept only in this page session.</p>
+<ol id="workflow-list" class="workflow-outline"></ol><p id="workflow-empty" class="note">Choose your starting data to begin.</p>
+<div class="ask-exports" aria-label="Export this plan"><button type="button" id="copy-plan" disabled>Copy text</button><button type="button" id="markdown-plan" disabled>Markdown</button><button type="button" id="json-plan" disabled>JSON</button><button type="button" id="print-plan" disabled>Print / PDF</button></div>
+<p id="export-status" role="status"></p><div id="copy-fallback" hidden><label for="workflow-text">Copy your workflow manually</label><textarea id="workflow-text" readonly rows="10"></textarea></div>
+<p class="ask-disclaimer"><strong>Ask Navigator creates a starting workflow, not a validated experimental design.</strong> Check instrument support, sample preparation, QC, statistical design, annotation confidence and database coverage before analysis.</p>
+</details></aside><section id="workflow-print" hidden aria-label="Printable workflow"></section></div>
+</main>
+  <footer class="site-footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <strong>Metabolomics Navigator</strong>
+        <p>An open scientific resource for metabolomics tools, analytical strategies and workflow guidance.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a href="/metabolomics-navigator-alpha/governance/">Governance</a>
+        <a href="/metabolomics-navigator-alpha/privacy/">Privacy</a>
+        <a href="https://github.com/scottjarmusch/metabolomics-navigator">GitHub repository</a>
+      </div>
+      <div>
+        <h2>Data</h2>
+        <a href="/metabolomics-navigator-alpha/tool-data.json">Tool data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/strategy-data.json">Strategy data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+  </footer>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script><script src="/metabolomics-navigator-alpha/assets/workflow-engine.js?v=8344c5bfd26b" defer></script><script src="/metabolomics-navigator-alpha/assets/ask-navigator.js?v=8344c5bfd26b" defer></script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+{
+  "version": 1,
+  "reviewed": "2026-09-13",
+  "disclaimer": "Ask Navigator creates a starting workflow, not a validated experimental design. Outputs listed here are planned, not generated. Check instrument support, sample preparation, QC, statistical design, annotation confidence and database coverage before analysis.",
+  "stages": [
+    {
+      "id": "start",
+      "title": "Starting data",
+      "question": "What are you starting with?",
+      "intro": "This first route covers untargeted small-molecule LC-MS data and processed LC-MS abundance tables. Your data stay with you; this planner does not upload or analyze files.",
+      "options": [
+        {
+          "id": "vendor",
+          "label": "LC-MS instrument files",
+          "why": "Start with the original files and plan import or conversion.",
+          "input": "Vendor LC-MS files",
+          "output": "Raw files retained for processing and sharing",
+          "produces": [
+            "raw",
+            "vendor"
+          ]
+        },
+        {
+          "id": "mzml",
+          "label": "LC-MS files already in mzML",
+          "why": "Open-format spectra can enter compatible feature-processing workflows.",
+          "input": "LC-MS mzML files",
+          "output": "mzML retained for processing and sharing",
+          "produces": [
+            "raw",
+            "mzml"
+          ]
+        },
+        {
+          "id": "table",
+          "label": "A processed LC-MS abundance table",
+          "why": "Start downstream when features have already been aligned across samples.",
+          "input": "Feature-by-sample abundances with unique feature and sample identifiers",
+          "output": "Feature table to review; no linked MS/MS is assumed",
+          "produces": [
+            "table"
+          ]
+        },
+        {
+          "id": "other-data",
+          "label": "GC-MS, imaging, targeted MS or other data",
+          "why": "Find guidance for your data without forcing it into an untargeted LC-MS route.",
+          "input": "An acquisition or analysis type outside this alpha route",
+          "output": "A clarification checklist rather than an incompatible workflow",
+          "blocker": {
+            "title": "This data type needs a different route.",
+            "nextAction": "Record the analytical platform, acquisition mode, starting files and study question. Use the Guide to choose a specialist route; this alpha currently supports untargeted LC-MS only.",
+            "guide": "guide/data-processing/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "acquisition",
+      "title": "Acquisition",
+      "requires": [
+        "raw"
+      ],
+      "question": "What fragmentation data were collected?",
+      "intro": "DDA selects individual precursor ions for fragmentation. DIA fragments wider windows or all ions and needs a different processing route. Check the acquisition method with your operator if unsure.",
+      "options": [
+        {
+          "id": "dda",
+          "label": "High-resolution LC-MS/MS with DDA",
+          "why": "Data-dependent acquisition provides precursor-linked fragments for the curated annotation route.",
+          "input": "Accurate-mass MS1 and DDA MS/MS from small molecules",
+          "output": "Plan to retain precursor and fragment information",
+          "produces": [
+            "dda"
+          ],
+          "caution": "Confirm acquisition mode and mass accuracy. This route does not cover undeconvoluted DIA spectra."
+        },
+        {
+          "id": "ms1",
+          "label": "MS1 only, or no usable MS/MS",
+          "why": "Feature processing and statistical comparisons remain possible without a fragmentation route.",
+          "input": "LC-MS data without usable precursor-linked fragments",
+          "output": "An abundance-focused plan",
+          "produces": [
+            "ms1"
+          ]
+        },
+        {
+          "id": "dia",
+          "label": "DIA or all-ion fragmentation",
+          "why": "These spectra need appropriate deconvolution and precursor assignment before a feature-linked MS/MS route.",
+          "input": "LC-MS DIA or all-ion data",
+          "output": "A specialist processing review before annotation or networking",
+          "blocker": {
+            "title": "DIA needs its own reviewed route.",
+            "nextAction": "Confirm the instrument and DIA mode, then review a compatible deconvolution workflow. Do not submit unassigned all-ion spectra to the DDA path. This alpha does not yet plan DIA processing.",
+            "guide": "guide/data-processing/"
+          }
+        },
+        {
+          "id": "uncertain",
+          "label": "I need to check the acquisition mode",
+          "why": "Confirm the acquisition before choosing a compatible processing and annotation route.",
+          "input": "Acquisition details to confirm with the operator",
+          "output": "Questions to resolve with the instrument operator",
+          "caution": "Confirm LC-MS acquisition details before implementing the plan; revisit this choice once known.",
+          "blocker": {
+            "title": "Confirm your acquisition mode first.",
+            "nextAction": "Ask the operator: was this LC-MS, was MS/MS collected, was it DDA or DIA/all-ion, and were accurate-mass precursor and fragment spectra acquired? Keep the original files and method. Return here once you know.",
+            "guide": "guide/data-processing/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "import",
+      "title": "Import / conversion",
+      "requires": [
+        "vendor"
+      ],
+      "question": "How will you open your instrument files?",
+      "intro": "Converting a file changes its representation; it does not detect or align features.",
+      "options": [
+        {
+          "id": "convert",
+          "tool": "msconvert",
+          "label": "Convert to mzML with MSConvert",
+          "why": "Prepare an open-format input for the processing choices that follow.",
+          "input": "A supported vendor format",
+          "output": "mzML spectra",
+          "produces": [
+            "mzml"
+          ],
+          "caution": "Some vendor readers need Windows. Confirm reader support and preserve centroiding/filter settings and original files.",
+          "sources": [
+            "https://www.proteowizard.org/tools/msconvert.html"
+          ]
+        },
+        {
+          "id": "direct",
+          "label": "Use a processor's supported direct import",
+          "why": "MZmine and MS-DIAL offer direct readers for supported vendor formats.",
+          "input": "Vendor files supported by the selected processor and operating system",
+          "output": "Files available to the processor",
+          "produces": [
+            "direct"
+          ],
+          "caution": "Direct import is conditional on vendor, version and operating system. If unsupported, go back and plan conversion to mzML.",
+          "sources": [
+            "https://mzmine.github.io/mzmine_documentation/",
+            "https://systemsomicslab.github.io/msdial5tutorial/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "processing",
+      "title": "Feature processing",
+      "requires": [
+        "raw"
+      ],
+      "question": "Which processing environment suits you?",
+      "intro": "Turn signals into a table that can be compared across samples. This is usually called feature detection and alignment. Each option is an alternative, not a ranking.",
+      "options": [
+        {
+          "id": "mzmine",
+          "tool": "mzmine",
+          "label": "MZmine · graphical workflow",
+          "why": "Graphical processing can retain feature-linked MS/MS and export downstream files.",
+          "input": "Supported vendor files or mzML",
+          "output": "Aligned feature table; for the DDA route, separately export matched MGF/MSP spectra",
+          "produces": [
+            "table"
+          ],
+          "conditionalProduces": [
+            {
+              "requires": [
+                "dda"
+              ],
+              "produces": [
+                "linked_msms"
+              ]
+            }
+          ],
+          "caution": "Use the dedicated downstream export settings and matching feature identifiers. Verify current access terms and inspect processing parameters.",
+          "sources": [
+            "https://mzmine.github.io/mzmine_documentation/",
+            "https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/fbmn/"
+          ]
+        },
+        {
+          "id": "msdial",
+          "tool": "ms-dial",
+          "label": "MS-DIAL · graphical workflow",
+          "why": "Provides feature processing and spectral export with integrated annotation options.",
+          "input": "Supported vendor files or mzML",
+          "output": "Aligned feature table; for the DDA route, separately export matched MGF/MSP spectra",
+          "produces": [
+            "table"
+          ],
+          "conditionalProduces": [
+            {
+              "requires": [
+                "dda"
+              ],
+              "produces": [
+                "linked_msms"
+              ]
+            }
+          ],
+          "caution": "Check export conventions and preserve feature IDs. An integrated library match does not establish a fully resolved structure.",
+          "sources": [
+            "https://systemsomicslab.github.io/msdial5tutorial/",
+            "https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/fbmn/"
+          ]
+        },
+        {
+          "id": "xcms",
+          "tool": "xcms",
+          "label": "XCMS · scripted R workflow",
+          "requires": [
+            "mzml"
+          ],
+          "why": "R/Bioconductor supports reproducible feature processing and alignment.",
+          "input": "mzML plus sample metadata",
+          "output": "Aligned feature abundance table",
+          "produces": [
+            "table"
+          ],
+          "caution": "This initial route covers table export only. It does not assume an XCMS feature-linked MS/MS export; networking is therefore omitted.",
+          "sources": [
+            "https://bioconductor.org/packages/xcms/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qc",
+      "title": "Quality-control plan",
+      "requires": [
+        "table"
+      ],
+      "question": "Include a quality-control review before interpretation.",
+      "intro": "A feature table can contain background, drift and unreliable signals. This is a planning checkpoint, not a claim that your data have passed QC.",
+      "options": [
+        {
+          "id": "qc-plan",
+          "label": "Add QC and sample-metadata review",
+          "why": "Review blanks, pooled QC where available, missingness, alignment and sample labels before comparing groups.",
+          "input": "Feature table, acquisition order, study design and available QC samples",
+          "output": "Planned QC decisions and a documented analysis table",
+          "produces": [
+            "qc_plan"
+          ],
+          "caution": "If the study lacks controls, document that limitation. Normalization and exclusion rules need study-specific justification."
+        }
+      ]
+    },
+    {
+      "id": "annotation",
+      "title": "Molecular annotation",
+      "requires": [
+        "linked_msms",
+        "qc_plan"
+      ],
+      "question": "Would you like to propose molecular identities?",
+      "intro": "Candidate formulas, structures and classes are different levels of evidence. The abundance table remains available for later statistics.",
+      "options": [
+        {
+          "id": "sirius",
+          "tool": "sirius",
+          "label": "Propose formulas and structure candidates with SIRIUS",
+          "why": "The planned high-resolution precursor-linked spectra can support small-molecule annotation.",
+          "input": "Curated high-accuracy MS/MS export with precursor/adduct information",
+          "output": "Candidate formulas, structures or classes linked back to features",
+          "produces": [
+            "candidates"
+          ],
+          "caution": "Inspect chimeric spectra and export metadata. Web-backed functions require an account/license; candidates are not confirmed identities.",
+          "sources": [
+            "https://v6.docs.sirius-ms.io/"
+          ]
+        },
+        {
+          "id": "skip-annotation",
+          "label": "Leave annotation for later",
+          "why": "You can compare features without claiming their identities.",
+          "input": "Existing planned outputs",
+          "output": "Unannotated features retained"
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "title": "Molecular relationships",
+      "requires": [
+        "linked_msms",
+        "qc_plan"
+      ],
+      "question": "Would a molecular network help your question?",
+      "intro": "A network groups features with related fragmentation patterns. It complements annotation and does not replace the abundance table.",
+      "options": [
+        {
+          "id": "fbmn",
+          "tool": "gnps-feature-based-molecular-networking",
+          "label": "Plan feature-based molecular networking",
+          "requires": [
+            "table",
+            "linked_msms"
+          ],
+          "why": "The paired feature table and representative spectra are the required FBMN inputs.",
+          "input": "Matching quantification table and MGF/MSP spectral summary; optional sample metadata",
+          "output": "Molecular network, spectral-library matches and workflow results",
+          "produces": [
+            "network"
+          ],
+          "caution": "Use processor-specific GNPS export conventions. Matching IDs are essential; similarity edges do not confirm structures or biological relationships. A GNPS2 account is needed.",
+          "sources": [
+            "https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/fbmn/"
+          ]
+        },
+        {
+          "id": "skip-network",
+          "label": "Continue without networking",
+          "why": "Networking is optional when it does not address the study question.",
+          "input": "Existing planned outputs",
+          "output": "Abundance and annotation outputs retained"
+        }
+      ]
+    },
+    {
+      "id": "statistics",
+      "title": "Statistical analysis",
+      "requires": [
+        "table",
+        "qc_plan"
+      ],
+      "question": "How would you like to explore differences between samples?",
+      "intro": "Return to the QC-reviewed abundance table with sample groups and covariates. Use methods that match replication, pairing and batch structure.",
+      "options": [
+        {
+          "id": "stats-web",
+          "tool": "metaboanalyst",
+          "label": "MetaboAnalyst · browser analysis",
+          "why": "Table-based modules support exploratory and statistical analysis of metabolomics abundances.",
+          "input": "QC-reviewed abundance table formatted for the chosen module, sample labels and covariates",
+          "output": "Statistical results and plots",
+          "produces": [
+            "statistics"
+          ],
+          "caution": "Document missing-value handling, normalization, transformations and multiple testing. Check upload limits and data-sharing rules.",
+          "sources": [
+            "https://www.metaboanalyst.ca/docs/Tutorials.xhtml"
+          ]
+        },
+        {
+          "id": "stats-r",
+          "tool": "metaboanalystr",
+          "label": "MetaboAnalystR · scripted analysis",
+          "why": "Use R to record and reproduce table-based statistical choices.",
+          "input": "QC-reviewed abundance matrix and sample metadata in module-specific R structures",
+          "output": "Statistical results, R objects and plots",
+          "produces": [
+            "statistics"
+          ],
+          "caution": "Install the required R dependencies and preserve code, package versions and analysis settings.",
+          "sources": [
+            "https://github.com/xia-lab/MetaboAnalystR"
+          ]
+        },
+        {
+          "id": "skip-stats",
+          "label": "Leave group comparisons out",
+          "why": "Not every dataset has a replicated comparison design.",
+          "input": "Existing planned outputs",
+          "output": "No inferential statistics planned"
+        }
+      ]
+    },
+    {
+      "id": "interpretation",
+      "title": "Biological interpretation",
+      "requires": [
+        "statistics",
+        "candidates"
+      ],
+      "question": "Plan a careful pathway-mapping review?",
+      "intro": "Candidate annotation alone does not guarantee usable metabolite identifiers. Check identification confidence, organism, coverage and the measured background first.",
+      "options": [
+        {
+          "id": "pathways",
+          "tool": "metaboanalyst",
+          "label": "Review identifiers before pathway analysis",
+          "why": "Pathway modules can interpret mapped compounds once identifiers and the study background are suitable.",
+          "input": "Manually reviewed compound IDs, statistical results, organism and measured background",
+          "output": "Conditional pathway-analysis plan and mapping report",
+          "caution": "Stop at identifier review if mapping or evidence is inadequate. Do not substitute feature IDs or predicted classes for identified compounds, and do not equate enrichment with flux.",
+          "sources": [
+            "https://www.metaboanalyst.ca/docs/Tutorials.xhtml"
+          ]
+        },
+        {
+          "id": "skip-pathways",
+          "label": "Keep interpretation at the feature level",
+          "why": "Avoid pathway claims while identities or database coverage are insufficient.",
+          "input": "Feature-level statistical results",
+          "output": "Prioritized features for follow-up"
+        }
+      ]
+    },
+    {
+      "id": "figures",
+      "title": "Visualization and reporting",
+      "requires": [
+        "qc_plan"
+      ],
+      "question": "Keep the evidence behind the figures.",
+      "intro": "Use the views and exports from your selected tools. A separated score plot or a convincing network layout is not validation.",
+      "options": [
+        {
+          "id": "report",
+          "label": "Add an evidence and figure checklist",
+          "why": "Connect figures to feature IDs, processing settings, sample metadata and annotation evidence.",
+          "input": "Selected-tool outputs and the retained feature table",
+          "output": "Planned figures, caption details, uncertainty notes and reproducible settings",
+          "caution": "Record what each figure supports and retain the underlying tables. Avoid interpreting exploratory patterns as established mechanisms."
+        }
+      ]
+    },
+    {
+      "id": "sharing",
+      "title": "Sharing and reuse",
+      "question": "How will you preserve the work?",
+      "intro": "This step plans sharing; nothing is uploaded or made public by Navigator.",
+      "options": [
+        {
+          "id": "massive",
+          "tool": "massive",
+          "label": "Plan a MassIVE deposition",
+          "why": "A repository can retain MS data, processed outputs and the information needed for reuse.",
+          "input": "Original files where available, processed outputs, sample-to-file mapping and methods",
+          "output": "A planned repository dataset and accession after submission",
+          "caution": "Follow repository submission requirements and confirm permissions before making a dataset public.",
+          "sources": [
+            "https://ccms-ucsd.github.io/GNPSDocumentation/datasets/"
+          ]
+        },
+        {
+          "id": "local",
+          "label": "Keep a documented local project for now",
+          "why": "Preserve a reproducible package before deciding on public deposition.",
+          "input": "Available raw data, outputs, metadata, versions and settings",
+          "output": "A documented project archive; no public accession"
+        }
+      ]
+    }
+  ],
+  "revision": "lcms-alpha-3",
+  "profiles": [
+    {
+      "id": "cohort",
+      "name": "Cohort study",
+      "summary": "Explore associations with participant characteristics or outcomes.",
+      "outline": "Sample and participant metadata → processing → QC → association analysis → cautious interpretation",
+      "checks": [
+        "Identify repeated samples from the same participant.",
+        "Record relevant covariates, batches and available controls."
+      ],
+      "guidance": {
+        "qc": "Check sample-to-participant mapping, collection batches and available QC samples.",
+        "statistics": "Choose an analysis that accounts for participant independence, covariates and repeated measurements. Group differences alone do not establish causation."
+      }
+    },
+    {
+      "id": "comparative",
+      "name": "Comparative metabolomics",
+      "summary": "Compare treatments, conditions or organisms.",
+      "outline": "Define the comparison → processing → QC → statistical comparison → follow-up",
+      "checks": [
+        "Distinguish independent biological replicates from technical repeats.",
+        "Establish whether observations are paired or independent."
+      ],
+      "guidance": {
+        "qc": "Check replicates, pairing, treatment labels and batch balance before comparing groups.",
+        "statistics": "Match the statistical model to pairing, replication and batch structure. With insufficient replication, keep the analysis descriptive."
+      }
+    },
+    {
+      "id": "natural-products",
+      "name": "Natural-product discovery",
+      "summary": "Explore molecular families and prioritize compounds for follow-up.",
+      "outline": "Processing → QC → annotation → molecular families → candidate prioritization",
+      "checks": [
+        "Record sample provenance and extraction blanks.",
+        "Confirm usable MS/MS before planning molecular networking."
+      ],
+      "guidance": {
+        "annotation": "Prioritize dereplication and annotation evidence. An unmatched spectrum is not proof that a compound is novel.",
+        "network": "FBMN can help explore molecular families if matching feature tables and linked MS/MS are available.",
+        "statistics": "Group comparisons are optional; only include them if they answer your discovery question."
+      },
+      "suggestions": {
+        "network": "fbmn",
+        "statistics": "skip-stats"
+      }
+    },
+    {
+      "id": "bioactivity",
+      "name": "Bioactivity-guided discovery",
+      "summary": "Connect chemical profiles across fractions with assay activity.",
+      "outline": "Matched fractions and assays → processing → QC → annotation/networking → activity association",
+      "checks": [
+        "Match chemical profiles and assay measurements to the same fractions.",
+        "Check assay controls and plan confirmation of prioritized compounds."
+      ],
+      "guidance": {
+        "qc": "Preserve fraction IDs shared by chemical data and bioassays; review assay controls alongside chemical QC.",
+        "statistics": "This alpha can plan the chemical analysis, but does not yet select a validated activity-correlation implementation. Review that step separately.",
+        "network": "Use molecular families as context for activity associations; co-occurrence does not prove that a feature causes activity."
+      },
+      "suggestions": {
+        "network": "fbmn"
+      },
+      "limitation": "The bioactivity-association step requires a separate method review; it is not implemented by this starter."
+    },
+    {
+      "id": "exploration",
+      "name": "Explore an existing dataset",
+      "summary": "Assess quality and patterns before choosing a specific analysis.",
+      "outline": "Identify available files → QC → descriptive exploration → follow-up questions",
+      "checks": [
+        "Identify which processing steps have already been performed.",
+        "Check available sample metadata and avoid assuming the table has passed QC."
+      ],
+      "guidance": {
+        "start": "Choose the files you actually have: original instrument files, mzML or an aligned abundance table.",
+        "statistics": "Start with descriptive summaries and quality assessment. Exploratory patterns need follow-up; do not treat them as validated predictions."
+      }
+    }
+  ]
+}

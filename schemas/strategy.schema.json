@@ -1,0 +1,618 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scottjarmusch.github.io/metabolomics-navigator/schemas/strategy.schema.json",
+  "title": "Metabolomics Navigator strategy entry",
+  "description": "Schema for a published, transferable experimental or computational metabolomics strategy.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "summary",
+    "publication",
+    "purpose",
+    "platforms",
+    "components",
+    "tools",
+    "provenance",
+    "status"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 180
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 700
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 7000
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "doi": {
+          "type": "string",
+          "pattern": "^10\\.\\d{4,9}/\\S+$"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "citation": {
+          "type": "string",
+          "maxLength": 1200
+        },
+        "journal": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 1900,
+          "maximum": 2200
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "doi"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        },
+        {
+          "required": [
+            "citation"
+          ]
+        }
+      ]
+    },
+    "purpose": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary"
+      ],
+      "properties": {
+        "primary": {
+          "$ref": "#/$defs/strategy_objective"
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/strategy_objective"
+          },
+          "uniqueItems": true,
+          "default": []
+        }
+      }
+    },
+    "platforms": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/platform"
+      }
+    },
+    "analysis_types": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/analysis_type"
+      },
+      "default": []
+    },
+    "acquisition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ms_levels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ms_level"
+          },
+          "uniqueItems": true
+        },
+        "strategies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/acquisition_strategy"
+          },
+          "uniqueItems": true
+        },
+        "ion_mobility": {
+          "$ref": "#/$defs/ion_mobility_support"
+        }
+      }
+    },
+    "components": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/strategy_component"
+      }
+    },
+    "workflow_steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "description"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 180
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1200
+          },
+          "tool_slugs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            },
+            "uniqueItems": true
+          },
+          "external_tools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 150
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
+          }
+        }
+      },
+      "default": []
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 150
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "role": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "slug"
+            ]
+          },
+          {
+            "required": [
+              "name"
+            ]
+          }
+        ]
+      },
+      "default": []
+    },
+    "resources": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "raw_data_available": {
+          "type": "boolean"
+        },
+        "raw_data_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "processed_data_available": {
+          "type": "boolean"
+        },
+        "processed_data_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "code_available": {
+          "type": "boolean"
+        },
+        "code_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "method_available": {
+          "type": "boolean"
+        },
+        "method_url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "designed_for": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "considerations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "related_strategies": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "submitted_by"
+      ],
+      "properties": {
+        "submitted_by": {
+          "$ref": "#/$defs/strategy_submission_role"
+        },
+        "public_attribution_consent": {
+          "type": "boolean",
+          "default": false,
+          "description": "Explicit consent to public name and ORCID attribution in the Contributor Directory."
+        },
+        "submitter_name": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "submitter_orcid": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$"
+        },
+        "source_issue": {
+          "type": "string",
+          "format": "uri"
+        },
+        "author_verified": {
+          "type": "boolean",
+          "default": false
+        },
+        "author_verified_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entry",
+        "review"
+      ],
+      "properties": {
+        "entry": {
+          "$ref": "#/$defs/entry_status"
+        },
+        "review": {
+          "$ref": "#/$defs/review_status"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_verified": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_editorial_review": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "sample_types": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/sample_type"
+      },
+      "default": [],
+      "description": "Specific sample matrices for which the strategy has been demonstrated or is directly applicable."
+    },
+    "biological_contexts": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/biological_context"
+      },
+      "default": [],
+      "description": "Broad biological systems or study contexts relevant to the strategy."
+    },
+    "organisms": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 180
+      },
+      "default": [],
+      "description": "Optional free-text organism names when scientifically useful."
+    }
+  },
+  "$defs": {
+    "strategy_objective": {
+      "type": "string",
+      "enum": [
+        "molecular_discovery",
+        "metabolite_annotation",
+        "structure_elucidation",
+        "dereplication",
+        "molecular_family_discovery",
+        "unknown_identification",
+        "metal_binding",
+        "biomolecular_interactions",
+        "chemical_reactivity",
+        "enzyme_activity",
+        "biotransformation",
+        "phenotype_association",
+        "disease_state_comparison",
+        "biomarker_discovery",
+        "host_microbe_interaction",
+        "natural_product_discovery",
+        "environmental_metabolomics",
+        "stable_isotope_tracing",
+        "flux_analysis",
+        "spatial_metabolomics",
+        "single_cell_metabolomics",
+        "native_metabolomics",
+        "reverse_metabolomics",
+        "exposomics"
+      ]
+    },
+    "strategy_component": {
+      "type": "string",
+      "enum": [
+        "sample_preparation",
+        "chromatography",
+        "post_column_modification",
+        "data_acquisition",
+        "ion_mobility",
+        "data_conversion",
+        "preprocessing",
+        "quality_control",
+        "annotation",
+        "spectral_search",
+        "molecular_networking",
+        "repository_mining",
+        "metadata_analysis",
+        "statistics",
+        "biological_validation",
+        "data_sharing"
+      ]
+    },
+    "strategy_submission_role": {
+      "type": "string",
+      "enum": [
+        "author",
+        "user",
+        "curator",
+        "other"
+      ]
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "lc_ms",
+        "gc_ms",
+        "ce_ms",
+        "direct_infusion_ms",
+        "maldi_ms",
+        "imaging_ms",
+        "multi_platform",
+        "platform_independent"
+      ]
+    },
+    "analysis_type": {
+      "type": "string",
+      "enum": [
+        "targeted",
+        "untargeted",
+        "semi_targeted",
+        "metabolite_profiling",
+        "lipidomics",
+        "stable_isotope_tracing",
+        "fluxomics",
+        "spatial_metabolomics",
+        "exposomics",
+        "volatilomics",
+        "multiomics"
+      ]
+    },
+    "ms_level": {
+      "type": "string",
+      "enum": [
+        "ms1",
+        "ms2",
+        "msn"
+      ]
+    },
+    "acquisition_strategy": {
+      "type": "string",
+      "enum": [
+        "full_scan",
+        "dda",
+        "dia",
+        "targeted_msms",
+        "prm_mrm",
+        "all_ion",
+        "flow_injection",
+        "native_esi",
+        "unspecified"
+      ]
+    },
+    "ion_mobility_support": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "required",
+        "not_required",
+        "not_applicable",
+        "unspecified"
+      ]
+    },
+    "entry_status": {
+      "type": "string",
+      "enum": [
+        "stub",
+        "published",
+        "archived"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "unreviewed",
+        "editorially_reviewed"
+      ]
+    },
+    "sample_type": {
+      "type": "string",
+      "enum": [
+        "plasma",
+        "serum",
+        "whole_blood",
+        "dried_blood_spot",
+        "urine",
+        "saliva",
+        "sputum",
+        "balf",
+        "csf",
+        "feces",
+        "tissue",
+        "cells",
+        "cell_culture_media",
+        "microbial_culture",
+        "microbial_supernatant",
+        "biofilm",
+        "plant_tissue",
+        "root_exudate",
+        "soil",
+        "water",
+        "food",
+        "fermentation",
+        "synthetic_standards",
+        "other_biofluid",
+        "other"
+      ]
+    },
+    "biological_context": {
+      "type": "string",
+      "enum": [
+        "human",
+        "animal",
+        "microbial",
+        "plant",
+        "fungal",
+        "marine",
+        "environmental",
+        "food_fermentation",
+        "host_microbe",
+        "synthetic_reference",
+        "broadly_applicable"
+      ]
+    }
+  }
+}

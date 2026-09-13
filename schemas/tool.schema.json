@@ -1,0 +1,922 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scottjarmusch.github.io/metabolomics-navigator/schemas/tool.schema.json",
+  "title": "Metabolomics Navigator tool entry",
+  "description": "Schema for a tool, software resource, service, database, spectral library, repository, or executable workflow entry.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "summary",
+    "links",
+    "resource_types",
+    "functions",
+    "platforms",
+    "interfaces",
+    "access",
+    "provenance",
+    "status"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "description": "Stable URL-safe identifier. Normally generated from the tool name."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "acronym": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 500,
+      "description": "Neutral one- or two-sentence description of what the tool does."
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 5000,
+      "description": "Optional longer encyclopedia-style overview."
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary"
+      ],
+      "properties": {
+        "primary": {
+          "type": "string",
+          "format": "uri"
+        },
+        "homepage": {
+          "type": "string",
+          "format": "uri"
+        },
+        "web_app": {
+          "type": "string",
+          "format": "uri"
+        },
+        "repository": {
+          "type": "string",
+          "format": "uri"
+        },
+        "documentation": {
+          "type": "string",
+          "format": "uri"
+        },
+        "download": {
+          "type": "string",
+          "format": "uri"
+        },
+        "tutorial": {
+          "type": "string",
+          "format": "uri"
+        },
+        "issue_tracker": {
+          "type": "string",
+          "format": "uri"
+        },
+        "biotools": {
+          "type": "string",
+          "format": "uri"
+        },
+        "workflowhub": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "resource_types": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/resource_type"
+      }
+    },
+    "functions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary"
+      ],
+      "properties": {
+        "primary": {
+          "$ref": "#/$defs/function"
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/function"
+          },
+          "uniqueItems": true,
+          "default": []
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/capability"
+          },
+          "uniqueItems": true,
+          "default": []
+        }
+      }
+    },
+    "platforms": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/platform"
+      }
+    },
+    "analysis_types": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/analysis_type"
+      },
+      "default": []
+    },
+    "interfaces": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/interface"
+      }
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model"
+      ],
+      "properties": {
+        "model": {
+          "$ref": "#/$defs/access_model"
+        },
+        "license": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Use an SPDX identifier or expression where possible."
+        },
+        "pricing_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000
+        }
+      }
+    },
+    "technical": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "operating_systems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/operating_system"
+          },
+          "uniqueItems": true
+        },
+        "programming_languages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "uniqueItems": true
+        },
+        "package_managers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "uniqueItems": true
+        },
+        "containers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "uniqueItems": true
+        },
+        "api_available": {
+          "type": "boolean"
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "input_types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/data_type"
+          },
+          "uniqueItems": true
+        },
+        "output_types": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/data_type"
+          },
+          "uniqueItems": true
+        },
+        "input_formats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/data_format"
+          },
+          "uniqueItems": true
+        },
+        "output_formats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/data_format"
+          },
+          "uniqueItems": true
+        },
+        "other_input_formats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "uniqueItems": true
+        },
+        "other_output_formats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "publications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "doi": {
+            "type": "string",
+            "pattern": "^10\\.\\d{4,9}/\\S+$"
+          },
+          "pmid": {
+            "type": "string",
+            "pattern": "^[0-9]+$"
+          },
+          "citation": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "primary",
+              "methods"
+            ]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "doi"
+            ]
+          },
+          {
+            "required": [
+              "pmid"
+            ]
+          },
+          {
+            "required": [
+              "citation"
+            ]
+          }
+        ]
+      },
+      "default": []
+    },
+    "common_uses": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 300
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "related_tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "slug"
+        ],
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "alternative",
+              "complementary",
+              "dependency",
+              "successor",
+              "predecessor",
+              "integration",
+              "part_of",
+              "contains",
+              "hosted_by",
+              "uses",
+              "other"
+            ]
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 300
+          }
+        }
+      },
+      "default": []
+    },
+    "maintenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/maintenance_status"
+        },
+        "latest_version": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "latest_release_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "repository_last_activity": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_checked": {
+          "type": "string",
+          "format": "date"
+        },
+        "superseded_by": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000
+        }
+      }
+    },
+    "credits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "role"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 150
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "developer",
+              "maintainer",
+              "institution",
+              "funder",
+              "contributor",
+              "other"
+            ]
+          },
+          "orcid": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "default": []
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "submitted_by"
+      ],
+      "properties": {
+        "submitted_by": {
+          "$ref": "#/$defs/submission_role"
+        },
+        "public_attribution_consent": {
+          "type": "boolean",
+          "default": false,
+          "description": "Explicit consent to public name and ORCID attribution in the Contributor Directory."
+        },
+        "submitter_name": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "submitter_orcid": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$"
+        },
+        "source_issue": {
+          "type": "string",
+          "format": "uri"
+        },
+        "developer_verified": {
+          "type": "boolean",
+          "default": false
+        },
+        "developer_verified_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entry",
+        "review"
+      ],
+      "properties": {
+        "entry": {
+          "$ref": "#/$defs/entry_status"
+        },
+        "review": {
+          "$ref": "#/$defs/review_status"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_editorial_review": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_verified": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "external_identifiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "biotools_id": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "research_resource_id": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "wikidata_id": {
+          "type": "string",
+          "pattern": "^Q[0-9]+$"
+        },
+        "edam_topics": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        },
+        "edam_operations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "designed_for": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "not_designed_for": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        },
+        "considerations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "acquisition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ms_levels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ms_level"
+          },
+          "uniqueItems": true
+        },
+        "strategies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/acquisition_strategy"
+          },
+          "uniqueItems": true
+        },
+        "ion_mobility": {
+          "$ref": "#/$defs/ion_mobility_support"
+        }
+      }
+    },
+    "resource_citations": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "citation",
+          "type"
+        ],
+        "properties": {
+          "citation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "software",
+              "documentation"
+            ]
+          },
+          "doi": {
+            "type": "string",
+            "pattern": "^10\\.\\d{4,9}/\\S+$"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "resource_type": {
+      "type": "string",
+      "enum": [
+        "software_application",
+        "programming_package",
+        "web_service",
+        "database_knowledgebase",
+        "spectral_library",
+        "data_repository",
+        "workflow_pipeline",
+        "workflow_platform",
+        "api_service",
+        "instrument_vendor_suite"
+      ]
+    },
+    "function": {
+      "type": "string",
+      "enum": [
+        "data_acquisition",
+        "data_conversion",
+        "preprocessing",
+        "quality_control",
+        "normalization",
+        "quantification",
+        "annotation_identification",
+        "spectral_analysis",
+        "molecular_networking",
+        "statistics",
+        "machine_learning",
+        "pathway_interpretation",
+        "isotope_tracing_flux",
+        "visualization_reporting",
+        "data_management_sharing",
+        "workflow_reproducibility",
+        "reference_data_search",
+        "multiomics_integration"
+      ]
+    },
+    "capability": {
+      "type": "string",
+      "enum": [
+        "spectral_data_io",
+        "identifier_harmonization",
+        "peak_detection",
+        "spectral_deconvolution",
+        "retention_time_alignment",
+        "gap_filling",
+        "adduct_isotope_grouping",
+        "blank_filtering",
+        "qc_drift_correction",
+        "batch_effect_correction",
+        "calibration_curve",
+        "library_matching",
+        "molecular_formula_prediction",
+        "structure_elucidation",
+        "identification_confidence",
+        "in_silico_spectra",
+        "retention_time_prediction",
+        "ccs_prediction",
+        "univariate_statistics",
+        "multivariate_statistics",
+        "feature_selection",
+        "pathway_enrichment",
+        "isotopologue_correction",
+        "flux_estimation",
+        "interactive_dashboard",
+        "provenance_tracking",
+        "container_support",
+        "chromatogram_building",
+        "ms2_processing",
+        "ion_identity_networking",
+        "structure_database_search",
+        "compound_class_prediction",
+        "substructure_prediction",
+        "repository_scale_search",
+        "metadata_contextualization",
+        "reference_spectrum_selection",
+        "network_visualization"
+      ]
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "lc_ms",
+        "gc_ms",
+        "ce_ms",
+        "direct_infusion_ms",
+        "maldi_ms",
+        "imaging_ms",
+        "multi_platform",
+        "platform_independent"
+      ]
+    },
+    "analysis_type": {
+      "type": "string",
+      "enum": [
+        "targeted",
+        "untargeted",
+        "semi_targeted",
+        "metabolite_profiling",
+        "lipidomics",
+        "stable_isotope_tracing",
+        "fluxomics",
+        "spatial_metabolomics",
+        "exposomics",
+        "volatilomics",
+        "multiomics"
+      ]
+    },
+    "interface": {
+      "type": "string",
+      "enum": [
+        "web_app",
+        "desktop_gui",
+        "command_line",
+        "r_package",
+        "python_package",
+        "matlab",
+        "notebook",
+        "api",
+        "galaxy",
+        "knime",
+        "workflow_language",
+        "vendor_integration"
+      ]
+    },
+    "access_model": {
+      "type": "string",
+      "enum": [
+        "open_source",
+        "source_available",
+        "free_web_service",
+        "free_academic",
+        "freemium",
+        "commercial",
+        "institutional_access",
+        "unknown"
+      ]
+    },
+    "maintenance_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "limited",
+        "unclear",
+        "archived",
+        "deprecated",
+        "unavailable"
+      ]
+    },
+    "entry_status": {
+      "type": "string",
+      "enum": [
+        "stub",
+        "published",
+        "archived"
+      ]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "unreviewed",
+        "editorially_reviewed"
+      ]
+    },
+    "submission_role": {
+      "type": "string",
+      "enum": [
+        "developer",
+        "maintainer",
+        "user",
+        "curator",
+        "other"
+      ]
+    },
+    "operating_system": {
+      "type": "string",
+      "enum": [
+        "browser",
+        "windows",
+        "macos",
+        "linux",
+        "containers",
+        "cross_platform"
+      ]
+    },
+    "data_format": {
+      "type": "string",
+      "enum": [
+        "vendor_raw",
+        "mzml",
+        "mzxml",
+        "netcdf",
+        "mgf",
+        "msp",
+        "mztab_m",
+        "csv_tsv",
+        "json",
+        "xml",
+        "isa_tab",
+        "imzml",
+        "hdf5",
+        "sdf",
+        "smiles_inchi",
+        "other"
+      ]
+    },
+    "data_type": {
+      "type": "string",
+      "enum": [
+        "raw_instrument_data",
+        "spectra",
+        "imaging_data",
+        "feature_table",
+        "spectral_library",
+        "compound_list",
+        "molecular_structures",
+        "sample_metadata",
+        "isotope_tracing_data",
+        "pathway_data",
+        "statistical_results",
+        "report"
+      ]
+    },
+    "ms_level": {
+      "type": "string",
+      "enum": [
+        "ms1",
+        "ms2",
+        "msn"
+      ]
+    },
+    "acquisition_strategy": {
+      "type": "string",
+      "enum": [
+        "full_scan",
+        "dda",
+        "dia",
+        "targeted_msms",
+        "prm_mrm",
+        "all_ion",
+        "flow_injection",
+        "native_esi",
+        "unspecified"
+      ]
+    },
+    "ion_mobility_support": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "required",
+        "not_required",
+        "not_applicable",
+        "unspecified"
+      ]
+    }
+  }
+}

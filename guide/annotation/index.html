@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Annotating molecules | Metabolomics Navigator</title>
+  <meta name="description" content="Annotation tools help connect measured signals to molecular formulas, candidate structures, or chemical classes. These are different levels of information. A class prediction can be useful even when an exact structure remains unknown; a ranked structure candidate still needs supporting evidence.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/annotation/">
+  <meta property="og:site_name" content="Metabolomics Navigator">
+  <meta property="og:title" content="Annotating molecules | Metabolomics Navigator">
+  <meta property="og:description" content="Annotation tools help connect measured signals to molecular formulas, candidate structures, or chemical classes. These are different levels of information. A class prediction can be useful even when an exact structure remains unknown; a ranked structure candidate still needs supporting evidence.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/annotation/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Annotating molecules | Metabolomics Navigator">
+  <meta name="twitter:description" content="Annotation tools help connect measured signals to molecular formulas, candidate structures, or chemical classes. These are different levels of information. A class prediction can be useful even when an exact structure remains unknown; a ranked structure candidate still needs supporting evidence.">
+  
+  <meta name="theme-color" content="#faf9f5">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body class="page-guide"><aside style="padding:12px;text-align:center;background:#f2e9cc;color:#183f42">Alpha review snapshot · Not the live site · <a href="https://scottjarmusch.github.io/metabolomics-navigator/">Visit the live Navigator</a></aside>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner section-wrap">
+      <a class="brand" href="/metabolomics-navigator-alpha/" aria-label="Metabolomics Navigator home">
+        <svg class="brand-logo" width="60" height="26" viewBox="0 0 100 44" aria-hidden="true">
+          <path class="brand-chrom" d="M2 34h14l4-24 4 26 4-18 4 20h16" />
+          <g class="brand-network">
+            <line x1="48" y1="12" x2="61" y2="8" />
+            <line x1="48" y1="12" x2="56" y2="22" />
+            <line x1="61" y1="8" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="67" y2="31" />
+            <line x1="67" y1="31" x2="80" y2="26" />
+            <circle cx="48" cy="12" r="3.2" />
+            <circle cx="61" cy="8" r="3.2" />
+            <circle cx="56" cy="22" r="3.2" />
+            <circle cx="72" cy="14" r="3.2" />
+            <circle cx="67" cy="31" r="3.2" />
+            <circle cx="80" cy="26" r="3.2" />
+          </g>
+        </svg>
+        <span class="brand-text">
+          <strong><span>Metabolomics</span> <span class="accent">Navigator</span></strong>
+          <small>Tools, strategies &amp; workflow guidance for metabolomics</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="/metabolomics-navigator-alpha/" aria-current="page">Guide</a>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/ask/">Ask Navigator</a>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a class="nav-submit" href="/metabolomics-navigator-alpha/submit/">Contribute</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+<div class="section-wrap category-layout">
+ <aside class="category-sidebar"><nav aria-label="Explore by task"><h2>Explore by task</h2><a href="/metabolomics-navigator-alpha/guide/data-processing/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 5h16M4 12h16M4 19h16"/><circle cx="8" cy="5" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="19" r="2"/>
+
+</svg>
+<span>Data processing</span></a><a href="/metabolomics-navigator-alpha/guide/annotation/" aria-current="page">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/>
+
+</svg>
+<span>Molecular annotation</span></a><a href="/metabolomics-navigator-alpha/guide/spectral-analysis/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m6 7 11 4M6 7l4 12m7-8-7 8"/><circle cx="5" cy="6" r="3"/><circle cx="18" cy="11" r="3"/><circle cx="10" cy="20" r="2"/>
+
+</svg>
+<span>Spectral analysis</span></a><a href="/metabolomics-navigator-alpha/guide/public-data/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>
+
+</svg>
+<span>Public-data search</span></a><a href="/metabolomics-navigator-alpha/guide/reference-resources/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M5 3h10l4 4v14H5zM14 3v5h5M8 12h8M8 16h5"/>
+
+</svg>
+<span>Data &amp; references</span></a><a href="/metabolomics-navigator-alpha/guide/interpretation/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Interpretation</span></a><a href="/metabolomics-navigator-alpha/guide/spatial-metabolomics/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Spatial metabolomics</span></a><a href="/metabolomics-navigator-alpha/guide/metabologenomics/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Metabologenomics</span></a><a href="/metabolomics-navigator-alpha/guide/microbial-maldi/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Microbial MALDI profiling</span></a></nav><a class="all-tools-link" href="/metabolomics-navigator-alpha/tools/">Search all 128 resources →</a></aside>
+ <article class="category-content"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Guide</a><span>›</span><span>Molecular annotation</span></nav><header class="category-intro"><span class="category-icon">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/>
+
+</svg>
+</span><h1>Annotating molecules</h1><p>Explore formulas, structures, and chemical classes.</p></header>
+ <details class="category-guidance"><summary>How to choose a resource</summary><p>Annotation tools help connect measured signals to molecular formulas, candidate structures, or chemical classes. These are different levels of information. A class prediction can be useful even when an exact structure remains unknown; a ranked structure candidate still needs supporting evidence.</p><p>Match the tool to the question you can answer with your data: formula, chemical class, database candidate, or a possible modification of a known molecule.</p></details>
+ 
+ <div class="category-list-heading"><h2>Tools & resources</h2><span>15 entries</span></div>
+ <ul class="category-resources"><li><a href="/metabolomics-navigator-alpha/tools/sirius/"><div class="resource-heading"><h3>SIRIUS</h3><span class="resource-access">Free for academic use</span></div><p>A cross-platform small-molecule MS/MS framework for LC-MS preprocessing, molecular-formula annotation, spectral-library searching, structure-database searching, compound-class prediction, confidence scoring, and de novo structure generation.</p><span class="resource-bottom">Formula &amp; structure annotation<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/lipidoz/"><div class="resource-heading"><h3>LipidOz</h3><span class="resource-access">Open source</span></div><p>Determine lipid carbon–carbon double-bond positions using diagnostic ozone-induced dissociation data.</p><span class="resource-bottom">Metabolite annotation and identification<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/csi-fingerid/"><div class="resource-heading"><h3>CSI:FingerID</h3><span class="resource-access">Free for academic use</span></div><p>A SIRIUS-integrated machine-learning method and webservice for predicting molecular fingerprints from MS/MS data and ranking candidate structures from molecular-structure databases.</p><span class="resource-bottom">Structure database search<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/canopus/"><div class="resource-heading"><h3>CANOPUS</h3><span class="resource-access">Free for academic use</span></div><p>A SIRIUS-integrated machine-learning method and webservice for predicting compound classes directly from high-resolution MS/MS data without requiring an exact database structure match.</p><span class="resource-bottom">Chemical-class prediction<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/msnovelist/"><div class="resource-heading"><h3>MSNovelist</h3><span class="resource-access">Free for academic use</span></div><p>A SIRIUS-integrated de novo structure-generation method that proposes molecular structures from a predicted molecular formula and CSI:FingerID fingerprint when database search is insufficient.</p><span class="resource-bottom">De novo structure candidates<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/modifinder/"><div class="resource-heading"><h3>ModiFinder</h3><span class="resource-access">Free web service</span></div><p>A GNPS2-associated computational tool for localizing structural modification sites by aligning MS/MS spectra of a known compound and a structurally related unknown analogue.</p><span class="resource-bottom">Modification-site localization<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/metfrag/"><div class="resource-heading"><h3>MetFrag</h3><span class="resource-access">Open source</span></div><p>Rank candidate molecular structures by comparing predicted fragments with an experimental MS/MS spectrum.</p><span class="resource-bottom">Fragment-based structure ranking<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/ms-finder/"><div class="resource-heading"><h3>MS-FINDER</h3><span class="resource-access">Source available with restrictions</span></div><p>Explore formula and structure candidates using fragmentation rules and EI-MS or MS/MS library searches.</p><span class="resource-bottom">Formula &amp; structure interpretation<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/cfm-id/"><div class="resource-heading"><h3>CFM-ID</h3><span class="resource-access">Free web service</span></div><p>Predict tandem mass spectra, annotate fragments and rank candidate structures for small molecules.</p><span class="resource-bottom">Predict spectra and rank structures<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/metid/"><div class="resource-heading"><h3>metID</h3><span class="resource-access">Open source</span></div><p>Annotate LC-MS features using accurate mass, retention time and tandem mass spectra in R.</p><span class="resource-bottom">Match mass, retention and MS/MS<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/mist/"><div class="resource-heading"><h3>MIST</h3><span class="resource-access">Source available with restrictions</span></div><p>Predict molecular fingerprints from tandem mass spectra and retrieve candidate structures.</p><span class="resource-bottom">Fingerprint prediction from MS/MS<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/msbuddy/"><div class="resource-heading"><h3>BUDDY / msbuddy</h3><span class="resource-access">Open source</span></div><p>Generate and rank molecular formula annotations for small-molecule mass-spectrometry queries.</p><span class="resource-bottom">Molecular formula candidates<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/metaboannotation/"><div class="resource-heading"><h3>MetaboAnnotation</h3><span class="resource-access">Open source</span></div><p>Match metabolomics features and spectra against reference values through a unified R interface.</p><span class="resource-bottom">Reproducible matching in R<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/ms2query/"><div class="resource-heading"><h3>MS2Query</h3><span class="resource-access">Open source</span></div><p>MS/MS analogue-search tool that combines learned spectral similarity and precursor-mass information to retrieve structurally related reference compounds.</p><span class="resource-bottom">Find spectral matches &amp; analogues<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/npclassifier/"><div class="resource-heading"><h3>NPClassifier</h3><span class="resource-access">Open source</span></div><p>Deep neural-network tool that classifies natural-product structures into biosynthetic pathways, superclasses and structural classes.</p><span class="resource-bottom">Classify supplied natural-product structures<span aria-hidden="true">↗</span></span></a></li></ul>
+ </article>
+</div>
+</main>
+  <footer class="site-footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <strong>Metabolomics Navigator</strong>
+        <p>An open scientific resource for metabolomics tools, analytical strategies and workflow guidance.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a href="/metabolomics-navigator-alpha/governance/">Governance</a>
+        <a href="/metabolomics-navigator-alpha/privacy/">Privacy</a>
+        <a href="https://github.com/scottjarmusch/metabolomics-navigator">GitHub repository</a>
+      </div>
+      <div>
+        <h2>Data</h2>
+        <a href="/metabolomics-navigator-alpha/tool-data.json">Tool data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/strategy-data.json">Strategy data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+  </footer>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+</body>
+</html>

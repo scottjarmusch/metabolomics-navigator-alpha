@@ -1,0 +1,627 @@
+version: 0.3.0
+last_updated: '2026-08-24'
+principles:
+- Use stable machine-readable IDs and editable human-readable labels.
+- Treat tools and strategies as separate first-class content types that cross-link to one another.
+- Categorize resources across separate dimensions rather than forcing one hierarchy.
+- Keep researcher submission forms short; curators may enrich records later.
+- Use broad browse categories with detailed capabilities for scientific specificity.
+- Use external standards such as EDAM and SPDX where practical, without requiring submitters to know them.
+required_submission_dimensions:
+- resource_types
+- primary_function
+- platforms
+- interfaces
+- access_model
+resource_types:
+- id: software_application
+  label: Software application
+  description: A standalone application or software suite.
+- id: programming_package
+  label: Programming package or library
+  description: A package intended to be called from R, Python, MATLAB, or another programming language.
+- id: web_service
+  label: Web application or service
+  description: A browser-accessible application or hosted analytical service.
+- id: database_knowledgebase
+  label: Database or knowledgebase
+  description: A curated or computational resource for metabolite, pathway, reaction, or reference information.
+- id: spectral_library
+  label: Spectral library
+  description: A reference collection of experimental or predicted spectra.
+- id: data_repository
+  label: Data repository
+  description: A service primarily used to deposit, preserve, or retrieve metabolomics datasets.
+- id: workflow_pipeline
+  label: Workflow or pipeline
+  description: A defined sequence of analytical steps distributed as an executable workflow.
+- id: workflow_platform
+  label: Workflow platform
+  description: An environment used to build, execute, share, or reproduce workflows.
+- id: api_service
+  label: API or programmatic service
+  description: A service primarily accessed through an application programming interface.
+- id: instrument_vendor_suite
+  label: Instrument-vendor suite
+  description: Software distributed primarily for use with a vendor's instruments or data ecosystem.
+functions:
+- id: data_acquisition
+  label: Data acquisition and instrument control
+  description: Instrument control, acquisition methods, or real-time acquisition support.
+- id: data_conversion
+  label: Data conversion and import
+  description: Conversion between vendor, open, tabular, or exchange formats.
+- id: preprocessing
+  label: Preprocessing and feature extraction
+  description: Peak detection, deconvolution, alignment, grouping, or gap filling.
+- id: quality_control
+  label: Quality control and filtering
+  description: QC assessment, contaminant or blank filtering, drift detection, or diagnostic reporting.
+- id: normalization
+  label: Normalization and batch correction
+  description: Signal normalization, scaling, drift correction, or batch-effect adjustment.
+- id: quantification
+  label: Quantification and targeted analysis
+  description: Calibration, integration, targeted quantification, or assay processing.
+- id: annotation_identification
+  label: Metabolite annotation and identification
+  description: Formula assignment, structure elucidation, library matching, or confidence assessment.
+- id: spectral_analysis
+  label: Spectral processing and comparison
+  description: Spectrum cleaning, similarity scoring, prediction, interpretation, or library generation.
+- id: molecular_networking
+  label: Molecular networking and chemical similarity
+  description: Network-based organization or exploration of spectra, features, or chemical relationships.
+- id: statistics
+  label: Statistical analysis
+  description: Univariate or multivariate statistics, hypothesis testing, or exploratory analysis.
+- id: machine_learning
+  label: Machine learning and prediction
+  description: Classification, regression, feature selection, embedding, or predictive modeling.
+- id: pathway_interpretation
+  label: Pathway and biological interpretation
+  description: Enrichment, pathway mapping, reaction analysis, or biological interpretation.
+- id: isotope_tracing_flux
+  label: Isotope tracing and flux analysis
+  description: Stable-isotope correction, isotopologue analysis, flux estimation, or metabolic modeling.
+- id: visualization_reporting
+  label: Visualization and reporting
+  description: Figures, dashboards, interactive exploration, automated reports, or publication outputs.
+- id: data_management_sharing
+  label: Data management and sharing
+  description: Metadata handling, deposition, retrieval, interoperability, or FAIR data support.
+- id: workflow_reproducibility
+  label: Workflow management and reproducibility
+  description: Pipeline execution, provenance, containers, notebooks, or reproducible environments.
+- id: reference_data_search
+  label: Reference data and database search
+  description: Search and retrieval of metabolite, spectrum, pathway, reaction, or ontology records.
+- id: multiomics_integration
+  label: Multi-omics integration
+  description: Integration of metabolomics with genomics, transcriptomics, proteomics, microbiome, or other data.
+capabilities:
+- id: identifier_harmonization
+  label: Identifier harmonization
+  parent_function: data_management_sharing
+- id: spectral_data_io
+  label: Spectral data reading and writing
+  parent_function: data_conversion
+- id: peak_detection
+  label: Peak or feature detection
+  parent_function: preprocessing
+- id: spectral_deconvolution
+  label: Spectral deconvolution
+  parent_function: preprocessing
+- id: retention_time_alignment
+  label: Retention-time alignment
+  parent_function: preprocessing
+- id: gap_filling
+  label: Gap filling
+  parent_function: preprocessing
+- id: adduct_isotope_grouping
+  label: Adduct and isotope grouping
+  parent_function: preprocessing
+- id: blank_filtering
+  label: Blank and contaminant filtering
+  parent_function: quality_control
+- id: qc_drift_correction
+  label: QC-based drift correction
+  parent_function: normalization
+- id: batch_effect_correction
+  label: Batch-effect correction
+  parent_function: normalization
+- id: calibration_curve
+  label: Calibration-curve quantification
+  parent_function: quantification
+- id: library_matching
+  label: Spectral-library matching
+  parent_function: annotation_identification
+- id: molecular_formula_prediction
+  label: Molecular-formula prediction
+  parent_function: annotation_identification
+- id: structure_elucidation
+  label: Structure elucidation
+  parent_function: annotation_identification
+- id: identification_confidence
+  label: Identification-confidence assessment
+  parent_function: annotation_identification
+- id: in_silico_spectra
+  label: In-silico spectrum prediction
+  parent_function: spectral_analysis
+- id: retention_time_prediction
+  label: Retention-time prediction
+  parent_function: annotation_identification
+- id: ccs_prediction
+  label: Collision-cross-section prediction
+  parent_function: annotation_identification
+- id: univariate_statistics
+  label: Univariate statistics
+  parent_function: statistics
+- id: multivariate_statistics
+  label: Multivariate statistics
+  parent_function: statistics
+- id: feature_selection
+  label: Feature selection
+  parent_function: machine_learning
+- id: pathway_enrichment
+  label: Pathway enrichment
+  parent_function: pathway_interpretation
+- id: isotopologue_correction
+  label: Isotopologue correction
+  parent_function: isotope_tracing_flux
+- id: flux_estimation
+  label: Metabolic-flux estimation
+  parent_function: isotope_tracing_flux
+- id: interactive_dashboard
+  label: Interactive dashboard
+  parent_function: visualization_reporting
+- id: provenance_tracking
+  label: Provenance tracking
+  parent_function: workflow_reproducibility
+- id: container_support
+  label: Container support
+  parent_function: workflow_reproducibility
+- id: chromatogram_building
+  label: Chromatogram building
+  parent_function: preprocessing
+- id: ms2_processing
+  label: MS/MS processing
+  parent_function: spectral_analysis
+- id: ion_identity_networking
+  label: Ion identity networking
+  parent_function: molecular_networking
+- id: structure_database_search
+  label: Structure-database searching
+  parent_function: annotation_identification
+- id: compound_class_prediction
+  label: Compound-class prediction
+  parent_function: annotation_identification
+- id: substructure_prediction
+  label: Substructure prediction
+  parent_function: annotation_identification
+- id: repository_scale_search
+  label: Repository-scale spectral search
+  parent_function: reference_data_search
+- id: metadata_contextualization
+  label: Metadata-based contextualization
+  parent_function: data_management_sharing
+- id: reference_spectrum_selection
+  label: Reference-spectrum selection
+  parent_function: spectral_analysis
+- id: network_visualization
+  label: Network visualization
+  parent_function: visualization_reporting
+platforms:
+- id: lc_ms
+  label: LC-MS
+- id: gc_ms
+  label: GC-MS
+- id: ce_ms
+  label: CE-MS
+- id: direct_infusion_ms
+  label: Direct-infusion MS
+- id: maldi_ms
+  label: MALDI-MS
+- id: imaging_ms
+  label: Imaging mass spectrometry
+- id: multi_platform
+  label: Multiple analytical platforms
+- id: platform_independent
+  label: Platform-independent
+analysis_types:
+- id: targeted
+  label: Targeted metabolomics
+- id: untargeted
+  label: Untargeted metabolomics
+- id: semi_targeted
+  label: Semi-targeted metabolomics
+- id: metabolite_profiling
+  label: Metabolite profiling
+- id: lipidomics
+  label: Lipidomics
+- id: stable_isotope_tracing
+  label: Stable-isotope tracing
+- id: fluxomics
+  label: Fluxomics
+- id: spatial_metabolomics
+  label: Spatial metabolomics
+- id: exposomics
+  label: Exposomics
+- id: volatilomics
+  label: Volatilomics
+- id: multiomics
+  label: Multi-omics
+interfaces:
+- id: web_app
+  label: Web application
+- id: desktop_gui
+  label: Desktop graphical interface
+- id: command_line
+  label: Command line
+- id: r_package
+  label: R package
+- id: python_package
+  label: Python package
+- id: matlab
+  label: MATLAB
+- id: notebook
+  label: Notebook
+- id: api
+  label: API
+- id: galaxy
+  label: Galaxy
+- id: knime
+  label: KNIME
+- id: workflow_language
+  label: Workflow language or engine
+- id: vendor_integration
+  label: Instrument-vendor integration
+access_models:
+- id: open_source
+  label: Open source
+- id: source_available
+  label: Source available with restrictions
+- id: free_web_service
+  label: Free web service
+- id: free_academic
+  label: Free for academic use
+- id: freemium
+  label: Freemium
+- id: commercial
+  label: Commercial
+- id: institutional_access
+  label: Institutional access required
+- id: unknown
+  label: Access model unclear
+maintenance_statuses:
+- id: active
+  label: Actively maintained
+- id: limited
+  label: Limited or infrequent maintenance
+- id: unclear
+  label: Maintenance status unclear
+- id: archived
+  label: Archived
+- id: deprecated
+  label: Deprecated or superseded
+- id: unavailable
+  label: Currently unavailable
+entry_statuses:
+- id: stub
+  label: Stub
+- id: published
+  label: Published
+- id: archived
+  label: Archived entry
+review_statuses:
+- id: unreviewed
+  label: Unreviewed
+- id: editorially_reviewed
+  label: Editorially reviewed
+submission_roles:
+- id: developer
+  label: Developer or author
+- id: maintainer
+  label: Current maintainer
+- id: user
+  label: Tool user
+- id: curator
+  label: Database or community curator
+- id: other
+  label: Other contributor
+operating_systems:
+- id: browser
+  label: Browser-based
+- id: windows
+  label: Windows
+- id: macos
+  label: macOS
+- id: linux
+  label: Linux
+- id: containers
+  label: Containers
+- id: cross_platform
+  label: Cross-platform
+common_data_formats:
+- id: vendor_raw
+  label: Vendor raw format
+- id: mzml
+  label: mzML
+- id: mzxml
+  label: mzXML
+- id: netcdf
+  label: netCDF or CDF
+- id: mgf
+  label: MGF
+- id: msp
+  label: MSP
+- id: mztab_m
+  label: mzTab-M
+- id: csv_tsv
+  label: CSV or TSV
+- id: json
+  label: JSON
+- id: xml
+  label: XML
+- id: isa_tab
+  label: ISA-Tab
+- id: imzml
+  label: imzML
+- id: hdf5
+  label: HDF5
+- id: sdf
+  label: SDF
+- id: smiles_inchi
+  label: SMILES or InChI
+- id: other
+  label: Other
+common_data_types:
+- id: raw_instrument_data
+  label: Raw instrument data
+- id: spectra
+  label: Mass spectra
+- id: imaging_data
+  label: Imaging data
+- id: feature_table
+  label: Feature or peak table
+- id: spectral_library
+  label: Spectral library
+- id: compound_list
+  label: Compound list or annotations
+- id: molecular_structures
+  label: Molecular structures
+- id: sample_metadata
+  label: Sample metadata
+- id: isotope_tracing_data
+  label: Isotope-tracing data
+- id: pathway_data
+  label: Pathway or reaction data
+- id: statistical_results
+  label: Statistical results
+- id: report
+  label: Human-readable report
+ms_levels:
+- id: ms1
+  label: MS1
+- id: ms2
+  label: MS/MS
+- id: msn
+  label: MSⁿ
+acquisition_strategies:
+- id: full_scan
+  label: Full-scan MS
+- id: dda
+  label: Data-dependent acquisition (DDA)
+- id: dia
+  label: Data-independent acquisition (DIA)
+- id: targeted_msms
+  label: Targeted MS/MS
+- id: prm_mrm
+  label: PRM or MRM/SRM
+- id: all_ion
+  label: All-ion fragmentation
+- id: flow_injection
+  label: Flow injection
+- id: native_esi
+  label: Native electrospray ionization
+- id: unspecified
+  label: General or unspecified acquisition
+ion_mobility_support:
+- id: supported
+  label: Ion mobility supported
+- id: required
+  label: Ion mobility required
+- id: not_required
+  label: Ion mobility not required
+- id: not_applicable
+  label: Not applicable
+- id: unspecified
+  label: Not specified
+strategy_objectives:
+- id: molecular_discovery
+  label: Molecular discovery
+- id: metabolite_annotation
+  label: Metabolite annotation
+- id: structure_elucidation
+  label: Structure elucidation
+- id: dereplication
+  label: Dereplication
+- id: molecular_family_discovery
+  label: Molecular-family discovery
+- id: unknown_identification
+  label: Unknown identification
+- id: metal_binding
+  label: Metal-binding compound discovery
+- id: biomolecular_interactions
+  label: Biomolecular interaction analysis
+- id: chemical_reactivity
+  label: Chemical-reactivity profiling
+- id: enzyme_activity
+  label: Enzyme-activity profiling
+- id: biotransformation
+  label: Biotransformation analysis
+- id: phenotype_association
+  label: Phenotype association
+- id: disease_state_comparison
+  label: Disease-state comparison
+- id: biomarker_discovery
+  label: Biomarker discovery
+- id: host_microbe_interaction
+  label: Host–microbe interaction
+- id: natural_product_discovery
+  label: Natural-product discovery
+- id: environmental_metabolomics
+  label: Environmental metabolomics
+- id: stable_isotope_tracing
+  label: Stable-isotope tracing
+- id: flux_analysis
+  label: Flux analysis
+- id: spatial_metabolomics
+  label: Spatial metabolomics
+- id: single_cell_metabolomics
+  label: Single-cell metabolomics
+- id: native_metabolomics
+  label: Native metabolomics
+- id: reverse_metabolomics
+  label: Reverse metabolomics
+- id: exposomics
+  label: Exposomics
+strategy_components:
+- id: sample_preparation
+  label: Sample preparation
+- id: chromatography
+  label: Chromatography
+- id: post_column_modification
+  label: Post-column modification or infusion
+- id: data_acquisition
+  label: Data acquisition
+- id: ion_mobility
+  label: Ion mobility
+- id: data_conversion
+  label: Data conversion
+- id: preprocessing
+  label: Preprocessing and feature extraction
+- id: quality_control
+  label: Quality control
+- id: annotation
+  label: Annotation or identification
+- id: spectral_search
+  label: Spectral search
+- id: molecular_networking
+  label: Molecular networking
+- id: repository_mining
+  label: Repository-scale mining
+- id: metadata_analysis
+  label: Metadata analysis
+- id: statistics
+  label: Statistical analysis
+- id: biological_validation
+  label: Biological validation
+- id: data_sharing
+  label: Data and workflow sharing
+strategy_submission_roles:
+- id: author
+  label: Author of the publication or strategy
+- id: user
+  label: Strategy user
+- id: curator
+  label: Database or community curator
+- id: other
+  label: Other contributor
+tool_relationships:
+- id: alternative
+  label: Alternative to
+- id: complementary
+  label: Complementary to
+- id: dependency
+  label: Depends on
+- id: integration
+  label: Integrates with
+- id: part_of
+  label: Part of
+- id: contains
+  label: Contains or hosts
+- id: hosted_by
+  label: Hosted by
+- id: successor
+  label: Successor to
+- id: predecessor
+  label: Predecessor to
+- id: uses
+  label: Uses
+- id: other
+  label: Other relationship
+sample_types:
+- id: plasma
+  label: Plasma
+- id: serum
+  label: Serum
+- id: whole_blood
+  label: Whole blood
+- id: dried_blood_spot
+  label: Dried blood spot
+- id: urine
+  label: Urine
+- id: saliva
+  label: Saliva
+- id: sputum
+  label: Sputum
+- id: balf
+  label: Bronchoalveolar lavage fluid
+- id: csf
+  label: Cerebrospinal fluid
+- id: feces
+  label: Feces or stool
+- id: tissue
+  label: Tissue or biopsy
+- id: cells
+  label: Cells or cell pellets
+- id: cell_culture_media
+  label: Cell-culture medium or supernatant
+- id: microbial_culture
+  label: Microbial culture or biomass
+- id: microbial_supernatant
+  label: Microbial culture supernatant
+- id: biofilm
+  label: Biofilm
+- id: plant_tissue
+  label: Plant tissue
+- id: root_exudate
+  label: Root exudate
+- id: soil
+  label: Soil
+- id: water
+  label: Water or aquatic sample
+- id: food
+  label: Food
+- id: fermentation
+  label: Fermentation sample
+- id: synthetic_standards
+  label: Synthetic or analytical standards
+- id: other_biofluid
+  label: Other biofluid
+- id: other
+  label: Other or broadly applicable
+biological_contexts:
+- id: human
+  label: Human
+- id: animal
+  label: Animal
+- id: microbial
+  label: Microbial
+- id: plant
+  label: Plant
+- id: fungal
+  label: Fungal
+- id: marine
+  label: Marine
+- id: environmental
+  label: Environmental
+- id: food_fermentation
+  label: Food or fermentation
+- id: host_microbe
+  label: Host–microbe interaction
+- id: synthetic_reference
+  label: Synthetic or reference material
+- id: broadly_applicable
+  label: Broadly applicable

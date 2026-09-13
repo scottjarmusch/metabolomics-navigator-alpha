@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exploring spectral relationships | Metabolomics Navigator</title>
+  <meta name="description" content="Tandem mass spectra contain fragmentation information that can help investigate related molecules. Molecular networking organizes spectra by similarity, while a query language can find spectra containing a specified pattern. These approaches help prioritize signals for closer inspection.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/spectral-analysis/">
+  <meta property="og:site_name" content="Metabolomics Navigator">
+  <meta property="og:title" content="Exploring spectral relationships | Metabolomics Navigator">
+  <meta property="og:description" content="Tandem mass spectra contain fragmentation information that can help investigate related molecules. Molecular networking organizes spectra by similarity, while a query language can find spectra containing a specified pattern. These approaches help prioritize signals for closer inspection.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/spectral-analysis/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exploring spectral relationships | Metabolomics Navigator">
+  <meta name="twitter:description" content="Tandem mass spectra contain fragmentation information that can help investigate related molecules. Molecular networking organizes spectra by similarity, while a query language can find spectra containing a specified pattern. These approaches help prioritize signals for closer inspection.">
+  
+  <meta name="theme-color" content="#faf9f5">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body class="page-guide"><aside style="padding:12px;text-align:center;background:#f2e9cc;color:#183f42">Alpha review snapshot · Not the live site · <a href="https://scottjarmusch.github.io/metabolomics-navigator/">Visit the live Navigator</a></aside>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner section-wrap">
+      <a class="brand" href="/metabolomics-navigator-alpha/" aria-label="Metabolomics Navigator home">
+        <svg class="brand-logo" width="60" height="26" viewBox="0 0 100 44" aria-hidden="true">
+          <path class="brand-chrom" d="M2 34h14l4-24 4 26 4-18 4 20h16" />
+          <g class="brand-network">
+            <line x1="48" y1="12" x2="61" y2="8" />
+            <line x1="48" y1="12" x2="56" y2="22" />
+            <line x1="61" y1="8" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="67" y2="31" />
+            <line x1="67" y1="31" x2="80" y2="26" />
+            <circle cx="48" cy="12" r="3.2" />
+            <circle cx="61" cy="8" r="3.2" />
+            <circle cx="56" cy="22" r="3.2" />
+            <circle cx="72" cy="14" r="3.2" />
+            <circle cx="67" cy="31" r="3.2" />
+            <circle cx="80" cy="26" r="3.2" />
+          </g>
+        </svg>
+        <span class="brand-text">
+          <strong><span>Metabolomics</span> <span class="accent">Navigator</span></strong>
+          <small>Tools, strategies &amp; workflow guidance for metabolomics</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="/metabolomics-navigator-alpha/" aria-current="page">Guide</a>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/ask/">Ask Navigator</a>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a class="nav-submit" href="/metabolomics-navigator-alpha/submit/">Contribute</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+<div class="section-wrap category-layout">
+ <aside class="category-sidebar"><nav aria-label="Explore by task"><h2>Explore by task</h2><a href="/metabolomics-navigator-alpha/guide/data-processing/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 5h16M4 12h16M4 19h16"/><circle cx="8" cy="5" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="19" r="2"/>
+
+</svg>
+<span>Data processing</span></a><a href="/metabolomics-navigator-alpha/guide/annotation/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/>
+
+</svg>
+<span>Molecular annotation</span></a><a href="/metabolomics-navigator-alpha/guide/spectral-analysis/" aria-current="page">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m6 7 11 4M6 7l4 12m7-8-7 8"/><circle cx="5" cy="6" r="3"/><circle cx="18" cy="11" r="3"/><circle cx="10" cy="20" r="2"/>
+
+</svg>
+<span>Spectral analysis</span></a><a href="/metabolomics-navigator-alpha/guide/public-data/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>
+
+</svg>
+<span>Public-data search</span></a><a href="/metabolomics-navigator-alpha/guide/reference-resources/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M5 3h10l4 4v14H5zM14 3v5h5M8 12h8M8 16h5"/>
+
+</svg>
+<span>Data &amp; references</span></a><a href="/metabolomics-navigator-alpha/guide/interpretation/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Interpretation</span></a><a href="/metabolomics-navigator-alpha/guide/spatial-metabolomics/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Spatial metabolomics</span></a><a href="/metabolomics-navigator-alpha/guide/metabologenomics/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Metabologenomics</span></a><a href="/metabolomics-navigator-alpha/guide/microbial-maldi/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Microbial MALDI profiling</span></a></nav><a class="all-tools-link" href="/metabolomics-navigator-alpha/tools/">Search all 128 resources →</a></aside>
+ <article class="category-content"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Guide</a><span>›</span><span>Spectral analysis</span></nav><header class="category-intro"><span class="category-icon">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m6 7 11 4M6 7l4 12m7-8-7 8"/><circle cx="5" cy="6" r="3"/><circle cx="18" cy="11" r="3"/><circle cx="10" cy="20" r="2"/>
+
+</svg>
+</span><h1>Exploring spectral relationships</h1><p>Find relationships and patterns in spectra.</p></header>
+ <details class="category-guidance"><summary>How to choose a resource</summary><p>Tandem mass spectra contain fragmentation information that can help investigate related molecules. Molecular networking organizes spectra by similarity, while a query language can find spectra containing a specified pattern. These approaches help prioritize signals for closer inspection.</p><p>Decide whether you need to explore relationships across a dataset or test a specific spectral pattern. Similarity or a query match alone does not establish a complete structure.</p></details>
+ <section><h2>Analytical strategies</h2><p>Understand the method, then choose its software implementation.</p><div class="related-grid"><a href="/metabolomics-navigator-alpha/strategies/gnps-feature-based-molecular-networking/"><strong>Feature-Based Molecular Networking (FBMN)</strong><span>A strategy that combines aligned LC-MS feature abundances with MS/MS spectral similarity to explore quantitative molecular families while retaining chromatographic feature identity.</span></a><a href="/metabolomics-navigator-alpha/strategies/gnps-ion-identity-molecular-networking/"><strong>Ion Identity Molecular Networking (IIMN)</strong><span>A strategy extending feature-based molecular networking with MS1-derived ion relationships, linking candidate ion species of the same molecule alongside MS/MS spectral-similarity edges.</span></a></div></section>
+ <div class="category-list-heading"><h2>Tools & resources</h2><span>16 entries</span></div>
+ <ul class="category-resources"><li><a href="/metabolomics-navigator-alpha/tools/gnps/"><div class="resource-heading"><h3>GNPS</h3><span class="resource-access">Free web service</span></div><p>A web-based mass-spectrometry ecosystem for molecular networking, spectral-library search, repository-scale search, interactive visualization, knowledgebase curation, and public-data integration.</p><span class="resource-bottom">Molecular networking &amp; libraries<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/gnps-classical-molecular-networking/"><div class="resource-heading"><h3>GNPS2 Classical Molecular Networking</h3><span class="resource-access">Free web service</span></div><p>GNPS2 workflow for organizing MS/MS spectra into molecular families using pairwise spectral similarity and spectral-library searching.</p><span class="resource-bottom">Spectrum-centric molecular networking<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/gnps-feature-based-molecular-networking/"><div class="resource-heading"><h3>GNPS2 Feature-Based Molecular Networking workflow</h3><span class="resource-access">Free web service</span></div><p>Dedicated GNPS2 workflow that combines an aligned LC-MS feature table with MS/MS spectra to build quantitative molecular networks.</p><span class="resource-bottom">Quantitative feature-based networking<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/massql/"><div class="resource-heading"><h3>MassQL</h3><span class="resource-access">Open source</span></div><p>An open-source, instrument-independent query language and software ecosystem for searching mass-spectrometry data using reusable MS1, MS/MS, chromatographic, and ion-mobility patterns.</p><span class="resource-bottom">Chemical-pattern queries<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/matchms/"><div class="resource-heading"><h3>matchms</h3><span class="resource-access">Open source</span></div><p>Build Python workflows for spectral cleaning, metadata harmonization and MS/MS similarity scoring.</p><span class="resource-bottom">Clean and compare MS/MS spectra<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/spec2vec/"><div class="resource-heading"><h3>Spec2Vec</h3><span class="resource-access">Open source</span></div><p>Compare tandem mass spectra using embeddings learned from recurring peaks and neutral losses.</p><span class="resource-bottom">Learned spectral similarity<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/ms2deepscore/"><div class="resource-heading"><h3>MS2DeepScore</h3><span class="resource-access">Open source</span></div><p>Estimate molecular structural similarity from pairs of tandem mass spectra.</p><span class="resource-bottom">Predict structural similarity<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/ms2lda/"><div class="resource-heading"><h3>MS2LDA</h3><span class="resource-access">Source available with restrictions</span></div><p>Find recurring patterns of fragments and neutral losses across tandem mass spectra.</p><span class="resource-bottom">Discover recurring substructure motifs<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/molnetenhancer/"><div class="resource-heading"><h3>MolNetEnhancer</h3><span class="resource-access">Source available with restrictions</span></div><p>Combine molecular networking, substructure motifs and chemical classifications into annotated networks.</p><span class="resource-bottom">Combine network annotation evidence<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/postmn-massql/"><div class="resource-heading"><h3>PostMN MassQL</h3><span class="resource-access">Free web service</span></div><p>Run MassQL chemical-pattern queries directly on consensus spectra produced by GNPS molecular networking.</p><span class="resource-bottom">Query processed networking spectra<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/multistep-massql/"><div class="resource-heading"><h3>Multi-step MassQL</h3><span class="resource-access">Free web service</span></div><p>Apply a predefined sequence of MassQL queries to GNPS2 networking spectra to investigate bile acids and their isomers.</p><span class="resource-bottom">Bile-acid query sequences<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/massql-playground/"><div class="resource-heading"><h3>MassQL Playground</h3><span class="resource-access">Free web service</span></div><p>Browser-based MassQL query editor and runner for exploring fragmentation patterns in local mass-spectrometry files.</p><span class="resource-bottom">Query local spectra in the browser<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/gnps-massql-analysis/"><div class="resource-heading"><h3>GNPS2 MassQL Analysis</h3><span class="resource-access">Free web service</span></div><p>Hosted interface for exploring MS/MS spectral libraries with MassQL and using LLM assistance to draft or explain queries.</p><span class="resource-bottom">Explore library queries with assistance<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/tinymass/"><div class="resource-heading"><h3>TinyMass</h3><span class="resource-access">Free web service</span></div><p>Hosted utility for sharing mass spectra through reusable spectrum identifiers in the GNPS2 ecosystem.</p><span class="resource-bottom">Share an individual spectrum<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/metgem/"><div class="resource-heading"><h3>MetGem</h3><span class="resource-access">Open source</span></div><p>Local desktop generation and exploration of MS/MS similarity networks and two-dimensional spectral projections.</p><span class="resource-bottom">Local MS/MS network generation<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/cytoscape/"><div class="resource-heading"><h3>Cytoscape</h3><span class="resource-access">Open source</span></div><p>Desktop network visualization and analysis for exploring MS molecular networks alongside feature annotations and sample metadata.</p><span class="resource-bottom">Explore and style molecular networks<span aria-hidden="true">↗</span></span></a></li></ul>
+ </article>
+</div>
+</main>
+  <footer class="site-footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <strong>Metabolomics Navigator</strong>
+        <p>An open scientific resource for metabolomics tools, analytical strategies and workflow guidance.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a href="/metabolomics-navigator-alpha/governance/">Governance</a>
+        <a href="/metabolomics-navigator-alpha/privacy/">Privacy</a>
+        <a href="https://github.com/scottjarmusch/metabolomics-navigator">GitHub repository</a>
+      </div>
+      <div>
+        <h2>Data</h2>
+        <a href="/metabolomics-navigator-alpha/tool-data.json">Tool data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/strategy-data.json">Strategy data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+  </footer>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+</body>
+</html>

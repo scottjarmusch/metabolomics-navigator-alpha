@@ -1,0 +1,1969 @@
+[
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "bioactivity-based-molecular-networking",
+    "name": "Bioactivity-Based Molecular Networking",
+    "summary": "A transferable natural-product discovery strategy that overlays quantitative bioassay results onto LC-MS feature abundance and MS/MS molecular networks to prioritize molecular families and individual features associated with biological activity.",
+    "description": "Bioactivity-Based Molecular Networking adds an orthogonal biological evidence layer to molecular networking. Fractionated samples are profiled by LC-MS/MS and tested in a quantitative bioassay. Feature abundances across fractions are correlated with bioactivity, producing a bioactivity score that is mapped onto the molecular network. This allows active molecular families and candidate analogues to be prioritized before isolation while preserving molecular-network annotation and dereplication context.",
+    "publication": {
+      "title": "Bioactivity-Based Molecular Networking for the Discovery of Drug Leads in Natural Product Bioassay-Guided Fractionation",
+      "doi": "10.1021/acs.jnatprod.7b00737",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.jnatprod.7b00737",
+      "citation": "Nothias L-F, Nothias-Esposito M, da Silva R, et al. Bioactivity-Based Molecular Networking for the Discovery of Drug Leads in Natural Product Bioassay-Guided Fractionation. Journal of Natural Products 81, 758–767 (2018).",
+      "journal": "Journal of Natural Products",
+      "year": 2018
+    },
+    "purpose": {
+      "primary": "natural_product_discovery",
+      "secondary": [
+        "phenotype_association",
+        "molecular_family_discovery",
+        "dereplication"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "dda"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "sample_preparation",
+      "chromatography",
+      "data_acquisition",
+      "preprocessing",
+      "molecular_networking",
+      "statistics",
+      "biological_validation",
+      "data_sharing"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Generate fractions and quantitative bioassay data",
+        "description": "Fractionate the bioactive extract or sample set and measure a quantitative biological response for the same fractions used for metabolomics."
+      },
+      {
+        "title": "Acquire untargeted LC-MS/MS profiles",
+        "description": "Profile the fractions by LC-MS/MS so that feature abundance across fractions and fragmentation spectra are available."
+      },
+      {
+        "title": "Detect and quantify features",
+        "description": "Process the LC-MS/MS data to generate aligned feature intensities across the fraction series.",
+        "tool_slugs": [
+          "mzmine",
+          "openms"
+        ]
+      },
+      {
+        "title": "Calculate feature–bioactivity associations",
+        "description": "Correlate feature abundance across fractions with the quantitative bioassay response to calculate a bioactivity score for each feature.",
+        "external_tools": [
+          {
+            "name": "Bioactive Molecular Networks Jupyter workflow",
+            "url": "https://github.com/DorresteinLaboratory/Bioactive_Molecular_Networks"
+          }
+        ]
+      },
+      {
+        "title": "Build and annotate the molecular network",
+        "description": "Generate a molecular network from MS/MS similarity and attach the bioactivity scores as node attributes so active molecular families can be recognized in chemical context.",
+        "tool_slugs": [
+          "gnps"
+        ]
+      },
+      {
+        "title": "Prioritize and validate active chemistry",
+        "description": "Select high-scoring features or molecular families for isolation, orthogonal structural work, and direct activity confirmation."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "mzmine",
+        "role": "One supported route for aligned LC-MS/MS feature detection and quantification."
+      },
+      {
+        "slug": "openms",
+        "role": "Alternative supported preprocessing route used by the original workflow through Optimus/OpenMS."
+      },
+      {
+        "slug": "gnps",
+        "role": "MS/MS molecular networking and library-based dereplication."
+      },
+      {
+        "name": "Bioactive Molecular Networks Jupyter workflow",
+        "url": "https://github.com/DorresteinLaboratory/Bioactive_Molecular_Networks",
+        "role": "Calculates and maps feature–bioactivity association scores."
+      },
+      {
+        "role": "Visualization of molecular networks with bioactivity attributes.",
+        "name": "Cytoscape",
+        "url": "https://cytoscape.org/"
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/DorresteinLaboratory/Bioactive_Molecular_Networks",
+      "method_available": true,
+      "method_url": "https://pubs.acs.org/doi/10.1021/acs.jnatprod.7b00737"
+    },
+    "scope": {
+      "designed_for": [
+        "Bioassay-guided natural-product discovery where the same fractions or samples have quantitative LC-MS feature data and biological activity measurements.",
+        "Prioritizing active analogues within molecular families before purification."
+      ],
+      "requirements": [
+        "Reproducible quantitative bioassay values matched to metabolomics samples.",
+        "Sufficient variation in both feature abundance and bioactivity across the sample or fraction series.",
+        "The supplied implementation uses MZmine 2 or Optimus exports and an R script or R-kernel Jupyter notebook; check current export compatibility."
+      ],
+      "considerations": [
+        "Correlation between a feature and bioactivity is prioritization evidence, not proof that the feature causes the phenotype.",
+        "Coeluting or covarying metabolites can receive similar activity scores and require follow-up isolation or orthogonal validation."
+      ]
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included as an Analytical Strategy because the method adds quantitative bioassay information to an existing molecular-networking workflow and remains transferable across natural-product sources and assays. Navigator review checked publication identity and methodological scope; linked software was not independently benchmarked."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-08",
+      "updated_at": "2026-09-09",
+      "last_verified": "2026-09-09",
+      "last_editorial_review": "2026-09-09"
+    },
+    "sample_types": [],
+    "biological_contexts": [
+      "broadly_applicable"
+    ],
+    "organisms": [],
+    "related_strategies": [
+      "reverse-metabolomics"
+    ]
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "chemoselective-reactivity-resolved-metabolomics",
+    "name": "Chemoselective reactivity-resolved metabolomics",
+    "summary": "A functional-group-resolved metabolomics strategy that uses orthogonal chemoselective probes, covalent capture and diagnostic reporter chemistry to enrich and organize otherwise chemically heterogeneous metabolite subsets before LC-MS.",
+    "description": "The modular reactivity-encoding platform (MREP) uses distinct alkyne-tagged probes for carboxyl, amine, carbonyl and thiol functionalities. Tagged metabolites are captured through click chemistry on a common resin, matrix is removed, and released derivatives share reporter-ion behavior. The strategy converts intrinsic chemical reactivity into an experimental annotation/enrichment dimension.",
+    "publication": {
+      "title": "Chemoselective Metabolomics via a Modular Reactivity-Encoding Platform",
+      "doi": "10.1002/advs.76599",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13379249/",
+      "citation": "Tao X, Zhang C-M, Yang R-J, et al. Chemoselective Metabolomics via a Modular Reactivity-Encoding Platform. Advanced Science (2026).",
+      "journal": "Advanced Science",
+      "year": 2026
+    },
+    "purpose": {
+      "primary": "chemical_reactivity",
+      "secondary": [
+        "metabolite_annotation",
+        "molecular_discovery"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "acquisition": {},
+    "components": [
+      "sample_preparation",
+      "chromatography",
+      "data_acquisition",
+      "annotation",
+      "biological_validation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Select a functional-group-specific probe",
+        "description": "Choose a chemoselective probe for the metabolite reactivity class of interest, such as carboxyl, amine, carbonyl or thiol groups."
+      },
+      {
+        "title": "Encode metabolites by covalent derivatization",
+        "description": "React the sample under conditions designed to selectively label the targeted functional group."
+      },
+      {
+        "title": "Capture and clean up the encoded submetabolome",
+        "description": "Use click chemistry and solid-phase capture to enrich tagged metabolites while reducing matrix background."
+      },
+      {
+        "title": "Release and analyze derivatives by LC-MS/MS",
+        "description": "Profile enriched derivatives, using shared reporter behavior and functional-group information to aid classification and annotation."
+      },
+      {
+        "title": "Reconstruct reactivity-resolved metabolome layers",
+        "description": "Compare the parallel functional-group-defined measurements to expand detectable chemical space and interpret metabolic changes."
+      }
+    ],
+    "tools": [],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1002/advs.76599"
+    },
+    "scope": {
+      "designed_for": [
+        "Expanding metabolite coverage through functional-group-selective enrichment and reporter chemistry.",
+        "Separating complex metabolomes into chemically interpretable reactivity classes."
+      ],
+      "requirements": [
+        "Validated chemoselective reagents and controls for reaction selectivity.",
+        "Careful assessment of derivatization yield, matrix effects and quantitative behavior."
+      ],
+      "considerations": [
+        "Probe selectivity and conversion efficiency are chemistry-dependent.",
+        "Derivatization changes retention, ionization and fragmentation and therefore requires method-specific references.",
+        "The source demonstrates mouse serum and liver; transfer to other organisms and matrices requires method validation."
+      ]
+    },
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included because chemoselective reactivity is an orthogonal experimental evidence/enrichment layer, not simply a different LC-MS software workflow. Navigator review checked publication identity and methodological scope; linked software was not independently benchmarked."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-08",
+      "updated_at": "2026-09-09",
+      "last_verified": "2026-09-09",
+      "last_editorial_review": "2026-09-09"
+    },
+    "sample_types": [
+      "serum",
+      "tissue"
+    ],
+    "biological_contexts": [
+      "animal"
+    ],
+    "organisms": [
+      "Mus musculus"
+    ]
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "credentialing-untargeted-features",
+    "name": "Credentialing untargeted metabolomics features",
+    "summary": "A method-development strategy that uses mixtures of natural-abundance and uniformly 13C-labeled biological extracts to distinguish genuine biological features from artifacts and benchmark untargeted metabolomics workflows.",
+    "description": "Credentialing creates an experimental ground truth for whether untargeted LC-MS features arise from biological metabolites. Natural-abundance and uniformly 13C-labeled material are mixed at defined ratios; expected isotope spacing and intensity relationships are used to label credible biological features. The number and quality of credentialed features can then be used to optimize extraction, chromatography, acquisition or feature-processing parameters.",
+    "publication": {
+      "title": "Credentialing Features: A Platform to Benchmark and Optimize Untargeted Metabolomic Methods",
+      "doi": "10.1021/ac503092d",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4188275/",
+      "citation": "Mahieu NG, Huang X, Chen Y-J, Patti GJ. Credentialing Features: A Platform to Benchmark and Optimize Untargeted Metabolomic Methods. Analytical Chemistry 86, 9583–9589 (2014).",
+      "journal": "Analytical Chemistry",
+      "year": 2014
+    },
+    "purpose": {
+      "primary": "stable_isotope_tracing",
+      "secondary": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted",
+      "stable_isotope_tracing"
+    ],
+    "acquisition": {},
+    "components": [
+      "sample_preparation",
+      "data_acquisition",
+      "preprocessing",
+      "quality_control",
+      "statistics"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Generate matched unlabeled and uniformly 13C-labeled biological material",
+        "description": "Grow a model biological system in natural-abundance and uniformly 13C-enriched media."
+      },
+      {
+        "title": "Prepare defined isotope mixtures",
+        "description": "Mix labeled and unlabeled extracts at known ratios so true biological features have predictable isotope spacing and intensity relationships."
+      },
+      {
+        "title": "Run the candidate untargeted workflow",
+        "description": "Process the mixtures using the extraction, chromatography, instrument and feature-detection workflow to be benchmarked."
+      },
+      {
+        "title": "Credential biological features",
+        "description": "Identify feature pairs that satisfy the expected mass shifts, retention-time agreement and isotope-intensity ratios."
+      },
+      {
+        "title": "Optimize the workflow",
+        "description": "Compare the number and behavior of credentialed features rather than total feature count when tuning experimental or computational parameters."
+      }
+    ],
+    "tools": [],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1021/ac503092d"
+    },
+    "scope": {
+      "designed_for": [
+        "Benchmarking and optimizing untargeted metabolomics pipelines using experimentally defined biological features."
+      ],
+      "requirements": [
+        "A biological model that can be grown with uniform stable-isotope labeling.",
+        "Accurate-mass data capable of resolving the expected isotope relationships."
+      ],
+      "considerations": [
+        "Optimization in a model system does not guarantee identical performance in every biological matrix.",
+        "The strategy distinguishes biological origin from artifact but does not identify metabolite structures.",
+        "The source establishes credentialing using labeled and unlabeled E. coli extracts; adaptation to other matrices or platforms requires validation."
+      ]
+    },
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included because isotope credentialing supplies an experimental truth layer for method optimization rather than merely applying an analysis pipeline. Navigator review checked publication identity and methodological scope; linked software was not independently benchmarked."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-08",
+      "updated_at": "2026-09-09",
+      "last_verified": "2026-09-09",
+      "last_editorial_review": "2026-09-09"
+    },
+    "sample_types": [
+      "microbial_culture"
+    ],
+    "biological_contexts": [
+      "microbial",
+      "broadly_applicable"
+    ],
+    "organisms": []
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "gnps-feature-based-molecular-networking",
+    "name": "Feature-Based Molecular Networking (FBMN)",
+    "summary": "A strategy that combines aligned LC-MS feature abundances with MS/MS spectral similarity to explore quantitative molecular families while retaining chromatographic feature identity.",
+    "description": "Feature-Based Molecular Networking connects an aligned chromatographic feature table to a network of representative fragmentation spectra. Unlike spectrum-centric networking, it retains feature-level abundance and can keep chromatographically separated isomers distinct. The Strategy is the analytical design; the GNPS2 FBMN workflow is one software implementation, used with compatible upstream feature-processing tools.",
+    "publication": {
+      "title": "Feature-based molecular networking in the GNPS analysis environment",
+      "doi": "10.1038/s41592-020-0933-6",
+      "url": "https://www.nature.com/articles/s41592-020-0933-6",
+      "citation": "Nothias L-F, Petras D, Schmid R, et al. Feature-based molecular networking in the GNPS analysis environment. Nature Methods 17, 905–908 (2020).",
+      "journal": "Nature Methods",
+      "year": 2020
+    },
+    "purpose": {
+      "primary": "molecular_family_discovery",
+      "secondary": [
+        "metabolite_annotation",
+        "molecular_discovery",
+        "natural_product_discovery"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted",
+      "metabolite_profiling",
+      "lipidomics"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "dda"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "preprocessing",
+      "quality_control",
+      "annotation",
+      "spectral_search",
+      "molecular_networking",
+      "data_sharing"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Process LC-MS/MS data into aligned features",
+        "description": "Perform feature detection, chromatogram construction/resolution, alignment, filtering, and MS/MS association in a compatible processing tool.",
+        "tool_slugs": [
+          "mzmine",
+          "ms-dial",
+          "xcms",
+          "openms"
+        ]
+      },
+      {
+        "title": "Export FBMN inputs",
+        "description": "Export a feature quantification table and representative MS/MS spectra using the selected implementation's supported format. Match feature identifiers between files and supply sample metadata when comparing groups.",
+        "tool_slugs": [
+          "mzmine",
+          "ms-dial",
+          "xcms",
+          "openms"
+        ]
+      },
+      {
+        "title": "Run the FBMN workflow in GNPS2",
+        "description": "Upload or select the feature table and spectral summary, configure tolerances and networking filters, and launch Feature-Based Molecular Networking.",
+        "tool_slugs": [
+          "gnps-feature-based-molecular-networking"
+        ]
+      },
+      {
+        "title": "Overlay spectral-library annotations",
+        "description": "Search compatible nodes against GNPS spectral libraries and inspect molecular families containing annotated and unannotated features.",
+        "tool_slugs": [
+          "gnps-feature-based-molecular-networking"
+        ]
+      },
+      {
+        "title": "Interpret quantitative molecular families",
+        "description": "Use feature abundances, metadata, retention time, ion mobility where available, and spectral relationships to compare molecular families across samples or conditions.",
+        "tool_slugs": [
+          "cytoscape"
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "slug": "gnps-feature-based-molecular-networking",
+        "role": "GNPS2 implementation of feature-based networking and spectral-library matching."
+      },
+      {
+        "slug": "mzmine",
+        "role": "Compatible upstream feature processing and FBMN export."
+      },
+      {
+        "slug": "ms-dial",
+        "role": "Compatible upstream feature processing and FBMN export."
+      },
+      {
+        "slug": "xcms",
+        "role": "Compatible upstream feature processing and FBMN export."
+      },
+      {
+        "slug": "openms",
+        "role": "Compatible upstream feature processing and FBMN export."
+      },
+      {
+        "slug": "cytoscape",
+        "role": "Inspect and style exported networks while retaining edge-type and feature metadata."
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/CCMS-UCSD/GNPS_Workflows/tree/master/feature-based-molecular-networking",
+      "method_available": true,
+      "method_url": "https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/fbmn/"
+    },
+    "scope": {
+      "designed_for": [
+        "Untargeted LC-MS/MS studies where chromatographic feature detection and quantitative feature tables are important for molecular-network interpretation.",
+        "Resolving isomeric or chromatographically separated features that would otherwise be combined in purely spectrum-centric networking."
+      ],
+      "requirements": [
+        "An aligned feature quantification table and representative MS/MS spectra exported from a compatible preprocessing workflow.",
+        "Consistent feature identifiers across the quantification table and spectral export; raw files alone are not ready-to-use FBMN inputs."
+      ],
+      "considerations": [
+        "The quality of the molecular network depends on upstream feature detection, alignment, MS/MS assignment, and preprocessing choices.",
+        "FBMN does not remove the need for independent structural validation; library matches and network propagation represent different levels of annotation evidence."
+      ]
+    },
+    "related_strategies": [
+      "gnps-ion-identity-molecular-networking",
+      "bioactivity-based-molecular-networking"
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Classified as a transferable analytical Strategy; linked Tool entries describe software implementations. Reviewed against the original method publication and GNPS documentation."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-08-24",
+      "updated_at": "2026-09-12",
+      "last_verified": "2026-09-12",
+      "last_editorial_review": "2026-09-12"
+    },
+    "sample_types": [],
+    "biological_contexts": [
+      "broadly_applicable"
+    ],
+    "organisms": [],
+    "aliases": [
+      "FBMN"
+    ]
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "gnps-ion-identity-molecular-networking",
+    "name": "Ion Identity Molecular Networking (IIMN)",
+    "summary": "A strategy extending feature-based molecular networking with MS1-derived ion relationships, linking candidate ion species of the same molecule alongside MS/MS spectral-similarity edges.",
+    "description": "Ion Identity Molecular Networking adds a second evidence layer to an FBMN network: relationships between candidate adducts, multimers and other ion species supported by chromatographic behavior and mass differences. MS1 ion-identity edges and MS/MS similarity edges have different meanings and should be interpreted separately. The published GNPS implementation can also collapse ion groups for visualization. These groupings are hypotheses about ion origin, not proof of a molecular structure.",
+    "publication": {
+      "title": "Ion identity molecular networking for mass spectrometry-based metabolomics in the GNPS environment",
+      "doi": "10.1038/s41467-021-23953-9",
+      "url": "https://www.nature.com/articles/s41467-021-23953-9",
+      "citation": "Schmid R, Petras D, Nothias L-F, et al. Ion identity molecular networking for mass spectrometry-based metabolomics in the GNPS environment. Nature Communications 12, 3832 (2021).",
+      "journal": "Nature Communications",
+      "year": 2021
+    },
+    "purpose": {
+      "primary": "metabolite_annotation",
+      "secondary": [
+        "molecular_family_discovery",
+        "unknown_identification",
+        "molecular_discovery"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted",
+      "metabolite_profiling"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "dda"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "preprocessing",
+      "annotation",
+      "molecular_networking",
+      "spectral_search",
+      "data_sharing"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Detect and align LC-MS/MS features",
+        "description": "Generate an aligned feature table with representative MS/MS spectra using a compatible preprocessing tool.",
+        "tool_slugs": [
+          "mzmine"
+        ]
+      },
+      {
+        "title": "Annotate ion identities",
+        "description": "In a documented ion-identity workflow, group chromatographic features and annotate plausible ion species using retention behavior, peak-shape correlation and expected mass relationships.",
+        "tool_slugs": [
+          "mzmine"
+        ]
+      },
+      {
+        "title": "Export FBMN and ion-identity edges",
+        "description": "Export the quantification table, representative MS/MS spectra and supplementary ion-identity pairs with matching feature identifiers. Follow the specific GNPS and preprocessing version documentation.",
+        "tool_slugs": [
+          "mzmine"
+        ]
+      },
+      {
+        "title": "Build the ion identity molecular network",
+        "description": "Run FBMN in GNPS with supplementary ion-identity relationships so that MS1 ion relationships and MS/MS spectral-similarity relationships are represented together.",
+        "tool_slugs": [
+          "gnps"
+        ]
+      },
+      {
+        "title": "Inspect compound-level ion groups and molecular families",
+        "description": "Distinguish ion-identity edges from spectral-similarity edges and review collapsed groups against the uncollapsed network. Check ambiguous assignments before propagating annotations.",
+        "tool_slugs": [
+          "cytoscape"
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "slug": "gnps",
+        "role": "Published GNPS FBMN/IIMN implementation; consult the linked IIMN documentation for the supported workflow."
+      },
+      {
+        "slug": "mzmine",
+        "role": "Documented route for feature processing, ion-identity annotation and supplementary-pairs export."
+      },
+      {
+        "slug": "cytoscape",
+        "role": "Inspect and style exported networks while retaining edge-type and feature metadata."
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/CCMS-UCSD/GNPS_Workflows",
+      "method_available": true,
+      "method_url": "https://ccms-ucsd.github.io/GNPSDocumentation/fbmn-iin/"
+    },
+    "scope": {
+      "designed_for": [
+        "LC-MS/MS datasets in which multiple ion species from the same molecule create redundant nodes or obscure molecular-family interpretation.",
+        "Combining chromatographic ion relationships with fragmentation-spectral relationships."
+      ],
+      "requirements": [
+        "Feature-level chromatographic information, MS/MS spectra, and an ion-identity/supplementary-pairs export from a compatible preprocessing workflow."
+      ],
+      "considerations": [
+        "Ion-identity assignments rely on chromatographic correlation and expected mass relationships and should be reviewed, particularly for crowded or poorly resolved chromatographic regions.",
+        "The original paper also describes MS-DIAL and XCMS with CAMERA export routes. Their version-specific scripts and formats must be checked before substituting them for the MZmine route shown here.",
+        "Features without MS/MS can participate through ion-identity edges when supported by the implementation; they do not thereby acquire an observed fragmentation spectrum.",
+        "Ion identity networking is not ion mobility networking and does not require ion mobility acquisition."
+      ]
+    },
+    "related_strategies": [
+      "gnps-feature-based-molecular-networking",
+      "bioactivity-based-molecular-networking"
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Classified as a transferable analytical Strategy; linked Tool entries describe software implementations. Reviewed against the original method publication and GNPS documentation."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-08-24",
+      "updated_at": "2026-09-12",
+      "last_verified": "2026-09-12",
+      "last_editorial_review": "2026-09-12"
+    },
+    "sample_types": [],
+    "biological_contexts": [
+      "broadly_applicable"
+    ],
+    "organisms": [],
+    "aliases": [
+      "IIMN",
+      "Ion identity networking"
+    ]
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "idbac-colony-maldi-msms-dereplication",
+    "name": "Colony-based MALDI-MS/MS dereplication with IDBac and GNPS2",
+    "summary": "A miniaturized microbial natural-product strategy that adds MALDI tandem mass spectrometry and GNPS2 molecular networking to IDBac so metabolite families can be preliminarily annotated directly from colonies before fermentation scale-up and extraction.",
+    "description": "This strategy extends colony-level IDBac screening beyond MALDI-MS1 chemical fingerprints. Protein and specialized-metabolite MS1 data are first used to understand isolate identity and metabolite-production potential. Selected precursor ions are then fragmented by MALDI-MS/MS, and the resulting spectra are passed to GNPS2 for molecular networking and library searching. The layered workflow adds preliminary structural context early enough to influence which strains are advanced to scale-up.",
+    "publication": {
+      "title": "MALDI Tandem Mass Spectrometry for Colony-Based Dereplication of Natural Products",
+      "doi": "10.1021/acs.jnatprod.6c00765",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.jnatprod.6c00765",
+      "citation": "Shepherd RA, Gad LY, Strobel M, et al. MALDI Tandem Mass Spectrometry for Colony-Based Dereplication of Natural Products. Journal of Natural Products (2026).",
+      "journal": "Journal of Natural Products",
+      "year": 2026
+    },
+    "purpose": {
+      "primary": "natural_product_discovery",
+      "secondary": [
+        "dereplication",
+        "molecular_family_discovery",
+        "metabolite_annotation"
+      ]
+    },
+    "platforms": [
+      "maldi_ms"
+    ],
+    "analysis_types": [
+      "metabolite_profiling",
+      "untargeted"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "full_scan",
+        "dda"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "sample_preparation",
+      "data_acquisition",
+      "preprocessing",
+      "spectral_search",
+      "molecular_networking",
+      "annotation",
+      "biological_validation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Profile colonies by MALDI-MS1",
+        "description": "Acquire protein-region and specialized-metabolite spectra directly from microbial colonies and inspect the collection in IDBac.",
+        "tool_slugs": [],
+        "external_tools": [
+          {
+            "name": "IDBac",
+            "url": "https://idbac.org/"
+          }
+        ]
+      },
+      {
+        "title": "Select small-molecule precursors for fragmentation",
+        "description": "Use the colony-level specialized-metabolite data to choose precursor ions for MALDI tandem-MS acquisition while filtering matrix/background signals.",
+        "tool_slugs": [],
+        "external_tools": [
+          {
+            "name": "IDBac",
+            "url": "https://idbac.org/"
+          }
+        ]
+      },
+      {
+        "title": "Acquire MALDI-MS/MS spectra",
+        "description": "Fragment selected precursor ions directly from colony-derived samples to generate tandem spectra before fermentation scale-up."
+      },
+      {
+        "title": "Run downstream GNPS2 molecular networking",
+        "description": "Submit compatible MALDI-MS/MS spectra to GNPS2 for molecular networking and spectral-library searching.",
+        "tool_slugs": [
+          "gnps"
+        ]
+      },
+      {
+        "title": "Prioritize strains and chemistry",
+        "description": "Combine colony identity, metabolite-production patterns, molecular-family context, and preliminary annotations to select strains and compounds for scale-up and orthogonal structural validation."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Colony-level bacterial grouping, specialized-metabolite profiling, and precursor-selection context.",
+        "name": "IDBac",
+        "url": "https://idbac.org/"
+      },
+      {
+        "slug": "gnps",
+        "role": "Downstream MS/MS molecular networking and spectral-library searching."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://pubs.acs.org/doi/10.1021/acs.jnatprod.6c00765"
+    },
+    "scope": {
+      "designed_for": [
+        "Early dereplication and strain prioritization in microbial natural-product discovery before large-scale fermentation and extraction.",
+        "Linking colony-level metabolite production to MS/MS molecular families and tentative annotations."
+      ],
+      "requirements": [
+        "MALDI instrumentation capable of the required MS1 and tandem-MS acquisition workflow.",
+        "Cultured microbial colonies and compatible IDBac/GNPS2 data preparation."
+      ],
+      "considerations": [
+        "Colony-level production can differ from larger-scale fermentation, so prioritized chemistry should be reconfirmed after scale-up.",
+        "Spectral-library matches and molecular-network relationships provide dereplication evidence but do not replace full structure elucidation."
+      ]
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included as an Analytical Strategy because it layers MALDI-MS/MS and GNPS2 structural context onto IDBac colony screening to move dereplication and prioritization earlier in the discovery pipeline. Navigator review checked publication identity and methodological scope; linked software was not independently benchmarked."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-08",
+      "updated_at": "2026-09-09",
+      "last_verified": "2026-09-09",
+      "last_editorial_review": "2026-09-09"
+    },
+    "sample_types": [
+      "microbial_culture"
+    ],
+    "biological_contexts": [
+      "microbial"
+    ],
+    "organisms": [],
+    "related_strategies": [
+      "idbac-microbial-library-dereplication"
+    ]
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "idbac-microbial-library-dereplication",
+    "name": "Taxonomy- and metabolite-aware microbial library prioritization with IDBac",
+    "summary": "A microbial natural-product discovery strategy that combines MALDI protein fingerprinting with specialized-metabolite overlap to reduce taxonomic and chemical redundancy when constructing or downsizing isolate libraries.",
+    "description": "This strategy uses two complementary MALDI information spaces before scale-up. Protein-region spectra group bacterial isolates by taxonomic or strain-level similarity, while lower-mass specialized-metabolite spectra reveal chemical overlap within those groups. Isolates can then be selected to preserve phylogenetic breadth while minimizing redundant natural-product profiles, shifting strain prioritization from morphology or taxonomy alone to combined biological and chemical evidence.",
+    "publication": {
+      "title": "Minimizing Taxonomic and Natural Product Redundancy in Microbial Libraries Using MALDI-TOF MS and the Bioinformatics Pipeline IDBac",
+      "doi": "10.1021/acs.jnatprod.9b00168",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.jnatprod.9b00168",
+      "citation": "Costa MS, Clark CM, Ómarsdóttir S, Sanchez LM, Murphy BT. Minimizing Taxonomic and Natural Product Redundancy in Microbial Libraries Using MALDI-TOF MS and the Bioinformatics Pipeline IDBac. Journal of Natural Products 82, 2167–2173 (2019).",
+      "journal": "Journal of Natural Products",
+      "year": 2019
+    },
+    "purpose": {
+      "primary": "natural_product_discovery",
+      "secondary": [
+        "phenotype_association"
+      ]
+    },
+    "platforms": [
+      "maldi_ms"
+    ],
+    "analysis_types": [
+      "metabolite_profiling"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1"
+      ],
+      "strategies": [
+        "full_scan"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "sample_preparation",
+      "data_acquisition",
+      "preprocessing",
+      "metadata_analysis",
+      "statistics",
+      "biological_validation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Acquire MALDI protein fingerprints from individual isolates",
+        "description": "Analyze colony material in the higher mass range to generate replicate protein fingerprints suitable for similarity grouping.",
+        "tool_slugs": [],
+        "external_tools": [
+          {
+            "name": "IDBac",
+            "url": "https://idbac.org/"
+          }
+        ]
+      },
+      {
+        "title": "Group taxonomically similar isolates",
+        "description": "Use protein-profile clustering to organize the collection into operational groups of closely related isolates.",
+        "tool_slugs": [],
+        "external_tools": [
+          {
+            "name": "IDBac",
+            "url": "https://idbac.org/"
+          }
+        ]
+      },
+      {
+        "title": "Acquire specialized-metabolite profiles",
+        "description": "Analyze the lower mass region from the same isolate collection to capture differences in specialized-metabolite production.",
+        "tool_slugs": [],
+        "external_tools": [
+          {
+            "name": "IDBac",
+            "url": "https://idbac.org/"
+          }
+        ]
+      },
+      {
+        "title": "Compare chemical overlap within taxonomic groups",
+        "description": "Use metabolite association patterns to identify isolates that add distinct chemistry rather than duplicating existing profiles.",
+        "tool_slugs": [],
+        "external_tools": [
+          {
+            "name": "IDBac",
+            "url": "https://idbac.org/"
+          }
+        ]
+      },
+      {
+        "title": "Select a reduced but diverse library",
+        "description": "Prioritize representatives that retain taxonomic breadth and specialized-metabolite diversity for fermentation, extraction, and downstream discovery."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Protein-profile grouping, specialized-metabolite comparison, and isolate prioritization.",
+        "name": "IDBac",
+        "url": "https://idbac.org/"
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://pubs.acs.org/doi/10.1021/acs.jnatprod.9b00168"
+    },
+    "scope": {
+      "designed_for": [
+        "Building or reducing bacterial isolate libraries for natural-product discovery.",
+        "Prioritizing isolates before scale-up using both relatedness and chemical phenotype."
+      ],
+      "requirements": [
+        "Cultured bacterial isolates and reproducible MALDI protein and small-molecule acquisitions."
+      ],
+      "considerations": [
+        "Culture conditions strongly influence specialized-metabolite profiles, so observed chemical redundancy is condition-dependent.",
+        "Protein spectral similarity is an operational grouping method and does not replace sequence-based taxonomy when definitive identification is required."
+      ]
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included as an Analytical Strategy because the publication converts IDBac measurements into a transferable decision framework for constructing chemically and taxonomically diverse microbial libraries. Navigator review checked publication identity and methodological scope; linked software was not independently benchmarked."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-08",
+      "updated_at": "2026-09-09",
+      "last_verified": "2026-09-09",
+      "last_editorial_review": "2026-09-09"
+    },
+    "sample_types": [
+      "microbial_culture"
+    ],
+    "biological_contexts": [
+      "microbial"
+    ],
+    "organisms": [],
+    "related_strategies": []
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "metabologenomics",
+    "name": "Metabologenomics",
+    "summary": "A natural-product discovery strategy that correlates metabolite occurrence across a strain collection with biosynthetic gene-cluster or gene-cluster-family occurrence to connect chemistry with its likely genetic origin.",
+    "description": "Metabologenomics treats a microbial strain collection as a panel of naturally varying experiments. Genome mining defines BGCs or GCFs, metabolomics defines spectra or molecular families, and co-occurrence across strains is scored to prioritize plausible BGC–metabolite links. The strategy can reveal both known and previously uncharacterized natural-product families without requiring a prior genetic hypothesis.",
+    "publication": {
+      "title": "Metabologenomics: Correlation of Microbial Gene Clusters with Metabolites Drives Discovery of a Nonribosomal Peptide with an Unusual Amino Acid Monomer",
+      "doi": "10.1021/acscentsci.5b00331",
+      "url": "https://pubs.acs.org/doi/10.1021/acscentsci.5b00331",
+      "citation": "Goering AW, McClure RA, Doroghazi JR, et al. Metabologenomics: Correlation of Microbial Gene Clusters with Metabolites Drives Discovery of a Nonribosomal Peptide with an Unusual Amino Acid Monomer. ACS Central Science (2016).",
+      "journal": "ACS Central Science",
+      "year": 2016
+    },
+    "purpose": {
+      "primary": "natural_product_discovery",
+      "secondary": [
+        "molecular_family_discovery",
+        "unknown_identification"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted",
+      "multiomics"
+    ],
+    "acquisition": {},
+    "components": [
+      "data_acquisition",
+      "preprocessing",
+      "molecular_networking",
+      "metadata_analysis",
+      "statistics",
+      "biological_validation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Profile a genetically diverse strain collection",
+        "description": "Generate comparable LC-MS/MS data across many sequenced isolates or conditions so metabolite occurrence can be compared across the collection."
+      },
+      {
+        "title": "Mine genomes for biosynthetic gene clusters",
+        "description": "Identify BGCs and cluster related BGCs into gene-cluster families using genome-mining tools.",
+        "external_tools": [
+          {
+            "name": "antiSMASH",
+            "url": "https://antismash.secondarymetabolites.org/"
+          },
+          {
+            "name": "BiG-SCAPE",
+            "url": "https://bigscape-corason.secondarymetabolites.org/"
+          }
+        ]
+      },
+      {
+        "title": "Organize metabolite features or molecular families",
+        "description": "Use molecular networking or related spectral grouping to define recurring chemical features across strains.",
+        "tool_slugs": [
+          "gnps"
+        ]
+      },
+      {
+        "title": "Score BGC–metabolite co-occurrence",
+        "description": "Correlate the presence/abundance of metabolite features or molecular families with BGC/GCF occurrence across strains.",
+        "tool_slugs": [],
+        "external_tools": [
+          {
+            "name": "NPLinker",
+            "url": "https://github.com/NPLinker/nplinker"
+          }
+        ]
+      },
+      {
+        "title": "Prioritize and validate links",
+        "description": "Use genetics, targeted cultivation, isolation, MS/NMR or heterologous expression to validate high-priority BGC–metabolite associations."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "gnps",
+        "role": "Molecular-family organization and metabolomics comparison."
+      },
+      {
+        "role": "Modern framework for scoring and exploring BGC–metabolite links.",
+        "name": "NPLinker",
+        "url": "https://github.com/NPLinker/nplinker"
+      },
+      {
+        "role": "Reference BGC/product knowledge for interpretation.",
+        "name": "MIBiG",
+        "url": "https://mibig.secondarymetabolites.org/"
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://pubs.acs.org/doi/10.1021/acscentsci.5b00331"
+    },
+    "scope": {
+      "designed_for": [
+        "Linking specialized-metabolite chemistry to candidate biosynthetic gene clusters across strain collections.",
+        "Prioritizing biosynthetic hypotheses before direct genetic validation."
+      ],
+      "requirements": [
+        "A sufficiently diverse, sequenced strain collection with comparable metabolomics data.",
+        "Consistent identifiers linking each genome/isolate to its metabolomics samples."
+      ],
+      "considerations": [
+        "Co-occurrence supports association, not causation; population structure and phylogeny can confound links.",
+        "Silent BGCs and condition-dependent metabolite production create false negatives.",
+        "The linked contemporary resources illustrate ways to implement the strategy; they are not all software used in the original publication."
+      ]
+    },
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included because genome–metabolome co-occurrence is a transferable evidence layer that adds biosynthetic linkage beyond routine molecular networking. Navigator review checked publication identity and methodological scope; linked software was not independently benchmarked."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-08",
+      "updated_at": "2026-09-09",
+      "last_verified": "2026-09-09",
+      "last_editorial_review": "2026-09-09"
+    },
+    "sample_types": [
+      "microbial_culture"
+    ],
+    "biological_contexts": [
+      "microbial"
+    ],
+    "organisms": []
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "msi-guided-molecular-networking",
+    "name": "Mass spectrometry imaging–guided molecular networking",
+    "summary": "A multimodal natural-product strategy that uses spatial localization from mass spectrometry imaging to prioritize metabolites for LC-MS/MS molecular networking and structural interpretation.",
+    "description": "Mass spectrometry imaging–guided molecular networking connects where a metabolite occurs with how its fragmentation spectrum relates to other molecules. Spatially resolved MSI features are used to identify chemically informative regions or ions, while LC-MS/MS molecular networking supplies fragmentation-based family context and annotation. The combination can focus structural analysis on spatially localized natural products rather than treating imaging and molecular networking as independent readouts.",
+    "publication": {
+      "title": "Mass spectrometry imaging guided molecular networking to expedite discovery and structural analysis of agarwood natural products",
+      "doi": "10.1016/j.aca.2019.05.070",
+      "url": "https://doi.org/10.1016/j.aca.2019.05.070",
+      "citation": "Kuo TH, Huang HC, Hsu CC. Mass spectrometry imaging guided molecular networking to expedite discovery and structural analysis of agarwood natural products. Analytica Chimica Acta 1080, 95–103 (2019).",
+      "journal": "Analytica Chimica Acta",
+      "year": 2019
+    },
+    "purpose": {
+      "primary": "spatial_metabolomics",
+      "secondary": [
+        "natural_product_discovery",
+        "structure_elucidation",
+        "molecular_family_discovery"
+      ]
+    },
+    "platforms": [
+      "imaging_ms",
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "spatial_metabolomics",
+      "untargeted"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "full_scan",
+        "dda"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "sample_preparation",
+      "data_acquisition",
+      "molecular_networking",
+      "annotation",
+      "biological_validation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Acquire spatial metabolite maps",
+        "description": "Use MALDI or another suitable imaging-MS method to map metabolite ions across the tissue or material of interest."
+      },
+      {
+        "title": "Prioritize spatially informative features",
+        "description": "Select ions or chemical regions whose localization suggests biological or anatomical relevance."
+      },
+      {
+        "title": "Acquire complementary LC-MS/MS data",
+        "description": "Generate fragmentation-rich LC-MS/MS data from matched or relevant material so spatially prioritized chemistry can be interpreted structurally."
+      },
+      {
+        "title": "Build molecular networks",
+        "description": "Organize related MS/MS spectra into molecular families and connect the spatially prioritized features to family-level structural context.",
+        "tool_slugs": [
+          "gnps"
+        ]
+      },
+      {
+        "title": "Validate spatial and structural assignments",
+        "description": "Confirm prioritized annotations and localization with orthogonal standards, fragmentation interpretation, or additional imaging experiments where possible."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "gnps",
+        "role": "Molecular-network analysis of structurally related tandem mass spectra."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1016/j.aca.2019.05.070"
+    },
+    "scope": {
+      "designed_for": [
+        "Natural-product or specialized-metabolite discovery where spatial localization can guide which chemistry deserves structural follow-up.",
+        "Multimodal studies combining imaging MS with fragmentation-rich LC-MS/MS."
+      ],
+      "requirements": [
+        "Spatially resolved MSI data and complementary MS/MS data that can be related to the same chemistry."
+      ],
+      "considerations": [
+        "Matching an MSI ion to an LC-MS/MS feature requires careful mass, adduct, and sample-context reasoning.",
+        "Spatial colocalization and spectral family membership do not substitute for complete structural confirmation."
+      ]
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included as an Analytical Strategy because spatial localization is used as a transferable evidence layer to guide molecular-network-based discovery and structural prioritization. Navigator review checked publication identity and methodological scope; linked software was not independently benchmarked."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-08",
+      "updated_at": "2026-09-09",
+      "last_verified": "2026-09-09",
+      "last_editorial_review": "2026-09-09"
+    },
+    "sample_types": [
+      "plant_tissue",
+      "tissue"
+    ],
+    "biological_contexts": [
+      "plant",
+      "broadly_applicable"
+    ],
+    "organisms": [],
+    "related_strategies": []
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "native-ms-metal-binding",
+    "name": "Native MS metabolomics for metal-binding compounds",
+    "aliases": [
+      "Native spray metabolomics"
+    ],
+    "summary": "A transferable LC-MS strategy that combines post-column pH adjustment and metal infusion with ion identity molecular networking to discover small molecules that bind metals in complex biological samples.",
+    "description": "This strategy adapts native electrospray concepts to metabolomics so that protonated and metal-bound forms of the same chromatographic analyte can be detected together. Post-column pH adjustment and infusion of a selected metal are coupled to feature processing and ion identity molecular networking, allowing candidate metal-binding molecules to be prioritized from characteristic mass offsets and shared chromatographic behavior.",
+    "publication": {
+      "title": "Native mass spectrometry-based metabolomics identifies metal-binding compounds",
+      "doi": "10.1038/s41557-021-00803-1",
+      "url": "https://www.nature.com/articles/s41557-021-00803-1",
+      "citation": "Aron AT, Petras D, Schmid R, et al. Native mass spectrometry-based metabolomics identifies metal-binding compounds. Nature Chemistry 14, 100–109 (2022).",
+      "journal": "Nature Chemistry",
+      "year": 2022
+    },
+    "purpose": {
+      "primary": "metal_binding",
+      "secondary": [
+        "native_metabolomics",
+        "natural_product_discovery"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted",
+      "metabolite_profiling"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "full_scan",
+        "dda",
+        "native_esi"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "chromatography",
+      "post_column_modification",
+      "data_acquisition",
+      "preprocessing",
+      "annotation",
+      "molecular_networking",
+      "data_sharing"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Separate metabolites by LC",
+        "description": "Analyze the extract using an LC-MS method suitable for retaining native-like metal-binding interactions after chromatographic separation."
+      },
+      {
+        "title": "Adjust post-column pH",
+        "description": "Infuse a volatile base or buffer after the LC column to establish conditions compatible with observing metal complexes during electrospray."
+      },
+      {
+        "title": "Infuse the metal of interest",
+        "description": "Introduce a metal salt post-column so protonated and metal-bound forms of candidate ligands can be observed with matched retention behavior."
+      },
+      {
+        "title": "Process features and ion identities",
+        "description": "Detect and align chromatographic features and group coeluting ion species with correlated peak shapes and expected mass relationships.",
+        "tool_slugs": [
+          "mzmine"
+        ]
+      },
+      {
+        "title": "Build an ion identity molecular network",
+        "description": "Use ion identity molecular networking to connect ion species and spectral relationships, highlighting candidate metal-binding compounds.",
+        "tool_slugs": [
+          "mzmine",
+          "gnps"
+        ],
+        "external_tools": [
+          {
+            "name": "Cytoscape",
+            "url": "https://cytoscape.org/"
+          }
+        ]
+      },
+      {
+        "title": "Prioritize and validate candidate binders",
+        "description": "Interpret expected metal-adduct mass offsets, inspect spectra and chromatograms, and validate prioritized compounds with standards or orthogonal evidence where available."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "mzmine",
+        "role": "Feature detection, ion grouping, and ion identity networking preparation."
+      },
+      {
+        "slug": "gnps",
+        "role": "Ion identity molecular networking and MS/MS-based network analysis."
+      },
+      {
+        "slug": "massive",
+        "role": "Public deposition and reuse of the study mass-spectrometry datasets."
+      },
+      {
+        "name": "Cytoscape",
+        "url": "https://cytoscape.org/",
+        "role": "Optional network visualization."
+      }
+    ],
+    "resources": {
+      "raw_data_available": true,
+      "raw_data_url": "https://massive.ucsd.edu/",
+      "processed_data_available": true,
+      "processed_data_url": "https://www.nature.com/articles/s41557-021-00803-1",
+      "code_available": true,
+      "code_url": "https://mzmine.github.io/iin_fbmn",
+      "method_available": true,
+      "method_url": "https://www.nature.com/articles/s41557-021-00803-1"
+    },
+    "scope": {
+      "designed_for": [
+        "Discovering metal-binding small molecules in complex extracts using standard LC-MS hardware with post-column modification.",
+        "Comparing protonated and metal-bound ion species through chromatographic correlation and defined mass offsets."
+      ],
+      "requirements": [
+        "LC-MS system with a post-column setup that permits pH adjustment and metal-salt infusion.",
+        "Appropriate blanks and controls to distinguish biologically relevant complexes from background or source-derived adducts."
+      ],
+      "considerations": [
+        "Metal identity, pH, salt concentration and electrospray conditions can alter complex formation and should be optimized and reported.",
+        "The network highlights candidate binding behavior; structural identity and biological relevance require additional evidence."
+      ]
+    },
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-08-21",
+      "updated_at": "2026-08-24",
+      "last_verified": "2026-08-21",
+      "last_editorial_review": "2026-08-21"
+    },
+    "sample_types": [
+      "microbial_culture",
+      "water",
+      "synthetic_standards"
+    ],
+    "biological_contexts": [
+      "microbial",
+      "fungal",
+      "marine",
+      "environmental",
+      "synthetic_reference"
+    ],
+    "organisms": []
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "ozid-structural-lipidomics",
+    "name": "Ozone-induced dissociation for structural lipidomics",
+    "summary": "A structural-lipidomics strategy that uses ozone-induced dissociation to generate diagnostic fragments for carbon–carbon double-bond positions that conventional CID-based lipidomics often cannot resolve.",
+    "description": "Ozone-induced dissociation (OzID) adds gas-phase chemical reactivity to lipid analysis. Reactions of mass-selected unsaturated lipid ions produce diagnostic fragments that locate carbon–carbon double bonds. The method complements collision-induced fragmentation. Later implementations can combine separation and automated interpretation, but their acquisition and software requirements are implementation-specific.",
+    "publication": {
+      "title": "Ozone-Induced Dissociation: Elucidation of Double Bond Position within Mass-Selected Lipid Ions",
+      "doi": "10.1021/ac7017684",
+      "url": "https://doi.org/10.1021/ac7017684",
+      "citation": "Thomas MC, Mitchell TW, Harman DG, Deeley JM, Nealon JR, Blanksby SJ. Ozone-Induced Dissociation: Elucidation of Double Bond Position within Mass-Selected Lipid Ions. Analytical Chemistry 80, 303–311 (2008).",
+      "journal": "Analytical Chemistry",
+      "year": 2008
+    },
+    "purpose": {
+      "primary": "structure_elucidation",
+      "secondary": [
+        "metabolite_annotation"
+      ]
+    },
+    "platforms": [
+      "lc_ms",
+      "direct_infusion_ms"
+    ],
+    "analysis_types": [
+      "lipidomics",
+      "targeted"
+    ],
+    "acquisition": {},
+    "components": [
+      "data_acquisition",
+      "annotation",
+      "biological_validation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Acquire lipids under OzID-compatible conditions",
+        "description": "Introduce ozone into a compatible MS workflow so unsaturated lipid ions undergo diagnostic gas-phase oxidation."
+      },
+      {
+        "title": "Collect diagnostic OzID fragments",
+        "description": "Acquire fragment pairs that encode the location of carbon–carbon double bonds."
+      },
+      {
+        "title": "Resolve and score double-bond assignments",
+        "description": "Interpret diagnostic fragment pairs; a later tool such as LipidOz can automate this for its supported OzID–ion mobility MS acquisition format.",
+        "tool_slugs": [],
+        "external_tools": [
+          {
+            "name": "LipidOz",
+            "url": "https://github.com/PNNL-m-q/lipidoz"
+          }
+        ]
+      },
+      {
+        "title": "Validate structural isomers",
+        "description": "Confirm critical assignments with standards, retention/ion-mobility behavior or orthogonal structural evidence when available."
+      }
+    ],
+    "tools": [
+      {
+        "role": "Later automated interpretation for compatible OzID–ion mobility MS data; not part of the original 2008 implementation.",
+        "name": "LipidOz",
+        "url": "https://github.com/PNNL-m-q/lipidoz"
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1021/ac7017684"
+    },
+    "scope": {
+      "designed_for": [
+        "Resolving lipid double-bond positional isomers beyond conventional sum-composition or acyl-chain annotation."
+      ],
+      "requirements": [
+        "Instrumentation or reaction setup capable of ozone-induced dissociation.",
+        "Appropriate acquisition methods and candidate lipid context."
+      ],
+      "considerations": [
+        "OzID adds structural specificity but does not automatically resolve every lipid stereochemical ambiguity.",
+        "Instrumentation and reaction implementation are platform-dependent.",
+        "The primary source introduces OzID. LipidOz is a later software implementation; OzFAD and other variants are not treated as interchangeable methods here."
+      ]
+    },
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included because gas-phase ozone chemistry adds orthogonal structural information not provided by routine CID lipidomics. Navigator review checked publication identity and methodological scope; linked software was not independently benchmarked."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-08",
+      "updated_at": "2026-09-09",
+      "last_verified": "2026-09-09",
+      "last_editorial_review": "2026-09-09"
+    },
+    "sample_types": [],
+    "biological_contexts": [
+      "broadly_applicable"
+    ],
+    "organisms": []
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "reverse-metabolomics",
+    "name": "Reverse metabolomics",
+    "summary": "A discovery strategy that starts from a candidate chemical structure or reference MS/MS spectrum, searches public metabolomics repositories for matching spectra, and uses sample metadata to reveal biological or phenotypic associations.",
+    "description": "Reverse metabolomics reverses the usual untargeted workflow. Instead of starting with an unknown feature and attempting to infer its structure, the researcher begins with a candidate structure and an experimental MS/MS spectrum, searches public metabolomics data for matching spectra, and then uses repository metadata to ask where the molecule occurs. The resulting organism, biospecimen, phenotype or disease associations can guide biological validation.",
+    "publication": {
+      "title": "Reverse metabolomics for the discovery of chemical structures from humans",
+      "doi": "10.1038/s41586-023-06906-8",
+      "url": "https://www.nature.com/articles/s41586-023-06906-8",
+      "citation": "Gentry EC, Collins SL, Panitchpakdi M, et al. Reverse metabolomics for the discovery of chemical structures from humans. Nature 626, 419–426 (2024).",
+      "journal": "Nature",
+      "year": 2024
+    },
+    "purpose": {
+      "primary": "reverse_metabolomics",
+      "secondary": [
+        "phenotype_association",
+        "molecular_discovery",
+        "metabolite_annotation"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted",
+      "metabolite_profiling"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms2"
+      ],
+      "strategies": [
+        "dda",
+        "targeted_msms",
+        "flow_injection"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "data_acquisition",
+      "spectral_search",
+      "repository_mining",
+      "metadata_analysis",
+      "biological_validation",
+      "data_sharing"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Generate or obtain a reference MS/MS spectrum",
+        "description": "Acquire tandem mass spectra for a candidate chemical structure, for example from a synthesized standard, authenticated standard, or suitable reference source.",
+        "tool_slugs": [
+          "msms-chooser"
+        ]
+      },
+      {
+        "title": "Select a representative reference spectrum",
+        "description": "When standards are analyzed in mixtures, automatically select the MS/MS scan associated with the expected precursor and review the spectrum before repository searching.",
+        "tool_slugs": [
+          "msms-chooser"
+        ]
+      },
+      {
+        "title": "Search public MS/MS data",
+        "description": "Use the reference spectrum as a query against public metabolomics datasets to identify files and datasets containing related spectra.",
+        "tool_slugs": [
+          "masst",
+          "gnps",
+          "massive"
+        ]
+      },
+      {
+        "title": "Contextualize matches with sample metadata",
+        "description": "Summarize organism, biospecimen, phenotype, disease state and other standardized metadata associated with matching public files.",
+        "tool_slugs": [
+          "redu"
+        ]
+      },
+      {
+        "title": "Prioritize biological associations",
+        "description": "Use the distribution of matched spectra across public datasets to generate hypotheses about where the molecule occurs and which phenotypes or sample types it may be associated with."
+      },
+      {
+        "title": "Validate prioritized associations",
+        "description": "Test the proposed association in independent cohorts, targeted measurements, culture systems, or functional experiments appropriate to the biological question."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "msms-chooser",
+        "role": "Selection of candidate reference MS/MS spectra from data acquired on standards."
+      },
+      {
+        "slug": "masst",
+        "role": "Repository-scale MS/MS spectrum searching."
+      },
+      {
+        "slug": "redu",
+        "role": "Metadata-based contextualization of public mass-spectrometry matches."
+      },
+      {
+        "slug": "gnps",
+        "role": "Web infrastructure for spectral workflows and public-data analysis."
+      },
+      {
+        "slug": "massive",
+        "role": "Public repository containing searchable metabolomics datasets."
+      }
+    ],
+    "resources": {
+      "raw_data_available": true,
+      "raw_data_url": "https://massive.ucsd.edu/",
+      "processed_data_available": true,
+      "processed_data_url": "https://www.nature.com/articles/s41586-023-06906-8",
+      "code_available": true,
+      "code_url": "https://github.com/emgentry/Synthesis-based-reverse-metabolomics",
+      "method_available": true,
+      "method_url": "https://www.nature.com/articles/s41586-023-06906-8"
+    },
+    "scope": {
+      "designed_for": [
+        "Asking where a known or newly synthesized chemical structure occurs across existing untargeted MS/MS datasets.",
+        "Using repository-scale metadata to generate hypotheses linking a molecule to organisms, sample types, disease states or other phenotypes."
+      ],
+      "requirements": [
+        "A suitable reference MS/MS spectrum for the candidate molecule.",
+        "Public datasets with matching MS/MS signals and sufficient metadata to interpret biological context."
+      ],
+      "considerations": [
+        "A repository spectral match is evidence of spectral similarity and occurrence, not by itself a complete structural confirmation.",
+        "Repository composition and metadata coverage can bias which biological contexts are visible."
+      ]
+    },
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-08-21",
+      "updated_at": "2026-08-24",
+      "last_verified": "2026-08-21",
+      "last_editorial_review": "2026-08-21"
+    },
+    "sample_types": [
+      "feces",
+      "tissue",
+      "microbial_culture",
+      "synthetic_standards",
+      "other"
+    ],
+    "biological_contexts": [
+      "human",
+      "animal",
+      "microbial",
+      "host_microbe",
+      "synthetic_reference",
+      "broadly_applicable"
+    ],
+    "organisms": [
+      "Homo sapiens"
+    ]
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "stable-isotope-labeling-molecular-networking",
+    "name": "Stable-isotope labeling–assisted molecular networking",
+    "summary": "A biosynthetic discovery strategy that combines stable-isotope precursor feeding with LC-MS/MS molecular networking to identify structurally related metabolites that incorporate a defined biosynthetic building block.",
+    "description": "Stable-isotope labeling–assisted molecular networking layers biosynthetic incorporation information onto MS/MS similarity. A labeled precursor such as a stable-isotope amino acid is supplied to a producing organism, labeled mass shifts are detected in metabolite features, and molecular networking groups related MS/MS spectra. The combination helps distinguish biosynthetically connected analogues and can provide sequence or building-block information that molecular networking alone does not supply.",
+    "publication": {
+      "title": "Combining Stable Isotope Labeling and Molecular Networking for Biosynthetic Pathway Characterization",
+      "doi": "10.1021/acs.analchem.5b01934",
+      "url": "https://pubs.acs.org/doi/10.1021/acs.analchem.5b01934",
+      "citation": "Klitgaard A, Nielsen JB, Frandsen RJN, Andersen MR, Nielsen KF. Combining Stable Isotope Labeling and Molecular Networking for Biosynthetic Pathway Characterization. Analytical Chemistry 87, 6520–6526 (2015).",
+      "journal": "Analytical Chemistry",
+      "year": 2015
+    },
+    "purpose": {
+      "primary": "stable_isotope_tracing",
+      "secondary": [
+        "natural_product_discovery",
+        "molecular_family_discovery",
+        "structure_elucidation"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted",
+      "stable_isotope_tracing"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "dda"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "sample_preparation",
+      "chromatography",
+      "data_acquisition",
+      "preprocessing",
+      "molecular_networking",
+      "annotation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Select and feed a stable-isotope precursor",
+        "description": "Add a labeled biosynthetic building block to the culture under conditions that permit incorporation into specialized metabolites, while retaining appropriate unlabeled controls."
+      },
+      {
+        "title": "Detect isotope incorporation",
+        "description": "Compare labeled and unlabeled LC-MS data to identify features with mass shifts consistent with incorporation of the supplied precursor."
+      },
+      {
+        "title": "Acquire and compare MS/MS spectra",
+        "description": "Collect fragmentation spectra for candidate labeled and related metabolites."
+      },
+      {
+        "title": "Build a molecular network",
+        "description": "Organize structurally related spectra by MS/MS similarity and overlay isotope-incorporation evidence to recognize families sharing the labeled building block.",
+        "tool_slugs": [
+          "gnps"
+        ]
+      },
+      {
+        "title": "Infer biosynthetic or structural relationships",
+        "description": "Use the combined label pattern and fragmentation relationships to prioritize analogues, infer building-block composition, and guide targeted structural validation."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "gnps",
+        "role": "Molecular networking of related MS/MS spectra."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://pubs.acs.org/doi/10.1021/acs.analchem.5b01934"
+    },
+    "scope": {
+      "designed_for": [
+        "Linking natural-product analogues to a supplied biosynthetic precursor.",
+        "Characterizing families of peptide or other metabolites where isotope incorporation provides interpretable biosynthetic information."
+      ],
+      "requirements": [
+        "A biologically plausible labeled precursor and culture system capable of incorporating it.",
+        "Matched labeled and unlabeled controls and sufficient mass accuracy to resolve the expected isotope shift."
+      ],
+      "considerations": [
+        "Label incorporation may be incomplete, diluted by metabolism, or redistributed into downstream metabolites.",
+        "Molecular similarity and label incorporation support a biosynthetic relationship but do not by themselves establish complete pathway genetics or final structure."
+      ]
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included as an Analytical Strategy because stable-isotope incorporation adds a biosynthetic evidence layer to molecular-network relationships and is transferable beyond the original fungal system. Navigator review checked publication identity and methodological scope; linked software was not independently benchmarked."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-08",
+      "updated_at": "2026-09-09",
+      "last_verified": "2026-09-09",
+      "last_editorial_review": "2026-09-09"
+    },
+    "sample_types": [
+      "microbial_culture"
+    ],
+    "biological_contexts": [
+      "fungal",
+      "microbial"
+    ],
+    "organisms": [
+      "Aspergillus nidulans"
+    ],
+    "related_strategies": []
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "taxonomically-informed-annotation",
+    "name": "Taxonomically informed metabolite annotation",
+    "summary": "A metabolite-annotation strategy that reranks candidate natural-product structures by combining spectral or in-silico annotation evidence with the taxonomic distance between the study organism and known producers of candidate compounds.",
+    "description": "Taxonomically informed scoring adds biological provenance to conventional candidate ranking. Candidate structures are first generated from spectral libraries or in-silico annotation. Known organism–compound associations are then used to calculate taxonomic relevance, allowing candidates reported from related organisms to receive additional support without treating taxonomy as structural proof.",
+    "publication": {
+      "title": "Taxonomically Informed Scoring Enhances Confidence in Natural Products Annotation",
+      "doi": "10.3389/fpls.2019.01329",
+      "url": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2019.01329/full",
+      "citation": "Rutz A, Dounoue-Kubo M, Ollivier S, et al. Taxonomically Informed Scoring Enhances Confidence in Natural Products Annotation. Frontiers in Plant Science 10, 1329 (2019).",
+      "journal": "Frontiers in Plant Science",
+      "year": 2019
+    },
+    "purpose": {
+      "primary": "metabolite_annotation",
+      "secondary": [
+        "natural_product_discovery",
+        "dereplication"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "acquisition": {},
+    "components": [
+      "data_acquisition",
+      "preprocessing",
+      "annotation",
+      "metadata_analysis",
+      "statistics"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Generate candidate structural annotations",
+        "description": "Use spectral-library or in-silico annotation to generate ranked candidate structures for MS/MS features."
+      },
+      {
+        "title": "Retrieve candidate biological-source information",
+        "description": "Collect taxonomic provenance for candidate natural products from curated structure–organism resources.",
+        "tool_slugs": [
+          "lotus",
+          "natural-products-atlas"
+        ]
+      },
+      {
+        "title": "Calculate taxonomic relevance",
+        "description": "Compare the taxonomy of the analyzed organism with reported producers of each candidate and convert the distance into an annotation-support score."
+      },
+      {
+        "title": "Rerank candidates",
+        "description": "Combine chemical and taxonomic evidence while retaining the original annotation evidence and uncertainty."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "lotus",
+        "role": "Structure–organism occurrence context."
+      },
+      {
+        "slug": "natural-products-atlas",
+        "role": "Natural-product taxonomic provenance, especially microbial compounds."
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/oolonek/taxo_scorer",
+      "method_available": true,
+      "method_url": "https://doi.org/10.3389/fpls.2019.01329"
+    },
+    "scope": {
+      "designed_for": [
+        "Improving candidate ranking when reliable organism identity and candidate source-occurrence information are available."
+      ],
+      "requirements": [
+        "A taxonomically identified source organism.",
+        "Candidate structures with linked biological-source metadata."
+      ],
+      "considerations": [
+        "Taxonomy is supporting evidence and cannot establish structure.",
+        "Published occurrence databases are incomplete and biased toward studied taxa.",
+        "The linked contemporary resources illustrate ways to implement the strategy; they are not all software used in the original publication."
+      ]
+    },
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included because taxonomy is an independent biological evidence layer added to conventional chemical annotation. Navigator review checked publication identity and methodological scope; linked software was not independently benchmarked."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-08",
+      "updated_at": "2026-09-09",
+      "last_verified": "2026-09-09",
+      "last_editorial_review": "2026-09-09"
+    },
+    "sample_types": [],
+    "biological_contexts": [
+      "plant",
+      "microbial",
+      "fungal"
+    ],
+    "organisms": []
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "three-dimensional-molecular-cartography",
+    "name": "3D molecular cartography",
+    "summary": "A spatial metabolomics strategy that combines systematic surface sampling, LC-MS/MS, coordinate-aware metadata and 2D/3D molecular mapping to reconstruct the distribution of metabolites and environmental chemicals across physical objects.",
+    "description": "3D molecular cartography extends metabolomics beyond conventional bulk samples by attaching each extraction to a physical coordinate. LC-MS data are processed and annotated, then mapped onto photographs or 3D surface models so chemical distributions can be explored spatially. Cartographical snapshots preserve visualization settings for reproducibility.",
+    "publication": {
+      "title": "3D molecular cartography using LC–MS facilitated by Optimus and 'ili software",
+      "doi": "10.1038/nprot.2017.122",
+      "url": "https://www.nature.com/articles/nprot.2017.122",
+      "citation": "Protsyuk I, Melnik AV, Nothias L-F, et al. 3D molecular cartography using LC–MS facilitated by Optimus and 'ili software. Nature Protocols 13, 134–154 (2018).",
+      "journal": "Nature Protocols",
+      "year": 2018
+    },
+    "purpose": {
+      "primary": "spatial_metabolomics",
+      "secondary": [
+        "environmental_metabolomics",
+        "molecular_discovery"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted",
+      "spatial_metabolomics"
+    ],
+    "acquisition": {},
+    "components": [
+      "sample_preparation",
+      "chromatography",
+      "data_acquisition",
+      "preprocessing",
+      "annotation",
+      "data_sharing"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Define a spatial sampling scheme",
+        "description": "Record coordinates for reproducible sampling across a surface, organism or object."
+      },
+      {
+        "title": "Extract and profile each location",
+        "description": "Analyze spatially indexed extracts by LC-MS/MS with appropriate blanks and quality controls."
+      },
+      {
+        "title": "Process and annotate features",
+        "description": "Generate a quantitative feature table and molecular annotations while preserving spatial sample identifiers."
+      },
+      {
+        "title": "Map molecular features onto the physical model",
+        "description": "Join feature abundance to sampling coordinates and visualize the chemical distribution on a 2D image or 3D model.",
+        "tool_slugs": [
+          "ili"
+        ]
+      },
+      {
+        "title": "Share cartographical snapshots",
+        "description": "Preserve the mapped view and visualization settings so collaborators can reproduce the spatial interpretation."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "ili",
+        "role": "Interactive 2D/3D molecular cartography visualization."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://www.nature.com/articles/nprot.2017.122"
+    },
+    "scope": {
+      "designed_for": [
+        "Mapping extractable small molecules over complex surfaces at scales larger than pixel-based MSI.",
+        "Environmental, ecological, built-environment and organism-surface chemistry."
+      ],
+      "requirements": [
+        "A reproducible coordinate system connecting each extraction to the mapped object.",
+        "Sufficient sampling density for the spatial question."
+      ],
+      "considerations": [
+        "Spatial resolution is determined by sampling geometry and is much coarser than many MSI methods.",
+        "Observed distributions integrate extraction, LC-MS detectability and sampling effects."
+      ]
+    },
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included because spatial coordinates and physical-model reconstruction add a transferable experimental layer to LC-MS metabolomics. Navigator review checked publication identity and methodological scope; linked software was not independently benchmarked."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-08",
+      "updated_at": "2026-09-11",
+      "last_verified": "2026-09-09",
+      "last_editorial_review": "2026-09-09"
+    },
+    "sample_types": [],
+    "biological_contexts": [
+      "environmental",
+      "plant",
+      "human",
+      "broadly_applicable"
+    ],
+    "organisms": []
+  }
+]
