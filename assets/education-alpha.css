@@ -26,3 +26,10 @@
 .education-resource,.education-resource-head > div { min-width:0; }
 .education-resource h2 { overflow-wrap:anywhere; }
 @media(max-width:480px){ .education-resource-head { flex-direction:column; gap:.5rem; } }
+
+.education-date,.education-tools-label { font-size:.85rem; color:var(--muted); margin:.5rem 0; }
+.education-date a { color:inherit; text-underline-offset:3px; }
+.education-tools-label { font-weight:600; margin-bottom:0; }
+.education-tools { margin-top:.4rem; }
+.education-sort { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; }
+.education-sort select { padding:.5rem; border:1px solid #9bada4; background:#fff; color:var(--ink); }
