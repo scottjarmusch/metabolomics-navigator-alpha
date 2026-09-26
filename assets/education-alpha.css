@@ -1,0 +1,28 @@
+/* Education alpha: lightweight directory of external learning resources. */
+.education-directory { padding-top:2.2rem; padding-bottom:4rem; }
+.education-alpha-note { margin-bottom:1.5rem; padding:1rem 1.2rem; border-left:3px solid var(--gold); background:#f6f1e6; max-width:78ch; }
+.education-controls { display:grid; grid-template-columns:minmax(0,2fr) minmax(220px,1fr); gap:1rem; margin:1.5rem 0 .8rem; }
+.education-controls label { display:grid; gap:.4rem; font-weight:600; }
+.education-controls input,.education-controls select { width:100%; box-sizing:border-box; padding:.75rem .85rem; border:1px solid #9bada4; border-radius:3px; background:#fff; color:var(--ink); }
+.education-count { color:var(--muted); font-size:.9rem; border-bottom:1px solid var(--line); padding-bottom:.8rem; }
+.education-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 2.4rem; }
+.education-resource { padding:1.5rem 0; border-bottom:1px solid var(--line); }
+.education-resource[hidden] { display:none; }
+.education-resource-head { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; }
+.education-resource h2 { margin:.2rem 0 .4rem; font-size:1.35rem; line-height:1.25; }
+.education-provider { color:var(--muted); font-size:.9rem; margin:.25rem 0 .7rem; }
+.education-tools { display:flex; flex-wrap:wrap; gap:.4rem; margin:.9rem 0; }
+.education-tools a { padding:.25rem .5rem; border:1px solid var(--line); border-radius:999px; font-size:.78rem; text-decoration:none; background:#fff; }
+.education-note { color:#675a3c; font-size:.88rem; }
+.education-status { flex:0 0 auto; padding:.2rem .45rem; border:1px solid #c9b88f; color:#80632d; font-size:.68rem; letter-spacing:.04em; text-transform:uppercase; }
+.education-status.validated { border-color:#9eb8ae; color:var(--teal); }
+.education-empty { padding:2rem 0; color:var(--muted); }
+.tool-education-links { display:grid; gap:.75rem; }
+.tool-education-links a { display:block; padding:.8rem 0; border-bottom:1px solid var(--line); text-decoration:none; }
+.tool-education-links a strong,.tool-education-links a span { display:block; }
+.tool-education-links a span { color:var(--muted); font-size:.86rem; margin-top:.2rem; }
+@media(max-width:760px){ .education-controls,.education-list { grid-template-columns:1fr; } }
+
+.education-resource,.education-resource-head > div { min-width:0; }
+.education-resource h2 { overflow-wrap:anywhere; }
+@media(max-width:480px){ .education-resource-head { flex-direction:column; gap:.5rem; } }
