@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Find published metabolomics Strategies, inspect their evidence and explore tools and learning resources.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=67f4e9823474">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=67f4e9823474">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=44ebbba25ad5">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=44ebbba25ad5">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -93,6 +93,16 @@
       <select id="ask-aim"><option value="">Choose an aim</option><option value="families">Find related molecules in my spectra</option><option value="pathways">Explore pathways behind group differences</option><option value="qc">Check changes caused by instrument drift</option><option value="flux">Estimate flux from isotope tracing</option><option value="unsure">I need help defining my question</option></select></p>
     <button id="ask-guide-button" class="button secondary" type="button">Find my next step</button>
     <p id="ask-guide-message" role="status"></p>
+    <nav id="ask-next-actions" aria-label="Suggested next steps" hidden>
+      <p><strong>Explore your next step</strong></p>
+      <ul>
+        <li data-guide-action="learn" hidden><a href="/metabolomics-navigator-alpha/education/">Find tutorials and video workshops</a></li>
+        <li data-guide-action="prepare" hidden><a href="/metabolomics-navigator-alpha/guide/data-processing/">Understand data processing</a> · <a href="/metabolomics-navigator-alpha/tools/?function=preprocessing">Browse preprocessing tools</a></li>
+        <li data-guide-action="qc" hidden><a href="/metabolomics-navigator-alpha/tools/?function=quality_control">Explore quality-control tools</a></li>
+        <li data-guide-action="statistics" hidden><a href="/metabolomics-navigator-alpha/tools/?function=statistics">Explore statistical analysis tools, including local software</a></li>
+      </ul>
+    </nav>
+
     <button id="ask-start-over" class="text-link" type="button">Start over</button>
     <p><a href="/metabolomics-navigator-alpha/">Read the MS metabolomics guide</a> · <a href="/metabolomics-navigator-alpha/tools/">Explore tools by task</a> · <a href="/metabolomics-navigator-alpha/education/">Tutorials and video workshops</a></p>
   </details>
@@ -1907,6 +1917,6 @@
     </div>
     <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 27 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=67f4e9823474" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=67f4e9823474" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=44ebbba25ad5" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=44ebbba25ad5" defer></script>
 </body>
 </html>

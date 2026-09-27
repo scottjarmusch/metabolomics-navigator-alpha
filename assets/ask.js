@@ -34,7 +34,15 @@
     return tokens.reduce((score,token)=>score + (data.words.has(token) ? weight(token)*(1 + (data.name.has(token)?1:0) + (data.keywords.has(token)?1:0)) : 0),0);
   }
 
+  const nextActions = document.querySelector('#ask-next-actions');
+  const actionLinks = [...document.querySelectorAll('[data-guide-action]')];
+  function showActions(names=[]) {
+    actionLinks.forEach(link => { link.hidden = !names.includes(link.dataset.guideAction); });
+    if (nextActions) nextActions.hidden = !names.length;
+  }
+
   function runSearch(value) {
+    showActions();
     const tokens = tokenize(value);
     let eligible=cards;
     const nmrOnly=/\bnmr\b/i.test(value) && !/\b(?:ms|lc-ms|mass spectrometry)\b/i.test(value);
@@ -51,6 +59,7 @@
     intentButtons.forEach(button => { button.hidden = !requestedIntents.some(intent => intent.id === button.dataset.askIntent); });
     if (mixedPanel) mixedPanel.hidden = !mixed;
     if (mixed || novice || constrained || generalStatistics) eligible=[];
+    if (generalStatistics) { showActions(['statistics','learn']); if(guidance) guidance.open=true; }
     if ((novice || constrained) && !nmrOnly && guidance) guidance.open=true;
     if(flux) eligible=eligible.filter(card=>(card.dataset.objectives || '').split(' ').includes('flux_analysis'));
     const scored = eligible.map(card => ({card, score: scoreCard(card,tokens)}))
@@ -91,17 +100,22 @@
     if (!stage || !data || !aim) {
       message.textContent = 'Choose a study stage, measurement type and aim. It is fine to select that you are not sure.';
     } else if (stage === 'planning') {
+      showActions(['learn']);
       message.textContent = 'Start with the guide and your MS facility: define the comparison, sample handling, controls and suitable measurements before choosing an analysis workflow.';
     } else if (data === 'unknown' || data === 'other' || aim === 'unsure') {
+      showActions(['learn']);
       message.textContent = 'Use the guide to clarify your measurement type and scientific aim. Your MS facility can help identify the files and measurements you have.';
     } else if (stage === 'raw') {
+      showActions(['prepare','qc','learn']);
       message.textContent = 'First prepare and quality-check your raw files. Explore data-processing tools in the catalogue and check instrument and file-format compatibility before selecting a downstream Strategy.';
     } else if (aim === 'families' && data !== 'msms') {
+      showActions(['learn']);
       message.textContent = 'Spectral molecular families need fragmentation spectra linked to precursors. A feature table alone does not provide that evidence; check whether MS/MS was acquired.';
     } else {
       const queries = {families:'feature based molecular networking', pathways:'pathway enrichment unidentified features', qc:'pooled QC LOESS signal drift', flux:'isotope labeling time course flux'};
       input.value = queries[aim];
       runSearch(input.value);
+      showActions(aim === 'qc' ? ['qc','learn'] : aim === 'pathways' ? ['statistics','learn'] : ['learn']);
       message.textContent = aim === 'flux' ? 'These flux methods require a suitable tracer experiment, time courses and model assumptions; ordinary group-comparison data are insufficient.' : aim === 'qc' ? 'QC drift correction requires repeated representative QC injections and recorded injection order. Check these requirements before using the published method.' : 'These are published precedents for your next analytical step. Review their requirements; they are not a complete study plan.';
     }
   });
