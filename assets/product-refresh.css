@@ -325,3 +325,8 @@ body { background:var(--paper); color:var(--ink); }
 #ask-guidance summary:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
 #ask-mixed .button { margin:.3rem .3rem .3rem 0; white-space:normal; }
 .ask-evidence > * { min-width:0; }
+
+.ask-starters { margin-bottom:1.5rem; padding:1rem; border:1px solid var(--line); background:#f0f4f1; }
+.ask-starters h2 { margin-top:0; }
+.ask-starters button[aria-pressed="true"] { background:var(--teal); color:#fff; }
+#ask-start-over { background:none; border:0; cursor:pointer; padding:.6rem 0; }

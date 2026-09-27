@@ -106,6 +106,35 @@
     }
   });
 
+  // Study contexts open clarification; they never assume acquired data or select a method.
+  const studyContexts = {
+    cohort: 'Comparing groups of people? Start with the comparison you want to make, your sample types and whether measurements already exist. Group differences alone do not establish a cause.',
+    comparative: 'Comparing conditions, treatments or time points? Define the comparison and your study stage before choosing processing, statistics or interpretation.',
+    natural: 'Exploring natural products or drug discovery? Clarify whether you want to find known compounds, investigate unknown structures or connect measured activity to chemical features.',
+    exposomics: 'Studying chemical exposures? Clarify whether you have a list of candidate chemicals or want to explore unknown signals, and what measurements are available.',
+    lipids: 'Studying lipids? Clarify whether you need abundance comparisons, lipid-class annotation or structural detail such as double-bond position; these are different analytical questions.',
+    spatial: 'Studying chemistry across a tissue or cells? Clarify whether you have mass-spectrometry images and any matching microscopy. The current guided data choices are limited; choose Another MS measurement type when appropriate.'
+  };
+  const clearStudy = () => {
+    input.value = '';
+    runSearch('');
+    ['#ask-stage','#ask-data','#ask-aim'].forEach(id => { const field=document.querySelector(id); if(field) field.value=''; });
+    const message=document.querySelector('#ask-guide-message'); if(message) message.textContent='';
+    const context=document.querySelector('#ask-study-context'); if(context) context.textContent='';
+    document.querySelectorAll('[data-study-start]').forEach(button=>button.setAttribute('aria-pressed','false'));
+  };
+  document.querySelectorAll('[data-study-start]').forEach(button => {
+    button.setAttribute('aria-pressed','false');
+    button.addEventListener('click',()=>{
+      clearStudy();
+      button.setAttribute('aria-pressed','true');
+      document.querySelector('#ask-study-context').textContent=studyContexts[button.dataset.studyStart] || '';
+      if(guidance) guidance.open=true;
+      document.querySelector('#ask-stage')?.focus();
+    });
+  });
+  document.querySelector('#ask-start-over')?.addEventListener('click',()=>{clearStudy();document.querySelector('#ask-stage')?.focus();});
+
   searchButton?.addEventListener('click', () => runSearch(input.value));
   input.addEventListener('keydown', event => {
     if (event.key === 'Enter') { event.preventDefault(); runSearch(input.value); }

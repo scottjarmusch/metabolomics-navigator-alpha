@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Find published metabolomics Strategies, inspect their evidence and explore tools and learning resources.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=67f4e9823474">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=67f4e9823474">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -68,6 +68,20 @@
 <section class="ask-decision" aria-labelledby="ask-title">
   <p class="preview-note"><strong>Evidence-backed alpha.</strong> Matching is currently deterministic and catalogue-grounded: it searches curated Strategy metadata and published implementations. Matches reflect shared terms, not a suitability assessment. Weak matches are filtered when stronger matches exist. It does not generate undocumented tool recommendations.</p>
 
+  <section class="ask-starters" aria-labelledby="ask-starters-title">
+    <h2 id="ask-starters-title">Start with your experiment</h2>
+    <p>Choose a starting point. We will help you define the next question; your study type alone does not determine a workflow.</p>
+    <div class="ask-examples">
+      <button type="button" data-study-start="cohort">Cohort comparison</button>
+      <button type="button" data-study-start="comparative">Comparative metabolomics</button>
+      <button type="button" data-study-start="natural">Natural products &amp; drug discovery</button>
+      <button type="button" data-study-start="exposomics">Exposomics</button>
+      <button type="button" data-study-start="lipids">Lipidomics</button>
+      <button type="button" data-study-start="spatial">Spatial metabolomics</button>
+    </div>
+    <p id="ask-study-context" role="status"></p>
+  </section>
+
   <details id="ask-guidance" class="ask-question">
     <summary><strong>New to metabolomics? Start with your study</strong></summary>
     <p>You do not need to know a software name. Start with what you have and what you want to learn.</p>
@@ -79,6 +93,7 @@
       <select id="ask-aim"><option value="">Choose an aim</option><option value="families">Find related molecules in my spectra</option><option value="pathways">Explore pathways behind group differences</option><option value="qc">Check changes caused by instrument drift</option><option value="flux">Estimate flux from isotope tracing</option><option value="unsure">I need help defining my question</option></select></p>
     <button id="ask-guide-button" class="button secondary" type="button">Find my next step</button>
     <p id="ask-guide-message" role="status"></p>
+    <button id="ask-start-over" class="text-link" type="button">Start over</button>
     <p><a href="/metabolomics-navigator-alpha/">Read the MS metabolomics guide</a> · <a href="/metabolomics-navigator-alpha/tools/">Explore tools by task</a> · <a href="/metabolomics-navigator-alpha/education/">Tutorials and video workshops</a></p>
   </details>
 
@@ -1890,8 +1905,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 27 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=cf9b592b00f0" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=67f4e9823474" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=67f4e9823474" defer></script>
 </body>
 </html>
