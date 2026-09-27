@@ -1,0 +1,1520 @@
+[
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "1st-gnps-user-meeting",
+    "title": "1st GNPS User Meeting",
+    "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=4HMjK4Js8xI",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "May be broad/community rather than tutorial; assess utility.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=4HMjK4Js8xI",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "bioconductor-untargeted-lc-ms-preprocessing-with-xcms",
+    "title": "Bioconductor untargeted LC-MS preprocessing with XCMS",
+    "summary": "Detailed hands-on preprocessing workshop; older but technically useful.",
+    "url": "https://www.bioconductor.org/help/course-materials/2019/CSAMA/materials/labs/lab-05-metabolomics/preprocessing-untargeted-metabolomics.html",
+    "resource_type": "tutorial",
+    "tool_slugs": [
+      "xcms"
+    ],
+    "provider": "Training resource",
+    "experience_level": "mixed",
+    "language": "en",
+    "note": "Alpha resource; manual content/currentness validation pending.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    }
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "cmfi-mass-spec-seminar-10-metabolomics-data-analysis-with-pyopenms",
+    "title": "CMFI Mass Spec Seminar #10 - Metabolomics Data Analysis with pyOpenMS",
+    "summary": "External workshop recording related to openms collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=XWDFZXYp1qM",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "openms"
+    ],
+    "provider": "Functional Metabolomics Lab",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Hands-on pyOpenMS with Binder.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2022,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=XWDFZXYp1qM",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "cmfi-molecular-networking-seminar",
+    "title": "CMFI Molecular Networking seminar",
+    "summary": "External workshop recording related to gnps, gnps-classical-molecular-networking collected for the Navigator Education alpha.",
+    "url": "https://youtu.be/s5y1XNKENbk",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps",
+      "gnps-classical-molecular-networking"
+    ],
+    "provider": "Functional Metabolomics Lab / GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Molecular networking seminar by Dorrestein/Petras.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2022,
+    "year_kind": "published",
+    "date_source": "https://youtu.be/s5y1XNKENbk",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gc-ms-deconvolution-library-search-and-molecular-networking",
+    "title": "GC-MS deconvolution, library search and molecular networking",
+    "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=CXDlwC7evnk",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "GC-MS workflow training.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=CXDlwC7evnk",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-classical-molecular-networking-in-portuguese",
+    "title": "GNPS Classical Molecular Networking in Portuguese",
+    "summary": "External workshop recording related to gnps-classical-molecular-networking collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=Lba9e45ZAE0",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps-classical-molecular-networking"
+    ],
+    "provider": "GNPS community / official listing",
+    "experience_level": "unspecified",
+    "language": "pt",
+    "note": "Portuguese-language tutorial.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=Lba9e45ZAE0",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-classical-molecular-networking-in-spanish",
+    "title": "GNPS Classical Molecular Networking in Spanish",
+    "summary": "External workshop recording related to gnps-classical-molecular-networking collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=hTZzZI3PtR0",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps-classical-molecular-networking"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "es",
+    "note": "Spanish-language tutorial.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=hTZzZI3PtR0",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-classical-molecular-networking",
+    "title": "GNPS Classical Molecular Networking",
+    "summary": "External workshop recording related to gnps-classical-molecular-networking, gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=PqTuex0nsGk",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps-classical-molecular-networking",
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Strong foundational workshop.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=PqTuex0nsGk",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-dashboard-overview",
+    "title": "GNPS Dashboard - Overview",
+    "summary": "External workshop recording related to gnps-dashboard, gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=S3aAkGTMC-g",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps-dashboard",
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Official dashboard overview.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2021,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=S3aAkGTMC-g",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-dashboard-teaching-tutorial-use-case",
+    "title": "GNPS Dashboard teaching/tutorial use case",
+    "summary": "External training video related to gnps-dashboard collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=tT5b1IIJCE8",
+    "resource_type": "video",
+    "tool_slugs": [
+      "gnps-dashboard"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Direct tutorial video linked in Dashboard teaching docs.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2021,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=tT5b1IIJCE8",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-fbmn-american-gut-mzmine2-tutorial",
+    "title": "GNPS FBMN - American Gut / MZmine2 tutorial",
+    "summary": "External training video related to gnps-feature-based-molecular-networking, mzmine collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=5jjMllbwD-U",
+    "resource_type": "video",
+    "tool_slugs": [
+      "gnps-feature-based-molecular-networking",
+      "mzmine"
+    ],
+    "provider": "Dorrestein Lab / GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Legacy MZmine2 interface.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2018,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=5jjMllbwD-U",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-fbmn-in-spanish-part-1",
+    "title": "GNPS FBMN in Spanish Part 1",
+    "summary": "External workshop recording related to gnps-feature-based-molecular-networking collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=0xWMAwM8x3U",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps-feature-based-molecular-networking"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "es",
+    "note": "Spanish-language FBMN.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=0xWMAwM8x3U",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-fbmn-in-spanish-part-2",
+    "title": "GNPS FBMN in Spanish Part 2",
+    "summary": "External workshop recording related to gnps-feature-based-molecular-networking collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=l90j5T8EQbw",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps-feature-based-molecular-networking"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "es",
+    "note": "Spanish-language FBMN.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=l90j5T8EQbw",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-feature-based-molecular-networking-mzmine2",
+    "title": "GNPS Feature Based Molecular Networking (MZmine2)",
+    "summary": "External workshop recording related to gnps-feature-based-molecular-networking, mzmine collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=MwdJ6mVkdJY",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps-feature-based-molecular-networking",
+      "mzmine"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Legacy MZmine2 interface; concepts still useful.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=MwdJ6mVkdJY",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-gc-part-2",
+    "title": "GNPS GC - Part 2",
+    "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=EJipzmkK7oA",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "GC-MS focused; assess relation to current GNPS tools.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=EJipzmkK7oA",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-ion-identity-networking-native-metabolomics",
+    "title": "GNPS Ion-Identity Networking, Native Metabolomics",
+    "summary": "External workshop recording related to gnps-feature-based-molecular-networking, mzmine collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=tb7LxaeNvcw",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps-feature-based-molecular-networking",
+      "mzmine"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Strong but may need explicit IIN mapping/note.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=tb7LxaeNvcw",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-library-workshop-hackathon",
+    "title": "GNPS Library Workshop/Hackathon",
+    "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=IbXBpud57Z8",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Assess if too broad/old for Education.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=IbXBpud57Z8",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-masst",
+    "title": "GNPS MASST",
+    "summary": "External workshop recording related to masst, gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=14hGi6FtZIM",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "masst",
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Strong repository-scale search resource.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=14hGi6FtZIM",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-merge-polarity-networks",
+    "title": "GNPS Merge Polarity Networks",
+    "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=wHdr9coLmoQ",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Check whether a dedicated Navigator entry exists/needed.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=wHdr9coLmoQ",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-metabolomics-principles-tools-portuguese-part-1",
+    "title": "GNPS metabolomics principles + tools Portuguese Part 1",
+    "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=QVw1K1dkpIc",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps"
+    ],
+    "provider": "GNPS community / official listing",
+    "experience_level": "unspecified",
+    "language": "pt",
+    "note": "Portuguese-language tutorial.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2021,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=QVw1K1dkpIc",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-metabolomics-principles-tools-portuguese-part-2",
+    "title": "GNPS metabolomics principles + tools Portuguese Part 2",
+    "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=OLRazw7Q-2M",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps"
+    ],
+    "provider": "GNPS community / official listing",
+    "experience_level": "unspecified",
+    "language": "pt",
+    "note": "Portuguese-language tutorial.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2021,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=OLRazw7Q-2M",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-molnetenhancer",
+    "title": "GNPS MolNetEnhancer",
+    "summary": "External workshop recording related to molnetenhancer, gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=-4DE_ZfF2vc",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "molnetenhancer",
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Strong tool-specific candidate.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=-4DE_ZfF2vc",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-ms2lda",
+    "title": "GNPS - MS2LDA",
+    "summary": "External workshop recording related to ms2lda, gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=0wKUmjPy40s",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "ms2lda",
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Official GNPS workshop.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=0wKUmjPy40s",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-nature-microbiome-2021-workshop",
+    "title": "GNPS Nature Microbiome 2021 Workshop",
+    "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=V3X7AMugMMc",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Food, diet, microbiome workshop.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2021,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=V3X7AMugMMc",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-redu",
+    "title": "GNPS ReDU",
+    "summary": "External workshop recording related to redu, gnps collected for the Navigator Education alpha.",
+    "url": "https://youtu.be/I-CdsHESLJ8",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "redu",
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Official ReDU workshop.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://youtu.be/I-CdsHESLJ8",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "gnps-workshops-training",
+    "title": "GNPS Workshops/Training",
+    "summary": "Official hub for GNPS modules and recorded workshops covering networking, MASST, ReDU, MS2LDA, dashboard, libraries and more.",
+    "url": "https://ccms-ucsd.github.io/GNPSDocumentation/workshops/",
+    "resource_type": "training_hub",
+    "tool_slugs": [
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "mixed",
+    "language": "en",
+    "note": "Alpha resource; manual content/currentness validation pending.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    }
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "lc-ms-data-analysis-with-xcms-and-metfrag-on-phenomenal",
+    "title": "LC/MS data analysis with XCMS and MetFrag on PhenoMeNal",
+    "summary": "External training video related to xcms, metfrag collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=vzcD0WnAuAQ",
+    "resource_type": "video",
+    "tool_slugs": [
+      "xcms",
+      "metfrag"
+    ],
+    "provider": "EMBL-EBI",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Older Galaxy/PhenoMeNal environment; concepts useful.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2017,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=vzcD0WnAuAQ",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "mana-2021-gnps-workshop-networking-dashboard-masst",
+    "title": "MANA 2021 GNPS Workshop - Networking, Dashboard, MASST",
+    "summary": "External workshop recording related to gnps, masst, gnps-dashboard collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=-XoVrHQxW9U",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps",
+      "masst",
+      "gnps-dashboard"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Broad GNPS workshop.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2021,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=-XoVrHQxW9U",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "massql-in-ms-dial-5",
+    "title": "MassQL in MS-DIAL 5",
+    "summary": "External training video related to ms-dial, massql collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=otCq9s1PjAs",
+    "resource_type": "video",
+    "tool_slugs": [
+      "ms-dial",
+      "massql"
+    ],
+    "provider": "MS-DIAL project",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Strong integration-focused candidate.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2022,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=otCq9s1PjAs",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "metaboanalyst-5-0-lc-ms-and-tandem-ms-workshop-part-1",
+    "title": "MetaboAnalyst 5.0 LC-MS and tandem-MS workshop Part 1",
+    "summary": "External workshop recording related to metaboanalyst collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=FHvsbf4vNt8",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "metaboanalyst"
+    ],
+    "provider": "Metabolomics Society",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Verify exact workshop year/title and relevance.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2026,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=FHvsbf4vNt8",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "metaboanalyst-tutorials",
+    "title": "MetaboAnalyst tutorials",
+    "summary": "Current official tutorial index; useful companion to workshop videos.",
+    "url": "https://www.metaboanalyst.ca/docs/Tutorials.xhtml",
+    "resource_type": "training_hub",
+    "tool_slugs": [
+      "metaboanalyst"
+    ],
+    "provider": "MetaboAnalyst",
+    "experience_level": "mixed",
+    "language": "en",
+    "note": "Alpha resource; manual content/currentness validation pending.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    }
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "metabolomic-data-analysis-using-metaboanalyst",
+    "title": "Metabolomic Data Analysis Using MetaboAnalyst",
+    "summary": "External workshop recording related to metaboanalyst collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=4CVC98KnlMA",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "metaboanalyst"
+    ],
+    "provider": "Canadian Bioinformatics Workshops",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Old MetaboAnalyst version; likely legacy-only.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2016,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=4CVC98KnlMA",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "metabolomics-spectrum-resolver-workshop",
+    "title": "Metabolomics Spectrum Resolver workshop",
+    "summary": "External workshop recording related to gnps-spectrum-summary collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=JMJO8CAfCNI",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps-spectrum-summary"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Check exact Navigator mapping; likely spectrum resolver/summary.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=JMJO8CAfCNI",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "metfrag-hands-on",
+    "title": "MetFrag Hands-on",
+    "summary": "Hands-on compound identification tutorial with MS/MS and metadata.",
+    "url": "https://ipb-halle.github.io/MetFragTraining/",
+    "resource_type": "tutorial",
+    "tool_slugs": [
+      "metfrag"
+    ],
+    "provider": "Training resource",
+    "experience_level": "mixed",
+    "language": "en",
+    "note": "Alpha resource; manual content/currentness validation pending.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    }
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "ms-dial-5-lc-ms-ms-dda-tutorial",
+    "title": "MS-DIAL 5 LC-MS/MS DDA tutorial",
+    "summary": "External training video related to ms-dial collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=cZY7wqF5Wdo",
+    "resource_type": "video",
+    "tool_slugs": [
+      "ms-dial"
+    ],
+    "provider": "MS-DIAL project",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Metabolomics DDA walkthrough; verify current version context.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2024,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=cZY7wqF5Wdo",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "ms-dial-5-official-tutorial",
+    "title": "MS-DIAL 5 official tutorial",
+    "summary": "Current official tutorial with embedded videos across LC-MS, GC-MS, CE-MS, lipidomics and utilities.",
+    "url": "https://systemsomicslab.github.io/msdial5tutorial/",
+    "resource_type": "training_hub",
+    "tool_slugs": [
+      "ms-dial"
+    ],
+    "provider": "MS-DIAL project",
+    "experience_level": "mixed",
+    "language": "en",
+    "note": "Alpha resource; manual content/currentness validation pending.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    }
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "ms-dial-5-raw-data-viewer-tutorial",
+    "title": "MS-DIAL 5 raw data viewer tutorial",
+    "summary": "External training video related to ms-dial collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=aApHc8Op4VY",
+    "resource_type": "video",
+    "tool_slugs": [
+      "ms-dial"
+    ],
+    "provider": "MS-DIAL project",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Embedded in current MS-DIAL 5 tutorial.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2022,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=aApHc8Op4VY",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "ms-dial-5-to-ms-finder-for-unknown-annotation",
+    "title": "MS-DIAL 5 to MS-FINDER for unknown annotation",
+    "summary": "External training video related to ms-dial, ms-finder collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=moHIiTTVfGQ",
+    "resource_type": "video",
+    "tool_slugs": [
+      "ms-dial",
+      "ms-finder"
+    ],
+    "provider": "MS-DIAL project",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Strong tool-boundary candidate.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2022,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=moHIiTTVfGQ",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "ms-dial-and-gnps-in-portuguese",
+    "title": "MS-DIAL and GNPS in Portuguese",
+    "summary": "External training video related to ms-dial, gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=IZoS3Lvto1M",
+    "resource_type": "video",
+    "tool_slugs": [
+      "ms-dial",
+      "gnps"
+    ],
+    "provider": "GNPS community",
+    "experience_level": "unspecified",
+    "language": "pt",
+    "note": "Community tutorial; manual quality check needed.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=IZoS3Lvto1M",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "ms-finder-tutorial",
+    "title": "MS-FINDER tutorial",
+    "summary": "Official detailed MS-FINDER tutorial; older page but comprehensive.",
+    "url": "https://systemsomicslab.github.io/mtbinfo.github.io/MS-FINDER/tutorial",
+    "resource_type": "tutorial",
+    "tool_slugs": [
+      "ms-finder"
+    ],
+    "provider": "Training resource",
+    "experience_level": "mixed",
+    "language": "en",
+    "note": "Alpha resource; manual content/currentness validation pending.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    }
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "multivariate-analysis-in-ms-dial-5",
+    "title": "Multivariate analysis in MS-DIAL 5",
+    "summary": "External training video related to ms-dial collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=wtOS7F1RgZs",
+    "resource_type": "video",
+    "tool_slugs": [
+      "ms-dial"
+    ],
+    "provider": "MS-DIAL project",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Statistics within MS-DIAL.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2022,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=wtOS7F1RgZs",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "mzmine-introduction-to-lc-ms",
+    "title": "MZmine introduction to LC-MS",
+    "summary": "External training video related to mzmine collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=UnqVtZngzl0",
+    "resource_type": "video",
+    "tool_slugs": [
+      "mzmine"
+    ],
+    "provider": "MZmine / EMBL-EBI training",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Current MZmine training set; validate title/version/interface.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2024,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=UnqVtZngzl0",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "mzmine-ion-mobility-ms-data-processing",
+    "title": "MZmine ion-mobility MS data processing",
+    "summary": "External training video related to mzmine collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=Xp-G1HSozgM",
+    "resource_type": "video",
+    "tool_slugs": [
+      "mzmine"
+    ],
+    "provider": "MZmine / EMBL-EBI training",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "MZmine 4.x-era webinar; strong candidate.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2024,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=Xp-G1HSozgM",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "mzmine-learners-corner",
+    "title": "MZmine Learners corner",
+    "summary": "Curated official page pointing to current MZmine videos, workshops, Functional Metabolomics Lab, and related channels.",
+    "url": "https://mzmine.github.io/mzmine_documentation/latest/learners_corner.html",
+    "resource_type": "training_hub",
+    "tool_slugs": [
+      "mzmine"
+    ],
+    "provider": "MZmine project",
+    "experience_level": "mixed",
+    "language": "en",
+    "note": "Alpha resource; manual content/currentness validation pending.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    }
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "mzmine-ms-library-generation",
+    "title": "MZmine MS-library generation",
+    "summary": "External training video related to mzmine collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=SmEpFYV4_bY",
+    "resource_type": "video",
+    "tool_slugs": [
+      "mzmine"
+    ],
+    "provider": "MZmine / EMBL-EBI training",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Strong workflow-specific candidate.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2024,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=SmEpFYV4_bY",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "mzmine-multimodal-data-processing-gc-ms-maldi-ms-lipids",
+    "title": "MZmine multimodal data processing (GC-MS, MALDI-MS, lipids)",
+    "summary": "External training video related to mzmine collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=cGA5WIKcMpM",
+    "resource_type": "video",
+    "tool_slugs": [
+      "mzmine"
+    ],
+    "provider": "MZmine / EMBL-EBI training",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Validate current scope/version.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2024,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=cGA5WIKcMpM",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "mzmine-workshops",
+    "title": "MZmine workshops",
+    "summary": "Official workshop archive including recent VMOL webinars and non-target metabolomics summer schools.",
+    "url": "https://mzmine.github.io/mzmine_documentation/latest/workshops.html",
+    "resource_type": "training_hub",
+    "tool_slugs": [
+      "mzmine"
+    ],
+    "provider": "MZmine project",
+    "experience_level": "mixed",
+    "language": "en",
+    "note": "Alpha resource; manual content/currentness validation pending.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    }
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "ntmss2022-day3-s3-ms2lda-and-molnetenhancer",
+    "title": "NTMSS2022 Day3 S3 - MS2LDA and MolNetEnhancer",
+    "summary": "External workshop recording related to ms2lda, molnetenhancer collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=Eg4cH93yViA",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "ms2lda",
+      "molnetenhancer"
+    ],
+    "provider": "Functional Metabolomics Lab",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Multi-tool resource.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2022,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=Eg4cH93yViA",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "ntmss2023-day2-bonus-mzmine-3-new-features",
+    "title": "NTMSS2023 Day2 BONUS - MZmine 3 New Features",
+    "summary": "External workshop recording related to mzmine collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=MdpUNf-xTmQ",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "mzmine"
+    ],
+    "provider": "Functional Metabolomics Lab",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Good supplementary resource.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2023,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=MdpUNf-xTmQ",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "ntmss2023-day2-s2-data-preprocessing-in-mzmine-3-i",
+    "title": "NTMSS2023 Day2 S2 - Data preprocessing in MZmine 3 I",
+    "summary": "External workshop recording related to mzmine collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=MmUY5qCz8eo",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "mzmine"
+    ],
+    "provider": "Functional Metabolomics Lab",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Summer-school session; check interface currency.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2023,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=MmUY5qCz8eo",
+    "date_verified_at": "2026-09-26",
+    "tool_versions": {
+      "mzmine": "3"
+    }
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "ntmss2023-day3-s4-sirius-csi-fingerid-i",
+    "title": "NTMSS2023 Day3 S4 - Sirius+CSI:FingerID I",
+    "summary": "External workshop recording related to sirius, csi-fingerid collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=Gj_h7fvzL_g",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "sirius",
+      "csi-fingerid"
+    ],
+    "provider": "Functional Metabolomics Lab",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Strong annotation resource.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2023,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=Gj_h7fvzL_g",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "ntmss2023-day4-s5-ms2lda",
+    "title": "NTMSS2023 Day4 S5 - MS2LDA",
+    "summary": "External workshop recording related to ms2lda collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=M6UlZA9JaY8",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "ms2lda"
+    ],
+    "provider": "Functional Metabolomics Lab",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Strong substructure-learning resource.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2023,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=M6UlZA9JaY8",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "patroon-tutorial",
+    "title": "patRoon tutorial",
+    "summary": "Current 2026 tutorial for a complete non-target analysis workflow.",
+    "url": "https://rickhelmus.github.io/patRoon/articles/tutorial.html",
+    "resource_type": "tutorial",
+    "tool_slugs": [
+      "patroon"
+    ],
+    "provider": "Training resource",
+    "experience_level": "mixed",
+    "language": "en",
+    "note": "Alpha resource; manual content/currentness validation pending.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    }
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "sio262-molecular-networking-intro",
+    "title": "SIO262 Molecular Networking Intro",
+    "summary": "External workshop recording related to gnps-classical-molecular-networking, gnps collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=DIItacY4VaE",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps-classical-molecular-networking",
+      "gnps"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Short instructional session.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=DIItacY4VaE",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "utilizing-gnps-and-ms2lda-for-molecular-networking-discovery",
+    "title": "Utilizing GNPS and MS2LDA for molecular networking discovery",
+    "summary": "External workshop recording related to gnps, ms2lda collected for the Navigator Education alpha.",
+    "url": "https://www.youtube.com/watch?v=Cc6eKGZQ1Qw",
+    "resource_type": "workshop",
+    "tool_slugs": [
+      "gnps",
+      "ms2lda"
+    ],
+    "provider": "GNPS",
+    "experience_level": "unspecified",
+    "language": "en",
+    "note": "Cross-tool workflow candidate.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    },
+    "year": 2020,
+    "year_kind": "published",
+    "date_source": "https://www.youtube.com/watch?v=Cc6eKGZQ1Qw",
+    "date_verified_at": "2026-09-26"
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "workflow4metabolomics-how-to-and-training",
+    "title": "Workflow4Metabolomics HOW TO and training",
+    "summary": "Links Galaxy Training Network and Workflow4Experimenters materials.",
+    "url": "https://workflow4metabolomics.org/howto",
+    "resource_type": "training_hub",
+    "tool_slugs": [
+      "workflow4metabolomics"
+    ],
+    "provider": "Training resource",
+    "experience_level": "mixed",
+    "language": "en",
+    "note": "Alpha resource; manual content/currentness validation pending.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    }
+  },
+  {
+    "$schema": "../../schemas/education.schema.json",
+    "slug": "xcms-tutorials-and-workshops",
+    "title": "XCMS tutorials and workshops",
+    "summary": "Current tutorial/workshop repository for LC-MS(/MS) preprocessing with XCMS; strong candidate when Education expands beyond video.",
+    "url": "https://github.com/jorainer/xcmsTutorials",
+    "resource_type": "tutorial",
+    "tool_slugs": [
+      "xcms"
+    ],
+    "provider": "Training resource",
+    "experience_level": "mixed",
+    "language": "en",
+    "note": "Alpha resource; manual content/currentness validation pending.",
+    "validation_status": "unreviewed",
+    "provenance": {
+      "submitted_by": "curator",
+      "last_checked": "2026-09-26"
+    },
+    "status": {
+      "entry": "draft"
+    }
+  }
+]

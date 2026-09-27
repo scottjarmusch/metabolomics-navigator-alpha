@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="MS/MS analogue-search tool that combines learned spectral similarity and precursor-mass information to retrieve structurally related reference compounds.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -64,15 +64,17 @@
   <main id="main-content">
 <section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/tools/">Tools</a><span>›</span><span>MS2Query</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Spectral processing and comparison</p><h1>MS2Query</h1><p class="tool-summary">MS/MS analogue-search tool that combines learned spectral similarity and precursor-mass information to retrieve structurally related reference compounds.</p><div class="badge-row large"><span class="badge">LC-MS</span><span class="badge">Web application</span><span class="badge">Python package</span><span class="badge">Command line</span><span class="badge">Open source</span></div></div><div class="tool-actions"><a class="button primary" href="https://gnps2.org/workflowinput?workflowname=ms2query_nextflow_workflow">Access tool</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+MS2Query">Suggest an update</a></div></div></div></section>
 <div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>
-<div><dt>Primary use</dt><dd>Spectral processing and comparison</dd></div><div><dt>Platforms</dt><dd>LC-MS</dd></div><div><dt>Interface</dt><dd>Web application, Python package, Command line</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Actively maintained</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div></dl>
+<div><dt>Primary use</dt><dd>Spectral processing and comparison</dd></div><div><dt>Platforms</dt><dd>LC-MS</dd></div><div><dt>Interface</dt><dd>Web application, Python package, Command line</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Actively maintained</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl>
 <div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/tools/ms2query.yml">View YAML source</a></div></aside>
 <article class="tool-article">
-<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a></nav>
+<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a><a href="#history">Entry history</a></nav>
+
 <section id="overview"><h2>Overview</h2><p>MS2Query searches reference MS/MS spectra for both exact-match candidates and structurally related analogues. It combines Spec2Vec, MS2DeepScore and precursor information to rank library candidates, with a Python implementation and a hosted GNPS2 workflow.</p></section>
 <section id="capabilities" class="capability-section"><h2>What can this tool do?</h2><div class="capability-cloud"><span>Spectral-library matching</span></div><h3>Common uses</h3><ul><li>Find plausible structural relatives when an exact library match is unavailable.</li><li>Prioritize spectra for closer structural investigation.</li></ul></section>
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Spectral processing and comparison</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Mass spectra</p></div><div><h3>Outputs</h3><p>Compound list or annotations, Statistical results</p></div><div><h3>Input formats</h3><p>MGF, MSP, mzML, mzXML, JSON, Universal Spectrum Identifiers (USIs), where supported by the selected interface</p></div><div><h3>Output formats</h3><p>CSV or TSV</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Library searching of small-molecule MS/MS spectra, including analogue retrieval.</li></ul></div><div><h3>Not designed for</h3><ul><li>De novo structure generation or conclusive identification of an unknown molecule.</li><li>Chromatographic feature detection, alignment or quantification.</li></ul></div><div><h3>Important requirements</h3><ul><li>MS/MS spectra with precursor information and the correct ionization mode.</li><li>Compatible reference-library and model files; hosted jobs require uploaded spectra and a GNPS2 account.</li></ul></div><div><h3>Considerations</h3><ul><li>An analogue is a related reference molecule, not necessarily the measured compound.</li><li>Filter results by model score and inspect precursor differences; class labels describe the proposed library molecule.</li><li>Results depend on reference-library coverage and model compatibility. Record the library, model and software versions.</li></ul></div></div></section>
+
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://gnps2.org/workflowinput?workflowname=ms2query_nextflow_workflow"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/ms2query_doc/"><span>Documentation</span><span aria-hidden="true">↗</span></a><a href="https://github.com/iomega/ms2query"><span>Source repository</span><span aria-hidden="true">↗</span></a></div><p class="note">The Python software is distributed under Apache-2.0. For the hosted workflow: GNPS2 is openly available to the academic community. The current GNPS2 documentation asks industry users to contact the maintainers or UC Riverside Technology Transfer regarding organizational access. Workflow submission requires a GNPS2 account.</p><p><strong>License:</strong> Apache-2.0</p></section>
 
 <section id="evidence">
@@ -91,7 +93,15 @@
 </section>
 
 <section><h2>Related tools</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/tools/ms2deepscore/"><strong>MS2DeepScore</strong><span><b>Integrates with</b> · MS2DeepScore predictions contribute to candidate ranking.</span></a><a href="/metabolomics-navigator-alpha/tools/spec2vec/"><strong>Spec2Vec</strong><span><b>Integrates with</b> · Uses learned spectral similarity concepts from Spec2Vec.</span></a><a href="/metabolomics-navigator-alpha/tools/gnps/"><strong>GNPS</strong><span><b>Part of</b> · Available as a GNPS2 workflow.</span></a></div></section>
-</article></div>
+<section id="history"><h2>Entry history</h2>
+<p>Changes to this catalogue entry, not the tool's software release history. Acceptance and editorial review are separate.</p>
+
+<ol>
+<li><strong>2026-09-10 · First committed entry</strong><p>Add three GNPS2 Tools and expose complete related-tool lists</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/fa815325a0c523de3a3cf6d719dec4a5fd725490">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/fa815325a0c523de3a3cf6d719dec4a5fd725490/content/tools/ms2query.yml">Entry at this revision</a></li>
+</ol>
+
+<p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commits/main/content/tools/ms2query.yml">Full GitHub history</a></p>
+</section></article></div>
 </main>
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
@@ -103,7 +113,7 @@
         <h2>Explore</h2>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
       </div>
       <div>
@@ -120,8 +130,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
 </body>
 </html>

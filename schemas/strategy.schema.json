@@ -430,6 +430,140 @@
       },
       "default": [],
       "description": "Optional free-text organism names when scientifically useful."
+    },
+    "ask_keywords": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 120
+      },
+      "uniqueItems": true,
+      "default": [],
+      "description": "Plain-language concepts and phrases used to match user questions to this strategy in Ask Navigator."
+    },
+    "implementations": {
+      "type": "array",
+      "default": [],
+      "description": "Published applications or adaptations that implement this strategy in a concrete study.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "year"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "doi": {
+            "type": "string",
+            "pattern": "^10\\.\\d{4,9}/\\S+$"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "citation": {
+            "type": "string",
+            "maxLength": 1200
+          },
+          "journal": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "year": {
+            "type": "integer",
+            "minimum": 1900,
+            "maximum": 2200
+          },
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "application",
+              "adaptation",
+              "protocol",
+              "benchmark",
+              "extension"
+            ]
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 1200
+          },
+          "sample_types": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "$ref": "#/$defs/sample_type"
+            }
+          },
+          "biological_contexts": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "$ref": "#/$defs/biological_context"
+            }
+          },
+          "organisms": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 180
+            }
+          },
+          "tool_slugs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+            }
+          },
+          "external_tools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "name"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "maxLength": 150
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "doi"
+            ]
+          },
+          {
+            "required": [
+              "url"
+            ]
+          },
+          {
+            "required": [
+              "citation"
+            ]
+          }
+        ]
+      }
     }
   },
   "$defs": {
@@ -447,6 +581,7 @@
         "chemical_reactivity",
         "enzyme_activity",
         "biotransformation",
+        "analytical_quality_control",
         "phenotype_association",
         "disease_state_comparison",
         "biomarker_discovery",

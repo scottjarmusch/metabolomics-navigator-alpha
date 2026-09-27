@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Apply a predefined sequence of MassQL queries to GNPS2 networking spectra to investigate bile acids and their isomers.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -64,15 +64,17 @@
   <main id="main-content">
 <section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/tools/">Tools</a><span>›</span><span>Multi-step MassQL</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Spectral processing and comparison</p><h1>Multi-step MassQL</h1><p class="tool-summary">Apply a predefined sequence of MassQL queries to GNPS2 networking spectra to investigate bile acids and their isomers.</p><div class="badge-row large"><span class="badge">LC-MS</span><span class="badge">Web application</span><span class="badge">Free web service</span></div></div><div class="tool-actions"><a class="button primary" href="https://multistep-massql.gnps2.org/">Access tool</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+Multi-step+MassQL">Suggest an update</a></div></div></div></section>
 <div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>
-<div><dt>Primary use</dt><dd>Spectral processing and comparison</dd></div><div><dt>Platforms</dt><dd>LC-MS</dd></div><div><dt>Interface</dt><dd>Web application</dd></div><div><dt>Access</dt><dd>Free web service</dd></div><div><dt>Maintenance</dt><dd>Actively maintained</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div></dl>
+<div><dt>Primary use</dt><dd>Spectral processing and comparison</dd></div><div><dt>Platforms</dt><dd>LC-MS</dd></div><div><dt>Interface</dt><dd>Web application</dd></div><div><dt>Access</dt><dd>Free web service</dd></div><div><dt>Maintenance</dt><dd>Actively maintained</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl>
 <div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/tools/multistep-massql.yml">View YAML source</a></div></aside>
 <article class="tool-article">
-<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a></nav>
+<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a><a href="#history">Entry history</a></nav>
+
 <section id="overview"><h2>Overview</h2><p>Multi-step MassQL applies successive fragmentation rules to spectra from a GNPS2 networking task. The documented app is configured for bile-acid classification, with a classification tree and result tables for inspecting individual features.</p></section>
 <section id="capabilities" class="capability-section"><h2>What can this tool do?</h2><div class="capability-cloud"><span>MS/MS processing</span><span>Compound-class prediction</span></div><h3>Common uses</h3><ul><li>Apply consistent bile-acid query logic across processed datasets.</li><li>Inspect alternative classifications for a feature.</li></ul></section>
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Spectral processing and comparison</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Mass spectra</p></div><div><h3>Outputs</h3><p>Compound list or annotations, Human-readable report</p></div><div><h3>Input formats</h3><p>Public GNPS2 CMN/FBMN task ID</p></div><div><h3>Output formats</h3><p>Interactive classification tree and result tables</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Bile-acid-focused analysis of completed molecular-networking results.</li></ul></div><div><h3>Not designed for</h3><ul><li>A general-purpose sequential-query interface for arbitrary metabolite classes.</li><li>Unqualified confirmation of stereochemistry from every matching spectrum.</li></ul></div><div><h3>Important requirements</h3><ul><li>A completed, public GNPS2 CMN or FBMN task containing relevant MS/MS spectra.</li></ul></div><div><h3>Considerations</h3><ul><li>Current documentation limits the app to bile acids; broader classes are described as future work.</li><li>Mixed spectra can satisfy multiple classifications. Inspect the evidence behind each assignment.</li><li>The app uses preconfigured queries; document the application version and upstream task when reporting results.</li></ul></div></div></section>
+
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://multistep-massql.gnps2.org/"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/metaboapp_Multi-Step_MassQL/"><span>Documentation</span><span aria-hidden="true">↗</span></a></div><p class="note">Publicly hosted MetaboApp. GNPS2 infrastructure is open to the academic community; its documentation directs industry users to the maintainers or UCR Technology Transfer. Hosted access does not establish a software or reference-data license.</p></section>
 
 <section id="evidence">
@@ -90,7 +92,15 @@
 </section>
 
 <section><h2>Related tools</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/tools/gnps/"><strong>GNPS</strong><span><b>Integrates with</b> · Consumes GNPS2 tasks or ecosystem data.</span></a><a href="/metabolomics-navigator-alpha/tools/gnps-classical-molecular-networking/"><strong>GNPS2 Classical Molecular Networking</strong><span><b>Integrates with</b> · Accepts a completed public CMN task.</span></a><a href="/metabolomics-navigator-alpha/tools/gnps-feature-based-molecular-networking/"><strong>GNPS2 Feature-Based Molecular Networking workflow</strong><span><b>Integrates with</b> · Accepts a completed public FBMN task.</span></a><a href="/metabolomics-navigator-alpha/tools/massql/"><strong>MassQL</strong><span><b>Integrates with</b> · Uses the MassQL query language.</span></a><a href="/metabolomics-navigator-alpha/tools/metaboapps/"><strong>MetaboApps</strong><span><b>Part of</b> · Standalone MetaboApp that can be launched directly or from a GNPS2 task.</span></a></div></section>
-</article></div>
+<section id="history"><h2>Entry history</h2>
+<p>Changes to this catalogue entry, not the tool's software release history. Acceptance and editorial review are separate.</p>
+
+<ol>
+<li><strong>2026-09-10 · First committed entry</strong><p>Add curated MassQL and reverse-metabolomics apps</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/23456ab620b11ca1c6cddf7be6b8e17d086afe5f">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/23456ab620b11ca1c6cddf7be6b8e17d086afe5f/content/tools/multistep-massql.yml">Entry at this revision</a></li>
+</ol>
+
+<p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commits/main/content/tools/multistep-massql.yml">Full GitHub history</a></p>
+</section></article></div>
 </main>
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
@@ -102,7 +112,7 @@
         <h2>Explore</h2>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
       </div>
       <div>
@@ -119,8 +129,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
 </body>
 </html>

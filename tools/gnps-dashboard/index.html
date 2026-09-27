@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="A browser-based interactive viewer for raw and public mass-spectrometry data, chromatograms, spectra, quantitative traces, and GNPS-associated datasets without requiring local analysis software.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -64,15 +64,17 @@
   <main id="main-content">
 <section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/tools/">Tools</a><span>›</span><span>GNPS Dashboard</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Visualization and reporting</p><h1>GNPS Dashboard</h1><p class="tool-summary">A browser-based interactive viewer for raw and public mass-spectrometry data, chromatograms, spectra, quantitative traces, and GNPS-associated datasets without requiring local analysis software.</p><div class="badge-row large"><span class="badge">Multiple analytical platforms</span><span class="badge">Untargeted metabolomics</span><span class="badge">Targeted metabolomics</span><span class="badge">Metabolite profiling</span><span class="badge">Web application</span></div></div><div class="tool-actions"><a class="button primary" href="https://dashboard.gnps2.org/">Access tool</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+GNPS+Dashboard">Suggest an update</a></div></div></div></section>
 <div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>
-<div><dt>Primary use</dt><dd>Visualization and reporting</dd></div><div><dt>Platforms</dt><dd>Multiple analytical platforms</dd></div><div><dt>Analysis</dt><dd>Untargeted metabolomics, Targeted metabolomics, Metabolite profiling</dd></div><div><dt>Interface</dt><dd>Web application</dd></div><div><dt>Operating systems</dt><dd>Browser-based</dd></div><div><dt>Access</dt><dd>Free web service</dd></div><div><dt>Maintenance</dt><dd>Actively maintained</dd></div><div><dt>Editorial review</dt><dd>2026-09-06</dd></div><div><dt>Previous verification</dt><dd>24 August 2026</dd></div></dl>
+<div><dt>Primary use</dt><dd>Visualization and reporting</dd></div><div><dt>Platforms</dt><dd>Multiple analytical platforms</dd></div><div><dt>Analysis</dt><dd>Untargeted metabolomics, Targeted metabolomics, Metabolite profiling</dd></div><div><dt>Interface</dt><dd>Web application</dd></div><div><dt>Operating systems</dt><dd>Browser-based</dd></div><div><dt>Access</dt><dd>Free web service</dd></div><div><dt>Maintenance</dt><dd>Actively maintained</dd></div><div><dt>Editorial review</dt><dd>2026-09-06</dd></div><div><dt>Previous verification</dt><dd>24 August 2026</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl>
 <div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/tools/gnps-dashboard.yml">View YAML source</a></div></aside>
 <article class="tool-article">
-<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a></nav>
+<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#learn">Learn</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a><a href="#history">Entry history</a></nav>
+
 <section id="overview"><h2>Overview</h2><p>GNPS Dashboard provides interactive browser-based exploration of mass-spectrometry files and public repository data. It can render chromatographic and spectral views, inspect individual scans, generate TIC/XIC-style traces, support targeted/SRM-style visualization, and link directly from GNPS analyses and public datasets. It also helps users identify and share spectra through Universal Spectrum Identifiers and connect raw-data inspection with downstream GNPS2 workflows.</p></section>
 <section id="capabilities" class="capability-section"><h2>What can this tool do?</h2><div class="capability-cloud"><span>Interactive dashboard</span><span>Chromatogram building</span><span>Provenance tracking</span></div><h3>Common uses</h3><ul><li>Interactively inspect raw/public LC-MS and other supported MS files in a browser.</li><li>Visualize chromatograms, extracted ion traces, spectra, and targeted transitions without installing local software.</li><li>Navigate from public repository files or GNPS2 analyses to individual scans and shareable spectrum identifiers.</li><li>Inspect chromatographic peaks and scan-level evidence underlying an annotation or unexpected sample signal.</li></ul></section>
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Visualization and reporting</p></div><div><h3>Other functions</h3><p>Data management and sharing, Preprocessing and feature extraction</p></div><div><h3>Analysis types</h3><p>Untargeted metabolomics, Targeted metabolomics, Metabolite profiling</p></div><div><h3>MS level</h3><p>MS1, MS/MS</p></div><div><h3>Acquisition</h3><p>Full-scan MS, Data-dependent acquisition (DDA), Data-independent acquisition (DIA), PRM or MRM/SRM, General or unspecified acquisition</p></div><div><h3>Ion mobility</h3><p>Ion mobility supported</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Raw instrument data, Mass spectra</p></div><div><h3>Outputs</h3><p>Mass spectra, Human-readable report</p></div><div><h3>Input formats</h3><p>mzML, mzXML</p></div><div><h3>Output formats</h3><p>JSON</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Rapid visual inspection and collaborative exploration of raw or public mass-spectrometry data.</li></ul></div><div><h3>Not designed for</h3><ul><li>Replacing a validated quantitative preprocessing pipeline or formal statistical analysis.</li></ul></div><div><h3>Important requirements</h3><ul><li>A supported public-file reference, repository dataset, or uploaded/accessible data source.</li></ul></div><div><h3>Considerations</h3><ul><li>Dashboard visualization complements rather than replaces comprehensive quantitative preprocessing and statistical workflows.</li><li>Available plots and data access depend on file format and repository availability.</li><li>Preserve a shareable view or file/scan identifier, and distinguish interactive visualization settings from analytical processing parameters.</li></ul></div></div></section>
+<section id="learn"><p class="eyebrow">Education · Alpha</p><h2>Learn this tool</h2><p class="note">External tutorials and workshops collected by Navigator. Alpha links still require manual validation unless marked otherwise.</p><div class="tool-education-links"><a href="https://www.youtube.com/watch?v=-XoVrHQxW9U" rel="noopener noreferrer"><strong>MANA 2021 GNPS Workshop - Networking, Dashboard, MASST</strong><span>GNPS · Video Workshop · Needs review</span></a><a href="https://www.youtube.com/watch?v=S3aAkGTMC-g" rel="noopener noreferrer"><strong>GNPS Dashboard - Overview</strong><span>GNPS · Video Workshop · Needs review</span></a><a href="https://www.youtube.com/watch?v=tT5b1IIJCE8" rel="noopener noreferrer"><strong>GNPS Dashboard teaching/tutorial use case</strong><span>GNPS · Video · Needs review</span></a></div><p><a href="/metabolomics-navigator-alpha/education/">Browse all education resources →</a></p></section>
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://dashboard.gnps2.org/"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://github.com/Wang-Bioinformatics-Lab/GNPS_LCMSDashboard"><span>Source repository</span><span aria-hidden="true">↗</span></a><a href="https://ccms-ucsd.github.io/GNPSDocumentation/lcms-dashboard/"><span>Documentation</span><span aria-hidden="true">↗</span></a></div><p class="note">Hosted access and any account or usage requirements should be checked at the linked service. Access to a web service does not establish the license of its code or reference data.</p></section>
 
 <section id="evidence">
@@ -91,7 +93,15 @@
 </section>
 
 <section><h2>Related tools</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/tools/massive/"><strong>MassIVE</strong><span><b>Integrates with</b> · A public repository for depositing, preserving, browsing, downloading, and reusing mass-spectrometry datasets, including datasets connected to GNPS analyses.</span></a><a href="/metabolomics-navigator-alpha/tools/gnps/"><strong>GNPS</strong><span><b>Part of</b> · A web-based mass-spectrometry ecosystem for molecular networking, spectral-library search, repository-scale search, interactive visualization, knowledgebase curation, and public-data integration.</span></a></div></section>
-</article></div>
+<section id="history"><h2>Entry history</h2>
+<p>Changes to this catalogue entry, not the tool's software release history. Acceptance and editorial review are separate.</p>
+
+<ol>
+<li><strong>2026-09-08 · Entry update</strong><p>Audit core publications across existing tools</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/3136b4ffb94b114f1a3d5977f7c5b3a380d7703a">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/3136b4ffb94b114f1a3d5977f7c5b3a380d7703a/content/tools/gnps-dashboard.yml">Entry at this revision</a></li><li><strong>2026-09-07 · Entry update</strong><p>Expand and document 31 metabolomics tools and resources</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/bbe2e78ac34f764a4833bfe08be54d85d864a4de">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/bbe2e78ac34f764a4833bfe08be54d85d864a4de/content/tools/gnps-dashboard.yml">Entry at this revision</a></li><li><strong>2026-08-24 · First committed entry</strong><p>Complete GNPS SIRIUS and MZmine tool ecosystems</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/2e8259706b771611b453475b87a543fdb23605d9">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/2e8259706b771611b453475b87a543fdb23605d9/content/tools/gnps-dashboard.yml">Entry at this revision</a></li>
+</ol>
+
+<p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commits/main/content/tools/gnps-dashboard.yml">Full GitHub history</a></p>
+</section></article></div>
 </main>
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
@@ -103,7 +113,7 @@
         <h2>Explore</h2>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
       </div>
       <div>
@@ -120,8 +130,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
 </body>
 </html>

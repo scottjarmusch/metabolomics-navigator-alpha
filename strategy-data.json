@@ -151,7 +151,162 @@
     "organisms": [],
     "related_strategies": [
       "reverse-metabolomics"
+    ],
+    "ask_keywords": [
+      "bioassay guided fractionation",
+      "bioactivity guided fractionation",
+      "connect bioactivity to metabolites",
+      "antimicrobial activity and metabolomics",
+      "phenotype associated metabolites",
+      "prioritize active natural products",
+      "correlate fractions with activity"
+    ],
+    "implementations": [
+      {
+        "title": "Bioactive Molecular Networking for Mapping the Antimicrobial Constituents of the Baltic Brown Alga Fucus vesiculosus",
+        "doi": "10.3390/md18060311",
+        "url": "https://doi.org/10.3390/md18060311",
+        "citation": "Buedenbender L, Astone FA, Tasdemir D. Bioactive Molecular Networking for Mapping the Antimicrobial Constituents of the Baltic Brown Alga Fucus vesiculosus. Marine Drugs 18, 311 (2020).",
+        "journal": "Marine Drugs",
+        "year": 2020,
+        "relationship": "application",
+        "summary": "Applied bioactive molecular networking to fractionated Fucus vesiculosus extracts, combining antimicrobial activity against MRSA with UPLC-QToF-MS/MS feature abundances, MZmine preprocessing, GNPS feature-based molecular networking, Pearson correlation scoring and Cytoscape visualization.",
+        "biological_contexts": [
+          "marine"
+        ],
+        "sample_types": [
+          "other"
+        ],
+        "organisms": [
+          "Fucus vesiculosus"
+        ],
+        "tool_slugs": [
+          "mzmine",
+          "gnps",
+          "cytoscape"
+        ]
+      },
+      {
+        "title": "Bioactivity-Based Molecular Networking-Guided Isolation of Epicolidines A-C from the Endophytic Fungus Epicoccum sp. 1-042",
+        "doi": "10.1021/acs.jnatprod.4c00214",
+        "url": "https://doi.org/10.1021/acs.jnatprod.4c00214",
+        "citation": "Chang S, Li Y, Huang X, et al. Bioactivity-Based Molecular Networking-Guided Isolation of Epicolidines A-C from the Endophytic Fungus Epicoccum sp. 1-042. Journal of Natural Products 87, 1582-1590 (2024).",
+        "journal": "Journal of Natural Products",
+        "year": 2024,
+        "relationship": "application",
+        "summary": "Used bioactivity-based molecular networking-guided fractionation in an endophytic fungal natural-product study to prioritize and isolate antibacterial polycyclic tetramic acids.",
+        "biological_contexts": [
+          "fungal"
+        ],
+        "sample_types": [
+          "microbial_culture"
+        ],
+        "organisms": [
+          "Epicoccum sp. 1-042"
+        ]
+      }
     ]
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "chemical-similarity-set-enrichment",
+    "name": "Chemical-similarity metabolite-set enrichment",
+    "summary": "Group identified metabolites by chemical similarity and test which groups change between study conditions.",
+    "description": "ChemRICH combines chemical ontology and structural similarity with set-level statistics, without requiring membership in predefined biochemical pathways.",
+    "publication": {
+      "title": "Chemical Similarity Enrichment Analysis (ChemRICH) as alternative to biochemical pathway mapping for metabolomic datasets",
+      "doi": "10.1038/s41598-017-15231-w",
+      "year": 2017,
+      "journal": "Scientific Reports"
+    },
+    "purpose": {
+      "primary": "phenotype_association",
+      "secondary": []
+    },
+    "platforms": [
+      "lc_ms",
+      "gc_ms"
+    ],
+    "analysis_types": [
+      "metabolite_profiling",
+      "lipidomics"
+    ],
+    "components": [
+      "statistics",
+      "metadata_analysis"
+    ],
+    "ask_keywords": [
+      "ChemRICH",
+      "chemical class enrichment",
+      "chemical similarity",
+      "metabolite sets",
+      "identified metabolites",
+      "SMILES",
+      "lipid classes"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Prepare identified metabolites and statistics",
+        "description": "Provide structures, identifiers and per-metabolite comparison statistics."
+      },
+      {
+        "title": "Construct chemical sets",
+        "description": "ChemRICH combines MeSH annotations and Tanimoto similarity into non-overlapping groups.",
+        "external_tools": [
+          {
+            "name": "ChemRICH",
+            "url": "https://chemrich.idsl.me/"
+          }
+        ]
+      },
+      {
+        "title": "Evaluate and interpret enrichment",
+        "description": "Use the published Kolmogorov-Smirnov set test and inspect directions of change.",
+        "external_tools": [
+          {
+            "name": "ChemRICH",
+            "url": "https://chemrich.idsl.me/"
+          }
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "ChemRICH",
+        "url": "https://chemrich.idsl.me/",
+        "role": "Implementation introduced by the primary paper; linked service is its current maintained entry point."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1038/s41598-017-15231-w"
+    },
+    "scope": {
+      "designed_for": [
+        "Chemical-class interpretation of identified MS metabolomics measurements."
+      ],
+      "requirements": [
+        "Chemical structures/identifiers and valid comparison statistics."
+      ],
+      "considerations": [
+        "Does not infer identities for unknown m/z features. Chemical-set enrichment is not proof of pathway activation or flux."
+      ]
+    },
+    "related_strategies": [
+      "feature-level-pathway-inference"
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Primary method reviewed using open-access full text. Distinct from mummichog: known structures and chemical sets rather than ambiguous feature-to-pathway mapping. No new Tool entry or software execution claimed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-20",
+      "updated_at": "2026-09-20",
+      "last_editorial_review": "2026-09-20"
+    }
   },
   {
     "$schema": "../../schemas/strategy.schema.json",
@@ -354,6 +509,363 @@
   },
   {
     "$schema": "../../schemas/strategy.schema.json",
+    "slug": "dadia-hybrid-acquisition",
+    "name": "DDA-assisted DIA metabolomics",
+    "aliases": [
+      "DaDIA"
+    ],
+    "summary": "A hybrid untargeted acquisition strategy that analyzes individual samples by DIA for broad feature and MS/MS coverage while using pooled quality-control samples by DDA to obtain cleaner fragmentation spectra for annotation.",
+    "description": "DaDIA deliberately separates the strengths of two acquisition modes across the study design. Biological samples are acquired using data-independent acquisition to maximize feature and fragmentation coverage, while pooled QC samples are acquired using data-dependent acquisition to generate higher-quality, less multiplexed MS/MS spectra. Computational integration then associates the complementary DDA and DIA evidence for metabolite annotation.",
+    "publication": {
+      "title": "DaDIA: Hybridizing Data-Dependent and Data-Independent Acquisition Modes for Generating High-Quality Metabolomic Data",
+      "doi": "10.1021/acs.analchem.0c05022",
+      "url": "https://doi.org/10.1021/acs.analchem.0c05022",
+      "citation": "Guo J, Shen S, Xing S, Huan T. DaDIA Hybridizing Data-Dependent and Data-Independent Acquisition Modes for Generating High-Quality Metabolomic Data. Analytical Chemistry 93, 2669-2677 (2021).",
+      "journal": "Analytical Chemistry",
+      "year": 2021
+    },
+    "purpose": {
+      "primary": "metabolite_annotation",
+      "secondary": [
+        "molecular_discovery"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "dda",
+        "dia"
+      ],
+      "ion_mobility": "unspecified"
+    },
+    "components": [
+      "sample_preparation",
+      "data_acquisition",
+      "quality_control",
+      "preprocessing",
+      "annotation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Prepare representative pooled QC material",
+        "description": "Pool study material so the QC contains a broad representation of metabolites observed across the sample set."
+      },
+      {
+        "title": "Acquire individual study samples by DIA",
+        "description": "Use DIA on individual biological samples to maximize feature detection and fragmentation coverage."
+      },
+      {
+        "title": "Acquire pooled QC samples by DDA",
+        "description": "Use DDA on pooled QC material to obtain cleaner precursor-specific fragmentation spectra."
+      },
+      {
+        "title": "Integrate DDA and DIA information",
+        "description": "Associate feature-level quantitative data and DIA coverage with higher-quality DDA spectra from the pooled QC.",
+        "external_tools": [
+          {
+            "name": "DaDIA.R",
+            "url": "https://github.com/HuanLab/DaDIA"
+          }
+        ]
+      },
+      {
+        "title": "Annotate and interpret the combined dataset",
+        "description": "Use integrated evidence for metabolite annotation and downstream statistical interpretation."
+      }
+    ],
+    "tools": [
+      {
+        "name": "DaDIA.R",
+        "url": "https://github.com/HuanLab/DaDIA",
+        "role": "Computational integration and annotation of the hybrid DDA/DIA dataset."
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/HuanLab/DaDIA",
+      "method_available": true,
+      "method_url": "https://doi.org/10.1021/acs.analchem.0c05022"
+    },
+    "scope": {
+      "designed_for": [
+        "Untargeted LC-MS studies seeking broad DIA coverage without sacrificing access to cleaner DDA spectra.",
+        "Studies already using pooled QC samples and able to dedicate additional injections to complementary acquisition."
+      ],
+      "requirements": [
+        "A representative pooled QC sample.",
+        "Instrument support for both DIA and DDA acquisition."
+      ],
+      "considerations": [
+        "The workflow increases acquisition and computational complexity relative to one acquisition mode.",
+        "Spectra obtained from pooled QC material must be mapped appropriately back to features in individual samples."
+      ]
+    },
+    "ask_keywords": [
+      "combine dda and dia",
+      "hybrid dda dia metabolomics",
+      "improve msms coverage and quality",
+      "pooled qc dda individual samples dia",
+      "dadia"
+    ],
+    "sample_types": [],
+    "biological_contexts": [
+      "broadly_applicable"
+    ],
+    "organisms": [],
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included because the publication introduces a transferable hybrid acquisition design rather than merely comparing existing acquisition modes."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "last_verified": "2026-09-19",
+      "last_editorial_review": "2026-09-19"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "exposomics-suspect-screening",
+    "name": "Suspect screening of exposome-related xenobiotics",
+    "summary": "An exposomics strategy that interrogates untargeted UHPLC-HRMS/MS data with curated lists of plausible xenobiotics and metabolites, then applies chromatographic, spectral, and error-control evidence to prioritize candidate exposures.",
+    "description": "Suspect screening occupies the space between targeted analysis and fully non-target screening. Rather than requiring authentic standards for every analyte or searching every detected feature without prior hypotheses, the workflow begins with curated suspect lists and tests whether those candidates are supported by accurate mass, chromatographic peak quality, fragmentation evidence, and matrix-aware filtering. The 2024 workflow evaluated this approach across multiple human biofluids and explicitly measured false-positive and false-negative behavior.",
+    "publication": {
+      "title": "Development and evaluation of a comprehensive workflow for suspect screening of exposome-related xenobiotics and phase II metabolites in diverse human biofluids",
+      "doi": "10.1016/j.chemosphere.2024.141221",
+      "url": "https://doi.org/10.1016/j.chemosphere.2024.141221",
+      "citation": "Development and evaluation of a comprehensive workflow for suspect screening of exposome-related xenobiotics and phase II metabolites in diverse human biofluids. Chemosphere 351, 141221 (2024).",
+      "journal": "Chemosphere",
+      "year": 2024
+    },
+    "purpose": {
+      "primary": "exposomics",
+      "secondary": [
+        "metabolite_annotation",
+        "unknown_identification"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "exposomics",
+      "untargeted"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "dda"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "sample_preparation",
+      "data_acquisition",
+      "preprocessing",
+      "spectral_search",
+      "annotation",
+      "metadata_analysis",
+      "biological_validation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Build suspect lists",
+        "description": "Assemble plausible parent xenobiotics and phase-II metabolites relevant to the exposure question and sample matrix."
+      },
+      {
+        "title": "Acquire UHPLC-HRMS/MS data",
+        "description": "Analyze biofluids using high-resolution MS with fragmentation information suitable for candidate assessment."
+      },
+      {
+        "title": "Filter chromatographic features for peak quality",
+        "description": "Apply automated peak-quality criteria to reduce poor chromatographic candidates before manual review."
+      },
+      {
+        "title": "Compare candidates with suspect and endogenous lists",
+        "description": "Evaluate expected xenobiotic candidates while accounting for endogenous molecules that may create annotation interference."
+      },
+      {
+        "title": "Evaluate structural evidence",
+        "description": "Combine accurate mass, isotope/adduct behavior, fragmentation evidence, and available reference information to annotate candidates."
+      },
+      {
+        "title": "Estimate identification errors",
+        "description": "Assess false positives and false negatives using standards or spiked samples where available."
+      }
+    ],
+    "tools": [
+      {
+        "name": "Compound Discoverer",
+        "role": "Software used in the published implementation for peak-quality assessment and suspect-screening processing."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1016/j.chemosphere.2024.141221"
+    },
+    "scope": {
+      "designed_for": [
+        "Screening broad but hypothesis-informed sets of environmental or exogenous chemicals in human biofluids.",
+        "Exposomics studies where fully targeted assays would be too narrow but unconstrained non-target identification is impractical."
+      ],
+      "requirements": [
+        "Curated suspect lists appropriate to the study question.",
+        "High-resolution MS data and enough spectral/chromatographic evidence to evaluate candidates."
+      ],
+      "considerations": [
+        "Suspect-list composition determines which exposure space is visible.",
+        "Matrix interferences and endogenous molecules can create both false positives and false negatives."
+      ]
+    },
+    "ask_keywords": [
+      "suspect screening exposomics",
+      "find xenobiotics in untargeted metabolomics",
+      "screen environmental exposures",
+      "phase ii metabolites suspect list",
+      "human biofluid exposomics"
+    ],
+    "sample_types": [
+      "urine",
+      "saliva",
+      "other_biofluid"
+    ],
+    "biological_contexts": [
+      "human"
+    ],
+    "organisms": [
+      "Homo sapiens"
+    ],
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included because the publication develops and evaluates a transferable suspect-screening workflow with explicit error analysis across multiple biofluids."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "last_verified": "2026-09-19",
+      "last_editorial_review": "2026-09-19"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "feature-level-pathway-inference",
+    "name": "Feature-level pathway inference before metabolite identification",
+    "summary": "Infer pathway and metabolic-network hypotheses from significant untargeted MS features before assigning every metabolite identity.",
+    "description": "The mummichog method connects ambiguous mass-to-metabolite matches to metabolic-network structure. Enrichment is evaluated against the measured feature background, allowing collective evidence to prioritize biological hypotheses for experimental follow-up.",
+    "publication": {
+      "title": "Predicting Network Activity from High Throughput Metabolomics",
+      "doi": "10.1371/journal.pcbi.1003123",
+      "year": 2013,
+      "journal": "PLOS Computational Biology",
+      "citation": "Li S, Park Y, Duraisingham S, et al. Predicting Network Activity from High Throughput Metabolomics. PLOS Computational Biology 9, e1003123 (2013)."
+    },
+    "purpose": {
+      "primary": "phenotype_association",
+      "secondary": [
+        "metabolite_annotation"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "components": [
+      "statistics",
+      "annotation",
+      "biological_validation"
+    ],
+    "ask_keywords": [
+      "pathway enrichment",
+      "unknown metabolites",
+      "unidentified features",
+      "biological interpretation",
+      "mummichog",
+      "metabolic pathways"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Define significant and background features",
+        "description": "Prepare significant feature masses and the full measured feature list from the comparison."
+      },
+      {
+        "title": "Map candidate metabolites to a network",
+        "description": "Use mass accuracy, ionization assumptions and a suitable metabolic model to retain plausible matches.",
+        "tool_slugs": [
+          "mummichog"
+        ]
+      },
+      {
+        "title": "Evaluate network and pathway enrichment",
+        "description": "Compare observed enrichment with permutations from the feature background.",
+        "tool_slugs": [
+          "mummichog"
+        ]
+      },
+      {
+        "title": "Validate prioritized hypotheses",
+        "description": "Follow up selected metabolites and pathways with independent measurements."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "mummichog",
+        "role": "Software implementation introduced with the defining paper."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003123"
+    },
+    "scope": {
+      "designed_for": [
+        "Functional interpretation when many significant features remain unidentified."
+      ],
+      "requirements": [
+        "Feature statistics, measured background and a relevant metabolic model."
+      ],
+      "considerations": [
+        "Enrichment is a hypothesis, not confirmation of individual identities or a measurement of flux.",
+        "Background selection and ambiguous ion assignments influence results."
+      ]
+    },
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Primary-paper review: 2013 method introduction, not its immune-cell application as a separate Strategy. The existing mummichog Tool remains the implementation record. No software execution tested."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "last_editorial_review": "2026-09-19"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
     "slug": "gnps-feature-based-molecular-networking",
     "name": "Feature-Based Molecular Networking (FBMN)",
     "summary": "A strategy that combines aligned LC-MS feature abundances with MS/MS spectral similarity to explore quantitative molecular families while retaining chromatographic feature identity.",
@@ -388,7 +900,8 @@
         "ms2"
       ],
       "strategies": [
-        "dda"
+        "dda",
+        "dia"
       ],
       "ion_mobility": "not_required"
     },
@@ -502,9 +1015,9 @@
       "entry": "published",
       "review": "editorially_reviewed",
       "created_at": "2026-08-24",
-      "updated_at": "2026-09-12",
+      "updated_at": "2026-09-21",
       "last_verified": "2026-09-12",
-      "last_editorial_review": "2026-09-12"
+      "last_editorial_review": "2026-09-21"
     },
     "sample_types": [],
     "biological_contexts": [
@@ -513,6 +1026,36 @@
     "organisms": [],
     "aliases": [
       "FBMN"
+    ],
+    "ask_keywords": [
+      "DIA MSE molecular networking",
+      "DIA IntOpenStream"
+    ],
+    "implementations": [
+      {
+        "title": "Integrative open workflow for confident annotation and molecular networking of metabolomics MSE/DIA data",
+        "doi": "10.1093/bib/bbae013",
+        "year": 2024,
+        "journal": "Briefings in Bioinformatics",
+        "relationship": "adaptation",
+        "summary": "DIA-IntOpenStream adapts FBMN to MSE/DIA data. Waters2mzML supplies mzML; KNIME assembles custom structure databases; MS-DIAL assigns DIA fragments to precursors and exports FBMN inputs for GNPS and Cytoscape. MZmine 3 is used for a parallel MS1 annotation branch, not DIA fragment deconvolution in this study. Reliable precursor-fragment assignment is required; custom mass matches and network neighbors are not confirmed structures. The demonstrated conversion uses Windows and Waters data; other vendor compatibility is not established here.",
+        "tool_slugs": [
+          "ms-dial",
+          "mzmine",
+          "gnps",
+          "cytoscape"
+        ],
+        "external_tools": [
+          {
+            "name": "Waters2mzML",
+            "url": "https://github.com/AnP311/Waters2mzML"
+          },
+          {
+            "name": "Published KNIME database workflow",
+            "url": "https://hub.knime.com/-/spaces/-/~8bZEbbknV8tVptea/current-state/"
+          }
+        ]
+      }
     ]
   },
   {
@@ -942,6 +1485,628 @@
   },
   {
     "$schema": "../../schemas/strategy.schema.json",
+    "slug": "isotope-coded-dansylation-metabolomics",
+    "name": "Isotope-coded dansylation for comparative metabolomics",
+    "summary": "Pair light and heavy chemical labels to quantify amine- and phenol-containing metabolites by LC-MS.",
+    "description": "Differential dansylation couples selective chemical tagging with coeluting isotope pairs. Sample-to-reference signal ratios support comparative quantification; labeled standards enable calibrated measurements.",
+    "publication": {
+      "title": "Differential 12C-/13C-Isotope Dansylation Labeling and Fast Liquid Chromatography/Mass Spectrometry for Absolute and Relative Quantification of the Metabolome",
+      "doi": "10.1021/ac900166a",
+      "year": 2009,
+      "journal": "Analytical Chemistry",
+      "citation": "Guo K, Li L. Differential 12C-/13C-Isotope Dansylation Labeling and Fast Liquid Chromatography/Mass Spectrometry for Absolute and Relative Quantification of the Metabolome. Analytical Chemistry 81, 3919–3932 (2009)."
+    },
+    "purpose": {
+      "primary": "chemical_reactivity",
+      "secondary": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "metabolite_profiling"
+    ],
+    "components": [
+      "sample_preparation",
+      "chromatography",
+      "data_acquisition",
+      "statistics"
+    ],
+    "ask_keywords": [
+      "dansylation",
+      "chemical isotope labeling",
+      "amine",
+      "phenol",
+      "relative quantification",
+      "light heavy reference"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Label samples and reference",
+        "description": "React compatible metabolites with light or heavy dansyl reagents."
+      },
+      {
+        "title": "Mix labeled material",
+        "description": "Combine labeled sample with reference material or calibrated standards."
+      },
+      {
+        "title": "Separate and measure isotope pairs",
+        "description": "Analyze coeluting pairs by LC-MS."
+      },
+      {
+        "title": "Calculate comparative abundances",
+        "description": "Use pair ratios and appropriate calibration for the intended measurement."
+      }
+    ],
+    "tools": [],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1021/ac900166a"
+    },
+    "scope": {
+      "designed_for": [
+        "Comparative profiling of chemically reactive amines and phenols."
+      ],
+      "requirements": [
+        "Compatible derivatization chemistry, labeled reference material and LC-MS."
+      ],
+      "considerations": [
+        "Chemical isotope tags do not measure biological isotope incorporation or metabolic flux.",
+        "Coverage is restricted by reactive functional groups; isotope pairs alone do not confirm structure."
+      ]
+    },
+    "implementations": [
+      {
+        "title": "Qualitative Metabolome Analysis of Human Cerebrospinal Fluid by 13C-/12C-Isotope Dansylation Labeling Combined with Liquid Chromatography Fourier Transform Ion Cyclotron Resonance Mass Spectrometry",
+        "doi": "10.1007/s13361-010-0033-4",
+        "year": 2011,
+        "journal": "Journal of the American Society for Mass Spectrometry",
+        "relationship": "application",
+        "summary": "Application of isotope dansylation to cerebrospinal-fluid profiling; the sample matrix does not define a new Strategy.",
+        "tool_slugs": [],
+        "citation": "Guo K, Bamforth F, Li L. Qualitative Metabolome Analysis of Human Cerebrospinal Fluid by 13C-/12C-Isotope Dansylation Labeling Combined with Liquid Chromatography Fourier Transform Ion Cyclotron Resonance Mass Spectrometry. Journal of the American Society for Mass Spectrometry (2011)."
+      }
+    ],
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "The defining 2009 method establishes chemical labeling and isotope-ratio quantification. The later CSF paper is an application. No original catalogue software dependency established; no experimental execution claimed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "last_editorial_review": "2026-09-19"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "iterative-exclusion-list-acquisition",
+    "name": "Iterative exclusion-list MS/MS acquisition",
+    "aliases": [
+      "IE-Omics acquisition workflow"
+    ],
+    "summary": "Use precursors fragmented in earlier injections to guide subsequent DDA runs toward additional ions.",
+    "description": "The IE-Omics workflow automates exclusion-list preparation between repeat injections. This record uses its 2017 metabolomics methods paper as a reproducible implementation; iterative exclusion has earlier proteomics origins. The defining relationship is measured fragmentation history informing the next acquisition, rather than precomputing survey-based schedules.",
+    "publication": {
+      "title": "Expanding Lipidome Coverage Using LC-MS/MS Data-Dependent Acquisition with Automated Exclusion List Generation",
+      "doi": "10.1007/s13361-017-1608-0",
+      "url": "https://doi.org/10.1007/s13361-017-1608-0",
+      "citation": "Koelmel JP, Kroeger NM, et al. Journal of the American Society for Mass Spectrometry 28, 908-917 (2017).",
+      "journal": "Journal of the American Society for Mass Spectrometry",
+      "year": 2017
+    },
+    "purpose": {
+      "primary": "metabolite_annotation",
+      "secondary": [
+        "molecular_discovery"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "dda"
+      ],
+      "ion_mobility": "unspecified"
+    },
+    "components": [
+      "data_acquisition",
+      "preprocessing",
+      "annotation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Acquire the initial DDA run",
+        "description": "Begin with top-N fragmentation of a representative sample."
+      },
+      {
+        "title": "Convert acquired spectra",
+        "description": "Export the measured run to MS2 format with msconvert.",
+        "tool_slugs": [
+          "msconvert"
+        ]
+      },
+      {
+        "title": "Generate the next exclusion list",
+        "description": "IE-Omics groups fragmented precursors by mass and retention time and can flag recurrent background ions.",
+        "external_tools": [
+          {
+            "name": "IE-Omics",
+            "url": "https://github.com/GarrettLab-UF/IE-Omics"
+          }
+        ]
+      },
+      {
+        "title": "Import the list and repeat acquisition",
+        "description": "Load the CSV into the instrument method before the next injection; the reported workflow is not real-time control."
+      },
+      {
+        "title": "Process and annotate spectra",
+        "description": "The study uses MZmine 2 feature detection with LipidMatch, alongside LipidSearch annotation.",
+        "tool_slugs": [
+          "mzmine"
+        ],
+        "external_tools": [
+          {
+            "name": "LipidMatch",
+            "url": "https://secim.ufl.edu/secim-tools/lipidmatch/"
+          },
+          {
+            "name": "LipidSearch"
+          }
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "slug": "msconvert",
+        "role": "Converts the acquired run to MS2 format."
+      },
+      {
+        "slug": "mzmine",
+        "role": "MZmine 2 supplies features for the published LipidMatch analysis."
+      },
+      {
+        "name": "IE-Omics",
+        "url": "https://github.com/GarrettLab-UF/IE-Omics",
+        "role": "Builds exclusion lists for successive acquisitions."
+      },
+      {
+        "name": "LipidMatch",
+        "url": "https://secim.ufl.edu/secim-tools/lipidmatch/",
+        "role": "Lipid annotation in the demonstrated workflow."
+      },
+      {
+        "name": "LipidSearch",
+        "role": "Additional lipid annotation in the study."
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/GarrettLab-UF/IE-Omics",
+      "method_available": true,
+      "method_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5408749/"
+    },
+    "scope": {
+      "designed_for": [
+        "Extending fragmentation coverage when repeated LC-MS/MS injections are feasible."
+      ],
+      "requirements": [
+        "Sufficient sample and instrument time for repeated injections.",
+        "Compatible instrument exclusion-list import; the documented implementation targets Thermo instruments."
+      ],
+      "considerations": [
+        "Check mass and retention-time tolerances and chromatographic reproducibility with the MS facility.",
+        "Additional spectra do not guarantee identification or equal gains across sample types.",
+        "This is not a replacement for quantitative study design or quality control."
+      ]
+    },
+    "ask_keywords": [
+      "iterative exclusion list",
+      "fragment additional precursors",
+      "previously fragmented ions",
+      "repeated DDA injections",
+      "IE Omics"
+    ],
+    "sample_types": [],
+    "biological_contexts": [
+      "broadly_applicable"
+    ],
+    "organisms": [],
+    "related_strategies": [
+      "iterative-optimized-ms2-acquisition"
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Primary indexed methods, official SECIM documentation and author code repository reviewed on 2026-09-21. DOI/title/year checked against Crossref. The 2017 paper formalizes this automated metabolomics workflow, not the invention of iterative exclusion. No instrument or software execution validation performed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-21",
+      "updated_at": "2026-09-21",
+      "last_verified": "2026-09-21",
+      "last_editorial_review": "2026-09-21"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "iterative-optimized-ms2-acquisition",
+    "name": "Iterative optimized MS/MS acquisition",
+    "aliases": [
+      "IODA"
+    ],
+    "summary": "Plan successive MS/MS acquisitions from an MS1 survey by optimizing precursor schedules across mass and retention time.",
+    "description": "MS2Planner uses topological sorting on a feature graph to maximize scheduled coverage. Features selected for one path are excluded from the next planning iteration. This is computational scheduling of repeat acquisitions, rather than a requirement to measure fragmentation quality after every run.",
+    "publication": {
+      "title": "MS2Planner: improved fragmentation spectra coverage in untargeted mass spectrometry by iterative optimized data acquisition",
+      "doi": "10.1093/bioinformatics/btab279",
+      "url": "https://doi.org/10.1093/bioinformatics/btab279",
+      "citation": "Zuo Z, Cao L, et al. MS2Planner: improved fragmentation spectra coverage in untargeted mass spectrometry by iterative optimized data acquisition. Bioinformatics 37(Suppl 1), i231-i236 (2021).",
+      "journal": "Bioinformatics",
+      "year": 2021
+    },
+    "purpose": {
+      "primary": "metabolite_annotation",
+      "secondary": [
+        "molecular_discovery",
+        "unknown_identification"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "dda",
+        "targeted_msms"
+      ],
+      "ion_mobility": "unspecified"
+    },
+    "components": [
+      "data_acquisition",
+      "preprocessing",
+      "annotation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Acquire an MS1 survey",
+        "description": "The published IODA experiment begins with a full-scan MS1 measurement."
+      },
+      {
+        "title": "Prepare features for scheduling",
+        "description": "Provide precursor masses, retention times and signals for the acquisition model."
+      },
+      {
+        "title": "Optimize successive acquisition paths",
+        "description": "Use topological sorting; exclude scheduled features before computing the next path.",
+        "external_tools": [
+          {
+            "name": "MS2Planner",
+            "url": "https://github.com/mohimanilab/MS2Planner"
+          }
+        ]
+      },
+      {
+        "title": "Export instrument inclusion lists",
+        "description": "The study provides companion scripts for inclusion-list generation.",
+        "external_tools": [
+          {
+            "name": "IODA_MS",
+            "url": "https://github.com/lfnothias/IODA_MS"
+          }
+        ]
+      },
+      {
+        "title": "Acquire and assess scheduled spectra",
+        "description": "The paper tests inclusion-prioritized DDA and targeted-MS2 variants, with and without dynamic exclusion. Review coverage and spectral quality for the chosen mode."
+      }
+    ],
+    "tools": [
+      {
+        "name": "MS2Planner",
+        "url": "https://github.com/mohimanilab/MS2Planner",
+        "role": "Computes optimized paths over survey features for successive acquisitions."
+      },
+      {
+        "name": "IODA_MS",
+        "url": "https://github.com/lfnothias/IODA_MS",
+        "role": "Companion inclusion-list generation scripts reported by the primary paper."
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/mohimanilab/MS2Planner",
+      "method_available": true,
+      "method_url": "https://doi.org/10.1093/bioinformatics/btab279"
+    },
+    "scope": {
+      "designed_for": [
+        "Increasing MS/MS coverage in untargeted LC-MS experiments when repeat injections are practical.",
+        "Building richer fragmentation coverage for annotation and discovery from representative or pooled samples."
+      ],
+      "requirements": [
+        "Full-scan survey features and instrument support for the selected inclusion-list acquisition mode.",
+        "Sufficient sample for repeated injections and chromatography consistent with the planned retention-time windows."
+      ],
+      "considerations": [
+        "Planning assumptions and acquisition timing must fit the instrument and chromatography.",
+        "This is not equivalent to a simple exclusion list updated after each measured DDA run; no universal coverage gain is promised."
+      ]
+    },
+    "ask_keywords": [
+      "get more msms spectra",
+      "improve fragmentation coverage",
+      "iterative dda",
+      "exclusion inclusion list metabolomics",
+      "pooled sample deeper msms coverage",
+      "topological sorting",
+      "schedule precursor ions"
+    ],
+    "sample_types": [],
+    "biological_contexts": [
+      "broadly_applicable"
+    ],
+    "organisms": [],
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Primary full text re-reviewed through Europe PMC XML on 2026-09-20. Corrected author citation, MS1 initialization, computational iteration and companion export scripts. No software execution or instrument validation performed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-20",
+      "last_verified": "2026-09-19",
+      "last_editorial_review": "2026-09-20"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "kinetic-flux-profiling",
+    "name": "Kinetic flux profiling from isotope-labeling time courses",
+    "summary": "Combine isotope-label incorporation kinetics with metabolite pool sizes to estimate cellular fluxes under an explicit kinetic model.",
+    "description": "Kinetic flux profiling follows replacement of unlabeled metabolites after switching a nutrient source to its isotope-labeled equivalent. The original demonstration used nitrogen assimilation in cultured E. coli; the transferable contribution is the link between labeling dynamics, pool sizes and flux.",
+    "publication": {
+      "title": "Kinetic flux profiling of nitrogen assimilation in Escherichia coli",
+      "doi": "10.1038/nchembio816",
+      "year": 2006,
+      "journal": "Nature Chemical Biology",
+      "citation": "Yuan et al. Kinetic flux profiling of nitrogen assimilation in Escherichia coli. Nature Chemical Biology (2006)."
+    },
+    "purpose": {
+      "primary": "flux_analysis",
+      "secondary": [
+        "stable_isotope_tracing"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "stable_isotope_tracing",
+      "fluxomics"
+    ],
+    "components": [
+      "sample_preparation",
+      "data_acquisition",
+      "statistics"
+    ],
+    "ask_keywords": [
+      "kinetic flux profiling",
+      "KFP",
+      "isotope labeling",
+      "metabolic flux",
+      "turnover",
+      "time course",
+      "pool size"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Switch nutrient isotope labeling",
+        "description": "Change the isotopic nutrient source while preserving the intended culture conditions."
+      },
+      {
+        "title": "Sample the labeling time course",
+        "description": "Quench and extract replicate samples at times that resolve metabolite turnover."
+      },
+      {
+        "title": "Measure labeling and pool sizes",
+        "description": "Use chromatography-MS to quantify unlabeled fractions and intracellular metabolite concentrations."
+      },
+      {
+        "title": "Fit the specified kinetic model",
+        "description": "Estimate turnover and flux using equations appropriate to precursor labeling and pathway structure."
+      }
+    ],
+    "tools": [],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1038/nprot.2008.131"
+    },
+    "scope": {
+      "designed_for": [
+        "Flux estimation in cultured cells with experimentally resolved labeling kinetics."
+      ],
+      "requirements": [
+        "Rapid nutrient switching, timed quenching, isotope-resolved measurements and pool-size quantification."
+      ],
+      "considerations": [
+        "Basic interpretation assumes metabolic steady state; dynamic variants require additional modeling.",
+        "Reliable quantification requires resolving turnover relative to upstream precursor labeling.",
+        "A single endpoint or labeling half-time without pool-size and model context does not establish absolute flux."
+      ]
+    },
+    "implementations": [
+      {
+        "title": "Kinetic flux profiling for quantitation of cellular metabolic fluxes",
+        "doi": "10.1038/nprot.2008.131",
+        "year": 2008,
+        "journal": "Nature Protocols",
+        "relationship": "protocol",
+        "summary": "Expanded experimental and quantitative procedure, including culture handling and kinetic interpretation.",
+        "tool_slugs": [],
+        "citation": "Yuan et al. Kinetic flux profiling for quantitation of cellular metabolic fluxes. Nature Protocols (2008)."
+      }
+    ],
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "The 2006 introduction defines the method; the 2008 procedure supplies implementation detail. Distinct from isotope-assisted networking and credentialing. No original catalogue software dependency was established; do not invent one. No experiment or software execution performed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "last_editorial_review": "2026-09-19"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "mass2motif-substructure-discovery",
+    "name": "Shared-substructure discovery with Mass2Motifs",
+    "summary": "Discover recurring fragment and neutral-loss patterns across MS/MS spectra to propose shared substructures.",
+    "description": "MS2LDA links spectra through learned Mass2Motifs, including molecules without high overall spectral similarity.",
+    "publication": {
+      "title": "Topic modeling for untargeted substructure exploration in metabolomics",
+      "doi": "10.1073/pnas.1608041113",
+      "year": 2016,
+      "journal": "Proceedings of the National Academy of Sciences"
+    },
+    "purpose": {
+      "primary": "metabolite_annotation",
+      "secondary": [
+        "molecular_family_discovery"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "components": [
+      "preprocessing",
+      "annotation",
+      "spectral_search"
+    ],
+    "ask_keywords": [
+      "MS2LDA",
+      "Mass2Motifs",
+      "shared substructures",
+      "fragment patterns",
+      "neutral losses",
+      "motif discovery",
+      "unknown spectra"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Prepare precursor-linked spectra",
+        "description": "The original workflow uses XCMS, MzMatch and RMassBank to prepare fragment and loss features.",
+        "tool_slugs": [
+          "xcms"
+        ]
+      },
+      {
+        "title": "Learn recurring motifs",
+        "description": "Apply topic modeling to the fragment/loss matrix.",
+        "tool_slugs": [
+          "ms2lda"
+        ]
+      },
+      {
+        "title": "Interpret and inspect assignments",
+        "description": "Compare motif patterns with reference spectra and chemical knowledge; examine associated precursors.",
+        "tool_slugs": [
+          "ms2lda"
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "slug": "xcms",
+        "role": "Original preprocessing."
+      },
+      {
+        "name": "MzMatch",
+        "role": "Original peak preprocessing."
+      },
+      {
+        "name": "RMassBank",
+        "role": "Original MS1-MS2 pairing."
+      },
+      {
+        "slug": "ms2lda",
+        "role": "Motif inference and exploration."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5137707/"
+    },
+    "scope": {
+      "designed_for": [
+        "Substructure hypotheses from collections of MS/MS spectra."
+      ],
+      "requirements": [
+        "Precursor-linked fragmentation spectra and consistent fragment/loss representation."
+      ],
+      "considerations": [
+        "A motif need not identify a unique substructure or complete molecule. Expert interpretation remains necessary."
+      ]
+    },
+    "implementations": [
+      {
+        "title": "Unsupervised Discovery and Comparison of Structural Families Across Multiple Samples in Untargeted Metabolomics",
+        "doi": "10.1021/acs.analchem.7b01391",
+        "year": 2017,
+        "journal": "Analytical Chemistry",
+        "relationship": "extension",
+        "summary": "MS2LDA+ learns shared motifs across samples while retaining sample-specific prevalence for comparison.",
+        "tool_slugs": [
+          "ms2lda"
+        ]
+      }
+    ],
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "2016 primary method; 2017 multisample extension retained here. Original software roles preserved; modern alternatives are not asserted as original dependencies. No software execution tested."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-20",
+      "updated_at": "2026-09-20",
+      "last_editorial_review": "2026-09-20"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
     "slug": "metabologenomics",
     "name": "Metabologenomics",
     "summary": "A natural-product discovery strategy that correlates metabolite occurrence across a strain collection with biosynthetic gene-cluster or gene-cluster-family occurrence to connect chemistry with its likely genetic origin.",
@@ -1078,6 +2243,358 @@
   },
   {
     "$schema": "../../schemas/strategy.schema.json",
+    "slug": "microscopy-msi-predictive-image-fusion",
+    "name": "Predictive fusion of microscopy and mass spectrometry imaging",
+    "aliases": [
+      "IMS-microscopy image fusion"
+    ],
+    "summary": "Model spatial relationships between microscopy features and measured ion intensities, then use validated relationships to predict molecular distributions at finer spatial resolution or in unmeasured tissue regions.",
+    "description": "This Strategy pairs registered microscopy with mass spectrometry imaging and fits a separate partial least squares relationship for each ion image. It goes beyond image overlays: optical features become predictors of molecular signals. The 2015 methodology formalizes this relationship for molecular tissue mapping, including lipid and small-molecule applications. Predicted distributions remain model outputs, not additional MS measurements or evidence of molecular identification.",
+    "publication": {
+      "title": "Image fusion of mass spectrometry and microscopy: a multimodality paradigm for molecular tissue mapping",
+      "doi": "10.1038/nmeth.3296",
+      "url": "https://doi.org/10.1038/nmeth.3296",
+      "citation": "Van de Plas R, Yang J, Spraggins J, Caprioli RM. Nature Methods 12, 366-372 (2015).",
+      "journal": "Nature Methods",
+      "year": 2015
+    },
+    "purpose": {
+      "primary": "spatial_metabolomics",
+      "secondary": []
+    },
+    "platforms": [
+      "imaging_ms"
+    ],
+    "analysis_types": [
+      "spatial_metabolomics",
+      "metabolite_profiling"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1"
+      ],
+      "strategies": [
+        "full_scan"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "data_acquisition",
+      "preprocessing",
+      "metadata_analysis",
+      "statistics"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Acquire paired molecular and optical images",
+        "description": "Measure MALDI ion images and microscopy of stained tissue from the same or an adjacent section. Preserve tissue coordinates and acquisition conditions."
+      },
+      {
+        "title": "Register images and derive paired features",
+        "description": "Align tissue locations across modalities and derive microscopy descriptors such as hue, texture and entropy corresponding to the measured MS locations."
+      },
+      {
+        "title": "Fit ion-specific cross-modal models",
+        "description": "Use partial least squares regression to model each ion intensity distribution from microscopy-derived predictors. Relationships and predictive performance differ between ions."
+      },
+      {
+        "title": "Evaluate reconstruction and spatial reliability",
+        "description": "Examine reconstruction scores, absolute residual maps and bootstrap confidence-interval images for each ion. Do not use fusion to predict ions for which microscopy provides inadequate support."
+      },
+      {
+        "title": "Predict supported molecular distributions",
+        "description": "Apply supported models to finer microscopy pixels or tissue regions with microscopy but no MS measurement. Label these outputs as predictions and retain the measured ion maps for comparison."
+      },
+      {
+        "title": "Interpret with measurement-based checks",
+        "description": "Assess registration, sampling differences and model transfer before biological interpretation. Where feasible compare predictions with independent MS measurements; absence of optical support does not establish that an MS feature is noise."
+      }
+    ],
+    "tools": [
+      {
+        "name": "Molecular Image Fusion prototype",
+        "url": "https://fusion.vueinnovations.com/",
+        "role": "Published command-line implementation of IMS-microscopy predictive fusion; obtain the prototype and review its licensing and runtime requirements through the official distribution site."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1038/nmeth.3296"
+    },
+    "scope": {
+      "designed_for": [
+        "Linking lipid or small-molecule tissue distributions with optical morphology.",
+        "Predictive sharpening and spatial extrapolation when cross-modal relationships are supported."
+      ],
+      "requirements": [
+        "Spatially registered microscopy and MSI measurements with corresponding tissue structures.",
+        "Ion-specific modeling and assessment of reconstruction, residuals and uncertainty."
+      ],
+      "considerations": [
+        "Higher-resolution predictions do not increase the spatial resolution of the original MS measurements.",
+        "Some ion distributions have no usable microscopy relationship and should not be predicted.",
+        "Adjacent-section differences, registration errors and changed staining conditions can invalidate relationships.",
+        "Extrapolation to unmeasured regions requires scrutiny of model transfer and overfitting.",
+        "The original software is distributed through a licensing portal; open-source availability and execution have not been established."
+      ]
+    },
+    "ask_keywords": [
+      "microscopy mass spectrometry image fusion",
+      "predict ion images from histology",
+      "spatial lipid image sharpening",
+      "MSI microscopy regression",
+      "predict molecular distributions in tissue"
+    ],
+    "sample_types": [
+      "tissue"
+    ],
+    "biological_contexts": [
+      "broadly_applicable"
+    ],
+    "organisms": [],
+    "related_strategies": [
+      "spacem-single-cell-metabolomics"
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Primary methodology and DOI metadata checked on 2026-09-23. Models cross-modal molecular distributions rather than assigning measured signals to individual cells; distinct from SpaceM. No software execution or independent performance validation is claimed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-23",
+      "updated_at": "2026-09-23",
+      "last_verified": "2026-09-23",
+      "last_editorial_review": "2026-09-23"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "molecular-networking-dereplication",
+    "name": "Molecular networking as a dereplication strategy",
+    "summary": "A natural-product dereplication strategy that organizes MS/MS spectra by fragmentation similarity and uses reference spectra, standards, or characterized organisms to recognize known molecules and related analogues before isolation.",
+    "description": "This strategy uses spectral molecular networking as an early dereplication layer in natural-product discovery. Experimental MS/MS spectra from complex extracts are organized according to spectral similarity and compared with spectra from known standards, synthetic compounds, public libraries, or well-characterized organisms. Known chemistry can therefore seed molecular families and highlight related analogues that may not be present in reference databases, allowing novelty and redundancy to be assessed before lengthy purification.",
+    "publication": {
+      "title": "Molecular Networking as a Dereplication Strategy",
+      "doi": "10.1021/np400413s",
+      "url": "https://doi.org/10.1021/np400413s",
+      "citation": "Yang JY, Sanchez LM, Rath CM, et al. Molecular Networking as a Dereplication Strategy. Journal of Natural Products 76, 1686-1699 (2013).",
+      "journal": "Journal of Natural Products",
+      "year": 2013
+    },
+    "purpose": {
+      "primary": "dereplication",
+      "secondary": [
+        "molecular_family_discovery",
+        "metabolite_annotation",
+        "natural_product_discovery"
+      ]
+    },
+    "platforms": [
+      "lc_ms",
+      "direct_infusion_ms"
+    ],
+    "analysis_types": [
+      "untargeted",
+      "metabolite_profiling"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms2"
+      ],
+      "strategies": [
+        "dda"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "data_acquisition",
+      "spectral_search",
+      "molecular_networking",
+      "annotation",
+      "biological_validation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Acquire MS/MS spectra from complex extracts",
+        "description": "Generate tandem mass spectra from the natural-product mixture using a compatible ionization and acquisition workflow."
+      },
+      {
+        "title": "Add reference spectra",
+        "description": "Include spectra from known standards, synthetic compounds, spectral libraries, or well-characterized organisms to provide dereplication anchors."
+      },
+      {
+        "title": "Build a spectral molecular network",
+        "description": "Organize spectra according to fragmentation similarity so structurally related molecules cluster into molecular families.",
+        "tool_slugs": [
+          "gnps"
+        ]
+      },
+      {
+        "title": "Dereplicate known chemistry and related analogues",
+        "description": "Use reference-connected molecular families to recognize known compounds and prioritize related features that may represent analogues rather than rediscoveries."
+      },
+      {
+        "title": "Prioritize chemistry for follow-up",
+        "description": "Advance molecular families that are poorly represented by known references or that contain features of specific biological or chemical interest."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "gnps",
+        "role": "Contemporary implementation environment for MS/MS molecular networking and library searching."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1021/np400413s"
+    },
+    "scope": {
+      "designed_for": [
+        "Early-stage dereplication of natural-product extracts before time-intensive isolation.",
+        "Recognizing related analogues around known reference compounds through MS/MS similarity."
+      ],
+      "requirements": [
+        "Reproducible MS/MS spectra from the sample set.",
+        "Suitable reference spectra or standards improve dereplication power."
+      ],
+      "considerations": [
+        "Spectral similarity supports structural relatedness but is not complete structural confirmation.",
+        "Network structure depends on fragmentation quality, spectral preprocessing, and similarity thresholds."
+      ]
+    },
+    "ask_keywords": [
+      "dereplicate natural products",
+      "avoid rediscovering known compounds",
+      "molecular networking dereplication",
+      "identify known compounds and analogues",
+      "prioritize novel molecular families"
+    ],
+    "sample_types": [],
+    "biological_contexts": [
+      "broadly_applicable"
+    ],
+    "organisms": [],
+    "related_strategies": [
+      "gnps-feature-based-molecular-networking",
+      "bioactivity-based-molecular-networking"
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included because the publication explicitly introduced molecular networking as a transferable dereplication strategy rather than an application-only use of networking."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "last_verified": "2026-09-19",
+      "last_editorial_review": "2026-09-19"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "ms2decide",
+    "name": "MS2DECIDE",
+    "summary": "Tandem mass spectrum to decision (MS2DECIDE) leverages decision theory and expert knowledge to aggregate the outputs of three widely used annotation tools (GNPS, Sirius, and ISDB-LOTUS) and compute a recommendation for targeting natural products with regard to their potential novelty.",
+    "publication": {
+      "doi": "10.1002/cmtd.202400088",
+      "url": "https://doi.org/10.1002/cmtd.202400088",
+      "title": "MS2DECIDE: Aggregating Multiannotated Tandem Mass Spectrometry Data with Decision Theory Enhances Natural Products Prioritization",
+      "journal": "Chemistry–Methods",
+      "year": 2025,
+      "citation": "Mejri, Yassine et al. MS2DECIDE: Aggregating Multiannotated Tandem Mass Spectrometry Data with Decision Theory Enhances Natural Products Prioritization. Chemistry–Methods (2025). DOI: 10.1002/cmtd.202400088."
+    },
+    "purpose": {
+      "primary": "natural_product_discovery",
+      "secondary": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "sample_types": [],
+    "biological_contexts": [],
+    "organisms": [],
+    "components": [
+      "annotation",
+      "spectral_search"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Prepare aligned inputs",
+        "description": "Provide a quantitative CSV table, MGF spectra and compatible SIRIUS annotation results with matching feature identifiers."
+      },
+      {
+        "title": "Collect complementary annotations",
+        "description": "Obtain GNPS spectral matches and ISDB-LOTUS results alongside SIRIUS candidates.",
+        "tool_slugs": [
+          "gnps",
+          "sirius"
+        ]
+      },
+      {
+        "title": "Combine evidence and prioritize",
+        "description": "Use the documented K-estimation method to combine annotation evidence and export ranked results for review."
+      },
+      {
+        "title": "Review candidates",
+        "description": "Inspect spectra, annotation disagreements and experimental context before selecting follow-up experiments."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "gnps"
+      },
+      {
+        "slug": "sirius"
+      },
+      {
+        "name": "ISDB-LOTUS"
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/MejriY/MS2DECIDE",
+      "method_available": true,
+      "method_url": "https://github.com/MejriY/MS2DECIDE#usage-guide-k_estimation"
+    },
+    "scope": {
+      "designed_for": [
+        "Prioritizing natural-product features using multiple annotation sources."
+      ],
+      "requirements": [
+        "Compatible feature tables, MS/MS spectra and annotation files; Python and access to the services used by the chosen implementation."
+      ],
+      "considerations": [
+        "Scores depend on annotation coverage and the decision model; they are not experimental identification or proof of novelty.",
+        "Follow the repository documentation for supported SIRIUS and GNPS versions."
+      ]
+    },
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/24",
+      "author_verified": false,
+      "submitter_name": "Morgane Mauduit",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0003-4583-5389",
+      "notes": "Original submission by Morgane Mauduit in issue #24; recovered after the title prevented automation. Method details checked against the linked implementation documentation. Software execution and author verification were not performed."
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-14",
+      "updated_at": "2026-09-15"
+    },
+    "description": "MS2DECIDE combines annotations from GNPS, SIRIUS and ISDB-LOTUS using an expert-informed decision model. It supports prioritization of natural-product features for follow-up rather than establishing chemical novelty or confirming structures."
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
     "slug": "msi-guided-molecular-networking",
     "name": "Mass spectrometry imaging–guided molecular networking",
     "summary": "A multimodal natural-product strategy that uses spatial localization from mass spectrometry imaging to prioritize metabolites for LC-MS/MS molecular networking and structural interpretation.",
@@ -1195,6 +2712,105 @@
     ],
     "organisms": [],
     "related_strategies": []
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "msi-imc-single-cell-immunometabolism",
+    "name": "Same-section MSI and imaging mass cytometry integration",
+    "summary": "Combine tissue metabolite images with antibody-based cellular phenotypes from imaging mass cytometry.",
+    "description": "This method links spatial metabolite signals to immunophenotyped cells on the same tissue section, adding a molecular cell-identity layer beyond morphology.",
+    "publication": {
+      "title": "Integration of mass cytometry and mass spectrometry imaging for spatially resolved single-cell metabolic profiling",
+      "doi": "10.1038/s41592-024-02392-6",
+      "year": 2024,
+      "journal": "Nature Methods",
+      "citation": "Nunes et al. Integration of mass cytometry and mass spectrometry imaging for spatially resolved single-cell metabolic profiling. Nature Methods (2024)."
+    },
+    "purpose": {
+      "primary": "single_cell_metabolomics",
+      "secondary": [
+        "spatial_metabolomics"
+      ]
+    },
+    "platforms": [
+      "imaging_ms"
+    ],
+    "analysis_types": [
+      "spatial_metabolomics",
+      "lipidomics"
+    ],
+    "components": [
+      "sample_preparation",
+      "data_acquisition",
+      "metadata_analysis",
+      "statistics"
+    ],
+    "ask_keywords": [
+      "immunophenotype",
+      "immune cells",
+      "imaging mass cytometry",
+      "IMC",
+      "single cell tissue",
+      "spatial immunometabolism"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Acquire MALDI images",
+        "description": "Measure metabolites before antibody staining."
+      },
+      {
+        "title": "Acquire immunophenotypes",
+        "description": "Remove matrix, stain with metal-tagged antibodies and perform IMC."
+      },
+      {
+        "title": "Register images and segment cells",
+        "description": "Align modalities and derive cellular boundaries and phenotypes."
+      },
+      {
+        "title": "Assign metabolite signals",
+        "description": "Aggregate overlapping image signals into relative per-cell profiles."
+      }
+    ],
+    "tools": [
+      {
+        "name": "MALDI-MSI-IMC analysis scripts",
+        "url": "https://github.com/deMirandaLab/MALDI-MSI-IMC",
+        "role": "Published registration and integration implementation."
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/deMirandaLab/MALDI-MSI-IMC",
+      "method_available": true,
+      "method_url": "https://doi.org/10.1038/s41592-024-02392-6"
+    },
+    "scope": {
+      "designed_for": [
+        "Spatial comparison of immunophenotyped cell populations."
+      ],
+      "requirements": [
+        "Compatible same-section MSI and IMC measurements."
+      ],
+      "considerations": [
+        "MSI pixels can overlap multiple cells, mixing assigned signals.",
+        "Cellular attribution depends on registration and segmentation."
+      ]
+    },
+    "related_strategies": [
+      "spacem-single-cell-metabolomics"
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Same-section antibody phenotyping distinguishes this from SpaceM. Colorectal tissue is the demonstration, not a separate Strategy. Primary method checked; scripts not executed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "last_editorial_review": "2026-09-19"
+    }
   },
   {
     "$schema": "../../schemas/strategy.schema.json",
@@ -1463,6 +3079,483 @@
   },
   {
     "$schema": "../../schemas/strategy.schema.json",
+    "slug": "paterno-buchi-lipid-double-bond-localization",
+    "name": "Paterno-Buchi photochemistry for lipid double-bond localization",
+    "summary": "Couple lipid photochemical derivatization to tandem MS to locate carbon-carbon double bonds.",
+    "description": "The defining approach converts unsaturated lipids into oxetane reaction products. Collision-induced fragmentation of those products yields diagnostic ions that report double-bond position.",
+    "publication": {
+      "title": "Pinpointing Double Bonds in Lipids by Paternò-Büchi Reactions and Mass Spectrometry",
+      "doi": "10.1002/anie.201310699",
+      "year": 2014,
+      "journal": "Angewandte Chemie International Edition",
+      "citation": "Ma X, Xia Y. Pinpointing Double Bonds in Lipids by Paternò-Büchi Reactions and Mass Spectrometry. Angewandte Chemie International Edition 53, 2592–2596 (2014)."
+    },
+    "purpose": {
+      "primary": "structure_elucidation",
+      "secondary": [
+        "chemical_reactivity"
+      ]
+    },
+    "platforms": [
+      "direct_infusion_ms"
+    ],
+    "analysis_types": [
+      "lipidomics"
+    ],
+    "components": [
+      "sample_preparation",
+      "data_acquisition",
+      "annotation"
+    ],
+    "ask_keywords": [
+      "Paterno Buchi",
+      "double bond position",
+      "lipid isomers",
+      "photochemical derivatization",
+      "unsaturated lipids"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Photochemically modify lipid double bonds",
+        "description": "The original implementation irradiates a nanoelectrospray plume containing lipids and acetone with UV light."
+      },
+      {
+        "title": "Fragment reaction products",
+        "description": "Acquire tandem mass spectra of the derivatized lipids using collision activation."
+      },
+      {
+        "title": "Interpret diagnostic fragments",
+        "description": "Assign candidate double-bond locations from the oxetane-cleavage products."
+      }
+    ],
+    "tools": [],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1002/anie.201310699"
+    },
+    "scope": {
+      "designed_for": [
+        "Locating double bonds in unsaturated lipids."
+      ],
+      "requirements": [
+        "A compatible UV photoreaction and tandem-MS setup."
+      ],
+      "considerations": [
+        "This is photochemical derivatization, distinct from gas-phase ozone-induced dissociation.",
+        "Do not assume that software written for OzID interprets these spectra."
+      ]
+    },
+    "related_strategies": [
+      "ozid-structural-lipidomics"
+    ],
+    "implementations": [
+      {
+        "title": "Identification and quantitation of lipid C=C location isomers: A shotgun lipidomics approach enabled by photochemical reaction",
+        "doi": "10.1073/pnas.1523356113",
+        "year": 2016,
+        "journal": "Proceedings of the National Academy of Sciences",
+        "relationship": "extension",
+        "summary": "Extends the photochemical method to identification and quantitation in complex lipid mixtures. Tissue comparisons are use cases, not additional Strategies.",
+        "tool_slugs": []
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Primary source introduces the analytical chemistry-to-fragmentation relationship. The 2016 extension is retained as an implementation. No catalogue software was identified as part of the original workflow; no substitute is invented."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "last_editorial_review": "2026-09-19"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "qc-rlsc-signal-drift-correction",
+    "name": "QC-based robust LOESS signal-drift correction",
+    "summary": "Use repeated biological QC injections to estimate and correct feature-specific signal drift along acquisition order.",
+    "description": "QC-RLSC fits local curves to QC intensities and interpolates correction across study injections. It links experimental QC placement with computational drift estimation and subsequent quality assessment.",
+    "publication": {
+      "title": "Procedures for large-scale metabolic profiling of serum and plasma using gas chromatography and liquid chromatography coupled to mass spectrometry",
+      "doi": "10.1038/nprot.2011.335",
+      "year": 2011,
+      "journal": "Nature Protocols",
+      "citation": "Dunn WB, Broadhurst D, Begley P, et al. Procedures for large-scale metabolic profiling of serum and plasma using gas chromatography and liquid chromatography coupled to mass spectrometry. Nature Protocols 6, 1060–1083 (2011)."
+    },
+    "purpose": {
+      "primary": "analytical_quality_control",
+      "secondary": []
+    },
+    "platforms": [
+      "lc_ms",
+      "gc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "components": [
+      "data_acquisition",
+      "preprocessing",
+      "quality_control",
+      "statistics"
+    ],
+    "ask_keywords": [
+      "QC-RLSC",
+      "pooled QC",
+      "LOESS",
+      "signal drift",
+      "injection order",
+      "batch correction",
+      "normalization",
+      "quality control"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Interleave representative QC injections",
+        "description": "Retain injection order and batch labels with study and QC measurements."
+      },
+      {
+        "title": "Prepare aligned feature intensities",
+        "description": "The documented LC-MS implementation uses XCMS for preprocessing.",
+        "tool_slugs": [
+          "xcms"
+        ]
+      },
+      {
+        "title": "Fit QC correction curves",
+        "description": "Cross-validate feature-wise LOESS smoothing and interpolate across injections."
+      },
+      {
+        "title": "Correct and assess reliability",
+        "description": "Normalize responses and inspect QC repeatability before combining batches."
+      }
+    ],
+    "tools": [
+      {
+        "slug": "xcms",
+        "role": "LC-MS preprocessing in the defining workflow; not asserted to implement the correction itself."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1038/nprot.2011.335"
+    },
+    "scope": {
+      "designed_for": [
+        "Analytical drift correction when representative QC injections span the run."
+      ],
+      "requirements": [
+        "Repeated QC observations with usable feature signals and recorded injection order."
+      ],
+      "considerations": [
+        "Sparse or unrepresentative QCs cannot reliably characterize every feature.",
+        "Check overfitting and corrected QC performance; correction does not fix experimental confounding."
+      ]
+    },
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "The 2011 primary procedure materially formalizes QC-RLSC. Scoped to its correction relationship, not every step in serum/plasma profiling. QC filtering is a companion step, not an extra card. No software execution performed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "last_editorial_review": "2026-09-19"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "reference-pool-cohort-extraction",
+    "name": "Reference-pool discovery with cohort-wide signal extraction",
+    "summary": "Discover features in pooled reference samples, then extract their signals across a large LC-MS cohort using curated mass and retention-time targets.",
+    "description": "This workflow separates discovery from cohort-wide quantification. Reference pools establish the target list; individual samples supply the quantitative measurements. Both annotated metabolites and retained unknown features can be measured. The method is not defined by the longevity cohort used to demonstrate it, and it does not require every feature to be identified.",
+    "publication": {
+      "title": "An Untargeted Metabolomics Workflow that Scales to Thousands of Samples for Population-Based Studies",
+      "doi": "10.1021/acs.analchem.2c01270",
+      "url": "https://doi.org/10.1021/acs.analchem.2c01270",
+      "citation": "Stancliffe E, Schwaiger-Haber M, et al. Analytical Chemistry 94, 17370-17378 (2022).",
+      "journal": "Analytical Chemistry",
+      "year": 2022
+    },
+    "purpose": {
+      "primary": "phenotype_association",
+      "secondary": [
+        "metabolite_annotation"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted",
+      "lipidomics"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1",
+        "ms2"
+      ],
+      "strategies": [
+        "dda"
+      ],
+      "ion_mobility": "unspecified"
+    },
+    "components": [
+      "preprocessing",
+      "quality_control",
+      "annotation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Prepare representative reference pools",
+        "description": "Include relevant cohort subsets and acquire pooled discovery data, blanks and consistent QC samples."
+      },
+      {
+        "title": "Build the polar feature list",
+        "description": "XCMS detects pooled features; CAMERA supports adduct selection. The study supplements these with AcquireX results.",
+        "tool_slugs": [
+          "xcms",
+          "camera"
+        ],
+        "external_tools": [
+          {
+            "name": "AcquireX"
+          }
+        ]
+      },
+      {
+        "title": "Curate reference targets",
+        "description": "Review artifacts and annotation evidence. The published polar branch uses DecoID; the lipid branch uses Lipid Annotator. Retain suitable unknown features too.",
+        "external_tools": [
+          {
+            "name": "DecoID"
+          },
+          {
+            "name": "Lipid Annotator"
+          }
+        ]
+      },
+      {
+        "title": "Extract cohort peak areas",
+        "description": "Use Skyline batch by batch with curated masses and retention-time boundaries; inspect integration and adjust for retention shifts.",
+        "tool_slugs": [
+          "skyline"
+        ]
+      },
+      {
+        "title": "Evaluate correction and export measurements",
+        "description": "Compare batch-correction choices against common QC samples before downstream biological analysis.",
+        "external_tools": [
+          {
+            "name": "Published processing notebooks",
+            "url": "https://github.com/pattilab/metabolomics_workflow"
+          }
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "slug": "xcms",
+        "role": "Detects features in pooled polar-metabolite data."
+      },
+      {
+        "slug": "camera",
+        "role": "Supports adduct selection during reference-list preparation."
+      },
+      {
+        "slug": "skyline",
+        "role": "Extracts and reviews cohort-wide peak areas from the curated target list."
+      },
+      {
+        "name": "AcquireX",
+        "role": "Supplies additional pooled-sample features in the published polar branch."
+      },
+      {
+        "name": "DecoID",
+        "role": "Supports spectral annotation of polar reference features."
+      },
+      {
+        "name": "Lipid Annotator",
+        "role": "Generates the published lipid reference list."
+      },
+      {
+        "name": "Published processing notebooks",
+        "url": "https://github.com/pattilab/metabolomics_workflow",
+        "role": "Reference processing, peak-boundary generation and batch-correction resources."
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/pattilab/metabolomics_workflow",
+      "method_available": true,
+      "method_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11018270/"
+    },
+    "scope": {
+      "designed_for": [
+        "Large LC-MS cohorts where pooled discovery can provide a reusable reference list."
+      ],
+      "requirements": [
+        "Representative pools, blanks, shared QC material and individual-sample raw data.",
+        "Expert curation of reference peaks and integration boundaries."
+      ],
+      "considerations": [
+        "Rare or low-abundance compounds can be diluted below detection in pools and omitted from the target list.",
+        "Targeted signal extraction from untargeted data is not a validated absolute-concentration assay.",
+        "Check batch correction for preservation of biological differences; no normalization method is universally best.",
+        "The code is documented here, not executed or benchmarked by Navigator."
+      ]
+    },
+    "ask_keywords": [
+      "thousands of samples",
+      "large cohort processing",
+      "pooled reference discovery",
+      "cohort wide peak extraction",
+      "Skyline reference targets"
+    ],
+    "related_strategies": [
+      "qc-rlsc-signal-drift-correction"
+    ],
+    "sample_types": [],
+    "biological_contexts": [
+      "broadly_applicable"
+    ],
+    "organisms": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Primary methods and author code repository reviewed on 2026-09-21. DOI/title/year verified against Crossref. Two queue rows consolidated into this one workflow; no longevity-specific Strategy added."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-21",
+      "updated_at": "2026-09-21",
+      "last_verified": "2026-09-21",
+      "last_editorial_review": "2026-09-21"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "retention-order-joint-annotation",
+    "name": "Retention-order-assisted joint molecular annotation",
+    "summary": "Combine relative LC elution order with MS/MS candidate scores to annotate multiple features jointly.",
+    "description": "The 2018 method integrates learned pairwise retention preferences with spectral evidence rather than filtering each feature independently by absolute retention time.",
+    "publication": {
+      "title": "Liquid-chromatography retention order prediction for metabolite identification",
+      "doi": "10.1093/bioinformatics/bty590",
+      "year": 2018,
+      "journal": "Bioinformatics"
+    },
+    "purpose": {
+      "primary": "metabolite_annotation",
+      "secondary": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "components": [
+      "chromatography",
+      "annotation",
+      "statistics"
+    ],
+    "ask_keywords": [
+      "retention order",
+      "elution order",
+      "joint annotation",
+      "LC-MS2Struct",
+      "retention time",
+      "candidate ranking"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Prepare candidate lists",
+        "description": "Associate measured retention times with spectra and candidate structures."
+      },
+      {
+        "title": "Score spectral candidates",
+        "description": "The original study uses IOKR scores.",
+        "external_tools": [
+          {
+            "name": "IOKR"
+          }
+        ]
+      },
+      {
+        "title": "Learn and integrate retention preferences",
+        "description": "Combine RankSVM order predictions and spectral scores using the published dynamic-programming procedure."
+      },
+      {
+        "title": "Review ranked assignments",
+        "description": "Inspect candidates and seek independent confirmation."
+      }
+    ],
+    "tools": [
+      {
+        "name": "IOKR",
+        "role": "Original spectral candidate scorer."
+      },
+      {
+        "name": "Retention-order prediction implementation",
+        "url": "https://version.aalto.fi/gitlab/bache1/retention_order_prediction.git",
+        "role": "Code location reported by the 2018 paper; not execution-tested."
+      }
+    ],
+    "resources": {
+      "method_available": true,
+      "method_url": "https://doi.org/10.1093/bioinformatics/bty590"
+    },
+    "scope": {
+      "designed_for": [
+        "Joint interpretation of LC-MS/MS features."
+      ],
+      "requirements": [
+        "Candidate structures, spectral scores, measured retention order and suitable training data."
+      ],
+      "considerations": [
+        "Candidate coverage and chromatographic transferability matter. Rankings do not confirm identities."
+      ]
+    },
+    "implementations": [
+      {
+        "title": "Joint structural annotation of small molecules using liquid chromatography retention order and tandem mass spectrometry data",
+        "doi": "10.1038/s42256-022-00577-2",
+        "year": 2022,
+        "journal": "Nature Machine Intelligence",
+        "relationship": "extension",
+        "summary": "LC-MS2Struct learns structured integration of spectral scores and retention order, including stereochemistry-aware fingerprints. This replaces the original integration model rather than reproducing its algorithm.",
+        "external_tools": [
+          {
+            "name": "LC-MS2Struct",
+            "url": "https://github.com/aalto-ics-kepaco/msms_rt_ssvm"
+          }
+        ]
+      }
+    ],
+    "related_strategies": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Origin anchored to the 2018 joint retention-order/MS2 method, not the later LC-MS2Struct tool. Primary methods and DOI metadata reviewed; software not executed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-20",
+      "updated_at": "2026-09-20",
+      "last_editorial_review": "2026-09-20"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
     "slug": "reverse-metabolomics",
     "name": "Reverse metabolomics",
     "summary": "A discovery strategy that starts from a candidate chemical structure or reference MS/MS spectrum, searches public metabolomics repositories for matching spectra, and uses sample metadata to reveal biological or phenotypic associations.",
@@ -1629,6 +3722,138 @@
   },
   {
     "$schema": "../../schemas/strategy.schema.json",
+    "slug": "spacem-single-cell-metabolomics",
+    "name": "Spatially registered single-cell metabolomics",
+    "aliases": [
+      "SpaceM"
+    ],
+    "summary": "A single-cell metabolomics strategy that registers microscopy-derived cell boundaries and morphologic information with MALDI imaging mass spectrometry so spatial ion signals can be assigned to individual cells.",
+    "description": "SpaceM combines light microscopy, image segmentation, MALDI mass spectrometry imaging, and spatial registration to convert tissue- or culture-level ion images into per-cell metabolic profiles. The key methodological step is aligning optical cell information with MSI ablation coordinates so metabolite signals can be associated with individual cells while retaining morpho-spatial context.",
+    "publication": {
+      "title": "SpaceM reveals metabolic states of single cells",
+      "doi": "10.1038/s41592-021-01198-0",
+      "url": "https://doi.org/10.1038/s41592-021-01198-0",
+      "citation": "Rappez L, Stadler M, Triana S, et al. SpaceM reveals metabolic states of single cells. Nature Methods 18, 799-805 (2021).",
+      "journal": "Nature Methods",
+      "year": 2021
+    },
+    "purpose": {
+      "primary": "single_cell_metabolomics",
+      "secondary": [
+        "spatial_metabolomics",
+        "phenotype_association"
+      ]
+    },
+    "platforms": [
+      "imaging_ms"
+    ],
+    "analysis_types": [
+      "spatial_metabolomics",
+      "metabolite_profiling"
+    ],
+    "acquisition": {
+      "ms_levels": [
+        "ms1"
+      ],
+      "strategies": [
+        "full_scan"
+      ],
+      "ion_mobility": "not_required"
+    },
+    "components": [
+      "sample_preparation",
+      "data_acquisition",
+      "preprocessing",
+      "metadata_analysis",
+      "statistics",
+      "biological_validation"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Acquire microscopy of the same cells",
+        "description": "Record optical images that preserve cell morphology and spatial context before MALDI analysis."
+      },
+      {
+        "title": "Segment individual cells",
+        "description": "Derive cell boundaries and image-derived features from the optical data."
+      },
+      {
+        "title": "Acquire MALDI mass spectrometry imaging",
+        "description": "Collect spatially resolved metabolite signals across the same cellular field."
+      },
+      {
+        "title": "Register optical and MSI coordinate systems",
+        "description": "Align cell masks with MALDI ablation locations so mass-spectral signals can be assigned to individual cells."
+      },
+      {
+        "title": "Construct per-cell metabolic profiles",
+        "description": "Aggregate registered ion signals into a cell-by-metabolite matrix while retaining morphologic and spatial information."
+      },
+      {
+        "title": "Identify metabolic cell states",
+        "description": "Analyze single-cell metabolic profiles to distinguish heterogeneous cell states and relate them to morphology or experimental conditions."
+      }
+    ],
+    "tools": [
+      {
+        "name": "SpaceM",
+        "url": "https://github.com/alexandrovteam/SpaceM",
+        "role": "Open-source implementation of spatial registration and single-cell metabolomic data processing."
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/alexandrovteam/SpaceM",
+      "method_available": true,
+      "method_url": "https://doi.org/10.1038/s41592-021-01198-0"
+    },
+    "scope": {
+      "designed_for": [
+        "In situ metabolic profiling of heterogeneous cell populations at single-cell resolution.",
+        "Linking metabolic states to cell morphology and spatial position."
+      ],
+      "requirements": [
+        "Compatible microscopy, cell segmentation, and MALDI-MSI measurements from the same spatial field.",
+        "Accurate spatial registration between optical images and MSI coordinates."
+      ],
+      "considerations": [
+        "Cell-level profiles depend on segmentation and registration accuracy.",
+        "MALDI pixel size, analyte delocalization, and ion suppression can influence per-cell assignments."
+      ]
+    },
+    "ask_keywords": [
+      "single cell metabolomics",
+      "maldi single cells",
+      "connect microscopy with mass spectrometry imaging",
+      "spatially resolved cell metabolomics",
+      "spacem"
+    ],
+    "sample_types": [
+      "cells"
+    ],
+    "biological_contexts": [
+      "broadly_applicable"
+    ],
+    "organisms": [],
+    "related_strategies": [
+      "msi-guided-molecular-networking"
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Included because the publication introduces a transferable multimodal strategy that uses spatial registration to convert MSI measurements into single-cell metabolic profiles."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "last_verified": "2026-09-19",
+      "last_editorial_review": "2026-09-19"
+    }
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
     "slug": "stable-isotope-labeling-molecular-networking",
     "name": "Stable-isotope labeling–assisted molecular networking",
     "summary": "A biosynthetic discovery strategy that combines stable-isotope precursor feeding with LC-MS/MS molecular networking to identify structurally related metabolites that incorporate a defined biosynthetic building block.",
@@ -1747,6 +3972,111 @@
       "Aspergillus nidulans"
     ],
     "related_strategies": []
+  },
+  {
+    "$schema": "../../schemas/strategy.schema.json",
+    "slug": "target-decoy-controlled-dia-metabolomics",
+    "name": "Target-decoy-controlled DIA metabolomics",
+    "summary": "Use DDA-derived assay libraries and decoy scoring to control false discoveries during targeted DIA extraction.",
+    "description": "DIAMetAlyzer links assay construction, chromatographic extraction and statistical validation. Its distinguishing contribution is error-controlled extraction, rather than merely combining acquisition modes.",
+    "publication": {
+      "title": "DIAMetAlyzer allows automated false-discovery rate-controlled analysis for data-independent acquisition in metabolomics",
+      "doi": "10.1038/s41467-022-29006-z",
+      "year": 2022,
+      "journal": "Nature Communications",
+      "citation": "Alka et al. DIAMetAlyzer allows automated false-discovery rate-controlled analysis for data-independent acquisition in metabolomics. Nature Communications (2022)."
+    },
+    "purpose": {
+      "primary": "metabolite_annotation",
+      "secondary": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "targeted"
+    ],
+    "components": [
+      "data_acquisition",
+      "annotation",
+      "quality_control",
+      "statistics"
+    ],
+    "ask_keywords": [
+      "DIAMetAlyzer",
+      "DIA",
+      "false discovery rate",
+      "decoy",
+      "assay library",
+      "targeted extraction"
+    ],
+    "workflow_steps": [
+      {
+        "title": "Construct target and decoy assays",
+        "description": "Build assays from DDA spectra with fragment annotations.",
+        "tool_slugs": [
+          "openms",
+          "sirius"
+        ]
+      },
+      {
+        "title": "Extract DIA chromatograms",
+        "description": "Use the assay library to extract candidate peak groups.",
+        "tool_slugs": [
+          "openms"
+        ]
+      },
+      {
+        "title": "Score and filter results",
+        "description": "Estimate false-discovery rates before interpreting quantified features.",
+        "tool_slugs": [
+          "openms"
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "slug": "openms",
+        "role": "Hosts the DIAMetAlyzer workflow."
+      },
+      {
+        "slug": "sirius",
+        "role": "Fragment annotation for assay construction."
+      }
+    ],
+    "resources": {
+      "code_available": true,
+      "code_url": "https://github.com/oliveralka/DIAMetAlyzer_additional_code",
+      "method_available": true,
+      "method_url": "https://doi.org/10.1038/s41467-022-29006-z"
+    },
+    "scope": {
+      "designed_for": [
+        "Assay-driven DIA quantification with statistical error control."
+      ],
+      "requirements": [
+        "Compatible DDA library and DIA measurements."
+      ],
+      "considerations": [
+        "Library coverage limits extraction.",
+        "Extraction FDR does not establish definitive chemical identity."
+      ]
+    },
+    "related_strategies": [
+      "dadia-hybrid-acquisition"
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "author_verified": false,
+      "notes": "Distinct from DaDIA acquisition design: this card describes target-decoy statistical validation. Primary paper checked; software not executed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-19",
+      "updated_at": "2026-09-19",
+      "last_editorial_review": "2026-09-19"
+    }
   },
   {
     "$schema": "../../schemas/strategy.schema.json",

@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Open-source R/Bioconductor toolbox for preprocessing, statistical analysis, segmentation, classification and visualization of mass spectrometry imaging data.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -64,15 +64,17 @@
   <main id="main-content">
 <section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/tools/">Tools</a><span>›</span><span>Cardinal</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Statistical analysis</p><h1>Cardinal</h1><p class="tool-summary">Open-source R/Bioconductor toolbox for preprocessing, statistical analysis, segmentation, classification and visualization of mass spectrometry imaging data.</p><div class="badge-row large"><span class="badge">Imaging mass spectrometry</span><span class="badge">Spatial metabolomics</span><span class="badge">R package</span><span class="badge">Open source</span></div></div><div class="tool-actions"><a class="button primary" href="https://cardinalmsi.org/">Access tool</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+Cardinal">Suggest an update</a></div></div></div></section>
 <div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>
-<div><dt>Primary use</dt><dd>Statistical analysis</dd></div><div><dt>Platforms</dt><dd>Imaging mass spectrometry</dd></div><div><dt>Analysis</dt><dd>Spatial metabolomics</dd></div><div><dt>Interface</dt><dd>R package</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Maintenance status unclear</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div></dl>
+<div><dt>Primary use</dt><dd>Statistical analysis</dd></div><div><dt>Platforms</dt><dd>Imaging mass spectrometry</dd></div><div><dt>Analysis</dt><dd>Spatial metabolomics</dd></div><div><dt>Interface</dt><dd>R package</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Maintenance status unclear</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl>
 <div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/tools/cardinal.yml">View YAML source</a></div></aside>
 <article class="tool-article">
-<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a></nav>
+<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a><a href="#history">Entry history</a></nav>
+
 <section id="overview"><h2>Overview</h2><p>Cardinal provides reproducible analysis of mass spectrometry imaging experiments, including preprocessing, visualization, spatial segmentation, classification and multivariate analysis. Cardinal v3 supports a broad range of MSI workflows and is designed for programmatic analysis in R.</p></section>
 <section id="capabilities" class="capability-section"><h2>What can this tool do?</h2><div class="capability-cloud"><span>Multivariate statistics</span></div><h3>Common uses</h3><ul><li>Preprocess and visualize MSI datasets.</li><li>Segment tissues by chemical composition.</li><li>Perform classification and multivariate analysis of MSI experiments.</li></ul></section>
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Statistical analysis</p></div><div><h3>Other functions</h3><p>Preprocessing and feature extraction, Visualization and reporting</p></div><div><h3>Analysis types</h3><p>Spatial metabolomics</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Imaging data</p></div><div><h3>Outputs</h3><p>Imaging data, Statistical results</p></div><div><h3>Input formats</h3><p>imzML</p></div><div><h3>Output formats</h3><p>R analysis objects and statistical or image outputs</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Reproducible statistical analysis of MALDI- and DESI-based MSI datasets.</li></ul></div><div><h3>Not designed for</h3><ul><li>Definitive metabolite identification solely from ion images or statistical classification.</li></ul></div><div><h3>Important requirements</h3><ul><li>Compatible imaging-MS data, spatial coordinates and an R/Bioconductor environment.</li><li>Biological sample metadata and an analysis design appropriate to spatial measurements.</li></ul></div><div><h3>Considerations</h3><ul><li>Pixels from one tissue are not independent biological replicates; preserve sample-level grouping during inference and validation.</li><li>Interpretation depends on acquisition quality, preprocessing choices and spatial experimental design.</li></ul></div></div></section>
+
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://cardinalmsi.org/"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://github.com/Cardinalverse/Cardinal"><span>Source repository</span><span aria-hidden="true">↗</span></a></div><p class="note">Install through Bioconductor with an R version compatible with the selected release. The current source declares Artistic-2.0 or the accompanying license file; package dependencies and versions should be recorded for reproducibility.</p><p><strong>License:</strong> Artistic-2.0</p></section>
 
 <section id="evidence">
@@ -93,7 +95,15 @@
 </section>
 
 <section><h2>Related tools</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/tools/metaspace/"><strong>METASPACE</strong><span><b>Complementary to</b> · Spatial statistical analysis and molecular annotation address different stages; no automatic integration is implied.</span></a><a href="/metabolomics-navigator-alpha/tools/m2aia/"><strong>M²aia</strong><span><b>Alternative to</b> · Open-source environment for interactive processing, visualization and registration of two- and three-dimensional mass spectrometry imaging data.</span></a><a href="/metabolomics-navigator-alpha/tools/pyimzml/"><strong>pyimzML</strong><span><b>Complementary to</b> · Python library for reading and writing imzML imaging mass-spectrometry data.</span></a></div></section>
-</article></div>
+<section id="history"><h2>Entry history</h2>
+<p>Changes to this catalogue entry, not the tool's software release history. Acceptance and editorial review are separate.</p>
+
+<ol>
+<li><strong>2026-09-10 · First committed entry</strong><p>Begin specialist population with Cardinal and spatial guide entry</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/acfec76a95b278c4b594572a8114882a1f133a90">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/acfec76a95b278c4b594572a8114882a1f133a90/content/tools/cardinal.yml">Entry at this revision</a></li>
+</ol>
+
+<p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commits/main/content/tools/cardinal.yml">Full GitHub history</a></p>
+</section></article></div>
 </main>
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
@@ -105,7 +115,7 @@
         <h2>Explore</h2>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
       </div>
       <div>
@@ -122,8 +132,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
 </body>
 </html>

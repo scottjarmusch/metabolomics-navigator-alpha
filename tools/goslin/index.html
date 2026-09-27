@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Lipid shorthand grammars and parser implementations for validating and normalizing names in MS lipidomics workflows.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -64,15 +64,17 @@
   <main id="main-content">
 <section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/tools/">Tools</a><span>›</span><span>Goslin</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Data management and sharing</p><h1>Goslin</h1><p class="tool-summary">Lipid shorthand grammars and parser implementations for validating and normalizing names in MS lipidomics workflows.</p><div class="badge-row large"><span class="badge">Platform-independent</span><span class="badge">Lipidomics</span><span class="badge">Python package</span><span class="badge">R package</span><span class="badge">API</span></div></div><div class="tool-actions"><a class="button primary" href="https://lifs-tools.github.io/goslin/">Access tool</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+Goslin">Suggest an update</a></div></div></div></section>
 <div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>
-<div><dt>Primary use</dt><dd>Data management and sharing</dd></div><div><dt>Platforms</dt><dd>Platform-independent</dd></div><div><dt>Analysis</dt><dd>Lipidomics</dd></div><div><dt>Interface</dt><dd>Python package, R package, API</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Maintenance status unclear</dd></div><div><dt>Editorial review</dt><dd>2026-09-11</dd></div><div><dt>Previous verification</dt><dd>11 September 2026</dd></div></dl>
+<div><dt>Primary use</dt><dd>Data management and sharing</dd></div><div><dt>Platforms</dt><dd>Platform-independent</dd></div><div><dt>Analysis</dt><dd>Lipidomics</dd></div><div><dt>Interface</dt><dd>Python package, R package, API</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Maintenance status unclear</dd></div><div><dt>Editorial review</dt><dd>2026-09-11</dd></div><div><dt>Previous verification</dt><dd>11 September 2026</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl>
 <div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/tools/goslin.yml">View YAML source</a></div></aside>
 <article class="tool-article">
-<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a></nav>
+<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a><a href="#history">Entry history</a></nav>
+
 <section id="overview"><h2>Overview</h2><p>Goslin defines grammars for lipid shorthand notation, with implementations in several programming languages and a web/API project. Goslin 2.0 incorporates updated structural levels. This canonical entry covers the grammar ecosystem rather than treating each implementation as a separate analytical tool.</p></section>
 <section id="capabilities" class="capability-section"><h2>What can this tool do?</h2><div class="capability-cloud"><span>Identifier harmonization</span></div><h3>Common uses</h3><ul><li>Validate lipid shorthand before integrating result tables.</li><li>Normalize supported lipid names within scripted analysis pipelines.</li></ul></section>
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Data management and sharing</p></div><div><h3>Analysis types</h3><p>Lipidomics</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Compound list or annotations</p></div><div><h3>Outputs</h3><p>Compound list or annotations</p></div><div><h3>Input formats</h3><p>Lipid shorthand names</p></div><div><h3>Output formats</h3><p>Standardized lipid identifiers</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Grammar-based parsing of supported lipid nomenclatures.</li></ul></div><div><h3>Not designed for</h3><ul><li>Identification from spectra or confirmation of double-bond positions.</li></ul></div><div><h3>Important requirements</h3><ul><li>Lipid name strings and a suitable Goslin implementation.</li></ul></div><div><h3>Considerations</h3><ul><li>Record the parser version and inspect rejected names.</li><li>Syntactic validity does not establish experimental identification confidence.</li></ul></div></div></section>
+
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://lifs-tools.github.io/goslin/"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://github.com/lifs-tools/goslin"><span>Source repository</span><span aria-hidden="true">↗</span></a></div><p class="note">MIT applies to the grammar repository. Check the license, installation requirements and supported interfaces of the selected language implementation separately.</p><p><strong>License:</strong> MIT</p></section>
 
 <section id="evidence">
@@ -93,7 +95,15 @@
 </section>
 
 <section><h2>Related tools</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/tools/lipidlynxx/"><strong>LipidLynxX</strong><span><b>Alternative to</b> · Provides nomenclature conversion and resource linking; supported notation and outputs differ.</span></a></div></section>
-</article></div>
+<section id="history"><h2>Entry history</h2>
+<p>Changes to this catalogue entry, not the tool's software release history. Acceptance and editorial review are separate.</p>
+
+<ol>
+<li><strong>2026-09-11 · First committed entry</strong><p>Add lipid naming tools and BioPAN integration</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/dca5be3fc6687889a8b0d4113bfc01b4867509f1">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/dca5be3fc6687889a8b0d4113bfc01b4867509f1/content/tools/goslin.yml">Entry at this revision</a></li>
+</ol>
+
+<p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commits/main/content/tools/goslin.yml">Full GitHub history</a></p>
+</section></article></div>
 </main>
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
@@ -105,7 +115,7 @@
         <h2>Explore</h2>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
       </div>
       <div>
@@ -122,8 +132,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
 </body>
 </html>

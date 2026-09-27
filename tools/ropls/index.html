@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Fit and assess multivariate PCA, PLS and OPLS models for omics data in R.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -64,15 +64,17 @@
   <main id="main-content">
 <section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/tools/">Tools</a><span>›</span><span>ropls</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Statistical analysis</p><h1>ropls</h1><p class="tool-summary">Fit and assess multivariate PCA, PLS and OPLS models for omics data in R.</p><div class="badge-row large"><span class="badge">Platform-independent</span><span class="badge">R package</span><span class="badge">Open source</span></div></div><div class="tool-actions"><a class="button primary" href="https://bioconductor.org/packages/ropls/">Access tool</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+ropls">Suggest an update</a></div></div></div></section>
 <div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>
-<div><dt>Primary use</dt><dd>Statistical analysis</dd></div><div><dt>Platforms</dt><dd>Platform-independent</dd></div><div><dt>Interface</dt><dd>R package</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Maintenance status unclear</dd></div><div><dt>Editorial review</dt><dd>2026-09-07</dd></div><div><dt>Previous verification</dt><dd>Not recorded</dd></div></dl>
+<div><dt>Primary use</dt><dd>Statistical analysis</dd></div><div><dt>Platforms</dt><dd>Platform-independent</dd></div><div><dt>Interface</dt><dd>R package</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Maintenance status unclear</dd></div><div><dt>Editorial review</dt><dd>2026-09-07</dd></div><div><dt>Previous verification</dt><dd>Not recorded</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl>
 <div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/tools/ropls.yml">View YAML source</a></div></aside>
 <article class="tool-article">
-<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a></nav>
+<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a><a href="#history">Entry history</a></nav>
+
 <section id="overview"><h2>Overview</h2><p>ropls provides scores, loadings, component assessment, permutation tests and variable-importance measures for exploratory and supervised analysis.</p></section>
 <section id="capabilities" class="capability-section"><h2>What can this tool do?</h2><div class="capability-cloud"><span>Multivariate statistics</span><span>Feature selection</span></div><h3>Common uses</h3><ul><li>Explore sample patterns with PCA.</li><li>Evaluate supervised models with validation and permutation testing.</li></ul></section>
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Statistical analysis</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Feature or peak table, Sample metadata</p></div><div><h3>Outputs</h3><p>Statistical results, Human-readable report</p></div><div><h3>Input formats</h3><p>Other, Numeric matrix and optional response vector</p></div><div><h3>Output formats</h3><p>Other, PCA/PLS/OPLS models, statistics and plots</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Explore sample patterns with PCA.</li></ul></div><div><h3>Not designed for</h3><ul><li>Proving predictive performance from separation in a training-set scores plot.</li></ul></div><div><h3>Important requirements</h3><ul><li>A numeric measurement matrix and appropriate responses for supervised models.</li></ul></div><div><h3>Considerations</h3><ul><li>Avoid information leakage during preprocessing and feature selection; use independent validation when assessing generalization.</li></ul></div></div></section>
+
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://bioconductor.org/packages/ropls/"><span>Primary access</span><span aria-hidden="true">↗</span></a></div><p class="note">Bioconductor package; installation and licensing details are provided on the package page.</p></section>
 
 <section id="evidence">
@@ -90,7 +92,15 @@
 </section>
 
 <section><h2>Related tools</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/tools/metaboanalyst/"><strong>MetaboAnalyst</strong><span><b>Complementary to</b> · A web platform and associated R package for metabolomics data processing, statistical analysis, visualization, functional interpretation, and multi-omics integration.</span></a><a href="/metabolomics-navigator-alpha/tools/workflow4metabolomics/"><strong>Workflow4Metabolomics</strong><span><b>Complementary to</b> · Create and share metabolomics processing and analysis workflows in a Galaxy environment.</span></a><a href="/metabolomics-navigator-alpha/tools/metabodiff/"><strong>MetaboDiff</strong><span><b>Complementary to</b> · Perform differential metabolomics analysis and explore metabolic correlation modules in R.</span></a></div></section>
-</article></div>
+<section id="history"><h2>Entry history</h2>
+<p>Changes to this catalogue entry, not the tool's software release history. Acceptance and editorial review are separate.</p>
+
+<ol>
+<li><strong>2026-09-08 · Entry update</strong><p>Audit core publications across existing tools</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/3136b4ffb94b114f1a3d5977f7c5b3a380d7703a">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/3136b4ffb94b114f1a3d5977f7c5b3a380d7703a/content/tools/ropls.yml">Entry at this revision</a></li><li><strong>2026-09-07 · First committed entry</strong><p>Add 50 documented metabolomics resources</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/67be0e9e4856bc03541379cde9632099d175a3e8">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/67be0e9e4856bc03541379cde9632099d175a3e8/content/tools/ropls.yml">Entry at this revision</a></li>
+</ol>
+
+<p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commits/main/content/tools/ropls.yml">Full GitHub history</a></p>
+</section></article></div>
 </main>
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
@@ -102,7 +112,7 @@
         <h2>Explore</h2>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
       </div>
       <div>
@@ -119,8 +129,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
 </body>
 </html>

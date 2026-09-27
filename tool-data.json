@@ -97,6 +97,70 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "bago",
+    "name": "BAGO",
+    "aliases": [
+      "Bayesian Optimization for LC Gradient Optimization"
+    ],
+    "summary": "BAGO is an open-source bioinformatics tool designed for the systematic optimization of LC gradient using the Bayesian optimization framework. It is particularly useful for optimizing LC gradients in LC-MS-based metabolomics, lipidomics, and exposomics.",
+    "links": {
+      "primary": "https://github.com/HuanLab/bago",
+      "documentation": "https://bago.readthedocs.io/en/latest/",
+      "repository": "https://github.com/Waddlessss/bago",
+      "homepage": "https://github.com/HuanLab/bago"
+    },
+    "resource_types": [
+      "software_application"
+    ],
+    "functions": {
+      "primary": "data_acquisition",
+      "secondary": [],
+      "capabilities": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "desktop_gui",
+      "python_package"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.6c01208",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-23"
+    },
+    "credits": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/54",
+      "developer_verified": false,
+      "submitter_name": "Morgane Mauduit",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0003-4583-5389"
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-23",
+      "updated_at": "2026-09-23",
+      "last_verified": "2026-09-23"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "biopan",
     "name": "BioPAN",
     "summary": "LIPID MAPS web tool for exploring changes in mammalian lipid pathways and predicting relative reaction or enzyme activity from quantitative lipidomics data.",
@@ -3712,6 +3776,128 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "iceberg",
+    "name": "ICEBERG",
+    "aliases": [],
+    "summary": "ICEBERG is a two-stage neural network that predicts mass spectra from molecular structures. It can rank candidate structures against a spectrum for metabolite annotation.",
+    "links": {
+      "primary": "https://github.com/coleygroup/ms-pred",
+      "repository": "https://github.com/coleygroup/ms-pred",
+      "documentation": "https://github.com/coleygroup/ms-pred#readme"
+    },
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "annotation_identification",
+      "secondary": [
+        "machine_learning"
+      ],
+      "capabilities": [
+        "structure_elucidation"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "python_package"
+    ],
+    "access": {
+      "model": "open_source",
+      "notes": "Python source, model instructions and links to pretrained weights are provided in the repository. Dataset access and pretrained-model use are distinct from training a new model; consult their respective terms and requirements."
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.3c04654",
+        "type": "primary",
+        "citation": "Goldman S, Li J, Coley CW. Generating Molecular Fragmentation Graphs with Autoregressive Neural Networks. Analytical Chemistry 96, 3419-3428 (2024).",
+        "note": "Original ICEBERG 1.0 method."
+      },
+      {
+        "doi": "10.1101/2025.05.28.656653",
+        "type": "primary",
+        "citation": "Wang R, et al. Neural Spectral Prediction for Structure Elucidation with Tandem Mass Spectrometry. bioRxiv (2025). Preprint.",
+        "note": "ICEBERG 2.0 citation listed by the official repository; later repository updates should be identified by model version."
+      }
+    ],
+    "common_uses": [
+      "Predict MS/MS spectra for candidate structures.",
+      "Rank a defined candidate set by comparison with an experimental spectrum."
+    ],
+    "scope": {
+      "designed_for": [
+        "Structure-to-spectrum prediction and candidate ranking for small molecules."
+      ],
+      "not_designed_for": [
+        "Raw chromatographic feature extraction or guaranteed de novo identification from a spectrum."
+      ],
+      "requirements": [
+        "Use matching model weights, molecular-structure inputs and model-specific acquisition metadata. Follow the prediction example for the chosen ICEBERG version."
+      ],
+      "considerations": [
+        "Candidate ranking is limited by the supplied candidate set and model applicability.",
+        "The repository distinguishes ICEBERG 1.0, 2.0 and 2.1. Record the model and weights used.",
+        "Training hardware requirements must not be presented as the minimum requirement for pretrained inference.",
+        "Software execution and prediction performance were not tested during this editorial preparation."
+      ]
+    },
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-14"
+    },
+    "credits": [
+      {
+        "name": "Runzhong Wang",
+        "role": "developer",
+        "orcid": "0000-0002-9566-738X"
+      }
+    ],
+    "provenance": {
+      "submitted_by": "developer",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/26",
+      "developer_verified": false,
+      "submitter_name": "Runzhong Wang",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0002-9566-738X",
+      "notes": "Draft editorial additions checked against the official ms-pred README and direct ICEBERG publications. Original developer-submission attribution is retained; no additional developer verification is claimed."
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-14",
+      "updated_at": "2026-09-15",
+      "last_verified": "2026-09-14"
+    },
+    "description": "ICEBERG predicts tandem mass spectra from candidate molecular structures using a learned fragment generator and an intensity predictor. Predicted spectra can be compared with an experimental spectrum to rank supplied candidates. The ms-pred repository also contains separate models; this entry covers ICEBERG, not every method in that repository.",
+    "data": {
+      "input_types": [
+        "molecular_structures",
+        "spectra"
+      ],
+      "output_types": [
+        "spectra",
+        "compound_list"
+      ],
+      "input_formats": [
+        "other"
+      ],
+      "other_input_formats": [
+        "SMILES candidate structures; experimental spectra for candidate ranking."
+      ],
+      "output_formats": [
+        "other"
+      ],
+      "other_output_formats": [
+        "Predicted spectra and candidate rankings; model-specific outputs."
+      ]
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "idbac",
     "name": "IDBac",
     "summary": "Web-based MALDI-TOF mass spectrometry platform and community knowledgebase for bacterial identification, culture-collection analysis, and comparison of specialized-metabolite profiles.",
@@ -5975,6 +6161,69 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "mb-post",
+    "name": "MB-POST",
+    "aliases": [],
+    "summary": "MB-POST is a metabolomics mass spectrometry data repository which implements a reanalysis-oriented metadata framework that captures the information essential for data reuse. It provides a streamlined submission system that enables the rapid deposition of standardized metabolomics metadata together with experimental data.",
+    "links": {
+      "primary": "https://repository.massbank.jp/",
+      "documentation": "https://repository.massbank.jp/help#before-submission",
+      "homepage": "https://repository.massbank.jp/"
+    },
+    "resource_types": [
+      "data_repository"
+    ],
+    "functions": {
+      "primary": "data_management_sharing",
+      "secondary": [
+        "reference_data_search"
+      ],
+      "capabilities": []
+    },
+    "platforms": [
+      "multi_platform"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "web_app"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.6c00697",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-23"
+    },
+    "credits": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/52",
+      "developer_verified": false,
+      "submitter_name": "Morgane Mauduit",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0003-4583-5389",
+      "notes": "MB-POST is a mass spectrometry data repository for metabolomics. It consists of a high-speed file upload process, flexible file management system and easy-to-use interfaces. \nUsers can release their \"raw/processed\" data via this site with a unique identifier number for the paper publication. Users also can suspend (or \"embargo\") their data until their paper is published. \nThe file transfer from users' computer to our repository server is very fast and uses only web browsers – it does not require installing any additional software."
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-23",
+      "updated_at": "2026-09-23",
+      "last_verified": "2026-09-23"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "metaboanalyst",
     "name": "MetaboAnalyst",
     "summary": "A web platform and associated R package for metabolomics data processing, statistical analysis, visualization, functional interpretation, and multi-omics integration.",
@@ -6230,6 +6479,67 @@
         "relationship": "complementary"
       }
     ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "metaboannoate",
+    "name": "MetaboAnnoate",
+    "aliases": [],
+    "summary": "MetaboAnnotate is an AI-powered system for metabolite annotation of MS/MS data. \nAgents (Supervisor, Planner, Executor, Evaluator) orchestrate workflows and call external tools.\nThe goal of MetabAnnotate is to streamline complex annotation workflows in metabolomics using a modular AI-agent framework.",
+    "links": {
+      "primary": "https://hassounlab.cs.tufts.edu/MetaboAnnotate/",
+      "homepage": "https://hassounlab.cs.tufts.edu/MetaboAnnotate/"
+    },
+    "resource_types": [
+      "web_service"
+    ],
+    "functions": {
+      "primary": "annotation_identification",
+      "secondary": [
+        "machine_learning"
+      ],
+      "capabilities": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "web_app"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.6c01717",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-18"
+    },
+    "credits": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/41",
+      "developer_verified": false,
+      "submitter_name": "Morgane Mauduit",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0003-4583-5389"
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-18",
+      "updated_at": "2026-09-18",
+      "last_verified": "2026-09-18"
+    }
   },
   {
     "$schema": "../../schemas/tool.schema.json",
@@ -6563,6 +6873,69 @@
         "relationship": "complementary"
       }
     ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "metabograph",
+    "name": "MetaboGraph",
+    "aliases": [],
+    "summary": "MetaboGraph is a Framework for Metabolomics and Lipidomics Annotation and Pathway Network Analysis that provides end-to-end workflow for metabolite identification, pathway enrichment, net analysis, and multi-omics integration. Designed for both beginner and advanced users, MetaboGraph combines powerful computational methods with an intuitive graphical interface.",
+    "links": {
+      "primary": "https://github.com/odaramola92/MetaboGraph",
+      "repository": "https://github.com/odaramola92/MetaboGraph"
+    },
+    "resource_types": [
+      "workflow_pipeline"
+    ],
+    "functions": {
+      "primary": "pathway_interpretation",
+      "secondary": [
+        "reference_data_search",
+        "visualization_reporting",
+        "multiomics_integration"
+      ],
+      "capabilities": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "python_package"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.6c01446",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-23"
+    },
+    "credits": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/50",
+      "developer_verified": false,
+      "submitter_name": "Morgane Mauduit",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0003-4583-5389"
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-23",
+      "updated_at": "2026-09-23",
+      "last_verified": "2026-09-23"
+    }
   },
   {
     "$schema": "../../schemas/tool.schema.json",
@@ -7170,6 +7543,76 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "metexplore",
+    "name": "MetExplore",
+    "aliases": [],
+    "summary": "MetExplore is an open-access web server that provides interactive tools for metabolic network analysis and visualization. The platform offers:\nA collection of curated genome-scale metabolic networks for multiple organisms, together with the possibility to import custom metabolic networks from SBML files.\nA metabolite identification module that maps experimental metabolites onto metabolic networks using ChEBI identifiers.\nPathway overrepresentation analysis to identify significantly enriched m...",
+    "links": {
+      "primary": "https://metexplore.toulouse.inrae.fr/metexplore3",
+      "repository": "https://forge.inrae.fr/metexplore/metexplore3",
+      "web_app": "https://metexplore.toulouse.inrae.fr/metexplore3/",
+      "homepage": "https://metexplore.toulouse.inrae.fr/metexplore3"
+    },
+    "resource_types": [
+      "web_service"
+    ],
+    "functions": {
+      "primary": "pathway_interpretation",
+      "secondary": [
+        "multiomics_integration",
+        "visualization_reporting"
+      ],
+      "capabilities": []
+    },
+    "platforms": [
+      "platform_independent"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "web_app"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "doi": "10.1093/nar/gky301",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-15"
+    },
+    "credits": [
+      {
+        "name": "Ludovic Cottret",
+        "role": "developer",
+        "orcid": "0000-0001-7418-7750"
+      }
+    ],
+    "provenance": {
+      "submitted_by": "developer",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/34",
+      "developer_verified": false,
+      "submitter_name": "Ludovic Cottret",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0001-7418-7750"
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-15",
+      "updated_at": "2026-09-15",
+      "last_verified": "2026-09-15"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "metfrag",
     "name": "MetFrag",
     "summary": "Rank candidate molecular structures by comparing predicted fragments with an experimental MS/MS spectrum.",
@@ -7477,6 +7920,72 @@
         "relationship": "complementary"
       }
     ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "metlinkr",
+    "name": "MetLinkR",
+    "aliases": [],
+    "summary": "MetLinkR is an R package used for cross-linking of metabolite identifiers across disparate data sets. It uses RefMet and RaMP-DB links to recognize metabolites referred to by different names or database identifiers. MetLinkR can be used as an R package or accessed through the RaMP-DB web interface.",
+    "links": {
+      "primary": "https://rampdb.nih.gov/identifier-harmonization",
+      "repository": "https://github.com/ncats/MetLinkR",
+      "homepage": "https://rampdb.nih.gov/identifier-harmonization"
+    },
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "reference_data_search",
+      "secondary": [],
+      "capabilities": []
+    },
+    "platforms": [
+      "platform_independent"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "r_package"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "citation": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12053952/",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-18"
+    },
+    "credits": [
+      {
+        "name": "Andrew Patt",
+        "role": "developer",
+        "orcid": "0000-0002-6373-9545"
+      }
+    ],
+    "provenance": {
+      "submitted_by": "developer",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/45",
+      "developer_verified": false,
+      "submitter_name": "Andrew Patt",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0002-6373-9545"
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-18",
+      "updated_at": "2026-09-18",
+      "last_verified": "2026-09-18"
+    }
   },
   {
     "$schema": "../../schemas/tool.schema.json",
@@ -8065,6 +8574,74 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "mixomics",
+    "name": "mixOmics",
+    "aliases": [
+      "DIABLO",
+      "MINT"
+    ],
+    "summary": "mixOmics is an R package with tools for integrating multi-omic datasets, such as proteomics, metabolomics, metagenomics, microbiome, lipidomics, and more. It can assist in data visualization and advanced multivariate techniques for integration of varied omics studies.",
+    "links": {
+      "primary": "https://mixomics.org/",
+      "repository": "https://github.com/mixOmics-org/mixOmics",
+      "documentation": "https://www.rdocumentation.org/packages/mixOmics/versions/6.3.2",
+      "homepage": "https://mixomics.org/"
+    },
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "multiomics_integration",
+      "secondary": [
+        "statistics",
+        "visualization_reporting",
+        "pathway_interpretation"
+      ],
+      "capabilities": []
+    },
+    "platforms": [
+      "platform_independent"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "r_package"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "doi": "10.1371/journal.pcbi.1005752",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-16"
+    },
+    "credits": [],
+    "provenance": {
+      "submitted_by": "user",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/40",
+      "developer_verified": false,
+      "submitter_name": "Daniel J. Otto",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0009-0001-4165-3484"
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-16",
+      "updated_at": "2026-09-16",
+      "last_verified": "2026-09-16"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "modifinder",
     "name": "ModiFinder",
     "summary": "A GNPS2-associated computational tool for localizing structural modification sites by aligning MS/MS spectra of a known compound and a structurally related unknown analogue.",
@@ -8291,6 +8868,119 @@
         "relationship": "complementary"
       }
     ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "molnetinvert",
+    "name": "MolNetInvert",
+    "summary": "Create metadata-based molecular networks from GNPS networks or feature tables to explore how metabolites are distributed across sample groups.",
+    "description": "MolNetInvert is a desktop GUI implementing Metadata-Based Molecular Networks (MBMN). It reorganizes processed metabolomics data around selected sample metadata and can simplify network views by collapsing clusters. Metadata connections describe sample-group associations; they are distinct from MS/MS similarity or ion-identity evidence.",
+    "links": {
+      "primary": "https://github.com/AaronJCA/MolNetInvert",
+      "repository": "https://github.com/AaronJCA/MolNetInvert",
+      "documentation": "https://github.com/AaronJCA/MolNetInvert/blob/main/MolNetInvert-UserGuide.pdf"
+    },
+    "resource_types": [
+      "software_application"
+    ],
+    "functions": {
+      "primary": "molecular_networking",
+      "secondary": [
+        "visualization_reporting"
+      ],
+      "capabilities": [
+        "network_visualization"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "untargeted"
+    ],
+    "interfaces": [
+      "desktop_gui"
+    ],
+    "access": {
+      "model": "open_source",
+      "license": "MIT",
+      "notes": "Repository includes an MIT license, Python source and a Windows executable (v1.2). Consult the user guide for setup and input conventions."
+    },
+    "data": {
+      "input_types": [
+        "feature_table",
+        "sample_metadata"
+      ],
+      "input_formats": [
+        "csv_tsv",
+        "other"
+      ],
+      "other_input_formats": [
+        "GNPS GraphML with metadata; optional metadata preference TXT"
+      ],
+      "output_types": [
+        "report"
+      ],
+      "output_formats": [
+        "other"
+      ],
+      "other_output_formats": [
+        "XGMML network for visualization in Cytoscape"
+      ]
+    },
+    "publications": [
+      {
+        "type": "primary",
+        "doi": "10.26434/chemrxiv-2024-q4dpr",
+        "citation": "Christiansen JV, Jarmusch SA, Vertot M, Andersen AJC. MolNetInvert: A Tool for Creating Metadata Based Molecular Networks and Their Applications in Large Microbial Datasets. ChemRxiv (2024), version 1. Preprint.",
+        "note": "Direct tool preprint, not a peer-reviewed journal article; no separate peer-reviewed version was verified during this review."
+      }
+    ],
+    "common_uses": [
+      "Compare metabolite distributions across biological conditions or sample groups.",
+      "Reorganize dense networks and singleton features around metadata."
+    ],
+    "scope": {
+      "designed_for": [
+        "Downstream exploration of processed MS metabolomics networks and feature tables."
+      ],
+      "not_designed_for": [
+        "Raw-file preprocessing or confirming compound identities from metadata connections."
+      ],
+      "requirements": [
+        "GNPS GraphML with appropriate metadata, or a CSV feature table and tab-delimited sample-to-group metadata in the documented format."
+      ],
+      "considerations": [
+        "Missing or inconsistent sample metadata changes the resulting grouping.",
+        "Collapsing or filtering nodes can hide detail; retain the original network and record settings.",
+        "Input modes and compatibility were checked in v1.2 source; software execution was not tested."
+      ]
+    },
+    "related_tools": [
+      {
+        "slug": "gnps",
+        "relationship": "uses",
+        "note": "Accepts documented GNPS classical, feature-based and ion-identity network exports."
+      },
+      {
+        "slug": "cytoscape",
+        "relationship": "complementary",
+        "note": "Visualize the exported XGMML network."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Metadata checked against the official repository, user guide and tool preprint. Software execution was not tested."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-12",
+      "updated_at": "2026-09-15",
+      "last_verified": "2026-09-12",
+      "last_editorial_review": "2026-09-12"
+    }
   },
   {
     "$schema": "../../schemas/tool.schema.json",
@@ -8668,6 +9358,140 @@
     "aliases": [
       "MSFINDER"
     ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "ms-mint",
+    "name": "MS-MINT",
+    "aliases": [],
+    "summary": "MS-MINT (MS-Metabolomics Integrator) is a Python application for processing, analyzing, and visualizing large liquid chromatography-mass spectrometry (LC-MS) metabolomics datasets",
+    "links": {
+      "primary": "https://github.com/LewisResearchGroup/ms-mint-app2",
+      "repository": "https://github.com/LewisResearchGroup/ms-mint-app2"
+    },
+    "resource_types": [
+      "software_application"
+    ],
+    "functions": {
+      "primary": "preprocessing",
+      "secondary": [
+        "visualization_reporting",
+        "statistics"
+      ],
+      "capabilities": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "python_package"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.6c01083",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-18"
+    },
+    "credits": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/43",
+      "developer_verified": false,
+      "submitter_name": "Morgane Mauduit",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0003-4583-5389",
+      "notes": "This software addresses traditional shortcomings in metabolomics data analysis by using an end-to-end workflow based on the region-of-interest (ROI) approach modeled after NMR software. \nIn MS-MINT, ROIs are defined as windows of retention time and m/z that are extracted from MS1 spectra.\nEach metabolite is therefore defined by a specific ROI, which can then be extracted from each spectrum and visualized or analyzed by data processing algorithms."
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-18",
+      "updated_at": "2026-09-18",
+      "last_verified": "2026-09-18"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "ms-net",
+    "name": "MS-Net",
+    "aliases": [
+      "MSNet",
+      "MS-Net"
+    ],
+    "summary": "MS-Net combines annotation levels from both mass spectral libraries and in silico tools such as MS-Finder or Sirius-CSI to build a comprehensive candidate chemical space. Then, MS-Net prioritizes annotation using the molecular network and Tanimoto-based similarity with optional biosource reranking. Additionnaly it can combine positive and negative acquisition modes and add metadata to all annotated features, such as chemical ontology or database identifiers.",
+    "links": {
+      "primary": "https://forge.inrae.fr/metatoul/equipe-agromix/ms-net",
+      "homepage": "https://forge.inrae.fr/metatoul/equipe-agromix/ms-net"
+    },
+    "resource_types": [
+      "workflow_pipeline"
+    ],
+    "functions": {
+      "primary": "annotation_identification",
+      "secondary": [
+        "molecular_networking"
+      ],
+      "capabilities": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "knime"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.6c01026",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-16"
+    },
+    "credits": [
+      {
+        "name": "Guillaume Marti",
+        "role": "developer",
+        "orcid": "0000-0002-6321-9005"
+      }
+    ],
+    "provenance": {
+      "submitted_by": "developer",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/38",
+      "developer_verified": false,
+      "submitter_name": "Guillaume Marti",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0002-6321-9005",
+      "notes": "MS-Net is compatible with output files from MZmine, Sirius, MS-Dial and MS-Finder"
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-16",
+      "updated_at": "2026-09-16",
+      "last_verified": "2026-09-16"
+    }
   },
   {
     "$schema": "../../schemas/tool.schema.json",
@@ -9285,6 +10109,67 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "msionization",
+    "name": "MSIonization",
+    "aliases": [],
+    "summary": "MSIonization is a Python package for predicting the optimal ionization mode with higher ionization efficiency for organic molecules from their SMILES representations.",
+    "links": {
+      "primary": "https://github.com/sepehribakhtyar/MSIonization",
+      "repository": "https://github.com/sepehribakhtyar/MSIonization"
+    },
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "machine_learning",
+      "secondary": [
+        "data_acquisition"
+      ],
+      "capabilities": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "python_package"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.6c01937",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-23"
+    },
+    "credits": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/56",
+      "developer_verified": false,
+      "submitter_name": "Morgane Mauduit",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0003-4583-5389"
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-23",
+      "updated_at": "2026-09-23",
+      "last_verified": "2026-09-23"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "msireader",
     "name": "MSiReader",
     "summary": "Vendor-neutral desktop software for visualization, analysis and interpretation of high-resolution mass spectrometry imaging datasets.",
@@ -9378,6 +10263,65 @@
         "relationship": "complementary"
       }
     ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "mslinear",
+    "name": "MSlineaR",
+    "aliases": [],
+    "summary": "MSlineaR, is an open-source R-based software tool implementing a six-step process to assess dilution-dependent response behavior in metabolomic data sets.",
+    "links": {
+      "primary": "https://github.com/bih-metabolomics/MSlineaR",
+      "repository": "https://github.com/bih-metabolomics/MSlineaR"
+    },
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "quality_control",
+      "secondary": [],
+      "capabilities": []
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "r_package"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.5c04480",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-23"
+    },
+    "credits": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/48",
+      "developer_verified": false,
+      "submitter_name": "Morgane Mauduit",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0003-4583-5389"
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-23",
+      "updated_at": "2026-09-23",
+      "last_verified": "2026-09-23"
+    }
   },
   {
     "$schema": "../../schemas/tool.schema.json",
@@ -11477,6 +12421,128 @@
         "dia"
       ],
       "ion_mobility": "required"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "peakpanther",
+    "name": "peakPantheR",
+    "aliases": [],
+    "summary": "R package for targeted extraction and integration of predefined metabolic features across LC-MS profiling files.",
+    "links": {
+      "primary": "https://bioconductor.org/packages/release/bioc/html/peakPantheR.html",
+      "repository": "https://github.com/phenomecentre/peakPantheR",
+      "issue_tracker": "https://github.com/phenomecentre/peakPantheR/issues",
+      "documentation": "https://phenomecentre.github.io/peakPantheR.github.io/",
+      "homepage": "https://phenomecentre.github.io/peakPantheR.github.io/"
+    },
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "preprocessing",
+      "secondary": [],
+      "capabilities": [
+        "peak_detection",
+        "chromatogram_building"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [
+      "targeted"
+    ],
+    "interfaces": [
+      "r_package",
+      "web_app"
+    ],
+    "access": {
+      "model": "open_source",
+      "license": "GPL-3",
+      "notes": "Open-source Bioconductor R package. Match R and Bioconductor releases and consult the selected release requirements. The Shiny GUI runs from the installed package; it is not a separate hosted analysis service."
+    },
+    "publications": [
+      {
+        "doi": "10.1093/bioinformatics/btab433",
+        "type": "primary",
+        "citation": "Wolfer AM, et al. peakPantheR, an R package for large-scale targeted extraction and integration of annotated metabolic features in LC-MS profiling datasets. Bioinformatics 37, 4886-4888 (2021)."
+      }
+    ],
+    "common_uses": [
+      "Extract a consistent predefined feature panel across LC-MS files.",
+      "Review chromatographic fits and refine target integration windows."
+    ],
+    "scope": {
+      "designed_for": [
+        "Targeted extraction from predefined retention-time and m/z regions in profiling data."
+      ],
+      "not_designed_for": [
+        "Discovery of all unknown features or de novo metabolite identification."
+      ],
+      "requirements": [
+        "A target annotation table with feature identifiers and retention-time/mass windows.",
+        "MS files supported by the underlying R readers and a compatible R/Bioconductor installation."
+      ],
+      "considerations": [
+        "Chromatographic drift and coelution can compromise extraction within fixed windows.",
+        "Inspect fitting diagnostics and retain target definitions and parameter changes.",
+        "A fitted peak does not replace reference-standard evidence for its assigned identity."
+      ]
+    },
+    "related_tools": [
+      {
+        "slug": "msnbase",
+        "relationship": "integration",
+        "note": "Used in the package data-reading ecosystem alongside mzR; check release compatibility."
+      }
+    ],
+    "credits": [
+      {
+        "name": "Gonçalo Correia",
+        "role": "developer",
+        "orcid": "0000-0001-8271-9294"
+      }
+    ],
+    "provenance": {
+      "submitted_by": "developer",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/17",
+      "developer_verified": false,
+      "submitter_name": "Gonçalo Correia",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0001-8271-9294",
+      "notes": "Recovered from the corrected public submission after its original ORCID parsing failure. Bioconductor, official project documentation and DOI metadata reviewed on 2026-09-12. No software execution or independent benchmarking performed. Contributor consent and submitted identity preserved; account ownership was not independently authenticated."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-12",
+      "updated_at": "2026-09-12",
+      "last_verified": "2026-09-12",
+      "last_editorial_review": "2026-09-12"
+    },
+    "description": "peakPantheR searches specified retention-time and m/z regions, fits chromatographic peaks and reports integration results with diagnostic plots. It supports processing many files in parallel and reviewing parameters through a local Shiny interface. The target list supplies the expected feature annotations; extraction does not independently establish compound identity.",
+    "data": {
+      "input_types": [
+        "spectra",
+        "compound_list"
+      ],
+      "input_formats": [
+        "mzml"
+      ],
+      "other_input_formats": [
+        "Target feature table with retention-time and m/z windows"
+      ],
+      "output_types": [
+        "feature_table",
+        "report"
+      ],
+      "output_formats": [
+        "csv_tsv"
+      ],
+      "other_output_formats": [
+        "Diagnostic chromatographic plots and R annotation objects"
+      ]
     }
   },
   {
@@ -14087,6 +15153,111 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "timar",
+    "name": "timaR",
+    "aliases": [],
+    "summary": "timaR helps annotate metabolites in MS/MS data by combining spectral matching with taxonomic information about the organisms being studied. It can incorporate retention-time evidence and existing SIRIUS or GNPS annotations to prioritize candidate compounds.",
+    "links": {
+      "primary": "https://taxonomicallyinformedannotation.github.io/tima/",
+      "homepage": "https://taxonomicallyinformedannotation.github.io/tima/",
+      "documentation": "https://taxonomicallyinformedannotation.github.io/tima/"
+    },
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "annotation_identification",
+      "secondary": [],
+      "capabilities": [
+        "library_matching"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "r_package"
+    ],
+    "access": {
+      "model": "open_source",
+      "notes": "Install through the documented R-universe repository; the documentation also describes a local Shiny interface and a Docker distribution. Consult the current setup instructions and terms for external resources."
+    },
+    "publications": [
+      {
+        "doi": "10.3389/fpls.2019.01329",
+        "type": "primary",
+        "citation": "Rutz A, Dounoue-Kubo M, Ollivier S, et al. Taxonomically Informed Scoring Enhances Confidence in Natural Products Annotation. Frontiers in Plant Science 10:1329 (2019).",
+        "note": "Foundational method cited by the official tima documentation; it does not describe every later R-package update."
+      }
+    ],
+    "common_uses": [
+      "Prioritize candidate annotations using organism taxonomy alongside MS/MS evidence.",
+      "Combine compatible SIRIUS or GNPS annotations with a processed feature dataset."
+    ],
+    "scope": {
+      "designed_for": [
+        "Downstream annotation of processed LC-MS/MS features with organism context."
+      ],
+      "not_designed_for": [
+        "Replacing raw-data feature extraction or confirming chemical identity from taxonomy alone."
+      ],
+      "requirements": [
+        "Feature table with feature IDs, retention time, m/z and sample intensities; MGF spectra; sample-to-organism metadata when multiple organisms are analyzed."
+      ],
+      "considerations": [
+        "Taxonomic context and reference-library coverage affect candidate prioritization.",
+        "External annotations and custom libraries are optional inputs; check documented version and column conventions."
+      ]
+    },
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-14"
+    },
+    "credits": [],
+    "provenance": {
+      "submitted_by": "user",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/28",
+      "developer_verified": false,
+      "submitter_name": "Elnur Garayev",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0003-4790-4878",
+      "notes": "Draft editorial additions based on the official tima documentation. Original submitter attribution is retained. Software execution was not tested."
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-14",
+      "updated_at": "2026-09-15",
+      "last_verified": "2026-09-14"
+    },
+    "description": "An R package for Taxonomically Informed Metabolite Annotation. The workflow combines processed feature information and fragmentation spectra with organism metadata and structure-organism evidence. External annotations and custom libraries can supplement the workflow; resulting candidates require interpretation rather than being treated as confirmed identities.",
+    "data": {
+      "input_types": [
+        "feature_table",
+        "spectra",
+        "sample_metadata"
+      ],
+      "output_types": [
+        "compound_list",
+        "report"
+      ],
+      "input_formats": [
+        "csv_tsv",
+        "mgf"
+      ],
+      "output_formats": [
+        "other"
+      ],
+      "other_output_formats": [
+        "Workflow files in .tima/data; exact tables depend on the selected workflow."
+      ]
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "tinymass",
     "name": "TinyMass",
     "summary": "Hosted utility for sharing mass spectra through reusable spectrum identifiers in the GNPS2 ecosystem.",
@@ -14361,6 +15532,7 @@
         "An account on a suitable Galaxy instance and data compatible with the chosen tools."
       ],
       "considerations": [
+        "W4M also supports NMR metabolomics, including workflows starting from FID data. This Navigator entry describes its MS-based applications.",
         "Record tool versions and histories; public-server quotas, installed tools and job availability vary by instance."
       ]
     },
@@ -14368,13 +15540,13 @@
     "provenance": {
       "submitted_by": "curator",
       "developer_verified": false,
-      "notes": "Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked official sources; software execution and developer verification were not assessed."
+      "notes": "Documentation-based editorial review on 7 September 2026. Scope and limitations summarize the linked official sources; software execution and developer verification were not assessed. Scope correction contributed by Yann Guitton (ORCID 0000-0002-4479-0636), W4M Coreteam, in https://github.com/scottjarmusch/metabolomics-navigator/issues/23."
     },
     "status": {
       "entry": "published",
       "review": "editorially_reviewed",
       "created_at": "2026-09-07",
-      "updated_at": "2026-09-08",
+      "updated_at": "2026-09-15",
       "last_editorial_review": "2026-09-07"
     },
     "related_tools": [

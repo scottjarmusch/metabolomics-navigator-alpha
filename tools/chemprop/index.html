@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Prioritize putative transformations between molecular-network features using abundance changes across ordered samples.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -64,15 +64,17 @@
   <main id="main-content">
 <section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/tools/">Tools</a><span>›</span><span>Chemical Proportionality (ChemProp)</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Statistical analysis</p><h1>Chemical Proportionality (ChemProp)</h1><p class="tool-summary">Prioritize putative transformations between molecular-network features using abundance changes across ordered samples.</p><div class="badge-row large"><span class="badge">LC-MS</span><span class="badge">Web application</span><span class="badge">Open source</span></div></div><div class="tool-actions"><a class="button primary" href="https://chemprop.gnps2.org/">Access tool</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+Chemical+Proportionality+%28ChemProp%29">Suggest an update</a></div></div></div></section>
 <div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>
-<div><dt>Primary use</dt><dd>Statistical analysis</dd></div><div><dt>Platforms</dt><dd>LC-MS</dd></div><div><dt>Interface</dt><dd>Web application</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Actively maintained</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div></dl>
+<div><dt>Primary use</dt><dd>Statistical analysis</dd></div><div><dt>Platforms</dt><dd>LC-MS</dd></div><div><dt>Interface</dt><dd>Web application</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Actively maintained</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl>
 <div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/tools/chemprop.yml">View YAML source</a></div></aside>
 <article class="tool-article">
-<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a></nav>
+<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a><a href="#history">Entry history</a></nav>
+
 <section id="overview"><h2>Overview</h2><p>Chemical Proportionality adds abundance-pattern context to molecular networks. The current ChemProp2 web app includes the original log-ratio method for two-point comparisons and correlation-based scoring for three or more sequential observations. Scores help select feature pairs for investigation; they do not establish a biochemical reaction. This is distinct from the unrelated Chemprop molecular-property prediction package.</p></section>
 <section id="capabilities" class="capability-section"><h2>What can this tool do?</h2><div class="capability-cloud"><span>Interactive dashboard</span></div><h3>Common uses</h3><ul><li>Prioritize molecular-network feature pairs whose abundance patterns suggest a potential transformation.</li><li>Compare temporal or spatial abundance trends among connected features.</li></ul></section>
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Statistical analysis</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Feature or peak table, Sample metadata</p></div><div><h3>Outputs</h3><p>Statistical results, Human-readable report</p></div><div><h3>Input formats</h3><p>CSV or TSV, TXT and XLSX uploads supported by the app, GNPS2 feature-based molecular networking task identifier, Network edge table for provided-edge and cascade modes</p></div><div><h3>Output formats</h3><p>Interactive app views of feature-pair scores and network context</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Ordered non-targeted LC-MS/MS feature-abundance data and molecular-network context.</li></ul></div><div><h3>Not designed for</h3><ul><li>Raw-data peak picking or conclusive assignment of reaction mechanisms and metabolite identities.</li></ul></div><div><h3>Important requirements</h3><ul><li>Feature quantification and sample metadata with consistent sample identifiers and an ordered comparison variable.</li><li>An edge table for provided-edge and cascade analyses; annotation tables are optional.</li><li>Select the scoring mode appropriate to two-point versus longer sequential comparisons.</li></ul></div><div><h3>Considerations</h3><ul><li>Anti-correlation and inferred direction are prioritization evidence, not proof of conversion or causation.</li><li>Sample preparation, normalization, missing values and experimental ordering affect abundance patterns.</li><li>Spectrum Resolver and ModiFinder links require USIs supplied by the GNPS2 task-ID input route; manual uploads do not provide that integration.</li><li>The original publication describes ChemProp1; it should not be treated as validation of every feature in ChemProp2.</li></ul></div></div></section>
+
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://chemprop.gnps2.org/"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://github.com/Functional-Metabolomics-Lab/ChemProp-Web-App/blob/main/Home.py"><span>Documentation</span><span aria-hidden="true">↗</span></a><a href="https://github.com/Functional-Metabolomics-Lab/ChemProp-Web-App"><span>Source repository</span><span aria-hidden="true">↗</span></a></div><p class="note">The source is BSD-3-Clause licensed. The app can be hosted locally with Python and Streamlit; the public instance is linked above. No analysis job was run during editorial review.</p><p><strong>License:</strong> BSD-3-Clause</p></section>
 
 <section id="evidence">
@@ -91,7 +93,15 @@
 </section>
 
 <section><h2>Related tools</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/tools/gnps-feature-based-molecular-networking/"><strong>GNPS2 Feature-Based Molecular Networking workflow</strong><span><b>Integrates with</b> · Accepts a GNPS2 FBMN task identifier to retrieve feature tables, metadata and network context.</span></a><a href="/metabolomics-navigator-alpha/tools/modifinder/"><strong>ModiFinder</strong><span><b>Integrates with</b> · The task-ID route supports USI-based follow-up with ModiFinder; manual uploads do not.</span></a><a href="/metabolomics-navigator-alpha/tools/metaboapps/"><strong>MetaboApps</strong><span><b>Part of</b> · Listed as a standalone Chemical Proportionality app in the MetaboApps ecosystem.</span></a></div></section>
-</article></div>
+<section id="history"><h2>Entry history</h2>
+<p>Changes to this catalogue entry, not the tool's software release history. Acceptance and editorial review are separate.</p>
+
+<ol>
+<li><strong>2026-09-10 · First committed entry</strong><p>Add source-reviewed Chemical Proportionality tool entry</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/065c66ed237f15ee5eb513c9c02515b16ad2a730">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/065c66ed237f15ee5eb513c9c02515b16ad2a730/content/tools/chemprop.yml">Entry at this revision</a></li>
+</ol>
+
+<p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commits/main/content/tools/chemprop.yml">Full GitHub history</a></p>
+</section></article></div>
 </main>
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
@@ -103,7 +113,7 @@
         <h2>Explore</h2>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
       </div>
       <div>
@@ -120,8 +130,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
 </body>
 </html>

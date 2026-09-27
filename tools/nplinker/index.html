@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Ranks candidate links between microbial biosynthetic gene clusters and MS metabolomics spectra or molecular families using paired strain data.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -64,15 +64,17 @@
   <main id="main-content">
 <section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/tools/">Tools</a><span>›</span><span>NPLinker</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Multi-omics integration</p><h1>NPLinker</h1><p class="tool-summary">Ranks candidate links between microbial biosynthetic gene clusters and MS metabolomics spectra or molecular families using paired strain data.</p><div class="badge-row large"><span class="badge">LC-MS</span><span class="badge">Platform-independent</span><span class="badge">Multi-omics</span><span class="badge">Untargeted metabolomics</span><span class="badge">Python package</span></div></div><div class="tool-actions"><a class="button primary" href="https://github.com/NPLinker/nplinker">Access tool</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+NPLinker">Suggest an update</a></div></div></div></section>
 <div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>
-<div><dt>Primary use</dt><dd>Multi-omics integration</dd></div><div><dt>Platforms</dt><dd>LC-MS, Platform-independent</dd></div><div><dt>Analysis</dt><dd>Multi-omics, Untargeted metabolomics</dd></div><div><dt>Interface</dt><dd>Python package, Web application</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Maintenance status unclear</dd></div><div><dt>Editorial review</dt><dd>2026-09-12</dd></div><div><dt>Previous verification</dt><dd>12 September 2026</dd></div></dl>
+<div><dt>Primary use</dt><dd>Multi-omics integration</dd></div><div><dt>Platforms</dt><dd>LC-MS, Platform-independent</dd></div><div><dt>Analysis</dt><dd>Multi-omics, Untargeted metabolomics</dd></div><div><dt>Interface</dt><dd>Python package, Web application</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Maintenance status unclear</dd></div><div><dt>Editorial review</dt><dd>2026-09-12</dd></div><div><dt>Previous verification</dt><dd>12 September 2026</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl>
 <div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/tools/nplinker.yml">View YAML source</a></div></aside>
 <article class="tool-article">
-<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a></nav>
+<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a><a href="#history">Entry history</a></nav>
+
 <section id="overview"><h2>Overview</h2><p>NPLinker brings processed metabolomics and genomics together to prioritize hypotheses about which gene clusters produce detected natural products. It uses matched strain information and configurable scoring methods. Scored links are candidates for follow-up experiments, not confirmed biosynthetic assignments.</p></section>
 <section id="capabilities" class="capability-section"><h2>What can this tool do?</h2><div class="capability-cloud"><span>Metadata-based contextualization</span></div><h3>Common uses</h3><ul><li>Prioritize gene-cluster and MS-feature links across microbial strains.</li><li>Explore paired genomics and metabolomics datasets.</li></ul></section>
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Multi-omics integration</p></div><div><h3>Other functions</h3><p>Molecular networking and chemical similarity, Visualization and reporting</p></div><div><h3>Analysis types</h3><p>Multi-omics, Untargeted metabolomics</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Mass spectra, Feature or peak table, Sample metadata</p></div><div><h3>Outputs</h3><p>Statistical results, Human-readable report</p></div><div><h3>Input formats</h3><p>Supported GNPS network archives, antiSMASH GenBank regions and optional BiG-SCAPE outputs, Strain-mapping JSON</p></div><div><h3>Output formats</h3><p>Scored candidate links and webapp analysis views</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Hypothesis generation from paired microbial genomics and MS metabolomics.</li></ul></div><div><h3>Not designed for</h3><ul><li>Raw MS preprocessing or proof of a gene-cluster/product relationship.</li></ul></div><div><h3>Important requirements</h3><ul><li>Matched strain identifiers connecting spectra and genomic regions.</li><li>Supported GNPS outputs, antiSMASH results and configured dependencies, or a supported paired-omics project.</li></ul></div><div><h3>Considerations</h3><ul><li>Missing strains, silent gene clusters and inconsistent sample naming can distort links.</li><li>Choose compatible BiG-SCAPE and MIBiG versions; the documented example uses MIBiG 3.1, so do not assume that the newest MIBiG release is interchangeable.</li></ul></div></div></section>
+
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://github.com/NPLinker/nplinker"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://nplinker.github.io/nplinker/latest/"><span>Documentation</span><span aria-hidden="true">↗</span></a></div><p class="note">Open-source Python framework with a documented webapp interface. Current documentation requires Python 3.11 or later on Linux, macOS or Windows with WSL; external dependencies and reference databases require additional installation. Pin a release and reference-data versions.</p><p><strong>License:</strong> Apache-2.0</p></section>
 
 <section id="evidence">
@@ -91,7 +93,15 @@
 </section>
 
 <section><h2>Related tools</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/tools/gnps/"><strong>GNPS</strong><span><b>Integrates with</b> · Uses GNPS molecular-network/metabolomics outputs.</span></a><a href="/metabolomics-navigator-alpha/tools/mibig/"><strong>MIBiG</strong><span><b>Integrates with</b> · Can use curated BGC/product knowledge.</span></a></div></section>
-</article></div>
+<section id="history"><h2>Entry history</h2>
+<p>Changes to this catalogue entry, not the tool's software release history. Acceptance and editorial review are separate.</p>
+
+<ol>
+<li><strong>2026-09-12 · First committed entry</strong><p>Add NPLinker and MIBiG with metabologenomics guidance</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/f873790cab7fa0ea840d5105998ee42fb1aa45dc">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/f873790cab7fa0ea840d5105998ee42fb1aa45dc/content/tools/nplinker.yml">Entry at this revision</a></li>
+</ol>
+
+<p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commits/main/content/tools/nplinker.yml">Full GitHub history</a></p>
+</section></article></div>
 </main>
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
@@ -103,7 +113,7 @@
         <h2>Explore</h2>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
       </div>
       <div>
@@ -120,8 +130,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
 </body>
 </html>

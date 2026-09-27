@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QC-based robust LOESS signal-drift correction | Metabolomics Navigator</title>
+  <meta name="description" content="Use repeated biological QC injections to estimate and correct feature-specific signal drift along acquisition order.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/qc-rlsc-signal-drift-correction/">
+  <meta property="og:site_name" content="Metabolomics Navigator">
+  <meta property="og:title" content="QC-based robust LOESS signal-drift correction | Metabolomics Navigator">
+  <meta property="og:description" content="Use repeated biological QC injections to estimate and correct feature-specific signal drift along acquisition order.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/qc-rlsc-signal-drift-correction/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="QC-based robust LOESS signal-drift correction | Metabolomics Navigator">
+  <meta name="twitter:description" content="Use repeated biological QC injections to estimate and correct feature-specific signal drift along acquisition order.">
+  
+  <meta name="theme-color" content="#faf9f5">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
+  <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body class="page-strategies"><aside style="padding:12px;text-align:center;background:#f2e9cc;color:#183f42">Alpha review snapshot · Not the live site · <a href="https://scottjarmusch.github.io/metabolomics-navigator/">Visit the live Navigator</a></aside>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner section-wrap">
+      <a class="brand" href="/metabolomics-navigator-alpha/" aria-label="Metabolomics Navigator home">
+        <svg class="brand-logo" width="60" height="26" viewBox="0 0 100 44" aria-hidden="true">
+          <path class="brand-chrom" d="M2 34h14l4-24 4 26 4-18 4 20h16" />
+          <g class="brand-network">
+            <line x1="48" y1="12" x2="61" y2="8" />
+            <line x1="48" y1="12" x2="56" y2="22" />
+            <line x1="61" y1="8" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="67" y2="31" />
+            <line x1="67" y1="31" x2="80" y2="26" />
+            <circle cx="48" cy="12" r="3.2" />
+            <circle cx="61" cy="8" r="3.2" />
+            <circle cx="56" cy="22" r="3.2" />
+            <circle cx="72" cy="14" r="3.2" />
+            <circle cx="67" cy="31" r="3.2" />
+            <circle cx="80" cy="26" r="3.2" />
+          </g>
+        </svg>
+        <span class="brand-text">
+          <strong><span>Metabolomics</span> <span class="accent">Navigator</span></strong>
+          <small>Tools, strategies &amp; workflow guidance for metabolomics</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="/metabolomics-navigator-alpha/">Guide</a>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/" aria-current="page">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/ask/">Ask Navigator</a>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a class="nav-submit" href="/metabolomics-navigator-alpha/submit/">Contribute</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+<section class="tool-hero strategy-detail-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/strategies/">Strategies</a><span>›</span><span>QC-based robust LOESS signal-drift correction</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Analytical quality control</p><h1>QC-based robust LOESS signal-drift correction</h1><p class="tool-summary">Use repeated biological QC injections to estimate and correct feature-specific signal drift along acquisition order.</p><p class="strategy-citation-line"><strong>Nature Protocols</strong> · 2011 · <a href="https://doi.org/10.1038/nprot.2011.335">10.1038/nprot.2011.335</a></p><div class="badge-row large"><span class="badge">LC-MS</span><span class="badge">GC-MS</span><span class="badge">Untargeted metabolomics</span><span class="badge">Analytical quality control</span></div></div><div class="tool-actions"><a class="button primary" href="https://doi.org/10.1038/nprot.2011.335">Read publication</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-strategy.yml&amp;title=%5BStrategy+update%5D%3A+QC-based+robust+LOESS+signal-drift+correction">Suggest an update</a></div></div></div></section>
+<div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Strategy facts"><h2>At a glance</h2><dl><div><dt>Purpose</dt><dd>Analytical quality control</dd></div><div><dt>Platform</dt><dd>LC-MS, GC-MS</dd></div><div><dt>Analysis</dt><dd>Untargeted metabolomics</dd></div><div><dt>Publication</dt><dd>Nature Protocols, 2011</dd></div><div><dt>Entry last verified</dt><dd>Not recorded</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl><div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/strategies/qc-rlsc-signal-drift-correction.yml">View YAML source</a></div></aside>
+<article class="tool-article"><section><h2>What does this strategy enable?</h2><p>QC-RLSC fits local curves to QC intensities and interpolates correction across study injections. It links experimental QC placement with computational drift estimation and subsequent quality assessment.</p></section>
+<section><p class="eyebrow">Transferable workflow</p><h2>Workflow</h2><ol class="workflow-timeline"><li><div class="step-number">1</div><div><h3>Interleave representative QC injections</h3><p>Retain injection order and batch labels with study and QC measurements.</p></div></li><li><div class="step-number">2</div><div><h3>Prepare aligned feature intensities</h3><p>The documented LC-MS implementation uses XCMS for preprocessing.</p><div class="workflow-tools"><a href="/metabolomics-navigator-alpha/tools/xcms/">xcms</a></div></div></li><li><div class="step-number">3</div><div><h3>Fit QC correction curves</h3><p>Cross-validate feature-wise LOESS smoothing and interpolate across injections.</p></div></li><li><div class="step-number">4</div><div><h3>Correct and assess reliability</h3><p>Normalize responses and inspect QC repeatability before combining batches.</p></div></li></ol></section>
+<section><p class="eyebrow">Connected resources</p><h2>Tools used in this strategy</h2><div class="tool-use-grid"><a class="tool-use-card" href="/metabolomics-navigator-alpha/tools/xcms/"><strong>xcms</strong><span>LC-MS preprocessing in the defining workflow; not asserted to implement the correction itself.</span><em>View tool entry →</em></a></div></section>
+
+<section><h2>Strategy profile</h2><div class="definition-grid"><div><h3>Components</h3><p>Data acquisition, Preprocessing and feature extraction, Quality control, Statistical analysis</p></div></div></section>
+<section><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Analytical drift correction when representative QC injections span the run.</li></ul></div><div><h3>Important requirements</h3><ul><li>Repeated QC observations with usable feature signals and recorded injection order.</li></ul></div><div><h3>Considerations</h3><ul><li>Sparse or unrepresentative QCs cannot reliably characterize every feature.</li><li>Check overfitting and corrected QC performance; correction does not fix experimental confounding.</li></ul></div></div></section>
+<section><h2>Reusable resources</h2><div class="availability-row"><span>✓ Published method available</span></div><div class="link-list"><a href="https://doi.org/10.1038/nprot.2011.335"><span>Published method</span><span>↗</span></a></div></section>
+<section><h2>Publication</h2><p>Dunn WB, Broadhurst D, Begley P, et al. Procedures for large-scale metabolic profiling of serum and plasma using gas chromatography and liquid chromatography coupled to mass spectrometry. Nature Protocols 6, 1060–1083 (2011).</p><p><a href="https://doi.org/10.1038/nprot.2011.335">doi:10.1038/nprot.2011.335</a></p></section>
+</article></div>
+</main>
+  <footer class="site-footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <strong>Metabolomics Navigator</strong>
+        <p>An open scientific resource for metabolomics tools, analytical strategies and workflow guidance.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
+        <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a href="/metabolomics-navigator-alpha/governance/">Governance</a>
+        <a href="/metabolomics-navigator-alpha/privacy/">Privacy</a>
+        <a href="https://github.com/scottjarmusch/metabolomics-navigator">GitHub repository</a>
+      </div>
+      <div>
+        <h2>Data</h2>
+        <a href="/metabolomics-navigator-alpha/tool-data.json">Tool data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/strategy-data.json">Strategy data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
+  </footer>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
+</body>
+</html>

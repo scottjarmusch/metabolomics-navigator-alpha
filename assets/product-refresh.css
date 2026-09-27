@@ -244,3 +244,84 @@ body { background:var(--paper); color:var(--ink); }
   }
   .site-header .nav-toggle:focus-visible { outline:3px solid #17575a; outline-offset:3px; }
 }
+
+/* Published Strategy implementation evidence. */
+.strategy-implementations { display:grid; gap:1rem; }
+.strategy-implementation { border-top:1px solid var(--line); padding:1rem 0 0; }
+.strategy-implementation h3 { margin:.15rem 0 .35rem; font-size:1.15rem; }
+.strategy-implementation .implementation-meta { color:var(--muted); font-size:.88rem; }
+
+
+/* Education alpha: lightweight directory of external learning resources. */
+.education-directory { padding-top:2.2rem; padding-bottom:4rem; }
+.education-alpha-note { margin-bottom:1.5rem; padding:1rem 1.2rem; border-left:3px solid var(--gold); background:#f6f1e6; max-width:78ch; }
+.education-controls { display:grid; grid-template-columns:minmax(0,2fr) minmax(220px,1fr); gap:1rem; margin:1.5rem 0 .8rem; }
+.education-controls label { display:grid; gap:.4rem; font-weight:600; }
+.education-controls input,.education-controls select { width:100%; box-sizing:border-box; padding:.75rem .85rem; border:1px solid #9bada4; border-radius:3px; background:#fff; color:var(--ink); }
+.education-count { color:var(--muted); font-size:.9rem; border-bottom:1px solid var(--line); padding-bottom:.8rem; }
+.education-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 2.4rem; }
+.education-resource { padding:1.5rem 0; border-bottom:1px solid var(--line); }
+.education-resource[hidden] { display:none; }
+.education-resource-head { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; }
+.education-resource h2 { margin:.2rem 0 .4rem; font-size:1.35rem; line-height:1.25; }
+.education-provider { color:var(--muted); font-size:.9rem; margin:.25rem 0 .7rem; }
+.education-tools { display:flex; flex-wrap:wrap; gap:.4rem; margin:.9rem 0; }
+.education-tools a { padding:.25rem .5rem; border:1px solid var(--line); border-radius:999px; font-size:.78rem; text-decoration:none; background:#fff; }
+.education-note { color:#675a3c; font-size:.88rem; }
+.education-status { flex:0 0 auto; padding:.2rem .45rem; border:1px solid #c9b88f; color:#80632d; font-size:.68rem; letter-spacing:.04em; text-transform:uppercase; }
+.education-status.validated { border-color:#9eb8ae; color:var(--teal); }
+.education-empty { padding:2rem 0; color:var(--muted); }
+.tool-education-links { display:grid; gap:.75rem; }
+.tool-education-links a { display:block; padding:.8rem 0; border-bottom:1px solid var(--line); text-decoration:none; }
+.tool-education-links a strong,.tool-education-links a span { display:block; }
+.tool-education-links a span { color:var(--muted); font-size:.86rem; margin-top:.2rem; }
+@media(max-width:760px){ .education-controls,.education-list { grid-template-columns:1fr; } }
+
+.education-resource,.education-resource-head > div { min-width:0; }
+.education-resource h2 { overflow-wrap:anywhere; }
+@media(max-width:480px){ .education-resource-head { flex-direction:column; gap:.5rem; } }
+
+.education-date,.education-tools-label { font-size:.85rem; color:var(--muted); margin:.5rem 0; }
+.education-date a { color:inherit; text-underline-offset:3px; }
+.education-tools-label { font-weight:600; margin-bottom:0; }
+.education-tools { margin-top:.4rem; }
+.education-sort { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; }
+.education-sort select { padding:.5rem; border:1px solid #9bada4; background:#fff; color:var(--ink); }
+
+/* Ask Navigator strategy-first alpha */
+.ask-evidence { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(280px,.8fr); gap:3rem; padding:3rem 0 5rem; }
+.ask-search-label { display:block; margin:.8rem 0 .45rem; font-weight:600; }
+.ask-search-row { display:flex; gap:.65rem; }
+.ask-search-row input { flex:1; min-width:0; border:1px solid var(--line); background:#fff; padding:.85rem 1rem; border-radius:3px; }
+.ask-search-row button { border:1px solid var(--teal); background:var(--teal); color:#fff; padding:.8rem 1rem; border-radius:3px; font-weight:700; }
+.ask-examples { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:1rem; }
+.ask-examples button { border:1px solid #b9c9c2; background:transparent; color:var(--teal); padding:.55rem .7rem; border-radius:999px; font-size:.84rem; }
+.ask-examples button:hover { border-color:var(--teal); background:#f0f4f1; }
+.ask-results-header { display:flex; justify-content:space-between; gap:1.5rem; align-items:end; margin:2.5rem 0 0; padding-bottom:1rem; border-bottom:1px solid var(--line); }
+.ask-results-header h2 { margin:.25rem 0 0; }
+.ask-strategy-results { display:grid; gap:0; }
+.ask-strategy-card { padding:1.8rem 0; border-bottom:1px solid var(--line); }
+.ask-strategy-head { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:1rem; }
+.ask-strategy-head h3 { margin:.15rem 0 .5rem; font:400 1.55rem/1.2 Georgia,serif; }
+.ask-strategy-head p { margin:.3rem 0; }
+.ask-year { color:var(--gold); font:400 1.2rem Georgia,serif; }
+.ask-evidence-line { display:flex; flex-wrap:wrap; gap:.4rem .8rem; align-items:baseline; padding:.85rem 0; color:var(--muted); font-size:.88rem; }
+.ask-workflow-preview,.ask-implementations { padding:1rem 0; border-top:1px solid #e7ebe8; }
+.ask-workflow-preview ol { margin:.7rem 0; padding-left:1.35rem; }
+.ask-workflow-preview li { margin:.55rem 0; }
+.ask-workflow-preview li span,.ask-workflow-preview li small { display:block; }
+.ask-workflow-preview li small { margin-top:.2rem; color:var(--muted); }
+.ask-implementations ul { list-style:none; padding:0; margin:.7rem 0 0; }
+.ask-implementations li { display:flex; justify-content:space-between; gap:1rem; padding:.55rem 0; border-top:1px solid #eef0ee; font-size:.9rem; }
+.ask-card-actions { display:flex; gap:1rem 1.4rem; flex-wrap:wrap; align-items:center; padding-top:1rem; }
+.ask-empty { margin-top:1.5rem; padding:1.3rem; border:1px solid var(--line); background:#f5f6f1; }
+
+@media(max-width:900px) { .ask-evidence { grid-template-columns:1fr; } }
+@media(max-width:640px) { .ask-search-row { flex-direction:column; } .ask-results-header,.ask-implementations li { align-items:flex-start; flex-direction:column; } }
+
+/* Study-first alpha entry: keep long choices usable on narrow screens. */
+#ask-guidance select { display:block; width:100%; max-width:100%; min-width:0; min-height:44px; padding:.65rem; color:var(--ink); background:var(--paper, #fff); border:1px solid var(--line); border-radius:4px; }
+#ask-guidance summary { cursor:pointer; padding:.5rem 0; }
+#ask-guidance summary:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
+#ask-mixed .button { margin:.3rem .3rem .3rem 0; white-space:normal; }
+.ask-evidence > * { min-width:0; }

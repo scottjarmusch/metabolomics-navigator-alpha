@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Read, extract, calibrate, and visualize multidimensional mass-spectrometry data in Python, including LC-IM-MS datasets stored in MZA and selected vendor-supported formats.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -64,15 +64,17 @@
   <main id="main-content">
 <section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/tools/">Tools</a><span>›</span><span>mzapy</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Preprocessing and feature extraction</p><h1>mzapy</h1><p class="tool-summary">Read, extract, calibrate, and visualize multidimensional mass-spectrometry data in Python, including LC-IM-MS datasets stored in MZA and selected vendor-supported formats.</p><div class="badge-row large"><span class="badge">LC-MS</span><span class="badge">Direct-infusion MS</span><span class="badge">Python package</span><span class="badge">Open source</span></div></div><div class="tool-actions"><a class="button primary" href="https://github.com/PNNL-m-q/mzapy">Access tool</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+mzapy">Suggest an update</a></div></div></div></section>
 <div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>
-<div><dt>Primary use</dt><dd>Preprocessing and feature extraction</dd></div><div><dt>Platforms</dt><dd>LC-MS, Direct-infusion MS</dd></div><div><dt>Interface</dt><dd>Python package</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Maintenance status unclear</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div></dl>
+<div><dt>Primary use</dt><dd>Preprocessing and feature extraction</dd></div><div><dt>Platforms</dt><dd>LC-MS, Direct-infusion MS</dd></div><div><dt>Interface</dt><dd>Python package</dd></div><div><dt>Access</dt><dd>Open source</dd></div><div><dt>Maintenance</dt><dd>Maintenance status unclear</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl>
 <div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/tools/mzapy.yml">View YAML source</a></div></aside>
 <article class="tool-article">
-<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a></nav>
+<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a><a href="#history">Entry history</a></nav>
+
 <section id="overview"><h2>Overview</h2><p>mzapy is a Python package for accessing and manipulating multidimensional mass-spectrometry data. It was developed around MZA and supports data extraction, plotting, selected calibration tasks, signal processing, peak finding, and programmatic access to dimensions such as retention time, ion mobility, mass-to-charge ratio, and intensity. It is particularly useful for scripting LC-IM-MS workflows and for prototyping downstream analyses on data converted to MZA.</p></section>
 <section id="capabilities" class="capability-section"><h2>What can this tool do?</h2><div class="capability-cloud"><span>Chromatogram building</span><span>Peak or feature detection</span><span>MS/MS processing</span></div><h3>Common uses</h3><ul><li>Extract retention-time, ion-mobility and m/z slices from multidimensional MS datasets.</li><li>Build scripted LC-IM-MS analysis and visualization workflows in Python.</li><li>Work programmatically with MZA files generated from vendor or mzML data.</li></ul></section>
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Preprocessing and feature extraction</p></div><div><h3>Other functions</h3><p>Data conversion and import, Visualization and reporting</p></div><div><h3>MS level</h3><p>MS1, MS/MS</p></div><div><h3>Acquisition</h3><p>Full-scan MS, Data-dependent acquisition (DDA), Data-independent acquisition (DIA)</p></div><div><h3>Ion mobility</h3><p>Ion mobility supported</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Raw instrument data, Mass spectra</p></div><div><h3>Outputs</h3><p>Mass spectra, Feature or peak table</p></div><div><h3>Input formats</h3><p>HDF5, Other, MZA</p></div><div><h3>Output formats</h3><p>CSV or TSV, Other</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Programmatic access and lightweight analysis of multidimensional MS data, especially ion-mobility datasets.</li></ul></div><div><h3>Not designed for</h3><ul><li>Complete untargeted feature processing or metabolite identification by itself.</li></ul></div><div><h3>Important requirements</h3><ul><li>A compatible Python environment and supported input data such as MZA.</li></ul></div><div><h3>Considerations</h3><ul><li>Ion-mobility workflows require appropriate calibration and interpretation of the mobility dimension; extraction utilities do not by themselves establish metabolite identity.</li></ul></div></div></section>
+
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://github.com/PNNL-m-q/mzapy"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://mzapy.readthedocs.io/"><span>Documentation</span><span aria-hidden="true">↗</span></a></div><p class="note">mzapy is distributed as open-source Python software; current installation and dependency details are documented in the project documentation.</p><p><strong>License:</strong> BSD-3-Clause</p></section>
 
 <section id="evidence">
@@ -91,7 +93,15 @@
 </section>
 
 <section><h2>Related tools</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/tools/asari/"><strong>asari</strong><span><b>Similar function</b> · Process high-resolution mass-spectrometry data into aligned feature tables.</span></a><a href="/metabolomics-navigator-alpha/tools/camera/"><strong>CAMERA</strong><span><b>Similar function</b> · Group and annotate related LC-MS signals after XCMS peak detection.</span></a><a href="/metabolomics-navigator-alpha/tools/ipo/"><strong>IPO</strong><span><b>Similar function</b> · Optimize peak picking, retention-time correction and grouping parameters for XCMS.</span></a><a href="/metabolomics-navigator-alpha/tools/ms-dial/"><strong>MS-DIAL</strong><span><b>Similar function</b> · A graphical and command-line workbench for untargeted metabolomics and lipidomics data processing across multiple chromatography and mass spectrometry platforms.</span></a></div></section>
-</article></div>
+<section id="history"><h2>Entry history</h2>
+<p>Changes to this catalogue entry, not the tool's software release history. Acceptance and editorial review are separate.</p>
+
+<ol>
+<li><strong>2026-09-10 · Entry update</strong><p>Complete mzapy editorial fields and citation</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/f8e002c8da39cefd39f7635168ba8b67fdb7f653">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/f8e002c8da39cefd39f7635168ba8b67fdb7f653/content/tools/mzapy.yml">Entry at this revision</a></li><li><strong>2026-09-10 · First committed entry</strong><p>Add mzapy multidimensional MS entry</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/f53acb3e984a76389b857d41e32e83f214380ea3">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/f53acb3e984a76389b857d41e32e83f214380ea3/content/tools/mzapy.yml">Entry at this revision</a></li>
+</ol>
+
+<p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commits/main/content/tools/mzapy.yml">Full GitHub history</a></p>
+</section></article></div>
 </main>
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
@@ -103,7 +113,7 @@
         <h2>Explore</h2>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
       </div>
       <div>
@@ -120,8 +130,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
 </body>
 </html>

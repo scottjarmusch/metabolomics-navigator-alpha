@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reference-pool discovery with cohort-wide signal extraction | Metabolomics Navigator</title>
+  <meta name="description" content="Discover features in pooled reference samples, then extract their signals across a large LC-MS cohort using curated mass and retention-time targets.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/reference-pool-cohort-extraction/">
+  <meta property="og:site_name" content="Metabolomics Navigator">
+  <meta property="og:title" content="Reference-pool discovery with cohort-wide signal extraction | Metabolomics Navigator">
+  <meta property="og:description" content="Discover features in pooled reference samples, then extract their signals across a large LC-MS cohort using curated mass and retention-time targets.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/reference-pool-cohort-extraction/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Reference-pool discovery with cohort-wide signal extraction | Metabolomics Navigator">
+  <meta name="twitter:description" content="Discover features in pooled reference samples, then extract their signals across a large LC-MS cohort using curated mass and retention-time targets.">
+  
+  <meta name="theme-color" content="#faf9f5">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
+  <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body class="page-strategies"><aside style="padding:12px;text-align:center;background:#f2e9cc;color:#183f42">Alpha review snapshot · Not the live site · <a href="https://scottjarmusch.github.io/metabolomics-navigator/">Visit the live Navigator</a></aside>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner section-wrap">
+      <a class="brand" href="/metabolomics-navigator-alpha/" aria-label="Metabolomics Navigator home">
+        <svg class="brand-logo" width="60" height="26" viewBox="0 0 100 44" aria-hidden="true">
+          <path class="brand-chrom" d="M2 34h14l4-24 4 26 4-18 4 20h16" />
+          <g class="brand-network">
+            <line x1="48" y1="12" x2="61" y2="8" />
+            <line x1="48" y1="12" x2="56" y2="22" />
+            <line x1="61" y1="8" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="67" y2="31" />
+            <line x1="67" y1="31" x2="80" y2="26" />
+            <circle cx="48" cy="12" r="3.2" />
+            <circle cx="61" cy="8" r="3.2" />
+            <circle cx="56" cy="22" r="3.2" />
+            <circle cx="72" cy="14" r="3.2" />
+            <circle cx="67" cy="31" r="3.2" />
+            <circle cx="80" cy="26" r="3.2" />
+          </g>
+        </svg>
+        <span class="brand-text">
+          <strong><span>Metabolomics</span> <span class="accent">Navigator</span></strong>
+          <small>Tools, strategies &amp; workflow guidance for metabolomics</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="/metabolomics-navigator-alpha/">Guide</a>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/" aria-current="page">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/ask/">Ask Navigator</a>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a class="nav-submit" href="/metabolomics-navigator-alpha/submit/">Contribute</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+<section class="tool-hero strategy-detail-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/strategies/">Strategies</a><span>›</span><span>Reference-pool discovery with cohort-wide signal extraction</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Phenotype association</p><h1>Reference-pool discovery with cohort-wide signal extraction</h1><p class="tool-summary">Discover features in pooled reference samples, then extract their signals across a large LC-MS cohort using curated mass and retention-time targets.</p><p class="strategy-citation-line"><strong>Analytical Chemistry</strong> · 2022 · <a href="https://doi.org/10.1021/acs.analchem.2c01270">10.1021/acs.analchem.2c01270</a></p><div class="badge-row large"><span class="badge">LC-MS</span><span class="badge">Untargeted metabolomics</span><span class="badge">Lipidomics</span><span class="badge">Phenotype association</span></div></div><div class="tool-actions"><a class="button primary" href="https://doi.org/10.1021/acs.analchem.2c01270">Read publication</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-strategy.yml&amp;title=%5BStrategy+update%5D%3A+Reference-pool+discovery+with+cohort-wide+signal+extraction">Suggest an update</a></div></div></div></section>
+<div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Strategy facts"><h2>At a glance</h2><dl><div><dt>Purpose</dt><dd>Phenotype association</dd></div><div><dt>Platform</dt><dd>LC-MS</dd></div><div><dt>Analysis</dt><dd>Untargeted metabolomics, Lipidomics</dd></div><div><dt>MS level</dt><dd>MS1, MS/MS</dd></div><div><dt>Acquisition</dt><dd>Data-dependent acquisition (DDA)</dd></div><div><dt>Publication</dt><dd>Analytical Chemistry, 2022</dd></div><div><dt>Entry last verified</dt><dd>21 September 2026</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl><div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/strategies/reference-pool-cohort-extraction.yml">View YAML source</a></div></aside>
+<article class="tool-article"><section><h2>What does this strategy enable?</h2><p>This workflow separates discovery from cohort-wide quantification. Reference pools establish the target list; individual samples supply the quantitative measurements. Both annotated metabolites and retained unknown features can be measured. The method is not defined by the longevity cohort used to demonstrate it, and it does not require every feature to be identified.</p></section>
+<section><p class="eyebrow">Transferable workflow</p><h2>Workflow</h2><ol class="workflow-timeline"><li><div class="step-number">1</div><div><h3>Prepare representative reference pools</h3><p>Include relevant cohort subsets and acquire pooled discovery data, blanks and consistent QC samples.</p></div></li><li><div class="step-number">2</div><div><h3>Build the polar feature list</h3><p>XCMS detects pooled features; CAMERA supports adduct selection. The study supplements these with AcquireX results.</p><div class="workflow-tools"><a href="/metabolomics-navigator-alpha/tools/xcms/">xcms</a><a href="/metabolomics-navigator-alpha/tools/camera/">CAMERA</a><span>AcquireX</span></div></div></li><li><div class="step-number">3</div><div><h3>Curate reference targets</h3><p>Review artifacts and annotation evidence. The published polar branch uses DecoID; the lipid branch uses Lipid Annotator. Retain suitable unknown features too.</p><div class="workflow-tools"><span>DecoID</span><span>Lipid Annotator</span></div></div></li><li><div class="step-number">4</div><div><h3>Extract cohort peak areas</h3><p>Use Skyline batch by batch with curated masses and retention-time boundaries; inspect integration and adjust for retention shifts.</p><div class="workflow-tools"><a href="/metabolomics-navigator-alpha/tools/skyline/">Skyline</a></div></div></li><li><div class="step-number">5</div><div><h3>Evaluate correction and export measurements</h3><p>Compare batch-correction choices against common QC samples before downstream biological analysis.</p><div class="workflow-tools"><a href="https://github.com/pattilab/metabolomics_workflow">Published processing notebooks ↗</a></div></div></li></ol></section>
+<section><p class="eyebrow">Connected resources</p><h2>Tools used in this strategy</h2><div class="tool-use-grid"><a class="tool-use-card" href="/metabolomics-navigator-alpha/tools/xcms/"><strong>xcms</strong><span>Detects features in pooled polar-metabolite data.</span><em>View tool entry →</em></a><a class="tool-use-card" href="/metabolomics-navigator-alpha/tools/camera/"><strong>CAMERA</strong><span>Supports adduct selection during reference-list preparation.</span><em>View tool entry →</em></a><a class="tool-use-card" href="/metabolomics-navigator-alpha/tools/skyline/"><strong>Skyline</strong><span>Extracts and reviews cohort-wide peak areas from the curated target list.</span><em>View tool entry →</em></a><a class="tool-use-card external"><strong>AcquireX</strong><span>Supplies additional pooled-sample features in the published polar branch.</span></a><a class="tool-use-card external"><strong>DecoID</strong><span>Supports spectral annotation of polar reference features.</span></a><a class="tool-use-card external"><strong>Lipid Annotator</strong><span>Generates the published lipid reference list.</span></a><a class="tool-use-card external" href="https://github.com/pattilab/metabolomics_workflow"><strong>Published processing notebooks</strong><span>Reference processing, peak-boundary generation and batch-correction resources.</span><em>External resource ↗</em></a></div></section>
+
+<section><h2>Strategy profile</h2><div class="definition-grid"><div><h3>Related objectives</h3><p>Metabolite annotation</p></div><div><h3>Components</h3><p>Preprocessing and feature extraction, Quality control, Annotation or identification</p></div><div><h3>Biological context</h3><p>Broadly applicable</p></div><div><h3>Ion mobility</h3><p>Not specified</p></div></div></section>
+<section><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Large LC-MS cohorts where pooled discovery can provide a reusable reference list.</li></ul></div><div><h3>Important requirements</h3><ul><li>Representative pools, blanks, shared QC material and individual-sample raw data.</li><li>Expert curation of reference peaks and integration boundaries.</li></ul></div><div><h3>Considerations</h3><ul><li>Rare or low-abundance compounds can be diluted below detection in pools and omitted from the target list.</li><li>Targeted signal extraction from untargeted data is not a validated absolute-concentration assay.</li><li>Check batch correction for preservation of biological differences; no normalization method is universally best.</li><li>The code is documented here, not executed or benchmarked by Navigator.</li></ul></div></div></section>
+<section><h2>Reusable resources</h2><div class="availability-row"><span>✓ Code available</span><span>✓ Published method available</span></div><div class="link-list"><a href="https://github.com/pattilab/metabolomics_workflow"><span>Code</span><span>↗</span></a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11018270/"><span>Published method</span><span>↗</span></a></div></section>
+<section><h2>Publication</h2><p>Stancliffe E, Schwaiger-Haber M, et al. Analytical Chemistry 94, 17370-17378 (2022).</p><p><a href="https://doi.org/10.1021/acs.analchem.2c01270">doi:10.1021/acs.analchem.2c01270</a></p></section>
+<section><h2>Related strategies</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/strategies/qc-rlsc-signal-drift-correction/"><strong>QC-based robust LOESS signal-drift correction</strong><span>Use repeated biological QC injections to estimate and correct feature-specific signal drift along acquisition order.</span></a></div></section></article></div>
+</main>
+  <footer class="site-footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <strong>Metabolomics Navigator</strong>
+        <p>An open scientific resource for metabolomics tools, analytical strategies and workflow guidance.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
+        <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a href="/metabolomics-navigator-alpha/governance/">Governance</a>
+        <a href="/metabolomics-navigator-alpha/privacy/">Privacy</a>
+        <a href="https://github.com/scottjarmusch/metabolomics-navigator">GitHub repository</a>
+      </div>
+      <div>
+        <h2>Data</h2>
+        <a href="/metabolomics-navigator-alpha/tool-data.json">Tool data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/strategy-data.json">Strategy data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
+  </footer>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
+</body>
+</html>

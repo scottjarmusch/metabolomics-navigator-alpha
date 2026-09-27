@@ -460,6 +460,8 @@ strategy_objectives:
   label: Enzyme-activity profiling
 - id: biotransformation
   label: Biotransformation analysis
+- id: analytical_quality_control
+  label: Analytical quality control
 - id: phenotype_association
   label: Phenotype association
 - id: disease_state_comparison

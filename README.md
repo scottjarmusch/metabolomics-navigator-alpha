@@ -1,11 +1,9 @@
 # Metabolomics Navigator alpha preview
 
-Generated review snapshot of Ask Navigator at bb409b1. Public alpha; not the production site.
+Strategy-first Ask Navigator plus Education. 34 Strategies, 143 tools and 57 learning resources.
 
-Preview: https://scottjarmusch.github.io/metabolomics-navigator-alpha/ask/
-
-Source: https://github.com/scottjarmusch/metabolomics-navigator
-
-Education alpha added from alpha/education-links (bad837c) on 2026-09-26, with navigation and narrow-screen layout fixes. Existing Ask preview retained.
+Ask: https://scottjarmusch.github.io/metabolomics-navigator-alpha/ask/
 
 Education: https://scottjarmusch.github.io/metabolomics-navigator-alpha/education/
+
+Source branch: codex/ask-education-alpha in scottjarmusch/metabolomics-navigator. Production unchanged.

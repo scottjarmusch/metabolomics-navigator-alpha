@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="GC-MS processing workflow that aligns chromatographic data and deconvolves overlapping signals into spectra and quantitative tables for downstream GNPS analysis.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=8344c5bfd26b">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=8344c5bfd26b">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=cf9b592b00f0">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=cf9b592b00f0">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -64,15 +64,17 @@
   <main id="main-content">
 <section class="tool-hero"><div class="section-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Home</a><span>›</span><a href="/metabolomics-navigator-alpha/tools/">Tools</a><span>›</span><span>MSHub-GC</span></nav><div class="tool-title-grid"><div><p class="eyebrow">Preprocessing and feature extraction</p><h1>MSHub-GC</h1><p class="tool-summary">GC-MS processing workflow that aligns chromatographic data and deconvolves overlapping signals into spectra and quantitative tables for downstream GNPS analysis.</p><div class="badge-row large"><span class="badge">GC-MS</span><span class="badge">Untargeted metabolomics</span><span class="badge">Volatilomics</span><span class="badge">Web application</span><span class="badge">Free web service</span></div></div><div class="tool-actions"><a class="button primary" href="https://gnps2.org/workflowinput?workflowname=mshubgc_workflow">Access tool</a><a class="button secondary" href="https://github.com/scottjarmusch/metabolomics-navigator/issues/new?template=update-tool.yml&amp;title=%5BTool+update%5D%3A+MSHub-GC">Suggest an update</a></div></div></div></section>
 <div class="tool-page section-wrap"><aside class="tool-facts" aria-label="Tool facts"><h2>At a glance</h2><dl>
-<div><dt>Primary use</dt><dd>Preprocessing and feature extraction</dd></div><div><dt>Platforms</dt><dd>GC-MS</dd></div><div><dt>Analysis</dt><dd>Untargeted metabolomics, Volatilomics</dd></div><div><dt>Interface</dt><dd>Web application</dd></div><div><dt>Access</dt><dd>Free web service</dd></div><div><dt>Maintenance</dt><dd>Actively maintained</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div></dl>
+<div><dt>Primary use</dt><dd>Preprocessing and feature extraction</dd></div><div><dt>Platforms</dt><dd>GC-MS</dd></div><div><dt>Analysis</dt><dd>Untargeted metabolomics, Volatilomics</dd></div><div><dt>Interface</dt><dd>Web application</dd></div><div><dt>Access</dt><dd>Free web service</dd></div><div><dt>Maintenance</dt><dd>Actively maintained</dd></div><div><dt>Editorial review</dt><dd>2026-09-10</dd></div><div><dt>Previous verification</dt><dd>10 September 2026</dd></div><div><dt>Submitted by</dt><dd>website developers</dd></div></dl>
 <div class="source-box"><strong>Page provenance</strong><div class="trust-stack"><span>Curator submitted</span><span>Editorially reviewed</span></div><a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/main/content/tools/mshub-gc.yml">View YAML source</a></div></aside>
 <article class="tool-article">
-<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a></nav>
+<nav class="entry-nav" aria-label="On this page"><span>On this page</span><a href="#overview">Overview</a><a href="#capabilities">Capabilities</a><a href="#compatibility">Data</a><a href="#scope">Considerations</a><a href="#resources">Resources</a><a href="#evidence">Evidence</a><a href="#history">Entry history</a></nav>
+
 <section id="overview"><h2>Overview</h2><p>MSHub-GC separates overlapping GC-MS signals computationally. Its GNPS2 workflow produces deconvolved spectra, a quantification table and a cluster summary. These outputs support subsequent library searching and molecular networking in the GC-MS analysis ecosystem.</p></section>
 <section id="capabilities" class="capability-section"><h2>What can this tool do?</h2><div class="capability-cloud"><span>Spectral deconvolution</span></div><h3>Common uses</h3><ul><li>Recover component spectra from overlapping GC-MS chromatographic signals.</li><li>Prepare quantitative and spectral outputs for downstream annotation.</li></ul></section>
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Preprocessing and feature extraction</p></div><div><h3>Other functions</h3><p>Molecular networking and chemical similarity, Spectral processing and comparison</p></div><div><h3>Analysis types</h3><p>Untargeted metabolomics, Volatilomics</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Raw instrument data, Mass spectra</p></div><div><h3>Outputs</h3><p>Feature or peak table, Mass spectra, Human-readable report</p></div><div><h3>Input formats</h3><p>netCDF or CDF, mzML, mzXML</p></div><div><h3>Output formats</h3><p>Deconvolved GC-MS spectra and downloadable tables</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Untargeted GC-MS processing, including volatile-metabolite studies.</li></ul></div><div><h3>Not designed for</h3><ul><li>LC-MS/MS feature processing or automatic confirmation of every compound identity.</li></ul></div><div><h3>Important requirements</h3><ul><li>GC-MS files in CDF, mzML or mzXML format, with one format used throughout the input folder.</li><li>The correct chromatographic time unit and a GNPS2 account.</li></ul></div><div><h3>Considerations</h3><ul><li>Inspect deconvolution quality and chromatographic separation before interpreting component spectra.</li><li>The linked paper describes the wider processing-and-networking system; the current launch page is the deconvolution workflow.</li><li>Do not assume support for every vendor-native file type; confirm conversion and input compatibility in the current documentation.</li></ul></div></div></section>
+
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://gnps2.org/workflowinput?workflowname=mshubgc_workflow"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/mshub-gc_doc/"><span>Documentation</span><span aria-hidden="true">↗</span></a><a href="https://github.com/Wang-Bioinformatics-Lab/mshub-gc_workflow"><span>Source repository</span><span aria-hidden="true">↗</span></a></div><p class="note">GNPS2 is openly available to the academic community. The current GNPS2 documentation asks industry users to contact the maintainers or UC Riverside Technology Transfer regarding organizational access. Workflow submission requires a GNPS2 account. The linked workflow repository is public; this hosted-service entry does not assert a license for every bundled processing dependency.</p></section>
 
 <section id="evidence">
@@ -91,7 +93,15 @@
 </section>
 
 <section><h2>Related tools</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/tools/gnps/"><strong>GNPS</strong><span><b>Part of</b> · GNPS2 GC-MS processing/networking workflow.</span></a></div></section>
-</article></div>
+<section id="history"><h2>Entry history</h2>
+<p>Changes to this catalogue entry, not the tool's software release history. Acceptance and editorial review are separate.</p>
+
+<ol>
+<li><strong>2026-09-10 · First committed entry</strong><p>Add three GNPS2 Tools and expose complete related-tool lists</p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commit/fa815325a0c523de3a3cf6d719dec4a5fd725490">View change</a> · <a href="https://github.com/scottjarmusch/metabolomics-navigator/blob/fa815325a0c523de3a3cf6d719dec4a5fd725490/content/tools/mshub-gc.yml">Entry at this revision</a></li>
+</ol>
+
+<p><a href="https://github.com/scottjarmusch/metabolomics-navigator/commits/main/content/tools/mshub-gc.yml">Full GitHub history</a></p>
+</section></article></div>
 </main>
   <footer class="site-footer">
     <div class="section-wrap footer-grid">
@@ -103,7 +113,7 @@
         <h2>Explore</h2>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
       </div>
       <div>
@@ -120,8 +130,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 13 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 26 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=8344c5bfd26b" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=cf9b592b00f0" defer></script>
 </body>
 </html>
