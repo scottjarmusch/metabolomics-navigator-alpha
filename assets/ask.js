@@ -90,6 +90,32 @@
     }
   }
 
+  const aimField = document.querySelector('#ask-aim');
+  const qcEvidence = document.querySelector('#ask-qc-evidence');
+  const tracerEvidence = document.querySelector('#ask-tracer-evidence');
+  function updateEvidenceQuestions() {
+    const qcQuestion=document.querySelector('#ask-qc-question');
+    const tracerQuestion=document.querySelector('#ask-tracer-question');
+    if(qcQuestion) qcQuestion.hidden=aimField?.value !== 'qc';
+    if(tracerQuestion) tracerQuestion.hidden=aimField?.value !== 'flux';
+  }
+  aimField?.addEventListener('change', () => {
+    if(qcEvidence) qcEvidence.value='';
+    if(tracerEvidence) tracerEvidence.value='';
+    runSearch('');
+    const message=document.querySelector('#ask-guide-message');
+    if(message) message.textContent='';
+    updateEvidenceQuestions();
+  });
+  updateEvidenceQuestions();
+  ['#ask-stage','#ask-data','#ask-qc-evidence','#ask-tracer-evidence'].forEach(id => {
+    document.querySelector(id)?.addEventListener('change', () => {
+      runSearch('');
+      const message=document.querySelector('#ask-guide-message');
+      if(message) message.textContent='';
+    });
+  });
+
   document.querySelector('#ask-guide-button')?.addEventListener('click', () => {
     const stage = document.querySelector('#ask-stage').value;
     const data = document.querySelector('#ask-data').value;
@@ -111,6 +137,16 @@
     } else if (aim === 'families' && data !== 'msms') {
       showActions(['learn']);
       message.textContent = 'Spectral molecular families need fragmentation spectra linked to precursors. A feature table alone does not provide that evidence; check whether MS/MS was acquired.';
+    } else if (aim === 'qc' && qcEvidence?.value !== 'yes') {
+      showActions(['qc','learn']);
+      message.textContent = qcEvidence?.value === 'no'
+        ? 'The pooled-QC drift-correction route needs repeated representative QC injections and injection order. Missing QC cannot be reconstructed by selecting this method. Review available controls and batch effects with your analyst.'
+        : 'Check the run sheet or ask your MS facility whether representative QC samples were injected repeatedly and injection order was recorded. Unknown QC availability is not confirmation that this method fits.';
+    } else if (aim === 'flux' && tracerEvidence?.value !== 'yes') {
+      showActions(['learn']);
+      message.textContent = tracerEvidence?.value === 'no'
+        ? 'Ordinary abundance measurements do not support these isotope-tracer flux methods. You can explore group differences or plan a suitable tracer experiment with a specialist.'
+        : 'Check whether isotope labeling measurements and sampling times are available. A metabolite table alone does not confirm that this was a tracer experiment.';
     } else {
       const queries = {families:'feature based molecular networking', pathways:'pathway enrichment unidentified features', qc:'pooled QC LOESS signal drift', flux:'isotope labeling time course flux'};
       input.value = queries[aim];
@@ -132,7 +168,8 @@
   const clearStudy = () => {
     input.value = '';
     runSearch('');
-    ['#ask-stage','#ask-data','#ask-aim'].forEach(id => { const field=document.querySelector(id); if(field) field.value=''; });
+    ['#ask-stage','#ask-data','#ask-aim','#ask-qc-evidence','#ask-tracer-evidence'].forEach(id => { const field=document.querySelector(id); if(field) field.value=''; });
+    updateEvidenceQuestions();
     const message=document.querySelector('#ask-guide-message'); if(message) message.textContent='';
     const context=document.querySelector('#ask-study-context'); if(context) context.textContent='';
     document.querySelectorAll('[data-study-start]').forEach(button=>button.setAttribute('aria-pressed','false'));

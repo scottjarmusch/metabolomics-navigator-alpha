@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Find published metabolomics Strategies, inspect their evidence and explore tools and learning resources.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=44ebbba25ad5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=44ebbba25ad5">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=50ac3d4f39a8">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=50ac3d4f39a8">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -91,6 +91,11 @@
       <select id="ask-data"><option value="">Choose what you know</option><option value="unknown">I am not sure</option><option value="msms">LC-MS/MS with fragment spectra</option><option value="features">An MS feature or metabolite table</option><option value="other">Another MS measurement type</option></select></p>
     <p><label for="ask-aim">What would you like to learn?</label><br>
       <select id="ask-aim"><option value="">Choose an aim</option><option value="families">Find related molecules in my spectra</option><option value="pathways">Explore pathways behind group differences</option><option value="qc">Check changes caused by instrument drift</option><option value="flux">Estimate flux from isotope tracing</option><option value="unsure">I need help defining my question</option></select></p>
+    <p id="ask-qc-question" hidden><label for="ask-qc-evidence">Were representative QC samples injected repeatedly, with injection order recorded?</label><br>
+      <select id="ask-qc-evidence"><option value="">Choose what you know</option><option value="unknown">I am not sure</option><option value="yes">Yes, both are available</option><option value="no">No, one or both are missing</option></select></p>
+    <p id="ask-tracer-question" hidden><label for="ask-tracer-evidence">Was this an isotope-tracer experiment with recorded labeling measurements and sampling times?</label><br>
+      <select id="ask-tracer-evidence"><option value="">Choose what you know</option><option value="unknown">I am not sure</option><option value="yes">Yes, those measurements are available</option><option value="no">No, these are ordinary abundance measurements</option></select></p>
+
     <button id="ask-guide-button" class="button secondary" type="button">Find my next step</button>
     <p id="ask-guide-message" role="status"></p>
     <nav id="ask-next-actions" aria-label="Suggested next steps" hidden>
@@ -1915,8 +1920,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 27 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 28 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=44ebbba25ad5" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=44ebbba25ad5" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=50ac3d4f39a8" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=50ac3d4f39a8" defer></script>
 </body>
 </html>
