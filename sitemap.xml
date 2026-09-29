@@ -166,6 +166,7 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/maldi-fish/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/credentialing-untargeted-features/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/dadia-hybrid-acquisition/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/epoxidation-lipid-double-bond-localization/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/gnps-feature-based-molecular-networking/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/feature-level-pathway-inference/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/gnps-ion-identity-molecular-networking/</loc></url>
@@ -194,6 +195,7 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/target-decoy-controlled-dia-metabolomics/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/taxonomically-informed-annotation/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/idbac-microbial-library-dereplication/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/tissue-isotope-imaging/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/data-processing/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/annotation/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/spectral-analysis/</loc></url>
