@@ -10554,6 +10554,103 @@
     },
     {
       "$schema": "../../schemas/tool.schema.json",
+      "slug": "msnlib",
+      "name": "MSnLib",
+      "summary": "Open multistage fragmentation reference spectra and a reproducible library-generation workflow implemented with mzmine.",
+      "description": "MSnLib combines reference-compound measurements, curated metadata and mzmine processing to generate spectral libraries organized as fragmentation trees. The 2025 publication describes more than two million spectra from 30,008 compounds; these are publication-version figures, not a live count.",
+      "links": {
+        "primary": "https://doi.org/10.1038/s41592-025-02813-0",
+        "documentation": "https://github.com/merlin-ms/mass-spectral-library-network/tree/master/libraries/MSnLib",
+        "repository": "https://github.com/merlin-ms/mass-spectral-library-network"
+      },
+      "resource_types": [
+        "spectral_library",
+        "workflow_pipeline"
+      ],
+      "functions": {
+        "primary": "reference_data_search",
+        "secondary": [
+          "spectral_analysis"
+        ],
+        "capabilities": [
+          "reference_spectrum_selection"
+        ]
+      },
+      "platforms": [
+        "direct_infusion_ms",
+        "lc_ms"
+      ],
+      "interfaces": [
+        "desktop_gui"
+      ],
+      "access": {
+        "model": "open_source",
+        "notes": "Generation uses open-source mzmine. MERLIN metadata and acquisition resources carry an MIT license; consult the selected library release for data reuse terms."
+      },
+      "data": {
+        "input_types": [
+          "spectra",
+          "compound_list"
+        ],
+        "other_input_formats": [
+          "Reference measurements and curated compound metadata"
+        ],
+        "output_types": [
+          "spectral_library"
+        ],
+        "other_output_formats": [
+          "Release-specific spectral-library files and multistage fragmentation trees"
+        ]
+      },
+      "common_uses": [
+        "Use reference fragmentation spectra for annotation or method development.",
+        "Generate libraries from measured reference compounds using mzmine."
+      ],
+      "scope": {
+        "designed_for": [
+          "Reference spectral resources and reproducible library generation."
+        ],
+        "not_designed_for": [
+          "A standalone end-to-end statistical analysis of biological cohorts."
+        ],
+        "requirements": [
+          "Compatible library-search software for using released spectra; mzmine and suitable measurements for generation."
+        ],
+        "considerations": [
+          "Match polarity, fragmentation stage and acquisition conditions when interpreting spectral similarity.",
+          "Confirm library-release formats and licensing before reuse."
+        ]
+      },
+      "publications": [
+        {
+          "type": "primary",
+          "doi": "10.1038/s41592-025-02813-0",
+          "citation": "Brungs C, Schmid R, Heuckeroth S, et al. MSnLib: efficient generation of open multi-stage fragmentation mass spectral libraries. Nature Methods 22, 2028-2031 (2025)."
+        }
+      ],
+      "related_tools": [
+        {
+          "slug": "mzmine",
+          "relationship": "integration",
+          "note": "Published library-generation processing is implemented in mzmine."
+        }
+      ],
+      "provenance": {
+        "submitted_by": "curator",
+        "developer_verified": false,
+        "notes": "Primary publication identity and MERLIN MSnLib documentation verified. Desktop interface refers to mzmine generation, not a separate MSnLib application. Downloads and generation were not independently executed."
+      },
+      "status": {
+        "entry": "published",
+        "review": "editorially_reviewed",
+        "created_at": "2026-09-28",
+        "updated_at": "2026-09-28",
+        "last_verified": "2026-09-28",
+        "last_editorial_review": "2026-09-28"
+      }
+    },
+    {
+      "$schema": "../../schemas/tool.schema.json",
       "slug": "msnovelist",
       "name": "MSNovelist",
       "summary": "A SIRIUS-integrated de novo structure-generation method that proposes molecular structures from a predicted molecular formula and CSI:FingerID fingerprint when database search is insufficient.",
@@ -14708,6 +14805,69 @@
     },
     {
       "$schema": "../../schemas/tool.schema.json",
+      "slug": "specreboot",
+      "name": "SpecReBoot",
+      "aliases": [],
+      "summary": "SpecReBoot brings the statistical rigor of phylogenetic bootstrapping to mass spectrometry. It resamples spectral features to estimate edge support and build consensus molecular networks with quantified confidence.",
+      "links": {
+        "primary": "https://github.com/ECharria/SpecReBoot",
+        "repository": "https://github.com/ECharria/SpecReBoot"
+      },
+      "resource_types": [
+        "programming_package"
+      ],
+      "functions": {
+        "primary": "molecular_networking",
+        "secondary": [
+          "spectral_analysis",
+          "reference_data_search"
+        ],
+        "capabilities": []
+      },
+      "platforms": [
+        "platform_independent"
+      ],
+      "analysis_types": [],
+      "interfaces": [
+        "python_package"
+      ],
+      "access": {
+        "model": "open_source"
+      },
+      "publications": [
+        {
+          "doi": "10.64898/2026.02.03.703446",
+          "type": "primary"
+        }
+      ],
+      "common_uses": [],
+      "scope": {},
+      "acquisition": {},
+      "related_tools": [],
+      "maintenance": {
+        "status": "unclear",
+        "last_checked": "2026-09-24"
+      },
+      "credits": [],
+      "provenance": {
+        "submitted_by": "curator",
+        "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/63",
+        "developer_verified": false,
+        "submitter_name": "Morgane Mauduit",
+        "public_attribution_consent": true,
+        "submitter_orcid": "0000-0003-4583-5389",
+        "notes": "Status: in active development \nFeedback, ideas, issues, and PRs are very welcome!"
+      },
+      "status": {
+        "entry": "stub",
+        "review": "unreviewed",
+        "created_at": "2026-09-24",
+        "updated_at": "2026-09-24",
+        "last_verified": "2026-09-24"
+      }
+    },
+    {
+      "$schema": "../../schemas/tool.schema.json",
       "slug": "spectra",
       "name": "Spectra",
       "summary": "Store, filter, process and compare mass spectra through a common R interface.",
@@ -15922,6 +16082,113 @@
           ]
         }
       ]
+    },
+    {
+      "$schema": "../../schemas/strategy.schema.json",
+      "slug": "chemical-proportionality-network-transformations",
+      "name": "Chemical proportionality for transformation prioritization",
+      "aliases": [
+        "ChemProp strategy"
+      ],
+      "summary": "Combine molecular-network edges with abundance changes across ordered samples to prioritize possible chemical transformations.",
+      "publication": {
+        "title": "Chemical Proportionality within Molecular Networks",
+        "doi": "10.1021/acs.analchem.1c01520",
+        "year": 2021,
+        "journal": "Analytical Chemistry",
+        "citation": "Petras D, et al. Chemical Proportionality within Molecular Networks. Analytical Chemistry 93, 12833-12839 (2021)."
+      },
+      "purpose": {
+        "primary": "biotransformation"
+      },
+      "platforms": [
+        "lc_ms"
+      ],
+      "components": [
+        "molecular_networking",
+        "metadata_analysis",
+        "statistics"
+      ],
+      "tools": [
+        {
+          "slug": "chemprop",
+          "role": "Score abundance changes between connected features."
+        }
+      ],
+      "workflow_steps": [
+        {
+          "title": "Prepare matched network and abundance data",
+          "description": "Connect quantified features to fragmentation-based network edges and ordered sample metadata."
+        },
+        {
+          "title": "Score proportional changes",
+          "description": "Apply the appropriate ChemProp scoring mode to connected feature pairs.",
+          "tool_slugs": [
+            "chemprop"
+          ]
+        },
+        {
+          "title": "Investigate candidate transformations",
+          "description": "Inspect abundance trends, mass differences and spectra before follow-up validation."
+        }
+      ],
+      "scope": {
+        "designed_for": [
+          "Prioritizing possible transformations among network-connected features."
+        ],
+        "requirements": [
+          "MS/MS network edges linked to quantified features.",
+          "Consistent sample identifiers and an ordered temporal or spatial variable.",
+          "Choose the scoring mode for the available sampling design."
+        ],
+        "considerations": [
+          "Direction and proportionality are hypotheses, not proof of a reaction or its mechanism.",
+          "Co-variation, normalization and missing signals affect interpretation.",
+          "This does not estimate metabolic flux."
+        ]
+      },
+      "ask_keywords": [
+        "chemical proportionality",
+        "prioritize biotransformations",
+        "ordered abundance changes",
+        "drug metabolite transformation",
+        "time resolved molecular network"
+      ],
+      "related_strategies": [
+        "gnps-feature-based-molecular-networking"
+      ],
+      "resources": {
+        "method_available": true,
+        "method_url": "https://doi.org/10.1021/acs.analchem.1c01520"
+      },
+      "implementations": [
+        {
+          "title": "A Functional Metabolomics Framework to Track Microbiome Drug Metabolism",
+          "doi": "10.64898/2026.01.30.702925",
+          "year": 2026,
+          "journal": "bioRxiv (preprint; not peer reviewed)",
+          "citation": "Pakkir Shah AK, et al. bioRxiv (2026), preprint. DOI: 10.64898/2026.01.30.702925.",
+          "relationship": "extension",
+          "summary": "ChemProp2 extends scoring to time-series correlations with a decoy-based empirical FDR procedure. Demonstrated with a synthetic gut community and drugs; microbial association does not establish a producing organism.",
+          "tool_slugs": [
+            "chemprop",
+            "gnps-feature-based-molecular-networking"
+          ]
+        }
+      ],
+      "provenance": {
+        "submitted_by": "curator",
+        "author_verified": false,
+        "notes": "Primary ChemProp paper anchors the transferable relationship. ChemProp2 is an extension, not a separate drug-specific Strategy. Primary DOI/title/year and preprint status verified; workflows not executed."
+      },
+      "status": {
+        "entry": "published",
+        "review": "editorially_reviewed",
+        "created_at": "2026-09-29",
+        "updated_at": "2026-09-29",
+        "last_verified": "2026-09-29",
+        "last_editorial_review": "2026-09-29"
+      }
     },
     {
       "$schema": "../../schemas/strategy.schema.json",
@@ -17702,6 +17969,108 @@
     },
     {
       "$schema": "../../schemas/strategy.schema.json",
+      "slug": "maldi-fish",
+      "name": "Correlative metabolite and microbial imaging with MALDI-FISH",
+      "aliases": [
+        "(MA)LDI-FISH",
+        "MALDI-FISH",
+        "metaFISH"
+      ],
+      "summary": "Combine mass spectrometry imaging with taxon-specific fluorescence labeling to associate spatial chemistry with microbial identity.",
+      "publication": {
+        "title": "Linking metabolite production to taxonomic identity in environmental samples by (MA)LDI-FISH",
+        "doi": "10.1038/ismej.2015.122",
+        "year": 2016,
+        "journal": "The ISME Journal",
+        "citation": "Kaltenpoth M, Strupat K, Svatos A. The ISME Journal 10, 527-531 (2016); first published online 14 July 2015."
+      },
+      "purpose": {
+        "primary": "spatial_metabolomics",
+        "secondary": [
+          "host_microbe_interaction"
+        ]
+      },
+      "platforms": [
+        "imaging_ms"
+      ],
+      "components": [
+        "sample_preparation",
+        "data_acquisition",
+        "metadata_analysis"
+      ],
+      "tools": [],
+      "workflow_steps": [
+        {
+          "title": "Preserve spatial correspondence",
+          "description": "Prepare material compatible with both fluorescence labeling and MSI."
+        },
+        {
+          "title": "Measure chemistry and microbial identity",
+          "description": "Acquire ion images and taxon-specific FISH fluorescence using the sequence specified by the selected published method."
+        },
+        {
+          "title": "Register and compare images",
+          "description": "Align the two measurements to assess which chemical distributions coincide with labeled microbes."
+        }
+      ],
+      "scope": {
+        "designed_for": [
+          "Spatial association of metabolites with microbes in heterogeneous samples."
+        ],
+        "requirements": [
+          "MS imaging and taxon-specific FISH microscopy from corresponding material.",
+          "Validated preparation, imaging order and spatial registration."
+        ],
+        "considerations": [
+          "Colocalization alone does not establish biosynthesis or metabolite exchange.",
+          "Resolution depends on both modalities; the original method should not be described as universally single-cell."
+        ]
+      },
+      "ask_keywords": [
+        "maldi fish",
+        "metafish",
+        "link metabolites to microbial identity",
+        "spatial chemistry and bacterial fluorescence"
+      ],
+      "related_strategies": [
+        "spacem-single-cell-metabolomics"
+      ],
+      "implementations": [
+        {
+          "title": "Spatial metabolomics of in situ host–microbe interactions at the micrometre scale",
+          "doi": "10.1038/s41564-019-0664-6",
+          "year": 2020,
+          "relationship": "extension",
+          "summary": "metaFISH integrates fluorescence and metabolite images on the same tissue section at micrometre scale."
+        },
+        {
+          "title": "Visualization of metabolites and microbes at high spatial resolution using MALDI mass spectrometry imaging and in situ fluorescence labeling",
+          "doi": "10.1038/s41596-023-00864-1",
+          "year": 2023,
+          "relationship": "protocol",
+          "summary": "Detailed metaFISH preparation, acquisition and image-integration instructions."
+        }
+      ],
+      "resources": {
+        "method_available": true,
+        "method_url": "https://doi.org/10.1038/s41596-023-00864-1"
+      },
+      "provenance": {
+        "submitted_by": "curator",
+        "author_verified": false,
+        "notes": "Primary identity and scope checked against the original paper and later metaFISH papers. Distinct from generic cell segmentation in SpaceM. No unverified software assigned."
+      },
+      "status": {
+        "entry": "published",
+        "review": "editorially_reviewed",
+        "created_at": "2026-09-28",
+        "updated_at": "2026-09-28",
+        "last_verified": "2026-09-28",
+        "last_editorial_review": "2026-09-28"
+      }
+    },
+    {
+      "$schema": "../../schemas/strategy.schema.json",
       "slug": "mass2motif-substructure-discovery",
       "name": "Shared-substructure discovery with Mass2Motifs",
       "summary": "Discover recurring fragment and neutral-loss patterns across MS/MS spectra to propose shared substructures.",
@@ -17956,6 +18325,189 @@
         "microbial"
       ],
       "organisms": []
+    },
+    {
+      "$schema": "../../schemas/strategy.schema.json",
+      "slug": "microbe-metabolite-conditional-associations",
+      "name": "Conditional microbe–metabolite association modeling",
+      "aliases": [
+        "mmvec strategy",
+        "microbe-metabolite vectors"
+      ],
+      "summary": "Model paired microbial and MS metabolomics measurements to prioritize conditional co-occurrence relationships between taxa and molecular features.",
+      "publication": {
+        "title": "Learning representations of microbe–metabolite interactions",
+        "doi": "10.1038/s41592-019-0616-3",
+        "year": 2019,
+        "journal": "Nature Methods",
+        "citation": "Morton JT, Aksenov AA, Nothias LF, et al. Nature Methods 16, 1306-1314 (2019)."
+      },
+      "purpose": {
+        "primary": "host_microbe_interaction",
+        "secondary": [
+          "phenotype_association"
+        ]
+      },
+      "platforms": [
+        "lc_ms"
+      ],
+      "components": [
+        "metadata_analysis",
+        "statistics"
+      ],
+      "tools": [
+        {
+          "name": "mmvec",
+          "url": "https://github.com/biocore/mmvec",
+          "role": "Estimate conditional microbe–metabolite co-occurrences from paired tables."
+        }
+      ],
+      "workflow_steps": [
+        {
+          "title": "Match the two measurement tables",
+          "description": "Align microbial and metabolite features using shared sample identifiers; inspect filtering, sparsity and study design."
+        },
+        {
+          "title": "Fit and evaluate the conditional model",
+          "description": "Use mmvec with appropriate tuning and held-out evaluation; inspect training diagnostics.",
+          "external_tools": [
+            {
+              "name": "mmvec",
+              "url": "https://github.com/biocore/mmvec"
+            }
+          ]
+        },
+        {
+          "title": "Prioritize and validate associations",
+          "description": "Inspect conditional rankings and ordinations, then design independent tests for biological hypotheses."
+        }
+      ],
+      "scope": {
+        "designed_for": [
+          "Associations across paired microbiome and MS metabolomics samples."
+        ],
+        "requirements": [
+          "Matched microbial feature and metabolite abundance tables with sufficient shared samples.",
+          "Recorded preprocessing and a validation design appropriate to the study."
+        ],
+        "considerations": [
+          "Conditional co-occurrence does not establish metabolite production, consumption or causation.",
+          "A low conditional score is not automatically a negative correlation.",
+          "Compare against suitable compositional-data baselines; universal superiority over linear methods is not established. See the 2021 discussion (10.1038/s41592-020-01006-1) and reply (10.1038/s41592-020-01007-0).",
+          "Small studies and sparse data require careful tuning and uncertainty assessment."
+        ]
+      },
+      "ask_keywords": [
+        "paired microbiome metabolomics",
+        "microbe metabolite co occurrence",
+        "conditional microbial metabolite associations",
+        "mmvec",
+        "connect microbial taxa to metabolite profiles"
+      ],
+      "related_strategies": [
+        "metabologenomics"
+      ],
+      "resources": {
+        "code_available": true,
+        "code_url": "https://github.com/biocore/mmvec",
+        "method_available": true,
+        "method_url": "https://doi.org/10.1038/s41592-019-0616-3"
+      },
+      "provenance": {
+        "submitted_by": "curator",
+        "author_verified": false,
+        "notes": "Primary method and official implementation reviewed, including the 2021 methodological discussion and reply. Distinct from BGC-to-metabolite matching and spatial colocalization. Inclusion does not endorse causal inference or benchmark superiority."
+      },
+      "status": {
+        "entry": "published",
+        "review": "editorially_reviewed",
+        "created_at": "2026-09-29",
+        "updated_at": "2026-09-29",
+        "last_verified": "2026-09-29",
+        "last_editorial_review": "2026-09-29"
+      }
+    },
+    {
+      "$schema": "../../schemas/strategy.schema.json",
+      "slug": "microfluidic-bioactivity-fractionation",
+      "name": "Microfluidic fractionation for compound-resolved bioactivity",
+      "summary": "Pair rapid chromatographic fraction collection with LC-MS/MS and luminescent bioreporters to connect chemical signals with antibacterial responses.",
+      "publication": {
+        "title": "High-Frequency Microfluidic Fractionation for Compound-Resolved Bioactivity-Based Metabolomics",
+        "doi": "10.1021/acs.analchem.5c04612",
+        "year": 2025,
+        "journal": "Analytical Chemistry",
+        "citation": "Geibel C, et al. Analytical Chemistry 97, 24093-24104 (2025)."
+      },
+      "purpose": {
+        "primary": "natural_product_discovery",
+        "secondary": [
+          "phenotype_association"
+        ]
+      },
+      "platforms": [
+        "lc_ms"
+      ],
+      "components": [
+        "chromatography",
+        "data_acquisition",
+        "biological_validation"
+      ],
+      "tools": [],
+      "workflow_steps": [
+        {
+          "title": "Collect fractions during LC-MS/MS",
+          "description": "Spot eluent onto a paper microfluidic device at approximately one fraction per second while acquiring spectra."
+        },
+        {
+          "title": "Measure reporter responses",
+          "description": "Expose fractions to luminescent bioreporters and image the response."
+        },
+        {
+          "title": "Align activity with chemistry",
+          "description": "Match reporter signals to chromatographic profiles to prioritize active compounds."
+        }
+      ],
+      "scope": {
+        "designed_for": [
+          "Antibacterial activity screening of extracts or compound mixtures."
+        ],
+        "requirements": [
+          "Custom rapid fractionation hardware and compatible paper devices.",
+          "LC-MS/MS, luminescent bioreporters and response imaging.",
+          "Reliable correspondence between fraction positions and retention times."
+        ],
+        "considerations": [
+          "Reporter responses are assay-specific; confirm prioritized activity with follow-up experiments.",
+          "Coelution can complicate assigning activity to one compound."
+        ]
+      },
+      "related_strategies": [
+        "bioactivity-based-molecular-networking"
+      ],
+      "ask_keywords": [
+        "microfluidic bioactivity fractionation",
+        "compound resolved bioactivity",
+        "luminescent bioreporter",
+        "connect chromatography to antibacterial activity"
+      ],
+      "resources": {
+        "method_available": true,
+        "method_url": "https://doi.org/10.1021/acs.analchem.5c04612"
+      },
+      "provenance": {
+        "submitted_by": "curator",
+        "author_verified": false,
+        "notes": "Distinct measurement integration, not a new biological application. Primary title, DOI, year and abstract verified. No software dependencies inferred from author overlap."
+      },
+      "status": {
+        "entry": "published",
+        "review": "editorially_reviewed",
+        "created_at": "2026-09-28",
+        "updated_at": "2026-09-28",
+        "last_verified": "2026-09-28",
+        "last_editorial_review": "2026-09-28"
+      }
     },
     {
       "$schema": "../../schemas/strategy.schema.json",

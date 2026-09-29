@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine learning and AI in MS metabolomics | Metabolomics Navigator</title>
+  <meta name="description" content="AI is an umbrella term; machine learning is one family of AI methods. Tools can combine several approaches. Start with your scientific task, then check the input data, model version and evidence behind the prediction.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/machine-learning-ai/">
+  <meta property="og:site_name" content="Metabolomics Navigator">
+  <meta property="og:title" content="Machine learning and AI in MS metabolomics | Metabolomics Navigator">
+  <meta property="og:description" content="AI is an umbrella term; machine learning is one family of AI methods. Tools can combine several approaches. Start with your scientific task, then check the input data, model version and evidence behind the prediction.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/machine-learning-ai/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Machine learning and AI in MS metabolomics | Metabolomics Navigator">
+  <meta name="twitter:description" content="AI is an umbrella term; machine learning is one family of AI methods. Tools can combine several approaches. Start with your scientific task, then check the input data, model version and evidence behind the prediction.">
+  
+  <meta name="theme-color" content="#faf9f5">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=ea46acd35984">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=ea46acd35984">
+  <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body class="page-guide"><aside style="padding:12px;text-align:center;background:#f2e9cc;color:#183f42">Alpha review snapshot · Not the live site · <a href="https://scottjarmusch.github.io/metabolomics-navigator/">Visit the live Navigator</a></aside>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner section-wrap">
+      <a class="brand" href="/metabolomics-navigator-alpha/" aria-label="Metabolomics Navigator home">
+        <svg class="brand-logo" width="60" height="26" viewBox="0 0 100 44" aria-hidden="true">
+          <path class="brand-chrom" d="M2 34h14l4-24 4 26 4-18 4 20h16" />
+          <g class="brand-network">
+            <line x1="48" y1="12" x2="61" y2="8" />
+            <line x1="48" y1="12" x2="56" y2="22" />
+            <line x1="61" y1="8" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="72" y2="14" />
+            <line x1="56" y1="22" x2="67" y2="31" />
+            <line x1="67" y1="31" x2="80" y2="26" />
+            <circle cx="48" cy="12" r="3.2" />
+            <circle cx="61" cy="8" r="3.2" />
+            <circle cx="56" cy="22" r="3.2" />
+            <circle cx="72" cy="14" r="3.2" />
+            <circle cx="67" cy="31" r="3.2" />
+            <circle cx="80" cy="26" r="3.2" />
+          </g>
+        </svg>
+        <span class="brand-text">
+          <strong><span>Metabolomics</span> <span class="accent">Navigator</span></strong>
+          <small>Tools, strategies &amp; workflow guidance for metabolomics</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="/metabolomics-navigator-alpha/" aria-current="page">Guide</a>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/ask/">Ask Navigator</a>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a class="nav-submit" href="/metabolomics-navigator-alpha/submit/">Contribute</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+<div class="section-wrap category-layout">
+ <aside class="category-sidebar"><nav aria-label="Explore by task"><h2>Explore by task</h2><a href="/metabolomics-navigator-alpha/guide/data-processing/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 5h16M4 12h16M4 19h16"/><circle cx="8" cy="5" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="19" r="2"/>
+
+</svg>
+<span>Data processing</span></a><a href="/metabolomics-navigator-alpha/guide/annotation/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/>
+
+</svg>
+<span>Molecular annotation</span></a><a href="/metabolomics-navigator-alpha/guide/spectral-analysis/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m6 7 11 4M6 7l4 12m7-8-7 8"/><circle cx="5" cy="6" r="3"/><circle cx="18" cy="11" r="3"/><circle cx="10" cy="20" r="2"/>
+
+</svg>
+<span>Spectral analysis</span></a><a href="/metabolomics-navigator-alpha/guide/public-data/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>
+
+</svg>
+<span>Public-data search</span></a><a href="/metabolomics-navigator-alpha/guide/reference-resources/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M5 3h10l4 4v14H5zM14 3v5h5M8 12h8M8 16h5"/>
+
+</svg>
+<span>Data &amp; references</span></a><a href="/metabolomics-navigator-alpha/guide/interpretation/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Interpretation</span></a><a href="/metabolomics-navigator-alpha/guide/spatial-metabolomics/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Spatial metabolomics</span></a><a href="/metabolomics-navigator-alpha/guide/metabologenomics/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Metabologenomics</span></a><a href="/metabolomics-navigator-alpha/guide/microbial-maldi/">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Microbial MALDI profiling</span></a><a href="/metabolomics-navigator-alpha/guide/machine-learning-ai/" aria-current="page">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+<span>Machine learning &amp; AI</span></a></nav><a class="all-tools-link" href="/metabolomics-navigator-alpha/tools/">Search all 145 resources →</a></aside>
+ <article class="category-content"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/metabolomics-navigator-alpha/">Guide</a><span>›</span><span>Machine learning &amp; AI</span></nav><header class="category-intro"><span class="category-icon">
+<svg class="topic-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 3v18h17M8 16v-5M13 16V6M18 16v-8"/>
+</svg>
+</span><h1>Machine learning and AI in MS metabolomics</h1><p>Understand what a model predicts, what evidence it needs and how to assess its output.</p></header>
+ <details class="category-guidance"><summary>How to choose a resource</summary><p>AI is an umbrella term; machine learning is one family of AI methods. Tools can combine several approaches. Start with your scientific task, then check the input data, model version and evidence behind the prediction.</p><p>Separate training a model from using pretrained weights. Hardware, licensing and data-transfer requirements can differ. Record the model and version, check performance on relevant chemistry and acquisition conditions, and treat predicted structures or associations as hypotheses.</p></details>
+ <section aria-labelledby="method-vocabulary"><h2 id="method-vocabulary">Terms you will encounter</h2><dl><dt><strong>Predictive machine learning</strong></dt><dd><p>Learns a relationship from examples, such as molecular structure to fragmentation spectrum or MS/MS to chemical class. Evaluate the specific prediction task and model applicability.</p></dd><dt><strong>Spectral representation learning</strong></dt><dd><p>Learns numerical representations of spectra for tasks such as similarity search. DreaMS uses self-supervised learning; a similar representation is not proof of identical structure.</p></dd><dt><strong>Generative models</strong></dt><dd><p>Generate candidates, such as molecular structures or fragmentation graphs. Generation does not establish that a proposed molecule is present in the sample.</p></dd><dt><strong>Foundation models</strong></dt><dd><p>Broadly pretrained models adapted to multiple downstream tasks. This describes training and reuse, not a guarantee of reliability for every instrument or sample type.</p></dd><dt><strong>Agentic AI</strong></dt><dd><p>A model selects or coordinates analysis tools over multiple steps. Inspect the actual tools, parameters, intermediate evidence and human review points. An agent can call both learned models and conventional software.</p></dd><dt><strong>Workflow automation</strong></dt><dd><p>Runs processing steps automatically. Automation alone does not imply learned inference or an AI agent. Everything Bagel is currently documented here as automated feature finding; use within an agentic workflow does not change that classification.</p></dd></dl><p>These descriptions overlap. They describe how a method works, while the catalogue’s scientific functions describe what it helps you do.</p><p><a href="/metabolomics-navigator-alpha/tools/?function=machine_learning">Browse tools tagged with machine learning →</a></p></section>
+ <section aria-labelledby="method-reading"><h2 id="method-reading">Method papers</h2><ul><li><a href="https://doi.org/10.1038/s41587-025-02663-3" target="_blank" rel="noopener">DreaMS — self-supervised spectral representations</a></li><li><a href="https://doi.org/10.1021/acs.analchem.3c04654" target="_blank" rel="noopener">ICEBERG — neural fragmentation-graph generation</a></li><li><a href="https://doi.org/10.1038/s41592-022-01486-3" target="_blank" rel="noopener">MSNovelist — de novo structure generation</a></li></ul></section>
+ 
+ <div class="category-list-heading"><h2>Tools & resources</h2><span>5 entries</span></div>
+ <ul class="category-resources"><li><a href="/metabolomics-navigator-alpha/tools/iceberg/"><div class="resource-heading"><h3>ICEBERG</h3><span class="resource-access">Open source</span></div><p>ICEBERG is a two-stage neural network that predicts mass spectra from molecular structures. It can rank candidate structures against a spectrum for metabolite annotation.</p><span class="resource-bottom">Predict spectra and rank candidate structures<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/msnovelist/"><div class="resource-heading"><h3>MSNovelist</h3><span class="resource-access">Free for academic use</span></div><p>A SIRIUS-integrated de novo structure-generation method that proposes molecular structures from a predicted molecular formula and CSI:FingerID fingerprint when database search is insufficient.</p><span class="resource-bottom">Generate molecular-structure candidates<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/csi-fingerid/"><div class="resource-heading"><h3>CSI:FingerID</h3><span class="resource-access">Free for academic use</span></div><p>A SIRIUS-integrated machine-learning method and webservice for predicting molecular fingerprints from MS/MS data and ranking candidate structures from molecular-structure databases.</p><span class="resource-bottom">Predict fingerprints for structure-database searches<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/canopus/"><div class="resource-heading"><h3>CANOPUS</h3><span class="resource-access">Free for academic use</span></div><p>A SIRIUS-integrated machine-learning method and webservice for predicting compound classes directly from high-resolution MS/MS data without requiring an exact database structure match.</p><span class="resource-bottom">Predict compound classes<span aria-hidden="true">↗</span></span></a></li><li><a href="/metabolomics-navigator-alpha/tools/peakdecoder/"><div class="resource-heading"><h3>PeakDecoder</h3><span class="resource-access">Open source</span></div><p>Use machine learning to support metabolite identification and error-rate estimation in multidimensional LC-IM-MS-DIA data.</p><span class="resource-bottom">Detect and annotate features in DIA data<span aria-hidden="true">↗</span></span></a></li></ul>
+ </article>
+</div>
+</main>
+  <footer class="site-footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <strong>Metabolomics Navigator</strong>
+        <p>An open scientific resource for metabolomics tools, analytical strategies and workflow guidance.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
+        <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
+        <a href="/metabolomics-navigator-alpha/browse/">Browse categories</a>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <a href="/metabolomics-navigator-alpha/about/">About</a>
+        <a href="/metabolomics-navigator-alpha/governance/">Governance</a>
+        <a href="/metabolomics-navigator-alpha/privacy/">Privacy</a>
+        <a href="https://github.com/scottjarmusch/metabolomics-navigator">GitHub repository</a>
+      </div>
+      <div>
+        <h2>Data</h2>
+        <a href="/metabolomics-navigator-alpha/tool-data.json">Tool data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/strategy-data.json">Strategy data (JSON)</a>
+        <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 29 September 2026</span></div>
+  </footer>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=ea46acd35984" defer></script>
+</body>
+</html>

@@ -108,6 +108,7 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/mslinear/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/msms-chooser/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/msnbase/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/msnlib/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/msnovelist/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/multistep-massql/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/mummichog/</loc></url>
@@ -145,6 +146,7 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/smartpeak/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/spamtp/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/spec2vec/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/specreboot/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/spectra/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/stattarget/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/structuremasst/</loc></url>
@@ -156,9 +158,12 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/xcms/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/three-dimensional-molecular-cartography/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/bioactivity-based-molecular-networking/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/chemical-proportionality-network-transformations/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/chemical-similarity-set-enrichment/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/chemoselective-reactivity-resolved-metabolomics/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/idbac-colony-maldi-msms-dereplication/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/microbe-metabolite-conditional-associations/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/maldi-fish/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/credentialing-untargeted-features/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/dadia-hybrid-acquisition/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/gnps-feature-based-molecular-networking/</loc></url>
@@ -170,6 +175,7 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/kinetic-flux-profiling/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/msi-guided-molecular-networking/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/metabologenomics/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/microfluidic-bioactivity-fractionation/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/molecular-networking-dereplication/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/ms2decide/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/strategies/native-ms-metal-binding/</loc></url>
@@ -197,4 +203,5 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/spatial-metabolomics/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/metabologenomics/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/microbial-maldi/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/guide/machine-learning-ai/</loc></url>
 </urlset>

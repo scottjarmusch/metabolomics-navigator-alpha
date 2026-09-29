@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Find published metabolomics Strategies, inspect their evidence and explore tools and learning resources.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=50ac3d4f39a8">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=50ac3d4f39a8">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=ea46acd35984">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=ea46acd35984">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -256,6 +256,62 @@
     </article>
   
     <article class="ask-strategy-card" hidden
+      data-search="chemical proportionality for transformation prioritization combine molecular-network edges with abundance changes across ordered samples to prioritize possible chemical transformations. chemical proportionality prioritize biotransformations ordered abundance changes drug metabolite transformation time resolved molecular network biotransformation analysis lc-ms molecular networking metadata analysis statistical analysis chemical proportionality (chemprop) a functional metabolomics framework to track microbiome drug metabolism chemprop2 extends scoring to time-series correlations with a decoy-based empirical fdr procedure. demonstrated with a synthetic gut community and drugs; microbial association does not establish a producing organism."
+      data-name="Chemical proportionality for transformation prioritization"
+      data-keywords="chemical proportionality prioritize biotransformations ordered abundance changes drug metabolite transformation time resolved molecular network"
+      data-objectives="biotransformation "
+      data-year="2021">
+      <div class="ask-strategy-head">
+        <div>
+          <p class="eyebrow">Biotransformation analysis</p>
+          <h3><a href="/metabolomics-navigator-alpha/strategies/chemical-proportionality-network-transformations/">Chemical proportionality for transformation prioritization</a></h3>
+          <p>Combine molecular-network edges with abundance changes across ordered samples to prioritize possible chemical transformations.</p>
+        </div>
+        <span class="ask-year">2021</span>
+      </div>
+
+      <div class="ask-evidence-line">
+        <strong>Published precedent</strong>
+        <span>Analytical Chemistry, 2021</span>
+        <a href="https://doi.org/10.1021/acs.analchem.1c01520">doi:10.1021/acs.analchem.1c01520</a>
+      </div>
+
+      <details class="ask-requirements"><summary>What you need for this Strategy</summary><ul><li>MS/MS network edges linked to quantified features.</li><li>Consistent sample identifiers and an ordered temporal or spatial variable.</li><li>Choose the scoring mode for the available sampling design.</li></ul></details>
+      
+      <div class="ask-workflow-preview">
+        <strong>Implemented workflow</strong>
+        <p class="note">Alternative searches use the recorded tool function; check inputs, outputs and acquisition compatibility before substituting.</p>
+        <ol>
+        
+          <li><span>Prepare matched network and abundance data</span></li>
+        
+          <li><span>Score proportional changes</span><small>Published resources: <a href="/metabolomics-navigator-alpha/tools/chemprop/">Chemical Proportionality (ChemProp)</a> (<a href="/metabolomics-navigator-alpha/education/?tool=chemprop">Find learning resources</a>)</small><small>Explore alternatives: <a href="/metabolomics-navigator-alpha/tools/?function=statistics">Statistical analysis</a></small></li>
+        
+          <li><span>Investigate candidate transformations</span></li>
+        
+        </ol>
+        
+      </div>
+      
+
+      
+      <div class="ask-implementations">
+        <strong>Subsequent published implementations</strong>
+        <ul>
+        
+          <li><span>2026 · A Functional Metabolomics Framework to Track Microbiome Drug Metabolism</span><a href="https://doi.org/10.64898/2026.01.30.702925">citation ↗</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div class="ask-card-actions">
+        <a class="button primary" href="/metabolomics-navigator-alpha/strategies/chemical-proportionality-network-transformations/">See workflow + evidence</a>
+        <a class="text-link" href="/metabolomics-navigator-alpha/tools/">Explore catalogue alternatives →</a>
+      </div>
+    </article>
+  
+    <article class="ask-strategy-card" hidden
       data-search="chemical-similarity metabolite-set enrichment group identified metabolites by chemical similarity and test which groups change between study conditions. chemrich chemical class enrichment chemical similarity metabolite sets identified metabolites smiles lipid classes phenotype association lc-ms gc-ms metabolite profiling lipidomics statistical analysis metadata analysis chemrich"
       data-name="Chemical-similarity metabolite-set enrichment"
       data-keywords="ChemRICH chemical class enrichment chemical similarity metabolite sets identified metabolites SMILES lipid classes"
@@ -396,6 +452,111 @@
 
       <div class="ask-card-actions">
         <a class="button primary" href="/metabolomics-navigator-alpha/strategies/idbac-colony-maldi-msms-dereplication/">See workflow + evidence</a>
+        <a class="text-link" href="/metabolomics-navigator-alpha/tools/">Explore catalogue alternatives →</a>
+      </div>
+    </article>
+  
+    <article class="ask-strategy-card" hidden
+      data-search="conditional microbe–metabolite association modeling model paired microbial and ms metabolomics measurements to prioritize conditional co-occurrence relationships between taxa and molecular features. paired microbiome metabolomics microbe metabolite co occurrence conditional microbial metabolite associations mmvec connect microbial taxa to metabolite profiles host–microbe interaction phenotype association lc-ms metadata analysis statistical analysis mmvec"
+      data-name="Conditional microbe–metabolite association modeling"
+      data-keywords="paired microbiome metabolomics microbe metabolite co occurrence conditional microbial metabolite associations mmvec connect microbial taxa to metabolite profiles"
+      data-objectives="host_microbe_interaction phenotype_association"
+      data-year="2019">
+      <div class="ask-strategy-head">
+        <div>
+          <p class="eyebrow">Host–microbe interaction</p>
+          <h3><a href="/metabolomics-navigator-alpha/strategies/microbe-metabolite-conditional-associations/">Conditional microbe–metabolite association modeling</a></h3>
+          <p>Model paired microbial and MS metabolomics measurements to prioritize conditional co-occurrence relationships between taxa and molecular features.</p>
+        </div>
+        <span class="ask-year">2019</span>
+      </div>
+
+      <div class="ask-evidence-line">
+        <strong>Published precedent</strong>
+        <span>Nature Methods, 2019</span>
+        <a href="https://doi.org/10.1038/s41592-019-0616-3">doi:10.1038/s41592-019-0616-3</a>
+      </div>
+
+      <details class="ask-requirements"><summary>What you need for this Strategy</summary><ul><li>Matched microbial feature and metabolite abundance tables with sufficient shared samples.</li><li>Recorded preprocessing and a validation design appropriate to the study.</li></ul></details>
+      
+      <div class="ask-workflow-preview">
+        <strong>Implemented workflow</strong>
+        <p class="note">Alternative searches use the recorded tool function; check inputs, outputs and acquisition compatibility before substituting.</p>
+        <ol>
+        
+          <li><span>Match the two measurement tables</span></li>
+        
+          <li><span>Fit and evaluate the conditional model</span><small>Published resources:  <a href="https://github.com/biocore/mmvec">mmvec</a></small></li>
+        
+          <li><span>Prioritize and validate associations</span></li>
+        
+        </ol>
+        
+      </div>
+      
+
+      
+
+      <div class="ask-card-actions">
+        <a class="button primary" href="/metabolomics-navigator-alpha/strategies/microbe-metabolite-conditional-associations/">See workflow + evidence</a>
+        <a class="text-link" href="/metabolomics-navigator-alpha/tools/">Explore catalogue alternatives →</a>
+      </div>
+    </article>
+  
+    <article class="ask-strategy-card" hidden
+      data-search="correlative metabolite and microbial imaging with maldi-fish combine mass spectrometry imaging with taxon-specific fluorescence labeling to associate spatial chemistry with microbial identity. maldi fish metafish link metabolites to microbial identity spatial chemistry and bacterial fluorescence spatial metabolomics host–microbe interaction imaging mass spectrometry sample preparation data acquisition metadata analysis spatial metabolomics of in situ host–microbe interactions at the micrometre scale metafish integrates fluorescence and metabolite images on the same tissue section at micrometre scale. visualization of metabolites and microbes at high spatial resolution using maldi mass spectrometry imaging and in situ fluorescence labeling detailed metafish preparation, acquisition and image-integration instructions."
+      data-name="Correlative metabolite and microbial imaging with MALDI-FISH"
+      data-keywords="maldi fish metafish link metabolites to microbial identity spatial chemistry and bacterial fluorescence"
+      data-objectives="spatial_metabolomics host_microbe_interaction"
+      data-year="2016">
+      <div class="ask-strategy-head">
+        <div>
+          <p class="eyebrow">Spatial metabolomics</p>
+          <h3><a href="/metabolomics-navigator-alpha/strategies/maldi-fish/">Correlative metabolite and microbial imaging with MALDI-FISH</a></h3>
+          <p>Combine mass spectrometry imaging with taxon-specific fluorescence labeling to associate spatial chemistry with microbial identity.</p>
+        </div>
+        <span class="ask-year">2016</span>
+      </div>
+
+      <div class="ask-evidence-line">
+        <strong>Published precedent</strong>
+        <span>The ISME Journal, 2016</span>
+        <a href="https://doi.org/10.1038/ismej.2015.122">doi:10.1038/ismej.2015.122</a>
+      </div>
+
+      <details class="ask-requirements"><summary>What you need for this Strategy</summary><ul><li>MS imaging and taxon-specific FISH microscopy from corresponding material.</li><li>Validated preparation, imaging order and spatial registration.</li></ul></details>
+      
+      <div class="ask-workflow-preview">
+        <strong>Implemented workflow</strong>
+        <p class="note">Alternative searches use the recorded tool function; check inputs, outputs and acquisition compatibility before substituting.</p>
+        <ol>
+        
+          <li><span>Preserve spatial correspondence</span></li>
+        
+          <li><span>Measure chemistry and microbial identity</span></li>
+        
+          <li><span>Register and compare images</span></li>
+        
+        </ol>
+        
+      </div>
+      
+
+      
+      <div class="ask-implementations">
+        <strong>Subsequent published implementations</strong>
+        <ul>
+        
+          <li><span>2023 · Visualization of metabolites and microbes at high spatial resolution using MALDI mass spectrometry imaging and in situ fluorescence labeling</span><a href="https://doi.org/10.1038/s41596-023-00864-1">citation ↗</a></li>
+        
+          <li><span>2020 · Spatial metabolomics of in situ host–microbe interactions at the micrometre scale</span><a href="https://doi.org/10.1038/s41564-019-0664-6">citation ↗</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div class="ask-card-actions">
+        <a class="button primary" href="/metabolomics-navigator-alpha/strategies/maldi-fish/">See workflow + evidence</a>
         <a class="text-link" href="/metabolomics-navigator-alpha/tools/">Explore catalogue alternatives →</a>
       </div>
     </article>
@@ -962,6 +1123,53 @@
 
       <div class="ask-card-actions">
         <a class="button primary" href="/metabolomics-navigator-alpha/strategies/metabologenomics/">See workflow + evidence</a>
+        <a class="text-link" href="/metabolomics-navigator-alpha/tools/">Explore catalogue alternatives →</a>
+      </div>
+    </article>
+  
+    <article class="ask-strategy-card" hidden
+      data-search="microfluidic fractionation for compound-resolved bioactivity pair rapid chromatographic fraction collection with lc-ms/ms and luminescent bioreporters to connect chemical signals with antibacterial responses. microfluidic bioactivity fractionation compound resolved bioactivity luminescent bioreporter connect chromatography to antibacterial activity natural-product discovery phenotype association lc-ms chromatography data acquisition biological validation"
+      data-name="Microfluidic fractionation for compound-resolved bioactivity"
+      data-keywords="microfluidic bioactivity fractionation compound resolved bioactivity luminescent bioreporter connect chromatography to antibacterial activity"
+      data-objectives="natural_product_discovery phenotype_association"
+      data-year="2025">
+      <div class="ask-strategy-head">
+        <div>
+          <p class="eyebrow">Natural-product discovery</p>
+          <h3><a href="/metabolomics-navigator-alpha/strategies/microfluidic-bioactivity-fractionation/">Microfluidic fractionation for compound-resolved bioactivity</a></h3>
+          <p>Pair rapid chromatographic fraction collection with LC-MS/MS and luminescent bioreporters to connect chemical signals with antibacterial responses.</p>
+        </div>
+        <span class="ask-year">2025</span>
+      </div>
+
+      <div class="ask-evidence-line">
+        <strong>Published precedent</strong>
+        <span>Analytical Chemistry, 2025</span>
+        <a href="https://doi.org/10.1021/acs.analchem.5c04612">doi:10.1021/acs.analchem.5c04612</a>
+      </div>
+
+      <details class="ask-requirements"><summary>What you need for this Strategy</summary><ul><li>Custom rapid fractionation hardware and compatible paper devices.</li><li>LC-MS/MS, luminescent bioreporters and response imaging.</li><li>Reliable correspondence between fraction positions and retention times.</li></ul></details>
+      
+      <div class="ask-workflow-preview">
+        <strong>Implemented workflow</strong>
+        <p class="note">Alternative searches use the recorded tool function; check inputs, outputs and acquisition compatibility before substituting.</p>
+        <ol>
+        
+          <li><span>Collect fractions during LC-MS/MS</span></li>
+        
+          <li><span>Measure reporter responses</span></li>
+        
+          <li><span>Align activity with chemistry</span></li>
+        
+        </ol>
+        
+      </div>
+      
+
+      
+
+      <div class="ask-card-actions">
+        <a class="button primary" href="/metabolomics-navigator-alpha/strategies/microfluidic-bioactivity-fractionation/">See workflow + evidence</a>
         <a class="text-link" href="/metabolomics-navigator-alpha/tools/">Explore catalogue alternatives →</a>
       </div>
     </article>
@@ -1920,8 +2128,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 28 September 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 29 September 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=50ac3d4f39a8" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=50ac3d4f39a8" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=ea46acd35984" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=ea46acd35984" defer></script>
 </body>
 </html>

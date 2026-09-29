@@ -10553,6 +10553,103 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "msnlib",
+    "name": "MSnLib",
+    "summary": "Open multistage fragmentation reference spectra and a reproducible library-generation workflow implemented with mzmine.",
+    "description": "MSnLib combines reference-compound measurements, curated metadata and mzmine processing to generate spectral libraries organized as fragmentation trees. The 2025 publication describes more than two million spectra from 30,008 compounds; these are publication-version figures, not a live count.",
+    "links": {
+      "primary": "https://doi.org/10.1038/s41592-025-02813-0",
+      "documentation": "https://github.com/merlin-ms/mass-spectral-library-network/tree/master/libraries/MSnLib",
+      "repository": "https://github.com/merlin-ms/mass-spectral-library-network"
+    },
+    "resource_types": [
+      "spectral_library",
+      "workflow_pipeline"
+    ],
+    "functions": {
+      "primary": "reference_data_search",
+      "secondary": [
+        "spectral_analysis"
+      ],
+      "capabilities": [
+        "reference_spectrum_selection"
+      ]
+    },
+    "platforms": [
+      "direct_infusion_ms",
+      "lc_ms"
+    ],
+    "interfaces": [
+      "desktop_gui"
+    ],
+    "access": {
+      "model": "open_source",
+      "notes": "Generation uses open-source mzmine. MERLIN metadata and acquisition resources carry an MIT license; consult the selected library release for data reuse terms."
+    },
+    "data": {
+      "input_types": [
+        "spectra",
+        "compound_list"
+      ],
+      "other_input_formats": [
+        "Reference measurements and curated compound metadata"
+      ],
+      "output_types": [
+        "spectral_library"
+      ],
+      "other_output_formats": [
+        "Release-specific spectral-library files and multistage fragmentation trees"
+      ]
+    },
+    "common_uses": [
+      "Use reference fragmentation spectra for annotation or method development.",
+      "Generate libraries from measured reference compounds using mzmine."
+    ],
+    "scope": {
+      "designed_for": [
+        "Reference spectral resources and reproducible library generation."
+      ],
+      "not_designed_for": [
+        "A standalone end-to-end statistical analysis of biological cohorts."
+      ],
+      "requirements": [
+        "Compatible library-search software for using released spectra; mzmine and suitable measurements for generation."
+      ],
+      "considerations": [
+        "Match polarity, fragmentation stage and acquisition conditions when interpreting spectral similarity.",
+        "Confirm library-release formats and licensing before reuse."
+      ]
+    },
+    "publications": [
+      {
+        "type": "primary",
+        "doi": "10.1038/s41592-025-02813-0",
+        "citation": "Brungs C, Schmid R, Heuckeroth S, et al. MSnLib: efficient generation of open multi-stage fragmentation mass spectral libraries. Nature Methods 22, 2028-2031 (2025)."
+      }
+    ],
+    "related_tools": [
+      {
+        "slug": "mzmine",
+        "relationship": "integration",
+        "note": "Published library-generation processing is implemented in mzmine."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Primary publication identity and MERLIN MSnLib documentation verified. Desktop interface refers to mzmine generation, not a separate MSnLib application. Downloads and generation were not independently executed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-28",
+      "updated_at": "2026-09-28",
+      "last_verified": "2026-09-28",
+      "last_editorial_review": "2026-09-28"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "msnovelist",
     "name": "MSNovelist",
     "summary": "A SIRIUS-integrated de novo structure-generation method that proposes molecular structures from a predicted molecular formula and CSI:FingerID fingerprint when database search is insufficient.",
@@ -14704,6 +14801,69 @@
         "relationship": "complementary"
       }
     ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "specreboot",
+    "name": "SpecReBoot",
+    "aliases": [],
+    "summary": "SpecReBoot brings the statistical rigor of phylogenetic bootstrapping to mass spectrometry. It resamples spectral features to estimate edge support and build consensus molecular networks with quantified confidence.",
+    "links": {
+      "primary": "https://github.com/ECharria/SpecReBoot",
+      "repository": "https://github.com/ECharria/SpecReBoot"
+    },
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "molecular_networking",
+      "secondary": [
+        "spectral_analysis",
+        "reference_data_search"
+      ],
+      "capabilities": []
+    },
+    "platforms": [
+      "platform_independent"
+    ],
+    "analysis_types": [],
+    "interfaces": [
+      "python_package"
+    ],
+    "access": {
+      "model": "open_source"
+    },
+    "publications": [
+      {
+        "doi": "10.64898/2026.02.03.703446",
+        "type": "primary"
+      }
+    ],
+    "common_uses": [],
+    "scope": {},
+    "acquisition": {},
+    "related_tools": [],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-24"
+    },
+    "credits": [],
+    "provenance": {
+      "submitted_by": "curator",
+      "source_issue": "https://github.com/scottjarmusch/metabolomics-navigator/issues/63",
+      "developer_verified": false,
+      "submitter_name": "Morgane Mauduit",
+      "public_attribution_consent": true,
+      "submitter_orcid": "0000-0003-4583-5389",
+      "notes": "Status: in active development \nFeedback, ideas, issues, and PRs are very welcome!"
+    },
+    "status": {
+      "entry": "stub",
+      "review": "unreviewed",
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24",
+      "last_verified": "2026-09-24"
+    }
   },
   {
     "$schema": "../../schemas/tool.schema.json",

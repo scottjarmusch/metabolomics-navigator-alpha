@@ -1,6 +1,6 @@
 # Metabolomics Navigator alpha preview
 
-Strategy-first Ask Navigator plus Education. 34 Strategies, 143 tools and 57 learning resources.
+Strategy-first Ask Navigator plus Education. 38 Strategies, 145 tools and 57 learning resources.
 
 Ask: https://scottjarmusch.github.io/metabolomics-navigator-alpha/ask/
 
