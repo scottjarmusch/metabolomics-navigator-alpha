@@ -20767,7 +20767,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "1st-gnps-user-meeting",
       "title": "1st GNPS User Meeting",
-      "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+      "summary": "GNPS community meeting recording. Explore how the platform is discussed by its user community; this is a broad meeting rather than a sequential software tutorial.",
       "url": "https://www.youtube.com/watch?v=4HMjK4Js8xI",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -20794,7 +20794,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "bioconductor-untargeted-lc-ms-preprocessing-with-xcms",
       "title": "Bioconductor untargeted LC-MS preprocessing with XCMS",
-      "summary": "Detailed hands-on preprocessing workshop; older but technically useful.",
+      "summary": "Bioconductor training on preprocessing untargeted LC-MS data with XCMS in R. Start here for the processing stage before downstream statistics or biological interpretation.",
       "url": "https://www.bioconductor.org/help/course-materials/2019/CSAMA/materials/labs/lab-05-metabolomics/preprocessing-untargeted-metabolomics.html",
       "resource_type": "tutorial",
       "tool_slugs": [
@@ -20817,7 +20817,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "cmfi-mass-spec-seminar-10-metabolomics-data-analysis-with-pyopenms",
       "title": "CMFI Mass Spec Seminar #10 - Metabolomics Data Analysis with pyOpenMS",
-      "summary": "External workshop recording related to openms collected for the Navigator Education alpha.",
+      "summary": "Hands-on metabolomics data analysis with pyOpenMS, the Python interface to OpenMS. The session uses Binder for an interactive computational environment.",
       "url": "https://www.youtube.com/watch?v=XWDFZXYp1qM",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -20844,7 +20844,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "cmfi-molecular-networking-seminar",
       "title": "CMFI Molecular Networking seminar",
-      "summary": "External workshop recording related to gnps, gnps-classical-molecular-networking collected for the Navigator Education alpha.",
+      "summary": "Dorrestein and Petras present molecular networking in this CMFI seminar. Background for understanding how spectral relationships can organize metabolomics data.",
       "url": "https://youtu.be/s5y1XNKENbk",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -20872,7 +20872,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gc-ms-deconvolution-library-search-and-molecular-networking",
       "title": "GC-MS deconvolution, library search and molecular networking",
-      "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+      "summary": "Training focused on the GC-MS analysis sequence: deconvolution, spectral-library searching and molecular networking. Choose this resource for gas-chromatography data rather than an LC-MS workflow.",
       "url": "https://www.youtube.com/watch?v=CXDlwC7evnk",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -20899,7 +20899,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-classical-molecular-networking-in-portuguese",
       "title": "GNPS Classical Molecular Networking in Portuguese",
-      "summary": "External workshop recording related to gnps-classical-molecular-networking collected for the Navigator Education alpha.",
+      "summary": "Portuguese-language introduction to classical molecular networking in GNPS. Relevant for exploring relationships among tandem mass spectra.",
       "url": "https://www.youtube.com/watch?v=Lba9e45ZAE0",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -20926,7 +20926,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-classical-molecular-networking-in-spanish",
       "title": "GNPS Classical Molecular Networking in Spanish",
-      "summary": "External workshop recording related to gnps-classical-molecular-networking collected for the Navigator Education alpha.",
+      "summary": "Spanish-language introduction to classical molecular networking in GNPS. Relevant for exploring relationships among tandem mass spectra.",
       "url": "https://www.youtube.com/watch?v=hTZzZI3PtR0",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -20953,7 +20953,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-classical-molecular-networking",
       "title": "GNPS Classical Molecular Networking",
-      "summary": "External workshop recording related to gnps-classical-molecular-networking, gnps collected for the Navigator Education alpha.",
+      "summary": "Workshop on classical molecular networking in GNPS: grouping related tandem mass spectra to explore molecular families. Use alongside the current documentation when following an older interface.",
       "url": "https://www.youtube.com/watch?v=PqTuex0nsGk",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -20981,7 +20981,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-dashboard-overview",
       "title": "GNPS Dashboard - Overview",
-      "summary": "External workshop recording related to gnps-dashboard, gnps collected for the Navigator Education alpha.",
+      "summary": "Overview of GNPS Dashboard for exploring mass spectrometry data. A starting point before using the linked Dashboard teaching example.",
       "url": "https://www.youtube.com/watch?v=S3aAkGTMC-g",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21009,7 +21009,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-dashboard-teaching-tutorial-use-case",
       "title": "GNPS Dashboard teaching/tutorial use case",
-      "summary": "External training video related to gnps-dashboard collected for the Navigator Education alpha.",
+      "summary": "Teaching example linked from the GNPS Dashboard documentation. Follow a tutorial use case to put the Dashboard overview into practical context.",
       "url": "https://www.youtube.com/watch?v=tT5b1IIJCE8",
       "resource_type": "video",
       "tool_slugs": [
@@ -21036,7 +21036,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-fbmn-american-gut-mzmine2-tutorial",
       "title": "GNPS FBMN - American Gut / MZmine2 tutorial",
-      "summary": "External training video related to gnps-feature-based-molecular-networking, mzmine collected for the Navigator Education alpha.",
+      "summary": "American Gut tutorial combining MZmine 2 with GNPS feature-based molecular networking. A worked dataset connects preprocessing with networking; the MZmine interface is a legacy version.",
       "url": "https://www.youtube.com/watch?v=5jjMllbwD-U",
       "resource_type": "video",
       "tool_slugs": [
@@ -21064,7 +21064,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-fbmn-in-spanish-part-1",
       "title": "GNPS FBMN in Spanish Part 1",
-      "summary": "External workshop recording related to gnps-feature-based-molecular-networking collected for the Navigator Education alpha.",
+      "summary": "Part 1 of the Spanish-language feature-based molecular networking tutorial. Start here before continuing to part 2.",
       "url": "https://www.youtube.com/watch?v=0xWMAwM8x3U",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21091,7 +21091,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-fbmn-in-spanish-part-2",
       "title": "GNPS FBMN in Spanish Part 2",
-      "summary": "External workshop recording related to gnps-feature-based-molecular-networking collected for the Navigator Education alpha.",
+      "summary": "Part 2 of the Spanish-language feature-based molecular networking tutorial. Continue from part 1 for the remainder of the sequence.",
       "url": "https://www.youtube.com/watch?v=l90j5T8EQbw",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21118,7 +21118,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-feature-based-molecular-networking-mzmine2",
       "title": "GNPS Feature Based Molecular Networking (MZmine2)",
-      "summary": "External workshop recording related to gnps-feature-based-molecular-networking, mzmine collected for the Navigator Education alpha.",
+      "summary": "Feature-based molecular networking training using MZmine 2 and GNPS. Relevant for connecting detected features to spectral networks; screenshots and menus reflect the older MZmine interface.",
       "url": "https://www.youtube.com/watch?v=MwdJ6mVkdJY",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21146,7 +21146,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-gc-part-2",
       "title": "GNPS GC - Part 2",
-      "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+      "summary": "Second session in the GNPS GC-MS training sequence. Intended for gas-chromatography mass spectrometry workflows; check the current GNPS documentation before reproducing older steps.",
       "url": "https://www.youtube.com/watch?v=EJipzmkK7oA",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21173,7 +21173,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-ion-identity-networking-native-metabolomics",
       "title": "GNPS Ion-Identity Networking, Native Metabolomics",
-      "summary": "External workshop recording related to gnps-feature-based-molecular-networking, mzmine collected for the Navigator Education alpha.",
+      "summary": "Workshop covering ion-identity networking and native metabolomics. Explore how information beyond spectral similarity can contribute to interpreting molecular networks.",
       "url": "https://www.youtube.com/watch?v=tb7LxaeNvcw",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21201,7 +21201,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-library-workshop-hackathon",
       "title": "GNPS Library Workshop/Hackathon",
-      "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+      "summary": "GNPS spectral-library workshop and hackathon recording. Community training around library resources; the format is broader than a single step-by-step tutorial.",
       "url": "https://www.youtube.com/watch?v=IbXBpud57Z8",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21228,7 +21228,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-masst",
       "title": "GNPS MASST",
-      "summary": "External workshop recording related to masst, gnps collected for the Navigator Education alpha.",
+      "summary": "Workshop on MASST, the GNPS mass spectrometry search tool. Relevant when asking where a tandem mass spectrum occurs across public datasets.",
       "url": "https://www.youtube.com/watch?v=14hGi6FtZIM",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21256,7 +21256,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-merge-polarity-networks",
       "title": "GNPS Merge Polarity Networks",
-      "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+      "summary": "GNPS session on merging networks from different ionization polarities. Relevant to researchers considering how positive- and negative-mode results can be viewed together.",
       "url": "https://www.youtube.com/watch?v=wHdr9coLmoQ",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21283,7 +21283,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-metabolomics-principles-tools-portuguese-part-1",
       "title": "GNPS metabolomics principles + tools Portuguese Part 1",
-      "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+      "summary": "Portuguese-language session introducing metabolomics principles and GNPS tools. Part 1 of a two-part learning sequence.",
       "url": "https://www.youtube.com/watch?v=QVw1K1dkpIc",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21310,7 +21310,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-metabolomics-principles-tools-portuguese-part-2",
       "title": "GNPS metabolomics principles + tools Portuguese Part 2",
-      "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+      "summary": "Portuguese-language session on metabolomics principles and GNPS tools. Continue from part 1 for the second instalment.",
       "url": "https://www.youtube.com/watch?v=OLRazw7Q-2M",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21337,7 +21337,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-molnetenhancer",
       "title": "GNPS MolNetEnhancer",
-      "summary": "External workshop recording related to molnetenhancer, gnps collected for the Navigator Education alpha.",
+      "summary": "Workshop introducing MolNetEnhancer in the GNPS ecosystem. Relevant for adding chemical-class and annotation context to molecular networks.",
       "url": "https://www.youtube.com/watch?v=-4DE_ZfF2vc",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21365,7 +21365,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-ms2lda",
       "title": "GNPS - MS2LDA",
-      "summary": "External workshop recording related to ms2lda, gnps collected for the Navigator Education alpha.",
+      "summary": "GNPS workshop on MS2LDA and its use in exploring recurring fragment and neutral-loss patterns. A resource for moving from spectra toward substructure-level interpretation.",
       "url": "https://www.youtube.com/watch?v=0wKUmjPy40s",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21393,7 +21393,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-nature-microbiome-2021-workshop",
       "title": "GNPS Nature Microbiome 2021 Workshop",
-      "summary": "External workshop recording related to gnps collected for the Navigator Education alpha.",
+      "summary": "GNPS workshop framed around food, diet and the microbiome. A domain-focused learning resource for researchers connecting metabolomics analysis with microbiome questions.",
       "url": "https://www.youtube.com/watch?v=V3X7AMugMMc",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21420,7 +21420,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-redu",
       "title": "GNPS ReDU",
-      "summary": "External workshop recording related to redu, gnps collected for the Navigator Education alpha.",
+      "summary": "Workshop on ReDU and reuse of public mass spectrometry data with associated metadata. Relevant when exploring datasets beyond your own experiment.",
       "url": "https://youtu.be/I-CdsHESLJ8",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21448,7 +21448,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "gnps-workshops-training",
       "title": "GNPS Workshops/Training",
-      "summary": "Official hub for GNPS modules and recorded workshops covering networking, MASST, ReDU, MS2LDA, dashboard, libraries and more.",
+      "summary": "GNPS training hub collecting workshop materials. Browse for a topic-specific session, then check its recording date and software interface before following it.",
       "url": "https://ccms-ucsd.github.io/GNPSDocumentation/workshops/",
       "resource_type": "training_hub",
       "tool_slugs": [
@@ -21471,7 +21471,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "lc-ms-data-analysis-with-xcms-and-metfrag-on-phenomenal",
       "title": "LC/MS data analysis with XCMS and MetFrag on PhenoMeNal",
-      "summary": "External training video related to xcms, metfrag collected for the Navigator Education alpha.",
+      "summary": "LC-MS training combining XCMS data processing and MetFrag annotation in the PhenoMeNal environment. The platform is older, so use the workflow context alongside current software documentation.",
       "url": "https://www.youtube.com/watch?v=vzcD0WnAuAQ",
       "resource_type": "video",
       "tool_slugs": [
@@ -21499,7 +21499,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "mana-2021-gnps-workshop-networking-dashboard-masst",
       "title": "MANA 2021 GNPS Workshop - Networking, Dashboard, MASST",
-      "summary": "External workshop recording related to gnps, masst, gnps-dashboard collected for the Navigator Education alpha.",
+      "summary": "MANA 2021 workshop spanning GNPS molecular networking, Dashboard and MASST. Compare resources for organizing spectra, inspecting data and searching public repositories.",
       "url": "https://www.youtube.com/watch?v=-XoVrHQxW9U",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21528,7 +21528,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "massql-in-ms-dial-5",
       "title": "MassQL in MS-DIAL 5",
-      "summary": "External training video related to ms-dial, massql collected for the Navigator Education alpha.",
+      "summary": "Tutorial on using MassQL within MS-DIAL 5. Relevant when you want to apply mass-spectrometry queries from an MS-DIAL workflow.",
       "url": "https://www.youtube.com/watch?v=otCq9s1PjAs",
       "resource_type": "video",
       "tool_slugs": [
@@ -21556,7 +21556,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "metaboanalyst-5-0-lc-ms-and-tandem-ms-workshop-part-1",
       "title": "MetaboAnalyst 5.0 LC-MS and tandem-MS workshop Part 1",
-      "summary": "External workshop recording related to metaboanalyst collected for the Navigator Education alpha.",
+      "summary": "Part 1 of a MetaboAnalyst 5.0 workshop focused on LC-MS and tandem-MS data. Use as version-specific training and compare its steps with the current interface.",
       "url": "https://www.youtube.com/watch?v=FHvsbf4vNt8",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21583,7 +21583,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "metaboanalyst-tutorials",
       "title": "MetaboAnalyst tutorials",
-      "summary": "Current official tutorial index; useful companion to workshop videos.",
+      "summary": "Official MetaboAnalyst tutorial collection. Choose a tutorial that matches your analysis objective and input data rather than treating every module as a required workflow step.",
       "url": "https://www.metaboanalyst.ca/docs/Tutorials.xhtml",
       "resource_type": "training_hub",
       "tool_slugs": [
@@ -21606,7 +21606,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "metabolomic-data-analysis-using-metaboanalyst",
       "title": "Metabolomic Data Analysis Using MetaboAnalyst",
-      "summary": "External workshop recording related to metaboanalyst collected for the Navigator Education alpha.",
+      "summary": "Recorded introduction to metabolomic data analysis using MetaboAnalyst. It uses an older version; consult current tutorials for present-day menus and options.",
       "url": "https://www.youtube.com/watch?v=4CVC98KnlMA",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21633,7 +21633,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "metabolomics-spectrum-resolver-workshop",
       "title": "Metabolomics Spectrum Resolver workshop",
-      "summary": "External workshop recording related to gnps-spectrum-summary collected for the Navigator Education alpha.",
+      "summary": "Workshop titled Metabolomics Spectrum Resolver. A resource for exploring spectrum-level analysis; the precise relationship to the linked GNPS Spectrum Summary entry still needs content review.",
       "url": "https://www.youtube.com/watch?v=JMJO8CAfCNI",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -21660,7 +21660,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "metfrag-hands-on",
       "title": "MetFrag Hands-on",
-      "summary": "Hands-on compound identification tutorial with MS/MS and metadata.",
+      "summary": "Hands-on MetFrag learning resource for computational annotation. Relevant when investigating candidate structures using tandem mass spectrometry evidence.",
       "url": "https://ipb-halle.github.io/MetFragTraining/",
       "resource_type": "tutorial",
       "tool_slugs": [
@@ -21683,7 +21683,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "ms-dial-5-lc-ms-ms-dda-tutorial",
       "title": "MS-DIAL 5 LC-MS/MS DDA tutorial",
-      "summary": "External training video related to ms-dial collected for the Navigator Education alpha.",
+      "summary": "MS-DIAL 5 walkthrough for LC-MS/MS data acquired with data-dependent acquisition. Choose this tutorial when your acquisition type is DDA.",
       "url": "https://www.youtube.com/watch?v=cZY7wqF5Wdo",
       "resource_type": "video",
       "tool_slugs": [
@@ -21710,7 +21710,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "ms-dial-5-official-tutorial",
       "title": "MS-DIAL 5 official tutorial",
-      "summary": "Current official tutorial with embedded videos across LC-MS, GC-MS, CE-MS, lipidomics and utilities.",
+      "summary": "Official MS-DIAL 5 tutorial resource. A starting point for learning the software before selecting a walkthrough for your acquisition type and analysis task.",
       "url": "https://systemsomicslab.github.io/msdial5tutorial/",
       "resource_type": "training_hub",
       "tool_slugs": [
@@ -21733,7 +21733,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "ms-dial-5-raw-data-viewer-tutorial",
       "title": "MS-DIAL 5 raw data viewer tutorial",
-      "summary": "External training video related to ms-dial collected for the Navigator Education alpha.",
+      "summary": "Tutorial for the MS-DIAL 5 raw-data viewer. Relevant at the initial inspection stage, before drawing conclusions from processed feature tables.",
       "url": "https://www.youtube.com/watch?v=aApHc8Op4VY",
       "resource_type": "video",
       "tool_slugs": [
@@ -21760,7 +21760,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "ms-dial-5-to-ms-finder-for-unknown-annotation",
       "title": "MS-DIAL 5 to MS-FINDER for unknown annotation",
-      "summary": "External training video related to ms-dial, ms-finder collected for the Navigator Education alpha.",
+      "summary": "Tutorial connecting MS-DIAL 5 with MS-FINDER for annotation of unknowns. Focuses on the handoff between data processing and computational structure investigation.",
       "url": "https://www.youtube.com/watch?v=moHIiTTVfGQ",
       "resource_type": "video",
       "tool_slugs": [
@@ -21788,7 +21788,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "ms-dial-and-gnps-in-portuguese",
       "title": "MS-DIAL and GNPS in Portuguese",
-      "summary": "External training video related to ms-dial, gnps collected for the Navigator Education alpha.",
+      "summary": "Portuguese-language tutorial covering MS-DIAL and GNPS. A resource for researchers learning how these tools fit into metabolomics analysis.",
       "url": "https://www.youtube.com/watch?v=IZoS3Lvto1M",
       "resource_type": "video",
       "tool_slugs": [
@@ -21816,7 +21816,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "ms-finder-tutorial",
       "title": "MS-FINDER tutorial",
-      "summary": "Official detailed MS-FINDER tutorial; older page but comprehensive.",
+      "summary": "MS-FINDER tutorial for computational investigation of small-molecule identities. Relevant after obtaining mass-spectrometry evidence for an unknown compound.",
       "url": "https://systemsomicslab.github.io/mtbinfo.github.io/MS-FINDER/tutorial",
       "resource_type": "tutorial",
       "tool_slugs": [
@@ -21839,7 +21839,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "multivariate-analysis-in-ms-dial-5",
       "title": "Multivariate analysis in MS-DIAL 5",
-      "summary": "External training video related to ms-dial collected for the Navigator Education alpha.",
+      "summary": "Tutorial on multivariate analysis within MS-DIAL 5. Relevant when moving from processed data to exploring patterns across samples.",
       "url": "https://www.youtube.com/watch?v=wtOS7F1RgZs",
       "resource_type": "video",
       "tool_slugs": [
@@ -21866,7 +21866,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "mzmine-introduction-to-lc-ms",
       "title": "MZmine introduction to LC-MS",
-      "summary": "External training video related to mzmine collected for the Navigator Education alpha.",
+      "summary": "MZmine training introducing LC-MS. A starting point for learners who need analytical context before exploring the software-specific workshops.",
       "url": "https://www.youtube.com/watch?v=UnqVtZngzl0",
       "resource_type": "video",
       "tool_slugs": [
@@ -21893,7 +21893,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "mzmine-ion-mobility-ms-data-processing",
       "title": "MZmine ion-mobility MS data processing",
-      "summary": "External training video related to mzmine collected for the Navigator Education alpha.",
+      "summary": "MZmine workshop focused on processing ion-mobility mass spectrometry data. Choose this resource when mobility information is part of your dataset.",
       "url": "https://www.youtube.com/watch?v=Xp-G1HSozgM",
       "resource_type": "video",
       "tool_slugs": [
@@ -21943,7 +21943,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "mzmine-ms-library-generation",
       "title": "MZmine MS-library generation",
-      "summary": "External training video related to mzmine collected for the Navigator Education alpha.",
+      "summary": "MZmine training focused on mass-spectral library generation. Relevant when building reference resources rather than only processing an experimental sample set.",
       "url": "https://www.youtube.com/watch?v=SmEpFYV4_bY",
       "resource_type": "video",
       "tool_slugs": [
@@ -21970,7 +21970,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "mzmine-multimodal-data-processing-gc-ms-maldi-ms-lipids",
       "title": "MZmine multimodal data processing (GC-MS, MALDI-MS, lipids)",
-      "summary": "External training video related to mzmine collected for the Navigator Education alpha.",
+      "summary": "MZmine workshop spanning GC-MS, MALDI-MS and lipid data processing. Browse for the modality that matches your experiment; these are distinct analytical contexts.",
       "url": "https://www.youtube.com/watch?v=cGA5WIKcMpM",
       "resource_type": "video",
       "tool_slugs": [
@@ -21997,7 +21997,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "mzmine-workshops",
       "title": "MZmine workshops",
-      "summary": "Official workshop archive including recent VMOL webinars and non-target metabolomics summer schools.",
+      "summary": "MZmine workshop collection. Find training by analysis topic and check the demonstrated version before reproducing interface-specific steps.",
       "url": "https://mzmine.github.io/mzmine_documentation/latest/workshops.html",
       "resource_type": "training_hub",
       "tool_slugs": [
@@ -22020,7 +22020,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "ntmss2022-day3-s3-ms2lda-and-molnetenhancer",
       "title": "NTMSS2022 Day3 S3 - MS2LDA and MolNetEnhancer",
-      "summary": "External workshop recording related to ms2lda, molnetenhancer collected for the Navigator Education alpha.",
+      "summary": "Summer-school session pairing MS2LDA with MolNetEnhancer. Relevant for interpreting molecular networks using recurring spectral patterns and chemical annotation context.",
       "url": "https://www.youtube.com/watch?v=Eg4cH93yViA",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -22048,7 +22048,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "ntmss2023-day2-bonus-mzmine-3-new-features",
       "title": "NTMSS2023 Day2 BONUS - MZmine 3 New Features",
-      "summary": "External workshop recording related to mzmine collected for the Navigator Education alpha.",
+      "summary": "Bonus summer-school session on new features in MZmine 3. Supplement the core preprocessing training with this version-specific overview.",
       "url": "https://www.youtube.com/watch?v=MdpUNf-xTmQ",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -22075,7 +22075,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "ntmss2023-day2-s2-data-preprocessing-in-mzmine-3-i",
       "title": "NTMSS2023 Day2 S2 - Data preprocessing in MZmine 3 I",
-      "summary": "External workshop recording related to mzmine collected for the Navigator Education alpha.",
+      "summary": "First summer-school session on data preprocessing in MZmine 3. Relevant before downstream annotation or statistics; the interface shown is version 3.",
       "url": "https://www.youtube.com/watch?v=MmUY5qCz8eo",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -22105,7 +22105,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "ntmss2023-day3-s4-sirius-csi-fingerid-i",
       "title": "NTMSS2023 Day3 S4 - Sirius+CSI:FingerID I",
-      "summary": "External workshop recording related to sirius, csi-fingerid collected for the Navigator Education alpha.",
+      "summary": "First summer-school session on SIRIUS and CSI:FingerID. A resource for exploring computational molecular annotation from mass spectrometry data.",
       "url": "https://www.youtube.com/watch?v=Gj_h7fvzL_g",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -22133,7 +22133,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "ntmss2023-day4-s5-ms2lda",
       "title": "NTMSS2023 Day4 S5 - MS2LDA",
-      "summary": "External workshop recording related to ms2lda collected for the Navigator Education alpha.",
+      "summary": "Summer-school session on MS2LDA. Relevant when exploring shared fragmentation patterns as evidence for molecular substructures.",
       "url": "https://www.youtube.com/watch?v=M6UlZA9JaY8",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -22158,9 +22158,684 @@
     },
     {
       "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day1-s1",
+      "title": "NTMSS2026 Day1 S1 - Allegra Aron - Welcome to Denver",
+      "summary": "Allegra Aron welcomes participants to the Denver summer school. Course orientation for the recording series rather than a standalone tool tutorial.",
+      "url": "https://www.youtube.com/watch?v=MLChqYBUFxs",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=MLChqYBUFxs",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day1-s2",
+      "title": "NTMSS2026 Day1 S2 - Scott & Alan Jarmusch - Mass Spectrometry Basics",
+      "summary": "Scott and Alan Jarmusch introduce mass spectrometry basics. Begin here if you are new to MS-based metabolomics and want background before the software-focused sessions.",
+      "url": "https://www.youtube.com/watch?v=_2I0FT5ltcY",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=_2I0FT5ltcY",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day1-s3",
+      "title": "NTMSS2026 Day1 S3 - Daniel Petras & Ming Wang - Data Sharing and Analysis with GNPS2",
+      "summary": "Daniel Petras and Ming Wang introduce data sharing and analysis with GNPS2. A starting point for placing public data access alongside the practical analysis workflow.",
+      "url": "https://www.youtube.com/watch?v=e0p7aNRRJt4",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "gnps"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=e0p7aNRRJt4",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day1-s4",
+      "title": "NTMSS2026 Day1 S4 - Allegra Aron - Intro to Data Sets",
+      "summary": "Allegra Aron introduces the datasets used in the summer school. Watch for context before following the subsequent practical data-analysis sessions.",
+      "url": "https://www.youtube.com/watch?v=qtRa7JzTu2w",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=qtRa7JzTu2w",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day1-s5",
+      "title": "NTMSS2026 Day1 S5 - Pieter Dorrestein - Keynote Lecture",
+      "summary": "Keynote lecture by Pieter Dorrestein at the 2026 non-target metabolomics summer school. The recording title does not specify the scientific topic; detailed coverage remains to be reviewed.",
+      "url": "https://www.youtube.com/watch?v=yRP0d2wgjXM",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=yRP0d2wgjXM",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day1-s6",
+      "title": "NTMSS2026Day1 S6 - Robin Schmid - mzmine part1",
+      "summary": "Part 1 of Robin Schmid's mzmine workshop. Start here for the three-part tool-training sequence before moving on to parts 2 and 3.",
+      "url": "https://www.youtube.com/watch?v=7a0P-q2Y1hA",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "mzmine"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=7a0P-q2Y1hA",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day1-s7",
+      "title": "NTMSS2026Day1 S7 - Robin Schmid - mzmine part2",
+      "summary": "Part 2 of Robin Schmid's mzmine workshop. Continue from part 1; a third session follows on day 2 of the summer school.",
+      "url": "https://www.youtube.com/watch?v=vK4tJb6UKsc",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "mzmine"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=vK4tJb6UKsc",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day2-s1",
+      "title": "NTMSS2026 Day2 S1 - Robin Schmid - mzmine part3",
+      "summary": "Part 3 of Robin Schmid's mzmine training sequence. Continue from the two day-1 sessions for the final recorded instalment of this tool-focused workshop.",
+      "url": "https://www.youtube.com/watch?v=XGYDEgK52KQ",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "mzmine"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=XGYDEgK52KQ",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day2-s2",
+      "title": "NTMSS2026 Day2 S2 - Kai Duehrkopp - SIRIUS part1",
+      "summary": "Part 1 of Kai Duehrkopp's SIRIUS workshop. An entry point for researchers exploring computational annotation of small molecules from mass spectrometry data.",
+      "url": "https://www.youtube.com/watch?v=_hcSxOvBnec",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "sirius"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=_hcSxOvBnec",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day2-s3",
+      "title": "NTMSS2026 Day2 S3 - Kai Duehrkopp - SIRIUS part2",
+      "summary": "Part 2 of Kai Duehrkopp's SIRIUS workshop. Continue from part 1 for the second session on this computational annotation tool.",
+      "url": "https://www.youtube.com/watch?v=plznZAsgxWg",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "sirius"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=plznZAsgxWg",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day2-s4",
+      "title": "NTMSS2026 Day2 S4 - Vanessa Phelan - Molecular Networking in GNPS2",
+      "summary": "Vanessa Phelan introduces molecular networking in GNPS2. Relevant for organizing tandem mass spectra by similarity and exploring related molecules in a dataset.",
+      "url": "https://www.youtube.com/watch?v=g7J_Z6zqbeo",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "gnps"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=g7J_Z6zqbeo",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day3-s1",
+      "title": "NTMSS2026 Day3 S1 - Anelize Bauermeister - Network Vizualization in Cytoscape",
+      "summary": "Anelize Bauermeister presents network visualization in Cytoscape. A resource for researchers ready to explore and present relationships in molecular-network results.",
+      "url": "https://www.youtube.com/watch?v=GBTSi_xADAE",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "cytoscape"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=GBTSi_xADAE",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day3-s3",
+      "title": "NTMSS2026 Day3 S3 - Allegra Aron & Scott Jarmusch - MassQL",
+      "summary": "Allegra Aron and Scott Jarmusch introduce MassQL, a query language for mass spectrometry data. Relevant when searching spectra for defined patterns rather than browsing individual spectra manually.",
+      "url": "https://www.youtube.com/watch?v=V2Yi80fYwpY",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "massql"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=V2Yi80fYwpY",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day3-s4",
+      "title": "NTMSS2026 Day3 S4 - Runzhong Wang - ICEBERG",
+      "summary": "Runzhong Wang presents ICEBERG in the summer-school programme. A tool-focused introduction for researchers exploring computational approaches to tandem mass spectra.",
+      "url": "https://www.youtube.com/watch?v=yBlXyzDe8dI",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "iceberg"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=yBlXyzDe8dI",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day3-s5",
+      "title": "NTMSS2026 Day3 S5 - Yourae Shin & Ming Wang - Feature Detection with Everything Bagel",
+      "summary": "Yourae Shin and Ming Wang present feature detection with Everything Bagel. This session addresses finding analytical features before downstream annotation, networking and interpretation.",
+      "url": "https://www.youtube.com/watch?v=Yy_LYccAX1s",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending. Everything Bagel is named in the recording but does not yet have a linked entry in this alpha catalogue.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=Yy_LYccAX1s",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day3-s6",
+      "title": "NTMSS2026 Day3 S6 - Mrunali Manjrekar - Deep Learning for Structure Elucidation",
+      "summary": "Mrunali Manjrekar discusses deep learning for structure elucidation. Relevant to researchers exploring how learned models can support the interpretation of molecular structure from analytical data.",
+      "url": "https://www.youtube.com/watch?v=ZYoAvVfBvC8",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=ZYoAvVfBvC8",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day4-s1",
+      "title": "NTMSS2026 Day4 S1 - Simone Zuffa - STATS part1",
+      "summary": "Simone Zuffa presents the first statistics session in the summer-school sequence. Pair it with the following FBMN STATS hands-on session for the practical component.",
+      "url": "https://www.youtube.com/watch?v=06YC1E-5gME",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=06YC1E-5gME",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day4-s2",
+      "title": "NTMSS2026 Day4 S2 - Daniel Petras - STATS part2 (FBMN STATS Hands-On)",
+      "summary": "Daniel Petras leads a hands-on session with FBMN STATS for statistical analysis of feature-based molecular networking results. This follows the introductory statistics session.",
+      "url": "https://www.youtube.com/watch?v=cUSwdx_WKRE",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "fbmn-stats"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=cUSwdx_WKRE",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day4-s3",
+      "title": "NTMSS2026 Day4 S3 - Daniel Petras - ChemProp and Data Integration in Cytoscape",
+      "summary": "Daniel Petras presents ChemProp alongside data integration in Cytoscape. Relevant when moving from molecular networks toward interpreting relationships among features and associated data.",
+      "url": "https://www.youtube.com/watch?v=N-K-BeTRhLg",
+      "resource_type": "workshop",
+      "tool_slugs": [
+        "chemprop",
+        "cytoscape"
+      ],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=N-K-BeTRhLg",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day4-s4",
+      "title": "NTMSS2026 Day4 S4 - Ricardo Da Silva - Keynote Lecture",
+      "summary": "Keynote lecture by Ricardo Da Silva at the 2026 non-target metabolomics summer school. The recording title does not specify the scientific topic; detailed coverage remains to be reviewed.",
+      "url": "https://www.youtube.com/watch?v=QX5v1tKkdvs",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=QX5v1tKkdvs",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day4-s5",
+      "title": "NTMSS2026 Day4 S5 - Wout Bittremieux - AI & ML in Metabolomics part1",
+      "summary": "Part 1 of Wout Bittremieux's introduction to artificial intelligence and machine learning in metabolomics. A starting point for exploring computational learning approaches in this field.",
+      "url": "https://www.youtube.com/watch?v=KIRxN76vAAA",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=KIRxN76vAAA",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day4-s6",
+      "title": "NTMSS2026 Day4 S6 - Wout Bittremieux - AI & ML in Metabolomics part2",
+      "summary": "Part 2 of Wout Bittremieux's introduction to artificial intelligence and machine learning in metabolomics. Continue from part 1 for the second session in this two-part sequence.",
+      "url": "https://www.youtube.com/watch?v=9GCKqX5wVNQ",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=9GCKqX5wVNQ",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day5-s1",
+      "title": "NTMSS2026 Day5 S1 - Emily Gentry - Repository Scale Analysis",
+      "summary": "Emily Gentry introduces repository-scale analysis, placing individual metabolomics experiments in the context of larger collections of public data.",
+      "url": "https://www.youtube.com/watch?v=dCdzD2r67LY",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=dCdzD2r67LY",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day5-s2",
+      "title": "NTMSS2026 Day5 S2 - Emily Gentry - Keynote Lecture",
+      "summary": "Keynote lecture by Emily Gentry at the 2026 non-target metabolomics summer school. The recording title does not specify the scientific topic; detailed coverage remains to be reviewed.",
+      "url": "https://www.youtube.com/watch?v=BVlIMEGiLDY",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=BVlIMEGiLDY",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day5-s3",
+      "title": "NTMSS2026 Day5 S3 - Daniel Petras, Allegra Aron & Simone Zuffa -Biological Interpretation of Results",
+      "summary": "Daniel Petras, Allegra Aron and Simone Zuffa discuss biological interpretation of metabolomics results: the stage after processing and annotation when analytical findings need scientific context.",
+      "url": "https://www.youtube.com/watch?v=kcfNT9KVjgk",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=kcfNT9KVjgk",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
+      "slug": "ntmss2026-day5-s4",
+      "title": "NTMSS2026 Day5 S4 - Simone Zuffa - Metabolite-Microbe Correlation",
+      "summary": "Simone Zuffa discusses correlations between metabolites and microbes. A session for researchers exploring how metabolomics results relate to microbial measurements.",
+      "url": "https://www.youtube.com/watch?v=rOOnpmiUDaw",
+      "resource_type": "workshop",
+      "tool_slugs": [],
+      "provider": "Functional Metabolomics Lab",
+      "experience_level": "unspecified",
+      "language": "en",
+      "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
+      "validation_status": "unreviewed",
+      "provenance": {
+        "submitted_by": "curator",
+        "last_checked": "2026-10-01"
+      },
+      "status": {
+        "entry": "draft"
+      },
+      "year": 2026,
+      "year_kind": "published",
+      "date_source": "https://www.youtube.com/watch?v=rOOnpmiUDaw",
+      "date_verified_at": "2026-10-01"
+    },
+    {
+      "$schema": "../../schemas/education.schema.json",
       "slug": "patroon-tutorial",
       "title": "patRoon tutorial",
-      "summary": "Current 2026 tutorial for a complete non-target analysis workflow.",
+      "summary": "patRoon tutorial for non-target analysis workflows in R. A resource for learners considering a scripted analysis environment.",
       "url": "https://rickhelmus.github.io/patRoon/articles/tutorial.html",
       "resource_type": "tutorial",
       "tool_slugs": [
@@ -22183,7 +22858,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "sio262-molecular-networking-intro",
       "title": "SIO262 Molecular Networking Intro",
-      "summary": "External workshop recording related to gnps-classical-molecular-networking, gnps collected for the Navigator Education alpha.",
+      "summary": "Short SIO262 introduction to molecular networking. Use for conceptual orientation before a longer hands-on GNPS workshop.",
       "url": "https://www.youtube.com/watch?v=DIItacY4VaE",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -22211,7 +22886,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "utilizing-gnps-and-ms2lda-for-molecular-networking-discovery",
       "title": "Utilizing GNPS and MS2LDA for molecular networking discovery",
-      "summary": "External workshop recording related to gnps, ms2lda collected for the Navigator Education alpha.",
+      "summary": "Session combining GNPS and MS2LDA for molecular-network exploration. Connect network relationships with recurring spectral patterns during interpretation.",
       "url": "https://www.youtube.com/watch?v=Cc6eKGZQ1Qw",
       "resource_type": "workshop",
       "tool_slugs": [
@@ -22239,7 +22914,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "workflow4metabolomics-how-to-and-training",
       "title": "Workflow4Metabolomics HOW TO and training",
-      "summary": "Links Galaxy Training Network and Workflow4Experimenters materials.",
+      "summary": "Workflow4Metabolomics how-to and training collection. A starting point for learning metabolomics analysis through the Galaxy-based platform.",
       "url": "https://workflow4metabolomics.org/howto",
       "resource_type": "training_hub",
       "tool_slugs": [
@@ -22262,7 +22937,7 @@
       "$schema": "../../schemas/education.schema.json",
       "slug": "xcms-tutorials-and-workshops",
       "title": "XCMS tutorials and workshops",
-      "summary": "Current tutorial/workshop repository for LC-MS(/MS) preprocessing with XCMS; strong candidate when Education expands beyond video.",
+      "summary": "XCMS tutorial and workshop collection. Find guidance for processing LC-MS data in R before selecting downstream annotation or statistical analysis.",
       "url": "https://github.com/jorainer/xcmsTutorials",
       "resource_type": "tutorial",
       "tool_slugs": [

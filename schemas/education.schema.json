@@ -48,7 +48,7 @@
     },
     "tool_slugs": {
       "type": "array",
-      "minItems": 1,
+      "minItems": 0,
       "uniqueItems": true,
       "items": {
         "type": "string",
