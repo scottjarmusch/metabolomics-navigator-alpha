@@ -6,6 +6,10 @@
   const count = document.querySelector('#ask-result-count');
   const empty = document.querySelector('#ask-empty');
   const examples = [...document.querySelectorAll('[data-ask-example]')];
+  const namedToolPanel = document.querySelector('#ask-tool-matches');
+  const namedTools = [...document.querySelectorAll('[data-ask-tool]')];
+  const normalizeName = value => value.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+  const ambiguousToolNames = new Set(['spectra','camera','massive','cardinal','coconut','lotus','mist','mint','skyline']);
   const guidance = document.querySelector('#ask-guidance');
   const mixedPanel = document.querySelector('#ask-mixed');
   const intentButtons = [...document.querySelectorAll('[data-ask-intent]')];
@@ -43,15 +47,25 @@
 
   function runSearch(value) {
     showActions();
+    const normalizedQuery = ' ' + normalizeName(value) + ' ';
+    const mentionedTools = namedTools.filter(tool => (tool.dataset.names || '').split('|').some(name => {
+      const normalized = normalizeName(name);
+      if (ambiguousToolNames.has(normalized) && !(name !== name.toLowerCase() && value.includes(name) && /\b(?:tool|package|software|library|repository)\b/i.test(value))) return false;
+      return normalized.length >= 4 && normalizedQuery.includes(' ' + normalized + ' ');
+    }));
+    namedTools.forEach(tool => { tool.hidden = !mentionedTools.includes(tool); });
+    if (namedToolPanel) namedToolPanel.hidden = !mentionedTools.length;
     const tokens = tokenize(value);
     let eligible=cards;
+    // Explicit tool requests must not turn incidental word overlap into a workflow claim.
+    if (mentionedTools.length) eligible=eligible.filter(card => mentionedTools.every(tool => (card.dataset.tools || '').split(' ').includes(tool.dataset.slug)));
     const nmrOnly=/\bnmr\b/i.test(value) && !/\b(?:ms|lc-ms|mass spectrometry)\b/i.test(value);
     if(nmrOnly) eligible=[];
     const flux=/\bflux(?:es)?\b/i.test(value);
     const generalOnly=tokens.length && tokens.every(t=>['new','compare','treated','untreated','cell','study','experiment','start','begin','research'].includes(t));
     const novice = generalOnly || /\b(?:beginner|can metabolomics help|where (?:do|should) we (?:start|begin)|before (?:i|we) collect|tell me which pathways changed)\b/i.test(value) || /\b(?:new to (?:metabolomics|lc-ms|mass spectrometry)|never used metabolomics|first metabolomics (?:study|experiment)|not sure|(?:do not|don['’]?t) (?:know|understand)|(?:where|how) (?:do|should) i (?:start|begin))\b/i.test(value);
     // Exclusion and missing-input requests need clarification, not positive keyword matches.
-    const constrained = !novice && /\b(?:forgot|failed) to (?:measure|acquire|collect|include)|\b(?:no|not|without|avoid|exclude|excluding|cannot|can['’]?t|don['’]?t|doesn['’]?t|isn['’]?t)\b/i.test(value);
+    const constrained = !novice && /\b(?:forgot|failed) to (?:measure|acquire|collect|include)|\b(?:no|not|without|avoid|exclude|excluding|cannot|can['’]?t|don['’]?t|doesn['’]?t|isn['’]?t)\b|\bunlabel(?:l)?ed\b/i.test(value);
     const generalStatistics = /\b(?:statistics|statistical analysis)\b/i.test(value) && /\b(?:locally|local|r|python)\b/i.test(value) && !/\b(?:flux|loess|chemrich|enrichment|drift|pls|pca)\b/i.test(value);
     const requestedIntents = intents.filter(intent => intent.pattern.test(value));
     const separateAims = /\b(?:and|then|plus|also|compare)\b|[+;]/i.test(value);
@@ -78,6 +92,11 @@
     });
 
     const shown = Math.min(ranked.length,6);
+    if (!shown && mentionedTools.length && !nmrOnly && !novice && !constrained && !mixed && !generalStatistics) {
+      count.textContent = 'Named tools found in the catalogue, but no matching curated Strategy records these tools in its workflow. Review the tool scope and requirements above; capabilities are not inferred from other Strategies.';
+      empty.hidden = true;
+      return;
+    }
     if (!tokens.length) {
       count.textContent = 'Choose an example or describe your question.';
       empty.hidden = true;

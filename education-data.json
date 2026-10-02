@@ -1769,11 +1769,13 @@
     "summary": "Yourae Shin and Ming Wang present feature detection with Everything Bagel. This session addresses finding analytical features before downstream annotation, networking and interpretation.",
     "url": "https://www.youtube.com/watch?v=Yy_LYccAX1s",
     "resource_type": "workshop",
-    "tool_slugs": [],
+    "tool_slugs": [
+      "everything-bagel"
+    ],
     "provider": "Functional Metabolomics Lab",
     "experience_level": "unspecified",
     "language": "en",
-    "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending. Everything Bagel is named in the recording but does not yet have a linked entry in this alpha catalogue.",
+    "note": "Recorded at the University of Denver summer school, June 15–19, 2026; uploaded September 30, 2026. Description and tool links are based on recording metadata; full content review is pending.",
     "validation_status": "unreviewed",
     "provenance": {
       "submitted_by": "curator",

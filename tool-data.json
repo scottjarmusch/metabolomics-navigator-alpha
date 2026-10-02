@@ -1,6 +1,96 @@
 [
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "13c-spacem",
+    "name": "13C-SpaceM analysis code",
+    "summary": "Analyze spatial carbon-13 labeling of fatty acids in single cells and tissue imaging experiments.",
+    "description": "The 13C-SpaceM repository provides scripts and notebooks supporting the published spatial isotope-tracing method. It performs isotope correction and single-cell or pixel-level analysis using prepared imaging and registration outputs. It is research code, not a self-contained replacement for the SpaceM processing pipeline.",
+    "links": {
+      "primary": "https://github.com/Buglakova/13C-SpaceM",
+      "repository": "https://github.com/Buglakova/13C-SpaceM",
+      "documentation": "https://github.com/Buglakova/13C-SpaceM"
+    },
+    "platforms": [
+      "imaging_ms",
+      "maldi_ms"
+    ],
+    "interfaces": [
+      "command_line",
+      "notebook"
+    ],
+    "resource_types": [
+      "workflow_pipeline"
+    ],
+    "functions": {
+      "primary": "isotope_tracing_flux",
+      "capabilities": [
+        "isotopologue_correction"
+      ]
+    },
+    "access": {
+      "model": "source_available",
+      "notes": "Public code; no explicit repository license verified. The README describes a separate closed-source SpaceM registration step and supplies its outputs for reproduction."
+    },
+    "data": {
+      "input_types": [
+        "imaging_data",
+        "isotope_tracing_data"
+      ],
+      "output_types": [
+        "isotope_tracing_data",
+        "report"
+      ],
+      "other_input_formats": [
+        "imzML ion images and prepared SpaceM registration/segmentation outputs"
+      ],
+      "other_output_formats": [
+        "AnnData objects and figure-generation notebooks"
+      ]
+    },
+    "common_uses": [
+      "Reproduce or adapt spatial fatty-acid isotope-tracing analysis."
+    ],
+    "scope": {
+      "designed_for": [
+        "The published single-cell and tissue isotope-tracing workflow."
+      ],
+      "not_designed_for": [
+        "A turnkey raw-image registration package."
+      ],
+      "requirements": [
+        "Prepared SpaceM outputs for single-cell analysis and the provided Conda environment."
+      ],
+      "considerations": [
+        "The authors flag dependency-version compatibility issues."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1038/s42255-024-01118-4",
+        "type": "primary",
+        "citation": "Spatial single-cell isotope tracing reveals heterogeneity of de novo fatty acid synthesis in cancer. Nature Metabolism (2024)."
+      }
+    ],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Discovered through the Enveda review intake; official repository and primary publication metadata checked on 2026-10-02. Editorial review only; software and performance not execution-tested."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "asari",
     "name": "asari",
     "summary": "Process high-resolution mass-spectrometry data into aligned feature tables.",
@@ -941,6 +1031,116 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "chemwalker",
+    "name": "ChemWalker",
+    "summary": "Rank candidate molecular structures by propagating spectral-library annotation evidence through molecular networks using random walks.",
+    "platforms": [
+      "lc_ms"
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Official ChemWalker repository and GNPS2 workflow input definition reviewed; primary DOI/title/year verified through Crossref on 2026-09-23. No software execution or developer verification."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-23",
+      "updated_at": "2026-09-23",
+      "last_verified": "2026-09-23",
+      "last_editorial_review": "2026-09-23"
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-23"
+    },
+    "description": "ChemWalker combines molecular-network context with candidate structures evaluated by in-silico fragmentation. Its Python implementation uses MetFrag, while a GNPS2 workflow accepts a networking task and a selected molecular family. Propagated rankings guide annotation follow-up rather than confirming an identity.",
+    "links": {
+      "primary": "https://github.com/computational-chemical-biology/ChemWalker",
+      "repository": "https://github.com/computational-chemical-biology/ChemWalker",
+      "documentation": "https://github.com/Wang-Bioinformatics-Lab/Chemwalker_workflow/blob/master/workflowinput.yaml",
+      "web_app": "https://gnps2.org/workflowinput?workflowname=chemwalker_nextflow_workflow"
+    },
+    "resource_types": [
+      "programming_package",
+      "workflow_pipeline"
+    ],
+    "interfaces": [
+      "python_package",
+      "web_app"
+    ],
+    "functions": {
+      "primary": "annotation_identification",
+      "secondary": [
+        "molecular_networking"
+      ],
+      "capabilities": [
+        "in_silico_spectra"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "BSD-3-Clause",
+      "notes": "Core Python package is BSD-3-Clause; MetFrag and workflow dependencies have their own requirements. Hosted GNPS2 execution requires an account and is restricted to academic/non-commercial use without a separate license."
+    },
+    "data": {
+      "input_types": [
+        "spectra"
+      ],
+      "output_types": [
+        "compound_list",
+        "report"
+      ],
+      "other_input_formats": [
+        "GNPS networking task ID and component index",
+        "Ion mode, adduct and optional pipe-separated candidate database"
+      ],
+      "other_output_formats": [
+        "Candidate annotation rankings from the selected network component."
+      ]
+    },
+    "common_uses": [
+      "Prioritize candidate structures for unannotated members of a molecular family.",
+      "Combine candidate fragmentation evidence with neighboring library annotations."
+    ],
+    "scope": {
+      "designed_for": [
+        "Annotation propagation within MS/MS molecular networks."
+      ],
+      "not_designed_for": [
+        "Raw feature detection, quantitative statistics or confirmed identification without additional evidence."
+      ],
+      "requirements": [
+        "A compatible network task and selected molecular component; the GNPS2 form requests one component per run.",
+        "Appropriate ion/adduct settings and a candidate structure database; local installation requires the documented environment and MetFrag."
+      ],
+      "considerations": [
+        "Incorrect seed annotations and missing candidate structures can affect propagated rankings.",
+        "The repository reports testing with MetFrag 2.3; compatibility with newer dependencies was not execution-tested."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1093/bioinformatics/btad078",
+        "type": "primary",
+        "citation": "Borelli TC, Arini GS, Feitosa LGP, et al. Improving annotation propagation on molecular networks through random walks: introducing ChemWalker. Bioinformatics 39(3), btad078 (2023)."
+      }
+    ],
+    "related_tools": [
+      {
+        "slug": "gnps-feature-based-molecular-networking",
+        "relationship": "integration",
+        "note": "The GNPS2 workflow accepts FBMN task identifiers and a molecular component."
+      },
+      {
+        "slug": "metfrag",
+        "relationship": "integration",
+        "note": "Uses MetFrag for candidate in-silico fragmentation."
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "cmmc-dashboard",
     "name": "CMMC Dashboard",
     "summary": "Visualize CMMC enrichment results alongside feature abundances, metadata and molecular-network information.",
@@ -1406,6 +1606,118 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "corromics",
+    "name": "CorrOmics",
+    "summary": "Explore associations between paired metabolomics and other omics feature tables and export correlation networks.",
+    "description": "CorrOmics links metabolite abundances with microbial or other omics measurements using sample-mapping metadata. It provides correlation-network exploration and downloadable edges; inferred associations do not establish biological causation. Hosted and local execution routes are documented.",
+    "links": {
+      "primary": "https://corromics.gnps2.org/",
+      "documentation": "https://github.com/Functional-Metabolomics-Lab/Corromics/blob/main/Home.py",
+      "repository": "https://github.com/Functional-Metabolomics-Lab/Corromics"
+    },
+    "resource_types": [
+      "web_service"
+    ],
+    "functions": {
+      "primary": "multiomics_integration",
+      "secondary": [
+        "statistics",
+        "visualization_reporting"
+      ],
+      "capabilities": [
+        "interactive_dashboard"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "web_app"
+    ],
+    "access": {
+      "model": "free_web_service",
+      "notes": "Public web app with documented Python/Streamlit local setup and a Windows installer route. No explicit repository license was established; public source availability is not an open-source license claim."
+    },
+    "publications": [],
+    "resource_citations": [
+      {
+        "type": "documentation",
+        "citation": "CorrOmics official documentation. Accessed 24 September 2026.",
+        "url": "https://github.com/Functional-Metabolomics-Lab/Corromics/blob/main/Home.py"
+      }
+    ],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-24"
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Official documentation reviewed on 2026-09-24. No dedicated publication verified; no analysis execution or independent benchmark claimed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24",
+      "last_verified": "2026-09-24",
+      "last_editorial_review": "2026-09-24"
+    },
+    "data": {
+      "input_types": [
+        "feature_table",
+        "sample_metadata"
+      ],
+      "output_types": [
+        "statistical_results",
+        "report"
+      ],
+      "other_input_formats": [
+        "Paired omics abundance tables and sample-mapping metadata"
+      ],
+      "output_formats": [
+        "csv_tsv"
+      ],
+      "other_output_formats": [
+        "GraphML network for Cytoscape"
+      ]
+    },
+    "common_uses": [
+      "Explore metabolite-microbe abundance associations.",
+      "Export cross-omics association networks for inspection in Cytoscape."
+    ],
+    "scope": {
+      "designed_for": [
+        "Exploratory association analysis of matched metabolomics and other omics samples."
+      ],
+      "not_designed_for": [
+        "Inferring causation, confirming metabolite identity or preprocessing raw MS files."
+      ],
+      "requirements": [
+        "Paired abundance tables and metadata with filename and ATTRIBUTE_Corromics_filename sample mappings.",
+        "Local Python/Streamlit dependencies when running outside the hosted service."
+      ],
+      "considerations": [
+        "The documentation limits hosted analyses to one million correlations and recommends local execution above that.",
+        "Compositional effects, confounders, missing values and repeated measures require study-specific assessment.",
+        "Exploratory methods differ in interpretation and significance support; do not treat every association score as a corrected hypothesis test."
+      ]
+    },
+    "related_tools": [
+      {
+        "slug": "metaboapps",
+        "relationship": "part_of",
+        "note": "Listed in the GNPS2 MetaboApps ecosystem."
+      },
+      {
+        "slug": "cytoscape",
+        "relationship": "integration",
+        "note": "Exports GraphML for network visualization."
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "csi-fingerid",
     "name": "CSI:FingerID",
     "summary": "A SIRIUS-integrated machine-learning method and webservice for predicting molecular fingerprints from MS/MS data and ranking candidate structures from molecular-structure databases.",
@@ -1758,6 +2070,206 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "everything-bagel",
+    "name": "Everything Bagel",
+    "summary": "Detect, align and gap-fill LC-MS features, with a GNPS2 workflow connecting raw LC-MS/MS data to feature-based molecular networking.",
+    "platforms": [
+      "lc_ms"
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "GNPS2 homepage announcement, hosted workflow link, FBMN input definition and Crossref preprint abstract/metadata checked on 2026-09-23. Preprint full text was not accessible; detailed performance, format and standalone software claims remain unverified. No analysis job was run."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-23",
+      "updated_at": "2026-09-23",
+      "last_verified": "2026-09-23",
+      "last_editorial_review": "2026-09-23"
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-23"
+    },
+    "aliases": [
+      "Everything Bagel Feature Finder",
+      "Everything Bagel Workflow"
+    ],
+    "description": "Everything Bagel is a feature-finding resource for untargeted LC-MS analysis. Its 2026 preprint describes feature detection, retention-time alignment and gap filling. The GNPS2-hosted workflow combines feature finding with FBMN, making this an upstream processing route into subsequent network interpretation.",
+    "links": {
+      "primary": "https://gnps2.org/workflowinput?workflowname=everything_bagel_workflow",
+      "documentation": "https://gnps2.org/homepage"
+    },
+    "resource_types": [
+      "workflow_pipeline",
+      "web_service"
+    ],
+    "interfaces": [
+      "web_app"
+    ],
+    "functions": {
+      "primary": "preprocessing",
+      "secondary": [
+        "molecular_networking"
+      ],
+      "capabilities": [
+        "peak_detection",
+        "retention_time_alignment",
+        "gap_filling"
+      ]
+    },
+    "access": {
+      "model": "free_web_service",
+      "notes": "Hosted GNPS2 execution requires an account and permits academic/non-commercial use; commercial access requires a license. A standalone code repository and software license were not verified in this review."
+    },
+    "data": {
+      "input_types": [
+        "raw_instrument_data"
+      ],
+      "output_types": [
+        "feature_table",
+        "report"
+      ],
+      "other_input_formats": [
+        "LC-MS/MS files accepted by the GNPS2 workflow form"
+      ],
+      "other_output_formats": [
+        "Aligned feature tables and GNPS2 FBMN results"
+      ]
+    },
+    "common_uses": [
+      "Generate aligned quantitative features from LC-MS data.",
+      "Connect raw-data processing with GNPS2 feature-based molecular networking."
+    ],
+    "scope": {
+      "designed_for": [
+        "Untargeted LC-MS feature finding and a raw-data-to-FBMN workflow."
+      ],
+      "not_designed_for": [
+        "A downstream statistical-analysis replacement or proof of compound identity."
+      ],
+      "requirements": [
+        "A GNPS2 account and compatible LC-MS(/MS) data; check the workflow form for file and parameter requirements."
+      ],
+      "considerations": [
+        "The dedicated publication is a preprint, not a peer-reviewed validation.",
+        "Reported speed and benchmark performance are author claims and were not independently reproduced here.",
+        "It is an upstream workflow, not solely an analysis of a previously generated network."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.64898/2026.08.17.744735",
+        "type": "primary",
+        "citation": "Shin Y, El Abiead Y, Jarmusch AK, et al. The Everything Bagel Feature Finder: Ultra-fast automated feature finding for untargeted metabolomics. bioRxiv (2026), preprint.",
+        "note": "Preprint; not peer reviewed."
+      }
+    ],
+    "related_tools": [
+      {
+        "slug": "gnps",
+        "relationship": "part_of",
+        "note": "Available as a hosted workflow in GNPS2."
+      },
+      {
+        "slug": "gnps-feature-based-molecular-networking",
+        "relationship": "integration",
+        "note": "The GNPS2 workflow joins feature finding to FBMN; the FBMN input definition includes an Everything Bagel format option."
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "fameta",
+    "name": "FAMetA",
+    "summary": "Estimate fatty-acid synthesis, import, elongation and desaturation from carbon-13 isotopologue profiles.",
+    "description": "FAMetA is an R package for model-based fatty-acid metabolic analysis. The publication also describes a web application. Its workflow uses LipidMS for preprocessing and accucor for natural-abundance correction before fitting fatty-acid metabolic contributions.",
+    "links": {
+      "primary": "https://github.com/maialba3/FAMetA",
+      "repository": "https://github.com/maialba3/FAMetA",
+      "documentation": "https://github.com/maialba3/FAMetA"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "r_package"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "isotope_tracing_flux",
+      "capabilities": [
+        "flux_estimation"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "GPL-2.0-or-later",
+      "notes": "License declared as GPL (>= 2) in package DESCRIPTION. The paper describes a web app, but current hosted availability was not verified."
+    },
+    "data": {
+      "input_types": [
+        "isotope_tracing_data"
+      ],
+      "output_types": [
+        "statistical_results",
+        "report"
+      ],
+      "other_input_formats": [
+        "Fatty-acid carbon-13 mass-isotopologue profiles prepared for the R workflow"
+      ],
+      "other_output_formats": [
+        "Fitted fatty-acid metabolic contributions and graphical summaries"
+      ]
+    },
+    "common_uses": [
+      "Investigate fatty-acid metabolic contributions in tracer experiments."
+    ],
+    "scope": {
+      "designed_for": [
+        "Model-based analysis of fatty-acid labeling."
+      ],
+      "not_designed_for": [
+        "Untargeted structure identification or unrestricted whole-network flux analysis."
+      ],
+      "requirements": [
+        "Suitable carbon-13 labeling data and the R/LipidMS/accucor dependencies."
+      ],
+      "considerations": [
+        "Model assumptions, tracer choice and isotopologue measurement quality constrain interpretation."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1093/bib/bbad064",
+        "type": "primary",
+        "citation": "FAMetA: a mass isotopologue-based tool for the comprehensive analysis of fatty acid metabolism. Briefings in Bioinformatics (2023)."
+      }
+    ],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Discovered through the Enveda review intake; official repository and primary publication metadata checked on 2026-10-02. Editorial review only; software and performance not execution-tested."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "fasst",
     "name": "FASST",
     "summary": "Accelerated indexed infrastructure for searching very large collections of tandem mass spectra, enabling current GNPS2 repository-scale search services to return results at billion-spectrum scale.",
@@ -1899,7 +2411,7 @@
     "slug": "fbmn-stats",
     "name": "FBMN Stats",
     "summary": "Clean and statistically explore feature-based molecular networking abundance tables with guided notebooks and a web app.",
-    "description": "FBMN-STATS provides an accompanying app and notebooks for downstream analysis of non-targeted LC-MS/MS feature tables. It connects data cleanup and statistical comparisons to the interpretation of molecular-network results.",
+    "description": "FBMN-STATS provides an accompanying app and notebooks for downstream analysis of non-targeted LC-MS/MS feature tables. It connects data cleanup and statistical comparisons to the interpretation of molecular-network results. R and Python notebooks can be run locally; a QIIME2 route and hosted interfaces are documented. The GNPS2 downstream link calls this the Hitchhiker Statistics Guide.",
     "links": {
       "primary": "https://fbmn-statsguide.gnps2.org/",
       "documentation": "https://github.com/Functional-Metabolomics-Lab/FBMN-STATS",
@@ -1964,7 +2476,8 @@
       "considerations": [
         "Legacy GNPS Quickstart exports may lack the reformatted outputs required by the current integration; maintainers recommend GNPS2.",
         "Normalization, missing values, batch structure and multiple comparisons require study-specific decisions.",
-        "Notebooks and the web app need not expose identical operations; consult the selected interface documentation."
+        "Notebooks and the web app need not expose identical operations; consult the selected interface documentation.",
+        "The browser-only FBMN-STATS Guide at apps.gnps2.org is marked in development and is not interchangeable with the original notebooks and Streamlit app."
       ]
     },
     "publications": [
@@ -1989,20 +2502,26 @@
     "provenance": {
       "submitted_by": "curator",
       "developer_verified": false,
-      "notes": "Official repository, license, GNPS2 listing and direct methods publication reviewed on 2026-09-10. No analysis job or independent benchmark performed."
+      "notes": "Official repository, license, GNPS2 listing and direct methods publication reviewed on 2026-09-10. No analysis job or independent benchmark performed. Rechecked 2026-09-23: added documented Hitchhiker aliases and local notebook visibility without creating a duplicate."
     },
     "status": {
       "entry": "published",
       "review": "editorially_reviewed",
       "created_at": "2026-09-10",
-      "updated_at": "2026-09-10",
-      "last_verified": "2026-09-10",
-      "last_editorial_review": "2026-09-10"
+      "updated_at": "2026-09-23",
+      "last_verified": "2026-09-23",
+      "last_editorial_review": "2026-09-23"
     },
     "maintenance": {
       "status": "active",
       "last_checked": "2026-09-10"
-    }
+    },
+    "aliases": [
+      "FBMN-STATS",
+      "FBmnStatsGUIde",
+      "Hitchhiker's Guide to Statistical Analysis of Feature-based Molecular Networks",
+      "Hitchhiker Statistics Guide"
+    ]
   },
   {
     "$schema": "../../schemas/tool.schema.json",
@@ -2912,6 +3431,108 @@
       "last_verified": "2026-09-11",
       "last_editorial_review": "2026-09-11"
     }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "gnps-network-overlay",
+    "name": "GNPS2 Network Overlay",
+    "summary": "Attach custom feature attributes to an existing GNPS2 molecular network using matching node identifiers.",
+    "description": "The network-overlay workflow joins an uploaded feature table to a completed network. The documented Progenesis route launches it from FBMN and supplies the existing spectra and graph automatically. The overlay adds supplied attributes; it does not independently establish their biological meaning.",
+    "links": {
+      "primary": "https://gnps2.org/workflowinput?workflowname=gnps2_network_overlay_workflow",
+      "documentation": "https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/protocol_fbmn_progenesis_overlay/"
+    },
+    "resource_types": [
+      "workflow_pipeline"
+    ],
+    "functions": {
+      "primary": "visualization_reporting",
+      "capabilities": [
+        "network_visualization"
+      ]
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "web_app"
+    ],
+    "access": {
+      "model": "free_web_service",
+      "notes": "Hosted GNPS2 resource. Check hosted-service terms and account requirements; a software license is not inferred from hosting."
+    },
+    "publications": [],
+    "resource_citations": [
+      {
+        "type": "documentation",
+        "citation": "GNPS2 Network Overlay official documentation. Accessed 24 September 2026.",
+        "url": "https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/protocol_fbmn_progenesis_overlay/"
+      }
+    ],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-09-24"
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Official documentation reviewed on 2026-09-24. No dedicated publication verified; no analysis execution or independent benchmark claimed."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-09-24",
+      "updated_at": "2026-09-24",
+      "last_verified": "2026-09-24",
+      "last_editorial_review": "2026-09-24"
+    },
+    "data": {
+      "input_types": [
+        "feature_table",
+        "spectra"
+      ],
+      "output_types": [
+        "report"
+      ],
+      "other_input_formats": [
+        "GraphML network, MGF spectra and an overlay table with a node-ID column"
+      ],
+      "other_output_formats": [
+        "GNPS2 network results with supplied overlay attributes"
+      ]
+    },
+    "common_uses": [
+      "Add feature-level information to a completed molecular network."
+    ],
+    "scope": {
+      "designed_for": [
+        "Overlaying table attributes on existing GNPS2 network nodes."
+      ],
+      "not_designed_for": [
+        "Generating new measured evidence or validating uploaded annotations."
+      ],
+      "requirements": [
+        "A completed network, its spectra and a compatible overlay table.",
+        "A node-ID column that matches network identifiers; follow the documented column-header restrictions."
+      ],
+      "considerations": [
+        "Mismatched identifiers can prevent correct attribute assignment.",
+        "The linked tutorial demonstrates Progenesis/FBMN; no broader format support was independently tested.",
+        "The source repository linked from the workflow collection could not be retrieved during review."
+      ]
+    },
+    "related_tools": [
+      {
+        "slug": "gnps-feature-based-molecular-networking",
+        "relationship": "integration",
+        "note": "Documented launch from completed FBMN results."
+      },
+      {
+        "slug": "gnps-classical-molecular-networking",
+        "relationship": "integration",
+        "note": "Also linked from the official classical-networking result definition."
+      }
+    ]
   },
   {
     "$schema": "../../schemas/tool.schema.json",
@@ -4247,6 +4868,195 @@
       {
         "slug": "xcms",
         "relationship": "complementary"
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "isoscan",
+    "name": "isoSCAN",
+    "summary": "Integrate stable-isotope-labeling peaks from GC chemical-ionization mass spectrometry data.",
+    "description": "isoSCAN is an R package for automatic peak integration in low- and high-resolution GC-CI-MS labeling experiments. Its catalogue scope follows the official package description; LC-MS support is not inferred from the discovery list.",
+    "links": {
+      "primary": "https://github.com/jcapelladesto/isoSCAN",
+      "repository": "https://github.com/jcapelladesto/isoSCAN",
+      "documentation": "https://github.com/jcapelladesto/isoSCAN"
+    },
+    "platforms": [
+      "gc_ms"
+    ],
+    "interfaces": [
+      "r_package"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "isotope_tracing_flux",
+      "capabilities": [
+        "peak_detection"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "GPL-3.0",
+      "notes": "R package depending on mzR and other packages declared in DESCRIPTION."
+    },
+    "data": {
+      "input_types": [
+        "spectra",
+        "isotope_tracing_data"
+      ],
+      "output_types": [
+        "isotope_tracing_data"
+      ],
+      "other_input_formats": [
+        "GC-CI-MS labeling data supplied through the documented R workflow"
+      ],
+      "other_output_formats": [
+        "Integrated isotope-labeling peak measurements returned by the R workflow"
+      ]
+    },
+    "common_uses": [
+      "Process GC-CI-MS measurements from stable-isotope experiments."
+    ],
+    "scope": {
+      "designed_for": [
+        "Peak integration for GC chemical-ionization labeling data."
+      ],
+      "not_designed_for": [
+        "A general LC-MS workflow or independent confirmation of metabolic flux."
+      ],
+      "requirements": [
+        "GC-CI-MS measurements and the repository R dependencies; consult the package vignette for import preparation."
+      ],
+      "considerations": [
+        "Match ionization mode and isotope experiment to the documented workflow."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.0c02998",
+        "type": "primary",
+        "citation": "Exploring the Use of Gas Chromatography Coupled to Chemical Ionization Mass Spectrometry (GC-CI-MS) for Stable Isotope Labeling in Metabolomics. Analytical Chemistry (2020).",
+        "note": "Published online December 2020; journal issue 2021. Both dates can appear in citations."
+      }
+    ],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Discovered through the Enveda review intake; official repository and primary publication metadata checked on 2026-10-02. Editorial review only; software and performance not execution-tested."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "khipu",
+    "name": "khipu",
+    "summary": "Group LC-MS isotope and adduct features into empirical compounds and infer neutral masses.",
+    "description": "khipu provides Python and command-line pre-annotation of feature tables. Its graph/tree representation links related ions; the associated Khipu-web publication extends access for stable-isotope tracing. These groupings do not by themselves establish molecular identity.",
+    "links": {
+      "primary": "https://github.com/shuzhao-li-lab/khipu",
+      "repository": "https://github.com/shuzhao-li-lab/khipu",
+      "documentation": "https://github.com/shuzhao-li-lab/khipu"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "python_package",
+      "command_line"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "annotation_identification",
+      "capabilities": [
+        "adduct_isotope_grouping"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "BSD-3-Clause",
+      "notes": "Python package; the repository also links a web interface. Check that interface separately for hosted availability."
+    },
+    "data": {
+      "input_types": [
+        "feature_table"
+      ],
+      "output_types": [
+        "compound_list"
+      ],
+      "other_input_formats": [
+        "Tab-delimited feature ID, m/z, retention time and sample intensity columns"
+      ],
+      "other_output_formats": [
+        "Empirical-compound annotations in JSON and TSV"
+      ]
+    },
+    "common_uses": [
+      "Reduce redundant isotope/adduct features before downstream interpretation."
+    ],
+    "scope": {
+      "designed_for": [
+        "LC-MS ion grouping, including configured isotope-tracing patterns."
+      ],
+      "not_designed_for": [
+        "Confirmed structural identification or a metabolic-flux solver."
+      ],
+      "requirements": [
+        "A preprocessed feature table and appropriate ion-mode, mass and retention-time tolerances."
+      ],
+      "considerations": [
+        "Grouping depends on expected ion patterns and preprocessing quality."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.2c05810",
+        "type": "primary",
+        "citation": "Generalized Tree Structure to Annotate Untargeted Metabolomics and Stable Isotope Tracing Data. Analytical Chemistry (2023)."
+      },
+      {
+        "doi": "10.1021/jasms.4c00175",
+        "type": "methods",
+        "citation": "Annotation of Metabolites in Stable Isotope Tracing Untargeted Metabolomics via Khipu-web. Journal of the American Society for Mass Spectrometry (2024)."
+      }
+    ],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Discovered through the Enveda review intake; official repository and primary publication metadata checked on 2026-10-02. Editorial review only; software and performance not execution-tested."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    },
+    "related_tools": [
+      {
+        "slug": "asari",
+        "relationship": "integration",
+        "note": "asari uses khipu for pre-annotation."
       }
     ]
   },
@@ -14211,6 +15021,102 @@
         "citation": "Bruker. SCiLS Software product documentation. Accessed 11 September 2026.",
         "type": "documentation",
         "url": "https://www.bruker.com/en/products-and-solutions/mass-spectrometry/ms-software/scils-lab.html"
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "simpel",
+    "name": "SIMPEL",
+    "summary": "Extract and correct isotopologue distributions from isotope-enriched metabolomics feature lists.",
+    "description": "SIMPEL is an R package for single- and dual-label HRMS experiments. It combines processed features with compound formula/retention-time information and produces mass-isotopologue distributions and labeling summaries. Flux modelling in the primary paper is performed downstream with separate modelling software.",
+    "links": {
+      "primary": "https://github.com/SIMPELmetabolism/SIMPEL",
+      "repository": "https://github.com/SIMPELmetabolism/SIMPEL",
+      "documentation": "https://github.com/SIMPELmetabolism/SIMPEL"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "r_package"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "isotope_tracing_flux",
+      "capabilities": [
+        "isotopologue_correction"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "GPL-3.0",
+      "notes": "R package with a repository tutorial and declared R dependencies."
+    },
+    "data": {
+      "input_types": [
+        "feature_table",
+        "compound_list"
+      ],
+      "output_types": [
+        "isotope_tracing_data",
+        "report"
+      ],
+      "other_input_formats": [
+        "Processed feature lists plus compound formulae and retention-time information"
+      ],
+      "other_output_formats": [
+        "Mass-isotopologue distribution matrices and labeling plots"
+      ]
+    },
+    "common_uses": [
+      "Prepare isotope-enrichment measurements for downstream modelling."
+    ],
+    "scope": {
+      "designed_for": [
+        "Post-processing transient stable-isotope labeling experiments."
+      ],
+      "not_designed_for": [
+        "A substitute for raw-data preprocessing or a standalone metabolic-network flux solver."
+      ],
+      "requirements": [
+        "Resolved isotope measurements, compound information and a configured R environment."
+      ],
+      "considerations": [
+        "Instrument resolving power and tracer design constrain which isotope species can be distinguished."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1038/s42003-024-05844-z",
+        "type": "primary",
+        "citation": "SIMPEL: using stable isotopes to elucidate dynamics of context specific metabolism. Communications Biology (2024)."
+      }
+    ],
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Discovered through the Enveda review intake; official repository and primary publication metadata checked on 2026-10-02. Editorial review only; software and performance not execution-tested."
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    },
+    "related_tools": [
+      {
+        "slug": "xcms",
+        "relationship": "integration",
+        "note": "The primary paper uses XCMS feature lists before SIMPEL."
       }
     ]
   },

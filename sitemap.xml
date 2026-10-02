@@ -11,6 +11,7 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/contribute/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/governance/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/privacy/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/13c-spacem/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/ili/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/asari/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/bago/</loc></url>
@@ -22,12 +23,16 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/cfm-id/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/chebi/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/chemprop/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/chemwalker/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/cmmc-dashboard/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/cmmc-kb/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/coconut/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/conjugated-metabolome-explorer/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/corromics/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/csi-fingerid/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/cytoscape/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/everything-bagel/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/fameta/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/fasst/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/fbmn-stats/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/foodb/</loc></url>
@@ -41,6 +46,7 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/food-readout/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/gnps-massql-analysis/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/gnps-spectrum-summary/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/gnps-network-overlay/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/gnps-reverse-metabolomics/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/gnps-usi-playground/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/goslin/</loc></url>
@@ -49,6 +55,8 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/iceberg/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/idbac/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/ipo/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/isoscan/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/khipu/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/lion-web/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/lipid-maps/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/lipid-mini-on/</loc></url>
@@ -141,6 +149,7 @@
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/rmsiproc/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/ropls/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/scils-lab/</loc></url>
+  <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/simpel/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/sirius/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/skyline/</loc></url>
   <url><loc>https://scottjarmusch.github.io/metabolomics-navigator-alpha/tools/smartpeak/</loc></url>
