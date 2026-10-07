@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Find published metabolomics Strategies, inspect their evidence and explore tools and learning resources.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=be0e62fd74f3">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=be0e62fd74f3">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=df6fca9fedc5">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=df6fca9fedc5">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -90,7 +90,7 @@
     <p><label for="ask-data">What measurements do you have?</label><br>
       <select id="ask-data"><option value="">Choose what you know</option><option value="unknown">I am not sure</option><option value="msms">LC-MS/MS with fragment spectra</option><option value="features">An MS feature or metabolite table</option><option value="other">Another MS measurement type</option></select></p>
     <p><label for="ask-aim">What would you like to learn?</label><br>
-      <select id="ask-aim"><option value="">Choose an aim</option><option value="families">Find related molecules in my spectra</option><option value="pathways">Explore pathways behind group differences</option><option value="qc">Check changes caused by instrument drift</option><option value="flux">Estimate flux from isotope tracing</option><option value="unsure">I need help defining my question</option></select></p>
+      <select id="ask-aim"><option value="">Choose an aim</option><option value="comparison">Compare metabolite levels between samples or groups</option><option value="families">Find related molecules in my spectra</option><option value="pathways">Explore pathways behind group differences</option><option value="qc">Check changes caused by instrument drift</option><option value="flux">Estimate flux from isotope tracing</option><option value="unsure">I need help defining my question</option></select></p>
     <p id="ask-qc-question" hidden><label for="ask-qc-evidence">Were representative QC samples injected repeatedly, with injection order recorded?</label><br>
       <select id="ask-qc-evidence"><option value="">Choose what you know</option><option value="unknown">I am not sure</option><option value="yes">Yes, both are available</option><option value="no">No, one or both are missing</option></select></p>
     <p id="ask-tracer-question" hidden><label for="ask-tracer-evidence">Was this an isotope-tracer experiment with recorded labeling measurements and sampling times?</label><br>
@@ -490,6 +490,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="3d molecular cartography a spatial metabolomics strategy that combines systematic surface sampling, lc-ms/ms, coordinate-aware metadata and 2d/3d molecular mapping to reconstruct the distribution of metabolites and environmental chemicals across physical objects. spatial metabolomics environmental metabolomics molecular discovery lc-ms untargeted metabolomics spatial metabolomics sample preparation chromatography data acquisition preprocessing and feature extraction annotation or identification data and workflow sharing environmental plant human broadly applicable `ili"
       data-name="3D molecular cartography"
+      data-platforms="lc_ms"
       data-tools="ili"
       data-keywords=""
       data-objectives="spatial_metabolomics environmental_metabolomics molecular_discovery"
@@ -540,6 +541,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="bioactivity-based molecular networking a transferable natural-product discovery strategy that overlays quantitative bioassay results onto lc-ms feature abundance and ms/ms molecular networks to prioritize molecular families and individual features associated with biological activity. bioassay guided fractionation bioactivity guided fractionation connect bioactivity to metabolites antimicrobial activity and metabolomics phenotype associated metabolites prioritize active natural products correlate fractions with activity natural-product discovery phenotype association molecular-family discovery dereplication lc-ms untargeted metabolomics sample preparation chromatography data acquisition preprocessing and feature extraction molecular networking statistical analysis biological validation data and workflow sharing broadly applicable ms1 ms/ms data-dependent acquisition (dda) mzmine openms gnps bioactive molecular networks jupyter workflow cytoscape bioactive molecular networking for mapping the antimicrobial constituents of the baltic brown alga fucus vesiculosus applied bioactive molecular networking to fractionated fucus vesiculosus extracts, combining antimicrobial activity against mrsa with uplc-qtof-ms/ms feature abundances, mzmine preprocessing, gnps feature-based molecular networking, pearson correlation scoring and cytoscape visualization. bioactivity-based molecular networking-guided isolation of epicolidines a-c from the endophytic fungus epicoccum sp. 1-042 used bioactivity-based molecular networking-guided fractionation in an endophytic fungal natural-product study to prioritize and isolate antibacterial polycyclic tetramic acids."
       data-name="Bioactivity-Based Molecular Networking"
+      data-platforms="lc_ms"
       data-tools="cytoscape gnps mzmine openms"
       data-keywords="bioassay guided fractionation bioactivity guided fractionation connect bioactivity to metabolites antimicrobial activity and metabolomics phenotype associated metabolites prioritize active natural products correlate fractions with activity"
       data-objectives="natural_product_discovery phenotype_association molecular_family_discovery dereplication"
@@ -601,6 +603,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="chemical proportionality for transformation prioritization combine molecular-network edges with abundance changes across ordered samples to prioritize possible chemical transformations. chemical proportionality prioritize biotransformations ordered abundance changes drug metabolite transformation time resolved molecular network biotransformation analysis lc-ms molecular networking metadata analysis statistical analysis chemical proportionality (chemprop) a functional metabolomics framework to track microbiome drug metabolism chemprop2 extends scoring to time-series correlations with a decoy-based empirical fdr procedure. demonstrated with a synthetic gut community and drugs; microbial association does not establish a producing organism."
       data-name="Chemical proportionality for transformation prioritization"
+      data-platforms="lc_ms"
       data-tools="chemprop gnps-feature-based-molecular-networking"
       data-keywords="chemical proportionality prioritize biotransformations ordered abundance changes drug metabolite transformation time resolved molecular network"
       data-objectives="biotransformation "
@@ -658,6 +661,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="chemical-similarity metabolite-set enrichment group identified metabolites by chemical similarity and test which groups change between study conditions. chemrich chemical class enrichment chemical similarity metabolite sets identified metabolites smiles lipid classes phenotype association lc-ms gc-ms metabolite profiling lipidomics statistical analysis metadata analysis chemrich"
       data-name="Chemical-similarity metabolite-set enrichment"
+      data-platforms="lc_ms gc_ms"
       data-tools=""
       data-keywords="ChemRICH chemical class enrichment chemical similarity metabolite sets identified metabolites SMILES lipid classes"
       data-objectives="phenotype_association "
@@ -706,6 +710,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="chemoselective reactivity-resolved metabolomics a functional-group-resolved metabolomics strategy that uses orthogonal chemoselective probes, covalent capture and diagnostic reporter chemistry to enrich and organize otherwise chemically heterogeneous metabolite subsets before lc-ms. chemical-reactivity profiling metabolite annotation molecular discovery lc-ms untargeted metabolomics sample preparation chromatography data acquisition annotation or identification biological validation serum tissue or biopsy animal mus musculus"
       data-name="Chemoselective reactivity-resolved metabolomics"
+      data-platforms="lc_ms"
       data-tools=""
       data-keywords=""
       data-objectives="chemical_reactivity metabolite_annotation molecular_discovery"
@@ -756,6 +761,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="colony-based maldi-ms/ms dereplication with idbac and gnps2 a miniaturized microbial natural-product strategy that adds maldi tandem mass spectrometry and gnps2 molecular networking to idbac so metabolite families can be preliminarily annotated directly from colonies before fermentation scale-up and extraction. natural-product discovery dereplication molecular-family discovery metabolite annotation maldi-ms metabolite profiling untargeted metabolomics sample preparation data acquisition preprocessing and feature extraction spectral search molecular networking annotation or identification biological validation microbial culture or biomass microbial ms1 ms/ms full-scan ms data-dependent acquisition (dda) idbac gnps"
       data-name="Colony-based MALDI-MS/MS dereplication with IDBac and GNPS2"
+      data-platforms="maldi_ms"
       data-tools="gnps"
       data-keywords=""
       data-objectives="natural_product_discovery dereplication molecular_family_discovery metabolite_annotation"
@@ -806,6 +812,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="conditional microbe–metabolite association modeling model paired microbial and ms metabolomics measurements to prioritize conditional co-occurrence relationships between taxa and molecular features. paired microbiome metabolomics microbe metabolite co occurrence conditional microbial metabolite associations mmvec connect microbial taxa to metabolite profiles host–microbe interaction phenotype association lc-ms metadata analysis statistical analysis mmvec"
       data-name="Conditional microbe–metabolite association modeling"
+      data-platforms="lc_ms"
       data-tools=""
       data-keywords="paired microbiome metabolomics microbe metabolite co occurrence conditional microbial metabolite associations mmvec connect microbial taxa to metabolite profiles"
       data-objectives="host_microbe_interaction phenotype_association"
@@ -854,6 +861,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="correlative metabolite and microbial imaging with maldi-fish combine mass spectrometry imaging with taxon-specific fluorescence labeling to associate spatial chemistry with microbial identity. maldi fish metafish link metabolites to microbial identity spatial chemistry and bacterial fluorescence spatial metabolomics host–microbe interaction imaging mass spectrometry sample preparation data acquisition metadata analysis spatial metabolomics of in situ host–microbe interactions at the micrometre scale metafish integrates fluorescence and metabolite images on the same tissue section at micrometre scale. visualization of metabolites and microbes at high spatial resolution using maldi mass spectrometry imaging and in situ fluorescence labeling detailed metafish preparation, acquisition and image-integration instructions."
       data-name="Correlative metabolite and microbial imaging with MALDI-FISH"
+      data-platforms="imaging_ms"
       data-tools=""
       data-keywords="maldi fish metafish link metabolites to microbial identity spatial chemistry and bacterial fluorescence"
       data-objectives="spatial_metabolomics host_microbe_interaction"
@@ -913,6 +921,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="credentialing untargeted metabolomics features a method-development strategy that uses mixtures of natural-abundance and uniformly 13c-labeled biological extracts to distinguish genuine biological features from artifacts and benchmark untargeted metabolomics workflows. stable-isotope tracing lc-ms untargeted metabolomics stable-isotope tracing sample preparation data acquisition preprocessing and feature extraction quality control statistical analysis microbial culture or biomass microbial broadly applicable"
       data-name="Credentialing untargeted metabolomics features"
+      data-platforms="lc_ms"
       data-tools=""
       data-keywords=""
       data-objectives="stable_isotope_tracing "
@@ -963,6 +972,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="dda-assisted dia metabolomics a hybrid untargeted acquisition strategy that analyzes individual samples by dia for broad feature and ms/ms coverage while using pooled quality-control samples by dda to obtain cleaner fragmentation spectra for annotation. combine dda and dia hybrid dda dia metabolomics improve msms coverage and quality pooled qc dda individual samples dia dadia metabolite annotation molecular discovery lc-ms untargeted metabolomics sample preparation data acquisition quality control preprocessing and feature extraction annotation or identification broadly applicable ms1 ms/ms data-dependent acquisition (dda) data-independent acquisition (dia) dadia.r"
       data-name="DDA-assisted DIA metabolomics"
+      data-platforms="lc_ms"
       data-tools=""
       data-keywords="combine dda and dia hybrid dda dia metabolomics improve msms coverage and quality pooled qc dda individual samples dia dadia"
       data-objectives="metabolite_annotation molecular_discovery"
@@ -1013,6 +1023,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="epoxidation-assisted lipid double-bond localization convert unsaturated fatty-acid double bonds to epoxides and use diagnostic tandem-ms fragments to distinguish positional isomers. epoxidation lipid double bond localization epoxide diagnostic fragments fatty acid positional isomers low temperature plasma epoxidation structure elucidation chemical-reactivity profiling direct-infusion ms lipidomics sample preparation data acquisition annotation or identification locating carbon-carbon double bonds in unsaturated phospholipids by epoxidation reaction and tandem mass spectrometry extends the epoxidation/cid approach to phospholipid classes in positive and negative ion modes."
       data-name="Epoxidation-assisted lipid double-bond localization"
+      data-platforms="direct_infusion_ms"
       data-tools=""
       data-keywords="epoxidation lipid double bond localization epoxide diagnostic fragments fatty acid positional isomers low temperature plasma epoxidation"
       data-objectives="structure_elucidation chemical_reactivity"
@@ -1070,6 +1081,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="feature-based molecular networking (fbmn) a strategy that combines aligned lc-ms feature abundances with ms/ms spectral similarity to explore quantitative molecular families while retaining chromatographic feature identity. dia mse molecular networking dia intopenstream molecular-family discovery metabolite annotation molecular discovery natural-product discovery lc-ms untargeted metabolomics metabolite profiling lipidomics preprocessing and feature extraction quality control annotation or identification spectral search molecular networking data and workflow sharing broadly applicable ms1 ms/ms data-dependent acquisition (dda) data-independent acquisition (dia) gnps2 feature-based molecular networking workflow mzmine ms-dial xcms openms cytoscape integrative open workflow for confident annotation and molecular networking of metabolomics mse/dia data dia-intopenstream adapts fbmn to mse/dia data. waters2mzml supplies mzml; knime assembles custom structure databases; ms-dial assigns dia fragments to precursors and exports fbmn inputs for gnps and cytoscape. mzmine 3 is used for a parallel ms1 annotation branch, not dia fragment deconvolution in this study. reliable precursor-fragment assignment is required; custom mass matches and network neighbors are not confirmed structures. the demonstrated conversion uses windows and waters data; other vendor compatibility is not established here."
       data-name="Feature-Based Molecular Networking (FBMN)"
+      data-platforms="lc_ms"
       data-tools="cytoscape gnps gnps-feature-based-molecular-networking ms-dial mzmine openms xcms"
       data-keywords="DIA MSE molecular networking DIA IntOpenStream"
       data-objectives="molecular_family_discovery metabolite_annotation molecular_discovery natural_product_discovery"
@@ -1129,6 +1141,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="feature-level pathway inference before metabolite identification infer pathway and metabolic-network hypotheses from significant untargeted ms features before assigning every metabolite identity. pathway enrichment unknown metabolites unidentified features biological interpretation mummichog metabolic pathways phenotype association metabolite annotation lc-ms untargeted metabolomics statistical analysis annotation or identification biological validation mummichog"
       data-name="Feature-level pathway inference before metabolite identification"
+      data-platforms="lc_ms"
       data-tools="mummichog"
       data-keywords="pathway enrichment unknown metabolites unidentified features biological interpretation mummichog metabolic pathways"
       data-objectives="phenotype_association metabolite_annotation"
@@ -1179,6 +1192,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="ion identity molecular networking (iimn) a strategy extending feature-based molecular networking with ms1-derived ion relationships, linking candidate ion species of the same molecule alongside ms/ms spectral-similarity edges. metabolite annotation molecular-family discovery unknown identification molecular discovery lc-ms untargeted metabolomics metabolite profiling preprocessing and feature extraction annotation or identification molecular networking spectral search data and workflow sharing broadly applicable ms1 ms/ms data-dependent acquisition (dda) gnps mzmine cytoscape"
       data-name="Ion Identity Molecular Networking (IIMN)"
+      data-platforms="lc_ms"
       data-tools="cytoscape gnps mzmine"
       data-keywords=""
       data-objectives="metabolite_annotation molecular_family_discovery unknown_identification molecular_discovery"
@@ -1229,6 +1243,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="isotope-coded dansylation for comparative metabolomics pair light and heavy chemical labels to quantify amine- and phenol-containing metabolites by lc-ms. dansylation chemical isotope labeling amine phenol relative quantification light heavy reference chemical-reactivity profiling lc-ms metabolite profiling sample preparation chromatography data acquisition statistical analysis qualitative metabolome analysis of human cerebrospinal fluid by 13c-/12c-isotope dansylation labeling combined with liquid chromatography fourier transform ion cyclotron resonance mass spectrometry application of isotope dansylation to cerebrospinal-fluid profiling; the sample matrix does not define a new strategy."
       data-name="Isotope-coded dansylation for comparative metabolomics"
+      data-platforms="lc_ms"
       data-tools=""
       data-keywords="dansylation chemical isotope labeling amine phenol relative quantification light heavy reference"
       data-objectives="chemical_reactivity "
@@ -1288,6 +1303,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="iterative exclusion-list ms/ms acquisition use precursors fragmented in earlier injections to guide subsequent dda runs toward additional ions. iterative exclusion list fragment additional precursors previously fragmented ions repeated dda injections ie omics metabolite annotation molecular discovery lc-ms untargeted metabolomics data acquisition preprocessing and feature extraction annotation or identification broadly applicable ms1 ms/ms data-dependent acquisition (dda) msconvert mzmine ie-omics lipidmatch lipidsearch"
       data-name="Iterative exclusion-list MS/MS acquisition"
+      data-platforms="lc_ms"
       data-tools="msconvert mzmine"
       data-keywords="iterative exclusion list fragment additional precursors previously fragmented ions repeated DDA injections IE Omics"
       data-objectives="metabolite_annotation molecular_discovery"
@@ -1338,6 +1354,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="iterative optimized ms/ms acquisition plan successive ms/ms acquisitions from an ms1 survey by optimizing precursor schedules across mass and retention time. get more msms spectra improve fragmentation coverage iterative dda exclusion inclusion list metabolomics pooled sample deeper msms coverage topological sorting schedule precursor ions metabolite annotation molecular discovery unknown identification lc-ms untargeted metabolomics data acquisition preprocessing and feature extraction annotation or identification broadly applicable ms1 ms/ms data-dependent acquisition (dda) targeted ms/ms ms2planner ioda_ms"
       data-name="Iterative optimized MS/MS acquisition"
+      data-platforms="lc_ms"
       data-tools=""
       data-keywords="get more msms spectra improve fragmentation coverage iterative dda exclusion inclusion list metabolomics pooled sample deeper msms coverage topological sorting schedule precursor ions"
       data-objectives="metabolite_annotation molecular_discovery unknown_identification"
@@ -1388,6 +1405,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="kinetic flux profiling from isotope-labeling time courses combine isotope-label incorporation kinetics with metabolite pool sizes to estimate cellular fluxes under an explicit kinetic model. kinetic flux profiling kfp isotope labeling metabolic flux turnover time course pool size flux analysis stable-isotope tracing lc-ms stable-isotope tracing fluxomics sample preparation data acquisition statistical analysis kinetic flux profiling for quantitation of cellular metabolic fluxes expanded experimental and quantitative procedure, including culture handling and kinetic interpretation."
       data-name="Kinetic flux profiling from isotope-labeling time courses"
+      data-platforms="lc_ms"
       data-tools=""
       data-keywords="kinetic flux profiling KFP isotope labeling metabolic flux turnover time course pool size"
       data-objectives="flux_analysis stable_isotope_tracing"
@@ -1447,6 +1465,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="mass spectrometry imaging–guided molecular networking a multimodal natural-product strategy that uses spatial localization from mass spectrometry imaging to prioritize metabolites for lc-ms/ms molecular networking and structural interpretation. spatial metabolomics natural-product discovery structure elucidation molecular-family discovery imaging mass spectrometry lc-ms spatial metabolomics untargeted metabolomics sample preparation data acquisition molecular networking annotation or identification biological validation plant tissue tissue or biopsy plant broadly applicable ms1 ms/ms full-scan ms data-dependent acquisition (dda) gnps"
       data-name="Mass spectrometry imaging–guided molecular networking"
+      data-platforms="imaging_ms lc_ms"
       data-tools="gnps"
       data-keywords=""
       data-objectives="spatial_metabolomics natural_product_discovery structure_elucidation molecular_family_discovery"
@@ -1497,6 +1516,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="metabologenomics a natural-product discovery strategy that correlates metabolite occurrence across a strain collection with biosynthetic gene-cluster or gene-cluster-family occurrence to connect chemistry with its likely genetic origin. natural-product discovery molecular-family discovery unknown identification lc-ms untargeted metabolomics multi-omics data acquisition preprocessing and feature extraction molecular networking metadata analysis statistical analysis biological validation microbial culture or biomass microbial gnps nplinker mibig"
       data-name="Metabologenomics"
+      data-platforms="lc_ms"
       data-tools="gnps"
       data-keywords=""
       data-objectives="natural_product_discovery molecular_family_discovery unknown_identification"
@@ -1547,6 +1567,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="microfluidic fractionation for compound-resolved bioactivity pair rapid chromatographic fraction collection with lc-ms/ms and luminescent bioreporters to connect chemical signals with antibacterial responses. microfluidic bioactivity fractionation compound resolved bioactivity luminescent bioreporter connect chromatography to antibacterial activity natural-product discovery phenotype association lc-ms chromatography data acquisition biological validation"
       data-name="Microfluidic fractionation for compound-resolved bioactivity"
+      data-platforms="lc_ms"
       data-tools=""
       data-keywords="microfluidic bioactivity fractionation compound resolved bioactivity luminescent bioreporter connect chromatography to antibacterial activity"
       data-objectives="natural_product_discovery phenotype_association"
@@ -1595,6 +1616,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="molecular networking as a dereplication strategy a natural-product dereplication strategy that organizes ms/ms spectra by fragmentation similarity and uses reference spectra, standards, or characterized organisms to recognize known molecules and related analogues before isolation. dereplicate natural products avoid rediscovering known compounds molecular networking dereplication identify known compounds and analogues prioritize novel molecular families dereplication molecular-family discovery metabolite annotation natural-product discovery lc-ms direct-infusion ms untargeted metabolomics metabolite profiling data acquisition spectral search molecular networking annotation or identification biological validation broadly applicable ms/ms data-dependent acquisition (dda) gnps"
       data-name="Molecular networking as a dereplication strategy"
+      data-platforms="lc_ms direct_infusion_ms"
       data-tools="gnps"
       data-keywords="dereplicate natural products avoid rediscovering known compounds molecular networking dereplication identify known compounds and analogues prioritize novel molecular families"
       data-objectives="dereplication molecular_family_discovery metabolite_annotation natural_product_discovery"
@@ -1645,6 +1667,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="ms2decide tandem mass spectrum to decision (ms2decide) leverages decision theory and expert knowledge to aggregate the outputs of three widely used annotation tools (gnps, sirius, and isdb-lotus) and compute a recommendation for targeting natural products with regard to their potential novelty. natural-product discovery lc-ms untargeted metabolomics annotation or identification spectral search ms2decide gnps sirius isdb-lotus"
       data-name="MS2DECIDE"
+      data-platforms="lc_ms"
       data-tools="gnps ms2decide sirius"
       data-keywords=""
       data-objectives="natural_product_discovery "
@@ -1695,6 +1718,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="native ms metabolomics for metal-binding compounds a transferable lc-ms strategy that combines post-column ph adjustment and metal infusion with ion identity molecular networking to discover small molecules that bind metals in complex biological samples. metal-binding compound discovery native metabolomics natural-product discovery lc-ms untargeted metabolomics metabolite profiling chromatography post-column modification or infusion data acquisition preprocessing and feature extraction annotation or identification molecular networking data and workflow sharing microbial culture or biomass water or aquatic sample synthetic or analytical standards microbial fungal marine environmental synthetic or reference material ms1 ms/ms full-scan ms data-dependent acquisition (dda) native electrospray ionization mzmine gnps massive cytoscape"
       data-name="Native MS metabolomics for metal-binding compounds"
+      data-platforms="lc_ms"
       data-tools="gnps massive mzmine"
       data-keywords=""
       data-objectives="metal_binding native_metabolomics natural_product_discovery"
@@ -1745,6 +1769,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="ozone-induced dissociation for structural lipidomics a structural-lipidomics strategy that uses ozone-induced dissociation to generate diagnostic fragments for carbon–carbon double-bond positions that conventional cid-based lipidomics often cannot resolve. structure elucidation metabolite annotation lc-ms direct-infusion ms lipidomics targeted metabolomics data acquisition annotation or identification biological validation broadly applicable lipidoz"
       data-name="Ozone-induced dissociation for structural lipidomics"
+      data-platforms="lc_ms direct_infusion_ms"
       data-tools=""
       data-keywords=""
       data-objectives="structure_elucidation metabolite_annotation"
@@ -1795,6 +1820,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="paterno-buchi photochemistry for lipid double-bond localization couple lipid photochemical derivatization to tandem ms to locate carbon-carbon double bonds. paterno buchi double bond position lipid isomers photochemical derivatization unsaturated lipids structure elucidation chemical-reactivity profiling direct-infusion ms lipidomics sample preparation data acquisition annotation or identification identification and quantitation of lipid c=c location isomers: a shotgun lipidomics approach enabled by photochemical reaction extends the photochemical method to identification and quantitation in complex lipid mixtures. tissue comparisons are use cases, not additional strategies."
       data-name="Paterno-Buchi photochemistry for lipid double-bond localization"
+      data-platforms="direct_infusion_ms"
       data-tools=""
       data-keywords="Paterno Buchi double bond position lipid isomers photochemical derivatization unsaturated lipids"
       data-objectives="structure_elucidation chemical_reactivity"
@@ -1852,6 +1878,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="predictive fusion of microscopy and mass spectrometry imaging model spatial relationships between microscopy features and measured ion intensities, then use validated relationships to predict molecular distributions at finer spatial resolution or in unmeasured tissue regions. microscopy mass spectrometry image fusion predict ion images from histology spatial lipid image sharpening msi microscopy regression predict molecular distributions in tissue spatial metabolomics imaging mass spectrometry spatial metabolomics metabolite profiling data acquisition preprocessing and feature extraction metadata analysis statistical analysis tissue or biopsy broadly applicable ms1 full-scan ms molecular image fusion prototype"
       data-name="Predictive fusion of microscopy and mass spectrometry imaging"
+      data-platforms="imaging_ms"
       data-tools=""
       data-keywords="microscopy mass spectrometry image fusion predict ion images from histology spatial lipid image sharpening MSI microscopy regression predict molecular distributions in tissue"
       data-objectives="spatial_metabolomics "
@@ -1902,6 +1929,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="qc-based robust loess signal-drift correction use repeated biological qc injections to estimate and correct feature-specific signal drift along acquisition order. qc-rlsc pooled qc loess signal drift injection order batch correction normalization quality control analytical quality control lc-ms gc-ms untargeted metabolomics data acquisition preprocessing and feature extraction quality control statistical analysis xcms"
       data-name="QC-based robust LOESS signal-drift correction"
+      data-platforms="lc_ms gc_ms"
       data-tools="xcms"
       data-keywords="QC-RLSC pooled QC LOESS signal drift injection order batch correction normalization quality control"
       data-objectives="analytical_quality_control "
@@ -1952,6 +1980,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="reference-pool discovery with cohort-wide signal extraction discover features in pooled reference samples, then extract their signals across a large lc-ms cohort using curated mass and retention-time targets. thousands of samples large cohort processing pooled reference discovery cohort wide peak extraction skyline reference targets phenotype association metabolite annotation lc-ms untargeted metabolomics lipidomics preprocessing and feature extraction quality control annotation or identification broadly applicable ms1 ms/ms data-dependent acquisition (dda) xcms camera skyline acquirex decoid lipid annotator published processing notebooks"
       data-name="Reference-pool discovery with cohort-wide signal extraction"
+      data-platforms="lc_ms"
       data-tools="camera skyline xcms"
       data-keywords="thousands of samples large cohort processing pooled reference discovery cohort wide peak extraction Skyline reference targets"
       data-objectives="phenotype_association metabolite_annotation"
@@ -2002,6 +2031,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="retention-order-assisted joint molecular annotation combine relative lc elution order with ms/ms candidate scores to annotate multiple features jointly. retention order elution order joint annotation lc-ms2struct retention time candidate ranking metabolite annotation lc-ms untargeted metabolomics chromatography annotation or identification statistical analysis iokr retention-order prediction implementation joint structural annotation of small molecules using liquid chromatography retention order and tandem mass spectrometry data lc-ms2struct learns structured integration of spectral scores and retention order, including stereochemistry-aware fingerprints. this replaces the original integration model rather than reproducing its algorithm. roasmi: accelerating small molecule identification by repurposing retention data uses learned molecular representations and a neural ranking model to predict retention order within a chromatographic application domain, then integrates this evidence with ms/ms scores. this is a later implementation, not the original 2018 workflow."
       data-name="Retention-order-assisted joint molecular annotation"
+      data-platforms="lc_ms"
       data-tools="lc-ms2struct roasmi"
       data-keywords="retention order elution order joint annotation LC-MS2Struct retention time candidate ranking"
       data-objectives="metabolite_annotation "
@@ -2063,6 +2093,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="reverse metabolomics a discovery strategy that starts from a candidate chemical structure or reference ms/ms spectrum, searches public metabolomics repositories for matching spectra, and uses sample metadata to reveal biological or phenotypic associations. reverse metabolomics phenotype association molecular discovery metabolite annotation lc-ms untargeted metabolomics metabolite profiling data acquisition spectral search repository-scale mining metadata analysis biological validation data and workflow sharing feces or stool tissue or biopsy microbial culture or biomass synthetic or analytical standards other or broadly applicable human animal microbial host–microbe interaction synthetic or reference material broadly applicable homo sapiens ms/ms data-dependent acquisition (dda) targeted ms/ms flow injection msms-chooser masst pan-redu gnps massive"
       data-name="Reverse metabolomics"
+      data-platforms="lc_ms"
       data-tools="gnps massive masst msms-chooser redu"
       data-keywords=""
       data-objectives="reverse_metabolomics phenotype_association molecular_discovery metabolite_annotation"
@@ -2113,6 +2144,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="same-section msi and imaging mass cytometry integration combine tissue metabolite images with antibody-based cellular phenotypes from imaging mass cytometry. immunophenotype immune cells imaging mass cytometry imc single cell tissue spatial immunometabolism single-cell metabolomics spatial metabolomics imaging mass spectrometry spatial metabolomics lipidomics sample preparation data acquisition metadata analysis statistical analysis maldi-msi-imc analysis scripts"
       data-name="Same-section MSI and imaging mass cytometry integration"
+      data-platforms="imaging_ms"
       data-tools=""
       data-keywords="immunophenotype immune cells imaging mass cytometry IMC single cell tissue spatial immunometabolism"
       data-objectives="single_cell_metabolomics spatial_metabolomics"
@@ -2163,6 +2195,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="shared-substructure discovery with mass2motifs discover recurring fragment and neutral-loss patterns across ms/ms spectra to propose shared substructures. ms2lda mass2motifs shared substructures fragment patterns neutral losses motif discovery unknown spectra metabolite annotation molecular-family discovery lc-ms untargeted metabolomics preprocessing and feature extraction annotation or identification spectral search xcms mzmatch rmassbank ms2lda unsupervised discovery and comparison of structural families across multiple samples in untargeted metabolomics ms2lda+ learns shared motifs across samples while retaining sample-specific prevalence for comparison."
       data-name="Shared-substructure discovery with Mass2Motifs"
+      data-platforms="lc_ms"
       data-tools="ms2lda xcms"
       data-keywords="MS2LDA Mass2Motifs shared substructures fragment patterns neutral losses motif discovery unknown spectra"
       data-objectives="metabolite_annotation molecular_family_discovery"
@@ -2220,6 +2253,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="spatially registered single-cell metabolomics a single-cell metabolomics strategy that registers microscopy-derived cell boundaries and morphologic information with maldi imaging mass spectrometry so spatial ion signals can be assigned to individual cells. single cell metabolomics maldi single cells connect microscopy with mass spectrometry imaging spatially resolved cell metabolomics spacem single-cell metabolomics spatial metabolomics phenotype association imaging mass spectrometry spatial metabolomics metabolite profiling sample preparation data acquisition preprocessing and feature extraction metadata analysis statistical analysis biological validation cells or cell pellets broadly applicable ms1 full-scan ms spacem"
       data-name="Spatially registered single-cell metabolomics"
+      data-platforms="imaging_ms"
       data-tools=""
       data-keywords="single cell metabolomics maldi single cells connect microscopy with mass spectrometry imaging spatially resolved cell metabolomics spacem"
       data-objectives="single_cell_metabolomics spatial_metabolomics phenotype_association"
@@ -2270,6 +2304,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="stable-isotope labeling–assisted molecular networking a biosynthetic discovery strategy that combines stable-isotope precursor feeding with lc-ms/ms molecular networking to identify structurally related metabolites that incorporate a defined biosynthetic building block. stable-isotope tracing natural-product discovery molecular-family discovery structure elucidation lc-ms untargeted metabolomics stable-isotope tracing sample preparation chromatography data acquisition preprocessing and feature extraction molecular networking annotation or identification microbial culture or biomass fungal microbial aspergillus nidulans ms1 ms/ms data-dependent acquisition (dda) gnps"
       data-name="Stable-isotope labeling–assisted molecular networking"
+      data-platforms="lc_ms"
       data-tools="gnps"
       data-keywords=""
       data-objectives="stable_isotope_tracing natural_product_discovery molecular_family_discovery structure_elucidation"
@@ -2320,6 +2355,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="suspect screening of exposome-related xenobiotics an exposomics strategy that interrogates untargeted uhplc-hrms/ms data with curated lists of plausible xenobiotics and metabolites, then applies chromatographic, spectral, and error-control evidence to prioritize candidate exposures. suspect screening exposomics find xenobiotics in untargeted metabolomics screen environmental exposures phase ii metabolites suspect list human biofluid exposomics exposomics metabolite annotation unknown identification lc-ms exposomics untargeted metabolomics sample preparation data acquisition preprocessing and feature extraction spectral search annotation or identification metadata analysis biological validation urine saliva other biofluid human homo sapiens ms1 ms/ms data-dependent acquisition (dda) compound discoverer"
       data-name="Suspect screening of exposome-related xenobiotics"
+      data-platforms="lc_ms"
       data-tools=""
       data-keywords="suspect screening exposomics find xenobiotics in untargeted metabolomics screen environmental exposures phase ii metabolites suspect list human biofluid exposomics"
       data-objectives="exposomics metabolite_annotation unknown_identification"
@@ -2370,6 +2406,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="target-decoy-controlled dia metabolomics use dda-derived assay libraries and decoy scoring to control false discoveries during targeted dia extraction. diametalyzer dia false discovery rate decoy assay library targeted extraction metabolite annotation lc-ms targeted metabolomics data acquisition annotation or identification quality control statistical analysis openms sirius"
       data-name="Target-decoy-controlled DIA metabolomics"
+      data-platforms="lc_ms"
       data-tools="openms sirius"
       data-keywords="DIAMetAlyzer DIA false discovery rate decoy assay library targeted extraction"
       data-objectives="metabolite_annotation "
@@ -2418,6 +2455,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="taxonomically informed metabolite annotation a metabolite-annotation strategy that reranks candidate natural-product structures by combining spectral or in-silico annotation evidence with the taxonomic distance between the study organism and known producers of candidate compounds. metabolite annotation natural-product discovery dereplication lc-ms untargeted metabolomics data acquisition preprocessing and feature extraction annotation or identification metadata analysis statistical analysis plant microbial fungal lotus natural products atlas"
       data-name="Taxonomically informed metabolite annotation"
+      data-platforms="lc_ms"
       data-tools="lotus natural-products-atlas"
       data-keywords=""
       data-objectives="metabolite_annotation natural_product_discovery dereplication"
@@ -2468,6 +2506,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="taxonomy- and metabolite-aware microbial library prioritization with idbac a microbial natural-product discovery strategy that combines maldi protein fingerprinting with specialized-metabolite overlap to reduce taxonomic and chemical redundancy when constructing or downsizing isolate libraries. natural-product discovery phenotype association maldi-ms metabolite profiling sample preparation data acquisition preprocessing and feature extraction metadata analysis statistical analysis biological validation microbial culture or biomass microbial ms1 full-scan ms idbac"
       data-name="Taxonomy- and metabolite-aware microbial library prioritization with IDBac"
+      data-platforms="maldi_ms"
       data-tools=""
       data-keywords=""
       data-objectives="natural_product_discovery phenotype_association"
@@ -2518,6 +2557,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="tissue isotope imaging with iso-imaging combine stable-isotope nutrient tracing with maldi imaging to map labeling patterns within tissue rather than averaging an entire section. spatial isotope tracing tissue isotope imaging nutrient labeling across tissue iso imaging isotopologue maps stable-isotope tracing spatial metabolomics imaging mass spectrometry sample preparation data acquisition metadata analysis isoscope"
       data-name="Tissue isotope imaging with iso-imaging"
+      data-platforms="imaging_ms"
       data-tools=""
       data-keywords="spatial isotope tracing tissue isotope imaging nutrient labeling across tissue iso imaging isotopologue maps"
       data-objectives="stable_isotope_tracing spatial_metabolomics"
@@ -2616,6 +2656,6 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     </div>
     <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 07 October 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=be0e62fd74f3" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=be0e62fd74f3" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=df6fca9fedc5" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=df6fca9fedc5" defer></script>
 </body>
 </html>

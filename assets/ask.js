@@ -63,18 +63,27 @@
     if (mentionedTools.length) eligible=eligible.filter(card => mentionedTools.every(tool => (card.dataset.tools || '').split(' ').includes(tool.dataset.slug)));
     const nmrOnly=/\bnmr\b/i.test(value) && !/\b(?:ms|lc-ms|mass spectrometry)\b/i.test(value);
     if(nmrOnly) eligible=[];
+    const bulkMeasurements = /\bbulk\b/i.test(value) && !/\b(?:spatial|imaging|maldi|histology|microscopy)\b/i.test(value);
+    if (bulkMeasurements) eligible=eligible.filter(card => !(card.dataset.platforms || '').split(' ').includes('imaging_ms'));
     const flux=/\bflux(?:es)?\b/i.test(value);
+    const comparisonRequest = !mentionedTools.length && /\b(?:compar(?:e|ing|ison)|differences?|differential|changed|changes)\b/i.test(value) && /\b(?:metabolites?|metabolomics|levels?|abundances?|samples?|groups?|conditions?|treated|controls?)\b/i.test(value) && !/\b(?:spatial|imaging|maldi|histology|microscopy|biotransformations?|transformations?|proportionality|ordered|loess|network(?:ing)?|pathways?|flux|isotop(?:e|es|ologue)|retention|annotation|annotate|derivatization|fragments?|bioactivity|enrichment|double.bond|isomers?)\b/i.test(value);
     const generalOnly=tokens.length && tokens.every(t=>['new','compare','treated','untreated','cell','study','experiment','start','begin','research'].includes(t));
     const novice = generalOnly || /\b(?:beginner|can metabolomics help|where (?:do|should) we (?:start|begin)|before (?:i|we) collect|tell me which pathways changed)\b/i.test(value) || /\b(?:new to (?:metabolomics|lc-ms|mass spectrometry)|never used metabolomics|first metabolomics (?:study|experiment)|not sure|(?:do not|don['’]?t) (?:know|understand)|(?:where|how) (?:do|should) i (?:start|begin))\b/i.test(value);
     // Exclusion and missing-input requests need clarification, not positive keyword matches.
     const constrained = !novice && /\b(?:forgot|failed) to (?:measure|acquire|collect|include)|\b(?:no|not|without|avoid|exclude|excluding|cannot|can['’]?t|don['’]?t|doesn['’]?t|isn['’]?t)\b|\bunlabel(?:l)?ed\b/i.test(value);
+    const comparison = comparisonRequest && !novice && !constrained;
     const generalStatistics = /\b(?:statistics|statistical analysis)\b/i.test(value) && /\b(?:locally|local|r|python)\b/i.test(value) && !/\b(?:flux|loess|chemrich|enrichment|drift|pls|pca)\b/i.test(value);
     const requestedIntents = intents.filter(intent => intent.pattern.test(value));
     const separateAims = /\b(?:and|then|plus|also|compare)\b|[+;]/i.test(value);
     const mixed = !nmrOnly && !novice && !constrained && separateAims && requestedIntents.length > 1;
     intentButtons.forEach(button => { button.hidden = !requestedIntents.some(intent => intent.id === button.dataset.askIntent); });
     if (mixedPanel) mixedPanel.hidden = !mixed;
-    if (mixed || novice || constrained || generalStatistics) eligible=[];
+    if (mixed || novice || constrained || generalStatistics || comparison) eligible=[];
+    if (comparison && !nmrOnly) {
+      if (guidance) guidance.open=true;
+      showActions(['prepare','qc','statistics','learn']);
+      if (guideMessage) guideMessage.textContent='For bulk-sample comparisons, start with a processed abundance table and sample metadata identifying groups, replicates and batches. Check blanks and QC, then choose statistical analysis for your study design. Use the study guide to say whether you have raw files or processed measurements; knowing the sample type alone does not select a published method.';
+    }
     if (generalStatistics) { showActions(['statistics','learn']); if(guidance) guidance.open=true; }
     if ((novice || constrained) && !nmrOnly) {
       if (guidance) guidance.open=true;
@@ -103,7 +112,7 @@
     });
 
     const shown = Math.min(ranked.length,6);
-    if (tokens.length && !shown && !novice && !constrained && !mixed && !nmrOnly && !generalStatistics && !mentionedTools.length) {
+    if (tokens.length && !shown && !comparison && !novice && !constrained && !mixed && !nmrOnly && !generalStatistics && !mentionedTools.length) {
       showActions(['learn','browse']);
       if (guidance) guidance.open=true;
     }
@@ -119,8 +128,8 @@
       count.textContent = shown + (ranked.length > shown ? ` of ${ranked.length}` : '') + ' matching published Strateg' + (shown === 1 ? 'y' : 'ies') + '.';
       empty.hidden = true;
     } else {
-      count.textContent = nmrOnly ? 'Navigator covers MS-based metabolomics; NMR-only workflows are outside scope.' : novice ? 'Please use the study guide to clarify your scientific aim and available measurements.' : constrained ? 'Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.' : generalStatistics ? 'Local analysis in R or Python is an option. Use the tool catalogue statistics filter to explore packages; the analysis depends on your study design, metadata and processed measurements. This request does not identify a specific published Strategy.' : mixed ? 'Your question spans several aims. Choose one to explore separately.' : flux && !eligible.length ? 'No curated flux-analysis Strategy is available yet. Isotope networking is not a substitute for flux inference.' : 'No matching published Strategy in the current collection.';
-      empty.hidden = !nmrOnly && (mixed || novice || constrained);
+      count.textContent = comparison && !nmrOnly ? 'Start with a bulk or group comparison: clarify your study stage, measurements and groups before selecting an analysis workflow.' : nmrOnly ? 'Navigator covers MS-based metabolomics; NMR-only workflows are outside scope.' : novice ? 'Please use the study guide to clarify your scientific aim and available measurements.' : constrained ? 'Your question includes an exclusion or missing input. This search cannot reliably apply those constraints; use the study guide to specify your available measurements before selecting a method.' : generalStatistics ? 'Local analysis in R or Python is an option. Use the tool catalogue statistics filter to explore packages; the analysis depends on your study design, metadata and processed measurements. This request does not identify a specific published Strategy.' : mixed ? 'Your question spans several aims. Choose one to explore separately.' : flux && !eligible.length ? 'No curated flux-analysis Strategy is available yet. Isotope networking is not a substitute for flux inference.' : 'No matching published Strategy in the current collection.';
+      empty.hidden = !nmrOnly && (mixed || novice || constrained || comparison);
     }
   }
 
@@ -168,6 +177,9 @@
     } else if (stage === 'raw') {
       showActions(['prepare','qc','learn']);
       message.textContent = 'First prepare and quality-check your raw files. Explore data-processing tools in the catalogue and check instrument and file-format compatibility before selecting a downstream Strategy.';
+    } else if (aim === 'comparison') {
+      showActions(['qc','statistics','learn']);
+      message.textContent = 'Compare processed metabolite or feature abundances using sample metadata, biological replicates and a statistical model suited to your study design. Review QC and batch effects before testing group differences. A significant feature is not automatically an identified metabolite.';
     } else if (aim === 'families' && data !== 'msms') {
       showActions(['learn']);
       message.textContent = 'Spectral molecular families need fragmentation spectra linked to precursors. A feature table alone does not provide that evidence; check whether MS/MS was acquired.';
