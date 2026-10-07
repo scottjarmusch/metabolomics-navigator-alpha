@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="A GNPS repository-scale spectral search service for finding where a query MS/MS spectrum or related spectra occur across public metabolomics data and spectral libraries.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=762ecce9c8f1">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=762ecce9c8f1">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=be0e62fd74f3">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=be0e62fd74f3">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -54,7 +54,7 @@
         <a href="/metabolomics-navigator-alpha/">Guide</a>
         <a href="/metabolomics-navigator-alpha/tools/" aria-current="page">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/ask/">Ask Navigator</a>
         <a href="/metabolomics-navigator-alpha/about/">About</a>
         <a class="nav-submit" href="/metabolomics-navigator-alpha/submit/">Contribute</a>
@@ -74,7 +74,7 @@
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Reference data and database search</p></div><div><h3>Other functions</h3><p>Spectral processing and comparison, Data management and sharing</p></div><div><h3>Analysis types</h3><p>Untargeted metabolomics, Metabolite profiling</p></div><div><h3>MS level</h3><p>MS/MS</p></div><div><h3>Acquisition</h3><p>Data-dependent acquisition (DDA), Targeted MS/MS, General or unspecified acquisition</p></div><div><h3>Ion mobility</h3><p>Ion mobility not required</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Mass spectra</p></div><div><h3>Outputs</h3><p>Mass spectra, Sample metadata, Human-readable report</p></div><div><h3>Input formats</h3><p>MGF, Universal Spectrum Identifier (USI) or peak list</p></div><div><h3>Output formats</h3><p>CSV or TSV</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Repository-scale contextualization of individual MS/MS spectra.</li></ul></div><div><h3>Not designed for</h3><ul><li>Quantitative comparison across unrelated public studies or proof of biosynthetic origin.</li></ul></div><div><h3>Important requirements</h3><ul><li>A centroided query MS/MS spectrum with precursor information.</li></ul></div><div><h3>Considerations</h3><ul><li>Search tolerances, cosine/similarity thresholds, and repository composition affect which matches are returned.</li><li>A spectral match indicates MS/MS similarity and possible occurrence; it is not by itself definitive structural confirmation.</li><li>The current GNPS2 implementation is substantially faster than the original MASST workflow and also supports programmatic access described in the current documentation.</li><li>Current pan-repository indexes extend beyond the original GNPS/MassIVE-only implementation; the exact indexed collections can change over time.</li><li>Retain the query spectrum identifier and inspect matched files and their study metadata before drawing an occurrence conclusion.</li></ul></div></div></section>
-<section id="learn"><p class="eyebrow">Education · Alpha</p><h2>Learn this tool</h2><p class="note">External tutorials and workshops collected by Navigator. Alpha links still require manual validation unless marked otherwise.</p><div class="tool-education-links"><a href="https://www.youtube.com/watch?v=-XoVrHQxW9U" rel="noopener noreferrer"><strong>MANA 2021 GNPS Workshop - Networking, Dashboard, MASST</strong><span>GNPS · Video Workshop · Needs review</span></a><a href="https://www.youtube.com/watch?v=14hGi6FtZIM" rel="noopener noreferrer"><strong>GNPS MASST</strong><span>GNPS · Video Workshop · Needs review</span></a></div><p><a href="/metabolomics-navigator-alpha/education/">Browse all education resources →</a></p></section>
+<section id="learn"><p class="eyebrow">Education</p><h2>Learn this tool</h2><p class="note">External tutorials and workshops collected by Navigator. Entries marked Needs review have not been checked end to end.</p><div class="tool-education-links"><a href="https://www.youtube.com/watch?v=-XoVrHQxW9U" rel="noopener noreferrer"><strong>MANA 2021 GNPS Workshop - Networking, Dashboard, MASST</strong><span>GNPS · Video Workshop · Needs review</span></a><a href="https://www.youtube.com/watch?v=14hGi6FtZIM" rel="noopener noreferrer"><strong>GNPS MASST</strong><span>GNPS · Video Workshop · Needs review</span></a></div><p><a href="/metabolomics-navigator-alpha/education/">Browse all education resources →</a></p></section>
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://masst.gnps2.org/"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/masst/"><span>Documentation</span><span aria-hidden="true">↗</span></a><a href="https://github.com/CCMS-UCSD/GNPS_Workflows/tree/master/search_single_spectrum"><span>Source repository</span><span aria-hidden="true">↗</span></a></div><p class="note">Hosted access and any account or usage requirements should be checked at the linked service. Access to a web service does not establish the license of its code or reference data.</p></section>
 <section class="strategy-links"><p class="eyebrow">From tool to strategy</p><h2>Strategies using MASST</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/strategies/reverse-metabolomics/"><strong>Reverse metabolomics</strong><span>Reverse metabolomics · Nature</span></a></div></section>
 <section id="evidence">
@@ -130,8 +130,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 02 October 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 07 October 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=762ecce9c8f1" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=be0e62fd74f3" defer></script>
 </body>
 </html>

@@ -22,7 +22,7 @@
   ];
   if (!input || !cards.length) return;
 
-  const stop = new Set(['a','an','and','are','for','from','i','in','into','my','of','on','the','to','with','have','has','want','need','find','using','use','can','how','what','when','most','is','am','do','me','data','metabolomics']);
+  const stop = new Set(['a','an','and','are','for','from','i','in','into','my','of','on','the','to','with','have','has','want','need','find','using','use','can','how','what','when','most','is','am','do','me','data','metabolomics','method','methods','workflow','workflows','approach','approaches']);
   const tokenize = value => [...new Set(value.toLowerCase()
     .replace(/[^a-z0-9]+/g,' ').split(/\s+/)
     .filter(x => x.length > 1 && !stop.has(x))
@@ -47,6 +47,8 @@
 
   function runSearch(value) {
     showActions();
+    const guideMessage = document.querySelector('#ask-guide-message');
+    if (guideMessage) guideMessage.textContent = '';
     const normalizedQuery = ' ' + normalizeName(value) + ' ';
     const mentionedTools = namedTools.filter(tool => (tool.dataset.names || '').split('|').some(name => {
       const normalized = normalizeName(name);
@@ -74,7 +76,16 @@
     if (mixedPanel) mixedPanel.hidden = !mixed;
     if (mixed || novice || constrained || generalStatistics) eligible=[];
     if (generalStatistics) { showActions(['statistics','learn']); if(guidance) guidance.open=true; }
-    if ((novice || constrained) && !nmrOnly && guidance) guidance.open=true;
+    if ((novice || constrained) && !nmrOnly) {
+      if (guidance) guidance.open=true;
+      const rawFiles = /\braw\b.*\b(?:files?|data)\b/i.test(value);
+      const qcConcern = /\b(?:qc|quality control|drift|batch effects?)\b/i.test(value);
+      showActions(rawFiles ? ['prepare','qc','learn'] : qcConcern ? ['qc','learn'] : ['learn']);
+      if (guideMessage) guideMessage.textContent = rawFiles
+        ? 'Start with data processing and quality control. Ask your MS facility which file format and acquisition type you have; then use the study guide to choose a downstream aim.'
+        : qcConcern ? 'Check your run sheet for controls, QC injections and injection order. The QC catalogue can help you inspect available evidence; a missing control cannot be assumed to exist.'
+        : 'Start with your scientific comparison and study stage. The guide and learning resources can help you identify which measurements are needed before choosing a published method.';
+    }
     if(flux) eligible=eligible.filter(card=>(card.dataset.objectives || '').split(' ').includes('flux_analysis'));
     const scored = eligible.map(card => ({card, score: scoreCard(card,tokens)}))
       .filter(x => x.score > 0)
@@ -92,6 +103,10 @@
     });
 
     const shown = Math.min(ranked.length,6);
+    if (tokens.length && !shown && !novice && !constrained && !mixed && !nmrOnly && !generalStatistics && !mentionedTools.length) {
+      showActions(['learn','browse']);
+      if (guidance) guidance.open=true;
+    }
     if (!shown && mentionedTools.length && !nmrOnly && !novice && !constrained && !mixed && !generalStatistics) {
       count.textContent = 'Named tools found in the catalogue, but no matching curated Strategy records these tools in its workflow. Review the tool scope and requirements above; capabilities are not inferred from other Strategies.';
       empty.hidden = true;

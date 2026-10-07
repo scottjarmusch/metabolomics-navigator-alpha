@@ -251,10 +251,9 @@ body { background:var(--paper); color:var(--ink); }
 .strategy-implementation h3 { margin:.15rem 0 .35rem; font-size:1.15rem; }
 .strategy-implementation .implementation-meta { color:var(--muted); font-size:.88rem; }
 
-
-/* Education alpha: lightweight directory of external learning resources. */
+/* Education: lightweight directory of external learning resources. */
 .education-directory { padding-top:2.2rem; padding-bottom:4rem; }
-.education-alpha-note { margin-bottom:1.5rem; padding:1rem 1.2rem; border-left:3px solid var(--gold); background:#f6f1e6; max-width:78ch; }
+.education-collection-note { margin-bottom:1.5rem; padding:1rem 1.2rem; border-left:3px solid var(--gold); background:#f6f1e6; max-width:78ch; }
 .education-controls { display:grid; grid-template-columns:minmax(0,2fr) minmax(220px,1fr); gap:1rem; margin:1.5rem 0 .8rem; }
 .education-controls label { display:grid; gap:.4rem; font-weight:600; }
 .education-controls input,.education-controls select { width:100%; box-sizing:border-box; padding:.75rem .85rem; border:1px solid #9bada4; border-radius:3px; background:#fff; color:var(--ink); }
@@ -330,3 +329,5 @@ body { background:var(--paper); color:var(--ink); }
 .ask-starters h2 { margin-top:0; }
 .ask-starters button[aria-pressed="true"] { background:var(--teal); color:#fff; }
 #ask-start-over { background:none; border:0; cursor:pointer; padding:.6rem 0; }
+
+.ask-implementation-tools { display:block; margin-top:.35rem; }

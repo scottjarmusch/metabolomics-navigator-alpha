@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Dedicated GNPS2 workflow that combines an aligned LC-MS feature table with MS/MS spectra to build quantitative molecular networks.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=762ecce9c8f1">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=762ecce9c8f1">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=be0e62fd74f3">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=be0e62fd74f3">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -54,7 +54,7 @@
         <a href="/metabolomics-navigator-alpha/">Guide</a>
         <a href="/metabolomics-navigator-alpha/tools/" aria-current="page">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/ask/">Ask Navigator</a>
         <a href="/metabolomics-navigator-alpha/about/">About</a>
         <a class="nav-submit" href="/metabolomics-navigator-alpha/submit/">Contribute</a>
@@ -74,7 +74,7 @@
 <section><h2>Scientific fit</h2><div class="definition-grid"><div><h3>Primary function</h3><p>Molecular networking and chemical similarity</p></div></div></section>
 <section id="compatibility"><h2>Data compatibility</h2><div class="definition-grid"><div><h3>Inputs</h3><p>Feature or peak table, Mass spectra, Sample metadata</p></div><div><h3>Outputs</h3><p>Feature or peak table, Compound list or annotations, Human-readable report</p></div><div><h3>Input formats</h3><p>CSV or TSV, MGF, MSP, mzML</p></div><div><h3>Output formats</h3><p>Network edge and node tables, library matches and downloadable workflow results</p></div></div></section>
 <section id="scope"><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Untargeted LC-MS/MS studies where chromatographic feature detection and quantitative feature tables are important for molecular-network interpretation.</li><li>Resolving isomeric or chromatographically separated features that would otherwise be combined in purely spectrum-centric networking.</li></ul></div><div><h3>Not designed for</h3><ul><li>Definitive structure identification from spectral similarity alone.</li><li>Replacing experimental quality control or validating biological causation.</li></ul></div><div><h3>Important requirements</h3><ul><li>An aligned feature quantification table and representative MS/MS spectra exported from a compatible preprocessing workflow.</li><li>Matching feature identifiers between the quantification table and spectral summary; sample metadata is optional.</li></ul></div><div><h3>Considerations</h3><ul><li>The quality of the molecular network depends on upstream feature detection, alignment, MS/MS assignment, and preprocessing choices.</li><li>FBMN does not remove the need for independent structural validation; library matches and network propagation represent different levels of annotation evidence.</li><li>Raw mzML files are optional supporting inputs in the documented GNPS2 workflow; they do not replace the required processed feature table and spectral summary.</li></ul></div></div></section>
-<section id="learn"><p class="eyebrow">Education · Alpha</p><h2>Learn this tool</h2><p class="note">External tutorials and workshops collected by Navigator. Alpha links still require manual validation unless marked otherwise.</p><div class="tool-education-links"><a href="https://www.youtube.com/watch?v=5jjMllbwD-U" rel="noopener noreferrer"><strong>GNPS FBMN - American Gut / MZmine2 tutorial</strong><span>Dorrestein Lab / GNPS · Video · Needs review</span></a><a href="https://www.youtube.com/watch?v=0xWMAwM8x3U" rel="noopener noreferrer"><strong>GNPS FBMN in Spanish Part 1</strong><span>GNPS · Video Workshop · Needs review</span></a><a href="https://www.youtube.com/watch?v=l90j5T8EQbw" rel="noopener noreferrer"><strong>GNPS FBMN in Spanish Part 2</strong><span>GNPS · Video Workshop · Needs review</span></a><a href="https://www.youtube.com/watch?v=MwdJ6mVkdJY" rel="noopener noreferrer"><strong>GNPS Feature Based Molecular Networking (MZmine2)</strong><span>GNPS · Video Workshop · Needs review</span></a><a href="https://www.youtube.com/watch?v=tb7LxaeNvcw" rel="noopener noreferrer"><strong>GNPS Ion-Identity Networking, Native Metabolomics</strong><span>GNPS · Video Workshop · Needs review</span></a></div><p><a href="/metabolomics-navigator-alpha/education/">Browse all education resources →</a></p></section>
+<section id="learn"><p class="eyebrow">Education</p><h2>Learn this tool</h2><p class="note">External tutorials and workshops collected by Navigator. Entries marked Needs review have not been checked end to end.</p><div class="tool-education-links"><a href="https://www.youtube.com/watch?v=5jjMllbwD-U" rel="noopener noreferrer"><strong>GNPS FBMN - American Gut / MZmine2 tutorial</strong><span>Dorrestein Lab / GNPS · Video · Needs review</span></a><a href="https://www.youtube.com/watch?v=0xWMAwM8x3U" rel="noopener noreferrer"><strong>GNPS FBMN in Spanish Part 1</strong><span>GNPS · Video Workshop · Needs review</span></a><a href="https://www.youtube.com/watch?v=l90j5T8EQbw" rel="noopener noreferrer"><strong>GNPS FBMN in Spanish Part 2</strong><span>GNPS · Video Workshop · Needs review</span></a><a href="https://www.youtube.com/watch?v=MwdJ6mVkdJY" rel="noopener noreferrer"><strong>GNPS Feature Based Molecular Networking (MZmine2)</strong><span>GNPS · Video Workshop · Needs review</span></a><a href="https://www.youtube.com/watch?v=tb7LxaeNvcw" rel="noopener noreferrer"><strong>GNPS Ion-Identity Networking, Native Metabolomics</strong><span>GNPS · Video Workshop · Needs review</span></a></div><p><a href="/metabolomics-navigator-alpha/education/">Browse all education resources →</a></p></section>
 <section id="resources"><h2>Access and documentation</h2><div class="link-list"><a href="https://gnps2.org/workflowinput?workflowname=feature_based_molecular_networking_workflow"><span>Primary access</span><span aria-hidden="true">↗</span></a><a href="https://wang-bioinformatics-lab.github.io/GNPS2_Documentation/fbmn/"><span>Documentation</span><span aria-hidden="true">↗</span></a></div><p class="note">GNPS2 is openly available to the academic community. The current GNPS2 documentation asks industry users to contact the maintainers or UC Riverside Technology Transfer regarding organizational access. Workflow submission requires a GNPS2 account.</p></section>
 <section class="strategy-links"><p class="eyebrow">From tool to strategy</p><h2>Strategies using GNPS2 Feature-Based Molecular Networking workflow</h2><div class="related-grid"><a href="/metabolomics-navigator-alpha/strategies/gnps-feature-based-molecular-networking/"><strong>Feature-Based Molecular Networking (FBMN)</strong><span>Molecular-family discovery · Nature Methods</span></a></div></section>
 <section id="evidence">
@@ -130,8 +130,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 02 October 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 07 October 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=762ecce9c8f1" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=be0e62fd74f3" defer></script>
 </body>
 </html>

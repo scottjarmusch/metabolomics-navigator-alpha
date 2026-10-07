@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Combine relative LC elution order with MS/MS candidate scores to annotate multiple features jointly.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=762ecce9c8f1">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=762ecce9c8f1">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=be0e62fd74f3">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=be0e62fd74f3">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -54,7 +54,7 @@
         <a href="/metabolomics-navigator-alpha/">Guide</a>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/" aria-current="page">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/ask/">Ask Navigator</a>
         <a href="/metabolomics-navigator-alpha/about/">About</a>
         <a class="nav-submit" href="/metabolomics-navigator-alpha/submit/">Contribute</a>
@@ -67,7 +67,7 @@
 <article class="tool-article"><section><h2>What does this strategy enable?</h2><p>The 2018 method integrates learned pairwise retention preferences with spectral evidence rather than filtering each feature independently by absolute retention time.</p></section>
 <section><p class="eyebrow">Transferable workflow</p><h2>Workflow</h2><ol class="workflow-timeline"><li><div class="step-number">1</div><div><h3>Prepare candidate lists</h3><p>Associate measured retention times with spectra and candidate structures.</p></div></li><li><div class="step-number">2</div><div><h3>Score spectral candidates</h3><p>The original study uses IOKR scores.</p><div class="workflow-tools"><span>IOKR</span></div></div></li><li><div class="step-number">3</div><div><h3>Learn and integrate retention preferences</h3><p>Combine RankSVM order predictions and spectral scores using the published dynamic-programming procedure.</p></div></li><li><div class="step-number">4</div><div><h3>Review ranked assignments</h3><p>Inspect candidates and seek independent confirmation.</p></div></li></ol></section>
 <section><p class="eyebrow">Connected resources</p><h2>Tools used in this strategy</h2><div class="tool-use-grid"><a class="tool-use-card external"><strong>IOKR</strong><span>Original spectral candidate scorer.</span></a><a class="tool-use-card external" href="https://version.aalto.fi/gitlab/bache1/retention_order_prediction.git"><strong>Retention-order prediction implementation</strong><span>Code location reported by the 2018 paper; not execution-tested.</span><em>External resource ↗</em></a></div></section>
-<section><p class="eyebrow">Evidence of reuse</p><h2>Published implementations and adaptations</h2><p>These papers applied, adapted, extended, benchmarked or formalized the Strategy after its originating publication. They are examples of precedent, not a ranking of software choices.</p><div class="strategy-implementations"><article class="strategy-implementation"><p class="implementation-meta">Extension · Nature Machine Intelligence · 2022</p><h3>Joint structural annotation of small molecules using liquid chromatography retention order and tandem mass spectrometry data</h3><p>LC-MS2Struct learns structured integration of spectral scores and retention order, including stereochemistry-aware fingerprints. This replaces the original integration model rather than reproducing its algorithm.</p><p><a href="https://doi.org/10.1038/s42256-022-00577-2">doi:10.1038/s42256-022-00577-2</a></p></article></div></section>
+<section><p class="eyebrow">Evidence of reuse</p><h2>Published implementations and adaptations</h2><p>These papers applied, adapted, extended, benchmarked or formalized the Strategy after its originating publication. They are examples of precedent, not a ranking of software choices.</p><div class="strategy-implementations"><article class="strategy-implementation"><p class="implementation-meta">Extension · Journal of Cheminformatics · 2025</p><h3>ROASMI: accelerating small molecule identification by repurposing retention data</h3><p>Uses learned molecular representations and a neural ranking model to predict retention order within a chromatographic application domain, then integrates this evidence with MS/MS scores. This is a later implementation, not the original 2018 workflow.</p><p><strong>Navigator tools used:</strong> <a href="/metabolomics-navigator-alpha/tools/roasmi/">ROASMI</a></p><p><a href="https://doi.org/10.1186/s13321-025-00968-8">doi:10.1186/s13321-025-00968-8</a></p></article><article class="strategy-implementation"><p class="implementation-meta">Extension · Nature Machine Intelligence · 2022</p><h3>Joint structural annotation of small molecules using liquid chromatography retention order and tandem mass spectrometry data</h3><p>LC-MS2Struct learns structured integration of spectral scores and retention order, including stereochemistry-aware fingerprints. This replaces the original integration model rather than reproducing its algorithm.</p><p><strong>Navigator tools used:</strong> <a href="/metabolomics-navigator-alpha/tools/lc-ms2struct/">LC-MS2Struct</a></p><p><a href="https://doi.org/10.1038/s42256-022-00577-2">doi:10.1038/s42256-022-00577-2</a></p></article></div></section>
 <section><h2>Strategy profile</h2><div class="definition-grid"><div><h3>Components</h3><p>Chromatography, Annotation or identification, Statistical analysis</p></div></div></section>
 <section><h2>Scope and considerations</h2><div class="scope-grid"><div><h3>Designed for</h3><ul><li>Joint interpretation of LC-MS/MS features.</li></ul></div><div><h3>Important requirements</h3><ul><li>Candidate structures, spectral scores, measured retention order and suitable training data.</li></ul></div><div><h3>Considerations</h3><ul><li>Candidate coverage and chromatographic transferability matter. Rankings do not confirm identities.</li></ul></div></div></section>
 <section><h2>Reusable resources</h2><div class="availability-row"><span>✓ Published method available</span></div><div class="link-list"><a href="https://doi.org/10.1093/bioinformatics/bty590"><span>Published method</span><span>↗</span></a></div></section>
@@ -101,8 +101,8 @@
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 02 October 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 07 October 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=762ecce9c8f1" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=be0e62fd74f3" defer></script>
 </body>
 </html>

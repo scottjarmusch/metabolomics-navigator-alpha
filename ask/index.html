@@ -17,8 +17,8 @@
   <meta name="twitter:description" content="Find published metabolomics Strategies, inspect their evidence and explore tools and learning resources.">
   
   <meta name="theme-color" content="#faf9f5">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=762ecce9c8f1">
-  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=762ecce9c8f1">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/site.css?v=be0e62fd74f3">
+  <link rel="stylesheet" href="/metabolomics-navigator-alpha/assets/product-refresh.css?v=be0e62fd74f3">
   <link rel="icon" href="/metabolomics-navigator-alpha/assets/favicon.svg" type="image/svg+xml">
   
 </head>
@@ -54,7 +54,7 @@
         <a href="/metabolomics-navigator-alpha/">Guide</a>
         <a href="/metabolomics-navigator-alpha/tools/">Tools</a>
         <a href="/metabolomics-navigator-alpha/strategies/">Strategies</a>
-        <a href="/metabolomics-navigator-alpha/education/">Education <small>Alpha</small></a>
+        <a href="/metabolomics-navigator-alpha/education/">Education</a>
         <a href="/metabolomics-navigator-alpha/ask/" aria-current="page">Ask Navigator</a>
         <a href="/metabolomics-navigator-alpha/about/">About</a>
         <a class="nav-submit" href="/metabolomics-navigator-alpha/submit/">Contribute</a>
@@ -62,7 +62,7 @@
     </div>
   </header>
   <main id="main-content">
-<header class="page-hero compact"><div class="section-wrap"><p class="eyebrow">ASK NAVIGATOR · ALPHA</p><h1>Start from a published workflow, not a list of tools.</h1><p>Describe the scientific problem you are trying to solve. Ask Navigator first matches your question to transferable Analytical Strategies, shows the workflow and publication that implemented them, and then links you into the full catalogue for alternatives.</p></div></header>
+<header class="page-hero compact"><div class="section-wrap"><p class="eyebrow">ASK NAVIGATOR · ALPHA</p><h1>Find your next step in metabolomics.</h1><p>Start with your experiment or describe what you want to learn. We will help you clarify your measurements, explore published Strategies and find the tools and tutorials for your next step.</p></div></header>
 
 <div class="ask-evidence section-wrap">
 <section class="ask-decision" aria-labelledby="ask-title">
@@ -104,6 +104,7 @@
         <li data-guide-action="learn" hidden><a href="/metabolomics-navigator-alpha/education/">Find tutorials and video workshops</a></li>
         <li data-guide-action="prepare" hidden><a href="/metabolomics-navigator-alpha/guide/data-processing/">Understand data processing</a> · <a href="/metabolomics-navigator-alpha/tools/?function=preprocessing">Browse preprocessing tools</a></li>
         <li data-guide-action="qc" hidden><a href="/metabolomics-navigator-alpha/tools/?function=quality_control">Explore quality-control tools</a></li>
+        <li data-guide-action="browse" hidden><a href="/metabolomics-navigator-alpha/strategies/">Browse the curated Strategies</a> · <a href="/metabolomics-navigator-alpha/tools/">Explore the tool catalogue</a></li>
         <li data-guide-action="statistics" hidden><a href="/metabolomics-navigator-alpha/tools/?function=statistics">Explore statistical analysis tools, including local software</a></li>
       </ul>
     </nav>
@@ -141,7 +142,7 @@
 
   <aside id="ask-tool-matches" class="preview-note" hidden aria-live="polite">
     <h2>Tools named in your question</h2>
-    <p>These are catalogue references, not a compatibility assessment. Read the recorded scope and requirements. A tool name alone does not establish a published workflow.</p>
+    <p>These are catalogue references, not a compatibility assessment. Read the recorded scope and requirements. A tool name alone does not establish a published workflow. Matches can come from the original method or a later implementation; each is labelled in the Strategy below.</p>
     <ul>
     
       <li data-ask-tool data-slug="13c-spacem" data-names="13C-SpaceM analysis code|13c-spacem" hidden><a href="/metabolomics-navigator-alpha/tools/13c-spacem/">13C-SpaceM analysis code</a> — Analyze spatial carbon-13 labeling of fatty acids in single cells and tissue imaging experiments.</li>
@@ -183,6 +184,8 @@
       <li data-ask-tool data-slug="csi-fingerid" data-names="CSI:FingerID|csi-fingerid" hidden><a href="/metabolomics-navigator-alpha/tools/csi-fingerid/">CSI:FingerID</a> — A SIRIUS-integrated machine-learning method and webservice for predicting molecular fingerprints from MS/MS data and ranking candidate structures from molecular-structure databases.</li>
     
       <li data-ask-tool data-slug="cytoscape" data-names="Cytoscape|cytoscape" hidden><a href="/metabolomics-navigator-alpha/tools/cytoscape/">Cytoscape</a> — Desktop network visualization and analysis for exploring MS molecular networks alongside feature annotations and sample metadata.</li>
+    
+      <li data-ask-tool data-slug="dbnorm" data-names="dbnorm|dbnorm" hidden><a href="/metabolomics-navigator-alpha/tools/dbnorm/">dbnorm</a> — Compare statistical batch-correction models and inspect technical variation in metabolomics matrices.</li>
     
       <li data-ask-tool data-slug="everything-bagel" data-names="Everything Bagel|everything-bagel|Everything Bagel Feature Finder|Everything Bagel Workflow" hidden><a href="/metabolomics-navigator-alpha/tools/everything-bagel/">Everything Bagel</a> — Detect, align and gap-fill LC-MS features, with a GNPS2 workflow connecting raw LC-MS/MS data to feature-based molecular networking.</li>
     
@@ -236,6 +239,8 @@
     
       <li data-ask-tool data-slug="khipu" data-names="khipu|khipu" hidden><a href="/metabolomics-navigator-alpha/tools/khipu/">khipu</a> — Group LC-MS isotope and adduct features into empirical compounds and infer neutral masses.</li>
     
+      <li data-ask-tool data-slug="lc-ms2struct" data-names="LC-MS2Struct|lc-ms2struct|LC-MS²Struct" hidden><a href="/metabolomics-navigator-alpha/tools/lc-ms2struct/">LC-MS2Struct</a> — Jointly rank molecular candidates using LC retention order and precomputed MS/MS scores.</li>
+    
       <li data-ask-tool data-slug="lion-web" data-names="LION/web|lion-web" hidden><a href="/metabolomics-navigator-alpha/tools/lion-web/">LION/web</a> — Web-based lipid ontology enrichment tool that connects lipid lists or rankings to chemical, biophysical, cellular and functional lipid properties.</li>
     
       <li data-ask-tool data-slug="lipid-maps" data-names="LIPID MAPS|lipid-maps" hidden><a href="/metabolomics-navigator-alpha/tools/lipid-maps/">LIPID MAPS</a> — Find lipid structures, classifications, nomenclature guidance and lipidomics analysis resources.</li>
@@ -256,6 +261,8 @@
     
       <li data-ask-tool data-slug="lotus" data-names="LOTUS|lotus" hidden><a href="/metabolomics-navigator-alpha/tools/lotus/">LOTUS</a> — Connect natural-product structures, organism occurrences and literature references.</li>
     
+      <li data-ask-tool data-slug="maffin" data-names="MAFFIN|maffin" hidden><a href="/metabolomics-navigator-alpha/tools/maffin/">MAFFIN</a> — Normalize metabolomics feature intensities using selected features and corrected signal responses.</li>
+    
       <li data-ask-tool data-slug="massbank" data-names="MassBank|massbank|MassBank Europe|MassBank Japan" hidden><a href="/metabolomics-navigator-alpha/tools/massbank/">MassBank</a> — Find and download open reference mass spectra with compound and acquisition metadata.</li>
     
       <li data-ask-tool data-slug="massive" data-names="MassIVE|massive|Mass Spectrometry Interactive Virtual Environment" hidden><a href="/metabolomics-navigator-alpha/tools/massive/">MassIVE</a> — A public repository for depositing, preserving, browsing, downloading, and reusing mass-spectrometry datasets, including datasets connected to GNPS analyses.</li>
@@ -267,6 +274,8 @@
       <li data-ask-tool data-slug="masst" data-names="MASST|masst|Mass Spectrometry Search Tool" hidden><a href="/metabolomics-navigator-alpha/tools/masst/">MASST</a> — A GNPS repository-scale spectral search service for finding where a query MS/MS spectrum or related spectra occur across public metabolomics data and spectral libraries.</li>
     
       <li data-ask-tool data-slug="matchms" data-names="matchms|matchms" hidden><a href="/metabolomics-navigator-alpha/tools/matchms/">matchms</a> — Build Python workflows for spectral cleaning, metadata harmonization and MS/MS similarity scoring.</li>
+    
+      <li data-ask-tool data-slug="matrixqcvis" data-names="MatrixQCvis|matrixqcvis" hidden><a href="/metabolomics-navigator-alpha/tools/matrixqcvis/">MatrixQCvis</a> — Explore sample and feature quality in metabolomics matrices through interactive visualizations.</li>
     
       <li data-ask-tool data-slug="mb-post" data-names="MB-POST|mb-post" hidden><a href="/metabolomics-navigator-alpha/tools/mb-post/">MB-POST</a> — MB-POST is a metabolomics mass spectrometry data repository which implements a reanalysis-oriented metadata framework that captures the information essential for data reuse. It provides a streamlined submission system that enables the rapid deposition of standardized metabolomics metadata together with experimental data.</li>
     
@@ -339,6 +348,8 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     
       <li data-ask-tool data-slug="ms-net" data-names="MS-Net|ms-net|MSNet|MS-Net" hidden><a href="/metabolomics-navigator-alpha/tools/ms-net/">MS-Net</a> — MS-Net combines annotation levels from both mass spectral libraries and in silico tools such as MS-Finder or Sirius-CSI to build a comprehensive candidate chemical space. Then, MS-Net prioritizes annotation using the molecular network and Tanimoto-based similarity with optional biosource reranking. Additionnaly it can combine positive and negative acquisition modes and add metadata to all annotated features, such as chemical ontology or database identifiers.</li>
     
+      <li data-ask-tool data-slug="ms2decide" data-names="MS2DECIDE|ms2decide" hidden><a href="/metabolomics-navigator-alpha/tools/ms2decide/">MS2DECIDE</a> — Combine GNPS, ISDB-LOTUS and SIRIUS annotations into scores for natural-product feature prioritization.</li>
+    
       <li data-ask-tool data-slug="ms2deepscore" data-names="MS2DeepScore|ms2deepscore" hidden><a href="/metabolomics-navigator-alpha/tools/ms2deepscore/">MS2DeepScore</a> — Estimate molecular structural similarity from pairs of tandem mass spectra.</li>
     
       <li data-ask-tool data-slug="ms2lda" data-names="MS2LDA|ms2lda" hidden><a href="/metabolomics-navigator-alpha/tools/ms2lda/">MS2LDA</a> — Find recurring patterns of fragments and neutral losses across tandem mass spectra.</li>
@@ -362,6 +373,8 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
       <li data-ask-tool data-slug="msnlib" data-names="MSnLib|msnlib" hidden><a href="/metabolomics-navigator-alpha/tools/msnlib/">MSnLib</a> — Open multistage fragmentation reference spectra and a reproducible library-generation workflow implemented with mzmine.</li>
     
       <li data-ask-tool data-slug="msnovelist" data-names="MSNovelist|msnovelist" hidden><a href="/metabolomics-navigator-alpha/tools/msnovelist/">MSNovelist</a> — A SIRIUS-integrated de novo structure-generation method that proposes molecular structures from a predicted molecular formula and CSI:FingerID fingerprint when database search is insufficient.</li>
+    
+      <li data-ask-tool data-slug="msquality" data-names="MsQuality|msquality" hidden><a href="/metabolomics-navigator-alpha/tools/msquality/">MsQuality</a> — Calculate standardized per-sample quality metrics from mass spectrometry data in R.</li>
     
       <li data-ask-tool data-slug="multistep-massql" data-names="Multi-step MassQL|multistep-massql" hidden><a href="/metabolomics-navigator-alpha/tools/multistep-massql/">Multi-step MassQL</a> — Apply a predefined sequence of MassQL queries to GNPS2 networking spectra to investigate bile acids and their isomers.</li>
     
@@ -391,6 +404,8 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     
       <li data-ask-tool data-slug="redu" data-names="Pan-ReDU|redu|ReDU|Reanalysis of Data User Interface" hidden><a href="/metabolomics-navigator-alpha/tools/redu/">Pan-ReDU</a> — A pan-repository metadata harmonization and search infrastructure for finding, contextualizing, downloading, and reanalyzing public metabolomics data across major repositories.</li>
     
+      <li data-ask-tool data-slug="paramounter" data-names="Paramounter|paramounter" hidden><a href="/metabolomics-navigator-alpha/tools/paramounter/">Paramounter</a> — Estimate LC-MS processing parameters from measured data for downstream feature extraction.</li>
+    
       <li data-ask-tool data-slug="patroon" data-names="patRoon|patroon" hidden><a href="/metabolomics-navigator-alpha/tools/patroon/">patRoon</a> — Assemble reproducible non-target screening workflows for environmental mass spectrometry in R.</li>
     
       <li data-ask-tool data-slug="peakbot" data-names="PeakBot|peakbot" hidden><a href="/metabolomics-navigator-alpha/tools/peakbot/">PeakBot</a> — Detect chromatographic peaks in profile-mode LC-HRMS data using machine learning.</li>
@@ -409,9 +424,13 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     
       <li data-ask-tool data-slug="pyimzml" data-names="pyimzML|pyimzml" hidden><a href="/metabolomics-navigator-alpha/tools/pyimzml/">pyimzML</a> — Python library for reading and writing imzML imaging mass-spectrometry data.</li>
     
+      <li data-ask-tool data-slug="qc4metabolomics" data-names="QC4Metabolomics|qc4metabolomics|MetabolomiQCsR" hidden><a href="/metabolomics-navigator-alpha/tools/qc4metabolomics/">QC4Metabolomics</a> — Monitor LC-MS data quality with a configurable processing service, database and dashboard.</li>
+    
       <li data-ask-tool data-slug="ramclustr" data-names="RAMClustR|ramclustr" hidden><a href="/metabolomics-navigator-alpha/tools/ramclustr/">RAMClustR</a> — Cluster related mass-spectrometry features and export compound-level spectra and abundances.</li>
     
       <li data-ask-tool data-slug="ramp-db" data-names="RaMP-DB|ramp-db" hidden><a href="/metabolomics-navigator-alpha/tools/ramp-db/">RaMP-DB</a> — Integrated metabolite, gene/protein, reaction, ontology and pathway resource for metabolomics and multi-omics pathway analysis.</li>
+    
+      <li data-ask-tool data-slug="rawhummus" data-names="RawHummus|rawhummus" hidden><a href="/metabolomics-navigator-alpha/tools/rawhummus/">RawHummus</a> — Inspect LC-MS instrument logs and raw QC measurements through an R Shiny interface.</li>
     
       <li data-ask-tool data-slug="reactome" data-names="Reactome|reactome" hidden><a href="/metabolomics-navigator-alpha/tools/reactome/">Reactome</a> — Explore curated metabolic and signaling reactions with literature-linked pathway context.</li>
     
@@ -420,6 +439,8 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
       <li data-ask-tool data-slug="rmsi" data-names="rMSI|rmsi" hidden><a href="/metabolomics-navigator-alpha/tools/rmsi/">rMSI</a> — Open-source R package and GUI for memory-efficient handling, exploration and visualization of mass spectrometry imaging datasets.</li>
     
       <li data-ask-tool data-slug="rmsiproc" data-names="rMSIproc|rmsiproc" hidden><a href="/metabolomics-navigator-alpha/tools/rmsiproc/">rMSIproc</a> — Open-source R/C++ package for large-scale MSI preprocessing, including smoothing, alignment, recalibration, normalization, peak picking and binning.</li>
+    
+      <li data-ask-tool data-slug="roasmi" data-names="ROASMI|roasmi" hidden><a href="/metabolomics-navigator-alpha/tools/roasmi/">ROASMI</a> — Predict relative LC retention behavior and combine it with MS/MS scores to rank candidate structures.</li>
     
       <li data-ask-tool data-slug="ropls" data-names="ropls|ropls" hidden><a href="/metabolomics-navigator-alpha/tools/ropls/">ropls</a> — Fit and assess multivariate PCA, PLS and OPLS models for omics data in R.</li>
     
@@ -519,7 +540,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="bioactivity-based molecular networking a transferable natural-product discovery strategy that overlays quantitative bioassay results onto lc-ms feature abundance and ms/ms molecular networks to prioritize molecular families and individual features associated with biological activity. bioassay guided fractionation bioactivity guided fractionation connect bioactivity to metabolites antimicrobial activity and metabolomics phenotype associated metabolites prioritize active natural products correlate fractions with activity natural-product discovery phenotype association molecular-family discovery dereplication lc-ms untargeted metabolomics sample preparation chromatography data acquisition preprocessing and feature extraction molecular networking statistical analysis biological validation data and workflow sharing broadly applicable ms1 ms/ms data-dependent acquisition (dda) mzmine openms gnps bioactive molecular networks jupyter workflow cytoscape bioactive molecular networking for mapping the antimicrobial constituents of the baltic brown alga fucus vesiculosus applied bioactive molecular networking to fractionated fucus vesiculosus extracts, combining antimicrobial activity against mrsa with uplc-qtof-ms/ms feature abundances, mzmine preprocessing, gnps feature-based molecular networking, pearson correlation scoring and cytoscape visualization. bioactivity-based molecular networking-guided isolation of epicolidines a-c from the endophytic fungus epicoccum sp. 1-042 used bioactivity-based molecular networking-guided fractionation in an endophytic fungal natural-product study to prioritize and isolate antibacterial polycyclic tetramic acids."
       data-name="Bioactivity-Based Molecular Networking"
-      data-tools="gnps mzmine openms"
+      data-tools="cytoscape gnps mzmine openms"
       data-keywords="bioassay guided fractionation bioactivity guided fractionation connect bioactivity to metabolites antimicrobial activity and metabolomics phenotype associated metabolites prioritize active natural products correlate fractions with activity"
       data-objectives="natural_product_discovery phenotype_association molecular_family_discovery dereplication"
       data-year="2018">
@@ -565,7 +586,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
         
           <li><span>2024 · Bioactivity-Based Molecular Networking-Guided Isolation of Epicolidines A-C from the Endophytic Fungus Epicoccum sp. 1-042</span><a href="https://doi.org/10.1021/acs.jnatprod.4c00214">citation ↗</a></li>
         
-          <li><span>2020 · Bioactive Molecular Networking for Mapping the Antimicrobial Constituents of the Baltic Brown Alga Fucus vesiculosus</span><a href="https://doi.org/10.3390/md18060311">citation ↗</a></li>
+          <li><span>2020 · Bioactive Molecular Networking for Mapping the Antimicrobial Constituents of the Baltic Brown Alga Fucus vesiculosus<small class="ask-implementation-tools">Implementation tools: <a href="/metabolomics-navigator-alpha/tools/mzmine/">MZmine</a> · <a href="/metabolomics-navigator-alpha/tools/gnps/">GNPS</a> · <a href="/metabolomics-navigator-alpha/tools/cytoscape/">Cytoscape</a></small></span><a href="https://doi.org/10.3390/md18060311">citation ↗</a></li>
         
         </ul>
       </div>
@@ -580,7 +601,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="chemical proportionality for transformation prioritization combine molecular-network edges with abundance changes across ordered samples to prioritize possible chemical transformations. chemical proportionality prioritize biotransformations ordered abundance changes drug metabolite transformation time resolved molecular network biotransformation analysis lc-ms molecular networking metadata analysis statistical analysis chemical proportionality (chemprop) a functional metabolomics framework to track microbiome drug metabolism chemprop2 extends scoring to time-series correlations with a decoy-based empirical fdr procedure. demonstrated with a synthetic gut community and drugs; microbial association does not establish a producing organism."
       data-name="Chemical proportionality for transformation prioritization"
-      data-tools="chemprop"
+      data-tools="chemprop gnps-feature-based-molecular-networking"
       data-keywords="chemical proportionality prioritize biotransformations ordered abundance changes drug metabolite transformation time resolved molecular network"
       data-objectives="biotransformation "
       data-year="2021">
@@ -622,7 +643,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
         <strong>Subsequent published implementations</strong>
         <ul>
         
-          <li><span>2026 · A Functional Metabolomics Framework to Track Microbiome Drug Metabolism</span><a href="https://doi.org/10.64898/2026.01.30.702925">citation ↗</a></li>
+          <li><span>2026 · A Functional Metabolomics Framework to Track Microbiome Drug Metabolism<small class="ask-implementation-tools">Implementation tools: <a href="/metabolomics-navigator-alpha/tools/chemprop/">Chemical Proportionality (ChemProp)</a> · <a href="/metabolomics-navigator-alpha/tools/gnps-feature-based-molecular-networking/">GNPS2 Feature-Based Molecular Networking workflow</a></small></span><a href="https://doi.org/10.64898/2026.01.30.702925">citation ↗</a></li>
         
         </ul>
       </div>
@@ -1049,7 +1070,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     <article class="ask-strategy-card" hidden
       data-search="feature-based molecular networking (fbmn) a strategy that combines aligned lc-ms feature abundances with ms/ms spectral similarity to explore quantitative molecular families while retaining chromatographic feature identity. dia mse molecular networking dia intopenstream molecular-family discovery metabolite annotation molecular discovery natural-product discovery lc-ms untargeted metabolomics metabolite profiling lipidomics preprocessing and feature extraction quality control annotation or identification spectral search molecular networking data and workflow sharing broadly applicable ms1 ms/ms data-dependent acquisition (dda) data-independent acquisition (dia) gnps2 feature-based molecular networking workflow mzmine ms-dial xcms openms cytoscape integrative open workflow for confident annotation and molecular networking of metabolomics mse/dia data dia-intopenstream adapts fbmn to mse/dia data. waters2mzml supplies mzml; knime assembles custom structure databases; ms-dial assigns dia fragments to precursors and exports fbmn inputs for gnps and cytoscape. mzmine 3 is used for a parallel ms1 annotation branch, not dia fragment deconvolution in this study. reliable precursor-fragment assignment is required; custom mass matches and network neighbors are not confirmed structures. the demonstrated conversion uses windows and waters data; other vendor compatibility is not established here."
       data-name="Feature-Based Molecular Networking (FBMN)"
-      data-tools="cytoscape gnps-feature-based-molecular-networking ms-dial mzmine openms xcms"
+      data-tools="cytoscape gnps gnps-feature-based-molecular-networking ms-dial mzmine openms xcms"
       data-keywords="DIA MSE molecular networking DIA IntOpenStream"
       data-objectives="molecular_family_discovery metabolite_annotation molecular_discovery natural_product_discovery"
       data-year="2020">
@@ -1093,7 +1114,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
         <strong>Subsequent published implementations</strong>
         <ul>
         
-          <li><span>2024 · Integrative open workflow for confident annotation and molecular networking of metabolomics MSE/DIA data</span><a href="https://doi.org/10.1093/bib/bbae013">citation ↗</a></li>
+          <li><span>2024 · Integrative open workflow for confident annotation and molecular networking of metabolomics MSE/DIA data<small class="ask-implementation-tools">Implementation tools: <a href="/metabolomics-navigator-alpha/tools/ms-dial/">MS-DIAL</a> · <a href="/metabolomics-navigator-alpha/tools/mzmine/">MZmine</a> · <a href="/metabolomics-navigator-alpha/tools/gnps/">GNPS</a> · <a href="/metabolomics-navigator-alpha/tools/cytoscape/">Cytoscape</a></small></span><a href="https://doi.org/10.1093/bib/bbae013">citation ↗</a></li>
         
         </ul>
       </div>
@@ -1622,9 +1643,9 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     </article>
   
     <article class="ask-strategy-card" hidden
-      data-search="ms2decide tandem mass spectrum to decision (ms2decide) leverages decision theory and expert knowledge to aggregate the outputs of three widely used annotation tools (gnps, sirius, and isdb-lotus) and compute a recommendation for targeting natural products with regard to their potential novelty. natural-product discovery lc-ms untargeted metabolomics annotation or identification spectral search gnps sirius isdb-lotus"
+      data-search="ms2decide tandem mass spectrum to decision (ms2decide) leverages decision theory and expert knowledge to aggregate the outputs of three widely used annotation tools (gnps, sirius, and isdb-lotus) and compute a recommendation for targeting natural products with regard to their potential novelty. natural-product discovery lc-ms untargeted metabolomics annotation or identification spectral search ms2decide gnps sirius isdb-lotus"
       data-name="MS2DECIDE"
-      data-tools="gnps sirius"
+      data-tools="gnps ms2decide sirius"
       data-keywords=""
       data-objectives="natural_product_discovery "
       data-year="2025">
@@ -1654,7 +1675,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
         
           <li><span>Collect complementary annotations</span><small>Published resources: <a href="/metabolomics-navigator-alpha/tools/gnps/">GNPS</a> (<a href="/metabolomics-navigator-alpha/education/?tool=gnps">Find learning resources</a>) · <a href="/metabolomics-navigator-alpha/tools/sirius/">SIRIUS</a> (<a href="/metabolomics-navigator-alpha/education/?tool=sirius">Find learning resources</a>)</small><small>Explore alternatives: <a href="/metabolomics-navigator-alpha/tools/?function=annotation_identification">Metabolite annotation and identification</a> · <a href="/metabolomics-navigator-alpha/tools/?function=molecular_networking">Molecular networking and chemical similarity</a></small></li>
         
-          <li><span>Combine evidence and prioritize</span></li>
+          <li><span>Combine evidence and prioritize</span><small>Published resources: <a href="/metabolomics-navigator-alpha/tools/ms2decide/">MS2DECIDE</a> (<a href="/metabolomics-navigator-alpha/education/?tool=ms2decide">Find learning resources</a>)</small><small>Explore alternatives: <a href="/metabolomics-navigator-alpha/tools/?function=annotation_identification">Metabolite annotation and identification</a></small></li>
         
           <li><span>Review candidates</span></li>
         
@@ -1979,9 +2000,9 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
     </article>
   
     <article class="ask-strategy-card" hidden
-      data-search="retention-order-assisted joint molecular annotation combine relative lc elution order with ms/ms candidate scores to annotate multiple features jointly. retention order elution order joint annotation lc-ms2struct retention time candidate ranking metabolite annotation lc-ms untargeted metabolomics chromatography annotation or identification statistical analysis iokr retention-order prediction implementation joint structural annotation of small molecules using liquid chromatography retention order and tandem mass spectrometry data lc-ms2struct learns structured integration of spectral scores and retention order, including stereochemistry-aware fingerprints. this replaces the original integration model rather than reproducing its algorithm."
+      data-search="retention-order-assisted joint molecular annotation combine relative lc elution order with ms/ms candidate scores to annotate multiple features jointly. retention order elution order joint annotation lc-ms2struct retention time candidate ranking metabolite annotation lc-ms untargeted metabolomics chromatography annotation or identification statistical analysis iokr retention-order prediction implementation joint structural annotation of small molecules using liquid chromatography retention order and tandem mass spectrometry data lc-ms2struct learns structured integration of spectral scores and retention order, including stereochemistry-aware fingerprints. this replaces the original integration model rather than reproducing its algorithm. roasmi: accelerating small molecule identification by repurposing retention data uses learned molecular representations and a neural ranking model to predict retention order within a chromatographic application domain, then integrates this evidence with ms/ms scores. this is a later implementation, not the original 2018 workflow."
       data-name="Retention-order-assisted joint molecular annotation"
-      data-tools=""
+      data-tools="lc-ms2struct roasmi"
       data-keywords="retention order elution order joint annotation LC-MS2Struct retention time candidate ranking"
       data-objectives="metabolite_annotation "
       data-year="2018">
@@ -2025,7 +2046,9 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
         <strong>Subsequent published implementations</strong>
         <ul>
         
-          <li><span>2022 · Joint structural annotation of small molecules using liquid chromatography retention order and tandem mass spectrometry data</span><a href="https://doi.org/10.1038/s42256-022-00577-2">citation ↗</a></li>
+          <li><span>2025 · ROASMI: accelerating small molecule identification by repurposing retention data<small class="ask-implementation-tools">Implementation tools: <a href="/metabolomics-navigator-alpha/tools/roasmi/">ROASMI</a></small></span><a href="https://doi.org/10.1186/s13321-025-00968-8">citation ↗</a></li>
+        
+          <li><span>2022 · Joint structural annotation of small molecules using liquid chromatography retention order and tandem mass spectrometry data<small class="ask-implementation-tools">Implementation tools: <a href="/metabolomics-navigator-alpha/tools/lc-ms2struct/">LC-MS2Struct</a></small></span><a href="https://doi.org/10.1038/s42256-022-00577-2">citation ↗</a></li>
         
         </ul>
       </div>
@@ -2182,7 +2205,7 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
         <strong>Subsequent published implementations</strong>
         <ul>
         
-          <li><span>2017 · Unsupervised Discovery and Comparison of Structural Families Across Multiple Samples in Untargeted Metabolomics</span><a href="https://doi.org/10.1021/acs.analchem.7b01391">citation ↗</a></li>
+          <li><span>2017 · Unsupervised Discovery and Comparison of Structural Families Across Multiple Samples in Untargeted Metabolomics<small class="ask-implementation-tools">Implementation tools: <a href="/metabolomics-navigator-alpha/tools/ms2lda/">MS2LDA</a></small></span><a href="https://doi.org/10.1021/acs.analchem.7b01391">citation ↗</a></li>
         
         </ul>
       </div>
@@ -2591,8 +2614,8 @@ Pathway overrepresentation analysis to identify significantly enriched m...</li>
         <a href="/metabolomics-navigator-alpha/catalogue-data.json">Complete catalogue (JSON)</a>
       </div>
     </div>
-    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 02 October 2026</span></div>
+    <div class="section-wrap footer-bottom"><span>CC BY 4.0</span><span>Generated 07 October 2026</span></div>
   </footer>
-  <script src="/metabolomics-navigator-alpha/assets/site.js?v=762ecce9c8f1" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=762ecce9c8f1" defer></script>
+  <script src="/metabolomics-navigator-alpha/assets/site.js?v=be0e62fd74f3" defer></script><script src="/metabolomics-navigator-alpha/assets/ask.js?v=be0e62fd74f3" defer></script>
 </body>
 </html>

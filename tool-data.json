@@ -1960,6 +1960,97 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "dbnorm",
+    "name": "dbnorm",
+    "summary": "Compare statistical batch-correction models and inspect technical variation in metabolomics matrices.",
+    "description": "dbnorm provides R functions for batch adjustment and diagnostic visualization. It includes empirical-Bayes and two-stage approaches and compares corrected data structure. Model selection does not establish that biological differences were preserved.",
+    "links": {
+      "primary": "https://github.com/NBDZ/dbnorm",
+      "repository": "https://github.com/NBDZ/dbnorm",
+      "documentation": "https://github.com/NBDZ/dbnorm"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "r_package"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "quality_control",
+      "capabilities": [
+        "batch_effect_correction"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "GPL-3.0",
+      "notes": "License checked against official package metadata or repository. Local setup requires the documented dependencies; no installation or hosted-service availability test was performed."
+    },
+    "data": {
+      "input_types": [
+        "feature_table",
+        "sample_metadata"
+      ],
+      "output_types": [
+        "feature_table",
+        "report"
+      ],
+      "other_input_formats": [
+        "CSV sample-by-feature matrix with batch labels"
+      ],
+      "other_output_formats": [
+        "Corrected CSV matrices and diagnostic PDF plots"
+      ]
+    },
+    "common_uses": [
+      "Inspect and compare batch-adjustment results."
+    ],
+    "scope": {
+      "designed_for": [
+        "Compare statistical batch-correction models and inspect technical variation in metabolomics matrices."
+      ],
+      "not_designed_for": [
+        "Confirming compound identity or replacing study design and scientific review."
+      ],
+      "requirements": [
+        "Processed metabolomics data, batch labels and compatible R dependencies.",
+        "CSV matrix with samples in rows, features in columns and batch labels; follow documented normalization/log2 preparation"
+      ],
+      "considerations": [
+        "Confounding between batch and biological groups requires assessment before correction.",
+        "The documented setup includes archived R dependencies."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1038/s41598-021-84824-3",
+        "type": "primary",
+        "citation": "DBnorm as an R package for the comparison and selection of appropriate statistical methods for batch effect correction in metabolomic studies. Scientific Reports (2021)."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Enveda intake candidate verified against official documentation, source/package metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review only; no software execution or independent benchmark."
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "drug-readout",
     "name": "GNPS2 Drug Readout",
     "summary": "Annotate GNPS2 feature-based networking results with drug and drug-metabolite context for exposure-oriented interpretation.",
@@ -5062,6 +5153,119 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "lc-ms2struct",
+    "name": "LC-MS2Struct",
+    "summary": "Jointly rank molecular candidates using LC retention order and precomputed MS/MS scores.",
+    "description": "LC-MS2Struct uses a structured support vector machine to combine relative elution order with spectral candidate scores across a set of features. It returns candidate rankings after preprocessing and candidate generation; it does not generate an end-to-end workflow from raw files.",
+    "links": {
+      "primary": "https://github.com/aalto-ics-kepaco/msms_rt_ssvm",
+      "repository": "https://github.com/aalto-ics-kepaco/msms_rt_ssvm",
+      "documentation": "https://github.com/aalto-ics-kepaco/lcms2struct_exp"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "python_package"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "annotation_identification",
+      "capabilities": [
+        "structure_elucidation"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "MIT",
+      "notes": "MIT license verified in the official repository. Software was not installed or execution-tested; dependencies and external services have their own requirements."
+    },
+    "data": {
+      "input_types": [
+        "compound_list",
+        "feature_table"
+      ],
+      "output_types": [
+        "compound_list"
+      ],
+      "other_input_formats": [
+        "Candidate structures, MS/MS scores and retention times via the Python interface"
+      ],
+      "other_output_formats": [
+        "Per-feature molecular candidate scores and rankings"
+      ]
+    },
+    "common_uses": [
+      "Re-rank ambiguous candidates using the retention order shared across an LC-MS/MS run."
+    ],
+    "scope": {
+      "designed_for": [
+        "Jointly rank molecular candidates using LC retention order and precomputed MS/MS scores."
+      ],
+      "not_designed_for": [
+        "Replacing experimental confirmation of compound identity.",
+        "Raw-data feature detection or chromatographic alignment."
+      ],
+      "requirements": [
+        "Linux and the documented Conda environment; the README does not support other operating systems.",
+        "The separate msmsrt_scorer dependency, suitable model/training data, per-feature candidate structures and MS/MS scores, and measured retention times.",
+        "Prepare inputs using the linked manuscript experiment scripts; this is a research Python implementation."
+      ],
+      "considerations": [
+        "The published evaluation uses reversed-phase LC data; evaluate transfer to your chromatographic conditions.",
+        "Candidates absent from the input sets cannot be recovered by re-ranking.",
+        "Joint scores depend on candidate and model quality; a high rank does not establish stereochemistry."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1038/s42256-022-00577-2",
+        "type": "primary",
+        "citation": "Joint structural annotation of small molecules using liquid chromatography retention order and tandem mass spectrometry data. Nature Machine Intelligence (2022)."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Enveda intake reviewed against the primary publication, official repository documentation and license on 2026-10-05. Editorial review only; no execution or independent benchmark."
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-05"
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "last_verified": "2026-10-05",
+      "last_editorial_review": "2026-10-05"
+    },
+    "aliases": [
+      "LC-MS²Struct"
+    ],
+    "related_tools": [
+      {
+        "slug": "cfm-id",
+        "relationship": "integration",
+        "note": "The primary paper demonstrates integration of candidate scores from CFM-ID. This is not a claim of a one-click connector."
+      },
+      {
+        "slug": "metfrag",
+        "relationship": "integration",
+        "note": "The primary paper demonstrates integration of candidate scores from MetFrag. This is not a claim of a one-click connector."
+      },
+      {
+        "slug": "sirius",
+        "relationship": "integration",
+        "note": "The primary paper demonstrates integration of candidate scores from SIRIUS. This is not a claim of a one-click connector."
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "lion-web",
     "name": "LION/web",
     "summary": "Web-based lipid ontology enrichment tool that connects lipid lists or rankings to chemical, biophysical, cellular and functional lipid properties.",
@@ -6207,6 +6411,97 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "maffin",
+    "name": "MAFFIN",
+    "summary": "Normalize metabolomics feature intensities using selected features and corrected signal responses.",
+    "description": "MAFFIN combines feature-quality selection, signal-intensity correction and maximal-density fold-change normalization. Its R implementation returns normalized intensities, normalization factors and variation summaries.",
+    "links": {
+      "primary": "https://github.com/HuanLab/MAFFIN",
+      "repository": "https://github.com/HuanLab/MAFFIN",
+      "documentation": "https://github.com/HuanLab/MAFFIN"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "r_package"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "quality_control",
+      "capabilities": [
+        "feature_selection"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "MIT",
+      "notes": "License checked against official package metadata or repository. Local setup requires the documented dependencies; no installation or hosted-service availability test was performed."
+    },
+    "data": {
+      "input_types": [
+        "feature_table",
+        "sample_metadata"
+      ],
+      "output_types": [
+        "feature_table",
+        "report"
+      ],
+      "other_input_formats": [
+        "CSV/data frame with features, samples and QC-group annotations"
+      ],
+      "other_output_formats": [
+        "Normalized table, normalization factors and PRMAD summaries as an R list or CSV"
+      ]
+    },
+    "common_uses": [
+      "Normalize processed feature tables using the documented QC design."
+    ],
+    "scope": {
+      "designed_for": [
+        "Normalize metabolomics feature intensities using selected features and corrected signal responses."
+      ],
+      "not_designed_for": [
+        "Confirming compound identity or replacing study design and scientific review."
+      ],
+      "requirements": [
+        "An appropriately annotated feature table; serial QC loading amounts for the signal-correction component.",
+        "Feature-by-sample CSV/data frame with group annotations for blanks, QC and serial QC loading levels"
+      ],
+      "considerations": [
+        "Do not assume that missing serial-QC information can be reconstructed from ordinary study samples.",
+        "Normalization can change biological contrasts; evaluate its assumptions for the study."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1093/bioinformatics/btac355",
+        "type": "primary",
+        "citation": "MAFFIN: metabolomics sample normalization using maximal density fold change with high-quality metabolic features and corrected signal intensities. Bioinformatics (2022)."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Enveda intake candidate verified against official documentation, source/package metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review only; no software execution or independent benchmark."
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "massbank",
     "name": "MassBank",
     "summary": "Find and download open reference mass spectra with compound and acquisition metadata.",
@@ -6968,6 +7263,97 @@
         "relationship": "complementary"
       }
     ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "matrixqcvis",
+    "name": "MatrixQCvis",
+    "summary": "Explore sample and feature quality in metabolomics matrices through interactive visualizations.",
+    "description": "MatrixQCvis is a Bioconductor/Shiny interface for inspecting quantitative matrices. It visualizes distributions, sample relationships, outliers and batch structure, using SummarizedExperiment as its input container.",
+    "links": {
+      "primary": "https://bioconductor.org/packages/MatrixQCvis/",
+      "repository": "https://github.com/tnaake/MatrixQCvis",
+      "documentation": "https://bioconductor.org/packages/MatrixQCvis/"
+    },
+    "platforms": [
+      "platform_independent"
+    ],
+    "interfaces": [
+      "r_package",
+      "web_app"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "quality_control",
+      "capabilities": [
+        "interactive_dashboard"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "GPL-3.0",
+      "notes": "License checked against official package metadata or repository. Local setup requires the documented dependencies; no installation or hosted-service availability test was performed."
+    },
+    "data": {
+      "input_types": [
+        "feature_table",
+        "sample_metadata"
+      ],
+      "output_types": [
+        "report"
+      ],
+      "other_input_formats": [
+        "SummarizedExperiment object supplied directly or as an RDS file"
+      ],
+      "other_output_formats": [
+        "Interactive per-sample and per-feature quality visualizations"
+      ]
+    },
+    "common_uses": [
+      "Inspect processed MS-metabolomics matrices before interpretation."
+    ],
+    "scope": {
+      "designed_for": [
+        "Explore sample and feature quality in metabolomics matrices through interactive visualizations."
+      ],
+      "not_designed_for": [
+        "Confirming compound identity or replacing study design and scientific review."
+      ],
+      "requirements": [
+        "A feature-by-sample matrix and metadata prepared as a SummarizedExperiment object."
+      ],
+      "considerations": [
+        "Visual separation alone cannot determine whether a batch difference is technical or biological.",
+        "Use the compatible Bioconductor release rather than assuming the development branch is production-ready."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1093/bioinformatics/btab748",
+        "type": "primary",
+        "citation": "MatrixQCvis: shiny-based interactive data quality exploration for omics data. Bioinformatics (2021).",
+        "note": "Published online in 2021; assigned to the 2022 journal issue. Replaces the intake preprint citation."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Enveda intake candidate verified against official documentation, source/package metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review only; no software execution or independent benchmark."
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    }
   },
   {
     "$schema": "../../schemas/tool.schema.json",
@@ -10305,6 +10691,121 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "ms2decide",
+    "name": "MS2DECIDE",
+    "summary": "Combine GNPS, ISDB-LOTUS and SIRIUS annotations into scores for natural-product feature prioritization.",
+    "description": "MS2DECIDE is a Python library implementing an expert-informed decision model. Its K-estimation workflow aggregates complementary annotation results and exports scored features for follow-up investigation.",
+    "links": {
+      "primary": "https://github.com/MejriY/MS2DECIDE",
+      "repository": "https://github.com/MejriY/MS2DECIDE",
+      "documentation": "https://github.com/MejriY/MS2DECIDE"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "python_package"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "annotation_identification",
+      "capabilities": [
+        "identification_confidence"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "MIT",
+      "notes": "MIT license verified in the official repository. Software was not installed or execution-tested; dependencies and external services have their own requirements."
+    },
+    "data": {
+      "input_types": [
+        "feature_table",
+        "spectra",
+        "compound_list"
+      ],
+      "output_types": [
+        "feature_table",
+        "statistical_results"
+      ],
+      "input_formats": [
+        "csv_tsv",
+        "mgf"
+      ],
+      "output_formats": [
+        "csv_tsv"
+      ],
+      "other_output_formats": [
+        "Filtered dataframe and TSV file with K-values"
+      ]
+    },
+    "common_uses": [
+      "Prioritize natural-product features using multiple annotation sources and an explicit decision model."
+    ],
+    "scope": {
+      "designed_for": [
+        "Combine GNPS, ISDB-LOTUS and SIRIUS annotations into scores for natural-product feature prioritization."
+      ],
+      "not_designed_for": [
+        "Replacing experimental confirmation of compound identity.",
+        "Raw-data feature detection or chromatographic alignment."
+      ],
+      "requirements": [
+        "A quantitative feature table, corresponding MGF spectra and compatible SIRIUS identification results with matching feature identifiers.",
+        "A supported Python environment, GNPS account and network access for the documented workflow.",
+        "The documentation describes SIRIUS 6 and MZmine FBMN-compatible exports; check current format compatibility before use."
+      ],
+      "considerations": [
+        "K-values reflect the decision model and available annotations, not probabilities of correct identification or proof of chemical novelty.",
+        "Results depend on reference coverage and agreement between annotation sources. Inspect spectra and investigate prioritized features experimentally."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1002/cmtd.202400088",
+        "type": "primary",
+        "citation": "MS2DECIDE: Aggregating Multiannotated Tandem Mass Spectrometry Data with Decision Theory Enhances Natural Products Prioritization. Chemistry–Methods (2025)."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Enveda intake reviewed against the primary publication, official repository documentation and license on 2026-10-05. Editorial review only; no execution or independent benchmark."
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-05"
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "last_verified": "2026-10-05",
+      "last_editorial_review": "2026-10-05"
+    },
+    "related_tools": [
+      {
+        "slug": "gnps",
+        "relationship": "integration",
+        "note": "The documented workflow obtains GNPS annotation evidence."
+      },
+      {
+        "slug": "sirius",
+        "relationship": "integration",
+        "note": "Consumes compatible SIRIUS annotation results."
+      },
+      {
+        "slug": "mzmine",
+        "relationship": "integration",
+        "note": "The README describes compatible MZmine FBMN-format exports, not an embedded plugin."
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "ms2deepscore",
     "name": "MS2DeepScore",
     "summary": "Estimate molecular structural similarity from pairs of tandem mass spectra.",
@@ -11601,6 +12102,101 @@
         "SIRIUS generated structure-candidate tables"
       ]
     }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "msquality",
+    "name": "MsQuality",
+    "summary": "Calculate standardized per-sample quality metrics from mass spectrometry data in R.",
+    "description": "MsQuality uses the mzQC controlled vocabulary to calculate low-level quality metrics from Spectra or MsExperiment objects. It supports tracking data quality across runs but is not itself a signal-drift correction algorithm.",
+    "links": {
+      "primary": "https://bioconductor.org/packages/MsQuality/",
+      "repository": "https://github.com/tnaake/MsQuality",
+      "documentation": "https://bioconductor.org/packages/MsQuality/"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "r_package"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "quality_control",
+      "capabilities": [
+        "spectral_data_io"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "GPL-3.0",
+      "notes": "License checked against official package metadata or repository. Local setup requires the documented dependencies; no installation or hosted-service availability test was performed."
+    },
+    "data": {
+      "input_types": [
+        "spectra"
+      ],
+      "output_types": [
+        "report"
+      ],
+      "other_input_formats": [
+        "Spectra or MsExperiment objects"
+      ],
+      "other_output_formats": [
+        "Per-sample quality-metric results from the R interface"
+      ]
+    },
+    "common_uses": [
+      "Calculate comparable low-level QC summaries for MS-metabolomics runs."
+    ],
+    "scope": {
+      "designed_for": [
+        "Calculate standardized per-sample quality metrics from mass spectrometry data in R."
+      ],
+      "not_designed_for": [
+        "Confirming compound identity or replacing study design and scientific review."
+      ],
+      "requirements": [
+        "A compatible R/Bioconductor installation and populated spectral objects.",
+        "Spectra or MsExperiment objects with retention time, m/z and intensity information"
+      ],
+      "considerations": [
+        "Available metrics depend on the information stored in each input; low-level metrics do not replace experimental QC design."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1093/bioinformatics/btad618",
+        "type": "primary",
+        "citation": "MsQuality: an interoperable open-source package for the calculation of standardized quality metrics of mass spectrometry data. Bioinformatics (2023)."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Enveda intake candidate verified against official documentation, source/package metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review only; no software execution or independent benchmark."
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    },
+    "related_tools": [
+      {
+        "slug": "spectra",
+        "relationship": "integration",
+        "note": "Metrics can be computed from Spectra objects."
+      }
+    ]
   },
   {
     "$schema": "../../schemas/tool.schema.json",
@@ -13025,6 +13621,106 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "paramounter",
+    "name": "Paramounter",
+    "summary": "Estimate LC-MS processing parameters from measured data for downstream feature extraction.",
+    "description": "Paramounter supplies R scripts for parameter estimation before feature extraction. The checked script reads mzXML through MSnbase and requires XCMS. Outputs guide processing settings; they are not validated metabolite identifications.",
+    "links": {
+      "primary": "https://github.com/HuanLab/Paramounter",
+      "repository": "https://github.com/HuanLab/Paramounter",
+      "documentation": "https://github.com/HuanLab/Paramounter"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "command_line"
+    ],
+    "resource_types": [
+      "workflow_pipeline"
+    ],
+    "functions": {
+      "primary": "preprocessing",
+      "capabilities": [
+        "peak_detection"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "MIT",
+      "notes": "License checked against official package metadata or repository. Local setup requires the documented dependencies; no installation or hosted-service availability test was performed."
+    },
+    "data": {
+      "input_types": [
+        "spectra"
+      ],
+      "output_types": [
+        "report"
+      ],
+      "other_input_formats": [
+        "mzXML files read by the supplied R scripts"
+      ],
+      "other_output_formats": [
+        "Parameter estimates and diagnostic plots for configuring downstream processing"
+      ]
+    },
+    "common_uses": [
+      "Estimate mass-tolerance and peak-processing settings."
+    ],
+    "scope": {
+      "designed_for": [
+        "Estimate LC-MS processing parameters from measured data for downstream feature extraction."
+      ],
+      "not_designed_for": [
+        "Confirming compound identity or replacing study design and scientific review."
+      ],
+      "requirements": [
+        "R with XCMS, MSnbase and the other script dependencies; edit example file paths and review the supplied manual."
+      ],
+      "considerations": [
+        "The repository warns that permissive optimized peak thresholds may increase false positives or cause crashes.",
+        "The available implementation is a script workflow, not a verified installable R package."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.1c04758",
+        "type": "primary",
+        "citation": "Paramounter: Direct Measurement of Universal Parameters To Process Metabolomics Data in a “White Box”. Analytical Chemistry (2022)."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Enveda intake candidate verified against official documentation, source/package metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review only; no software execution or independent benchmark."
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    },
+    "related_tools": [
+      {
+        "slug": "xcms",
+        "relationship": "integration",
+        "note": "The checked scripts use XCMS during parameter estimation."
+      },
+      {
+        "slug": "msnbase",
+        "relationship": "integration",
+        "note": "The input script uses readMSData from MSnbase."
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "patroon",
     "name": "patRoon",
     "summary": "Assemble reproducible non-target screening workflows for environmental mass spectrometry in R.",
@@ -14031,6 +14727,99 @@
   },
   {
     "$schema": "../../schemas/tool.schema.json",
+    "slug": "qc4metabolomics",
+    "name": "QC4Metabolomics",
+    "summary": "Monitor LC-MS data quality with a configurable processing service, database and dashboard.",
+    "description": "QC4Metabolomics provides a locally deployed QC system with background processing, a MariaDB database and a Shiny interface. Its MetabolomiQCsR component supplies QC functions. Optional conversion services prepare mzML inputs.",
+    "links": {
+      "primary": "https://stanstrup.github.io/QC4Metabolomics/",
+      "repository": "https://github.com/stanstrup/QC4Metabolomics",
+      "documentation": "https://stanstrup.github.io/QC4Metabolomics/"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "web_app"
+    ],
+    "resource_types": [
+      "workflow_pipeline"
+    ],
+    "functions": {
+      "primary": "quality_control",
+      "capabilities": [
+        "container_support",
+        "interactive_dashboard"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "GPL-3.0-or-later",
+      "notes": "License checked against official package metadata or repository. Local setup requires the documented dependencies; no installation or hosted-service availability test was performed."
+    },
+    "data": {
+      "input_types": [
+        "spectra",
+        "sample_metadata"
+      ],
+      "output_types": [
+        "report"
+      ],
+      "other_input_formats": [
+        "mzML files plus configured file-name metadata and QC settings"
+      ],
+      "other_output_formats": [
+        "QC database records and dashboard views"
+      ]
+    },
+    "common_uses": [
+      "Track quality measurements across acquisitions."
+    ],
+    "scope": {
+      "designed_for": [
+        "Monitor LC-MS data quality with a configurable processing service, database and dashboard."
+      ],
+      "not_designed_for": [
+        "Confirming compound identity or replacing study design and scientific review."
+      ],
+      "requirements": [
+        "Docker/Compose, configured data volumes, database and background workers."
+      ],
+      "considerations": [
+        "This is infrastructure to deploy and configure, not simply a public upload website.",
+        "File naming and metadata parsing must match the local acquisition setup."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1021/acs.analchem.4c07078",
+        "type": "primary",
+        "citation": "QC4Metabolomics: Real-Time and Retrospective Quality Control of Metabolomics Data. Analytical Chemistry (2025)."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Enveda intake candidate verified against official documentation, source/package metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review only; no software execution or independent benchmark."
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    },
+    "aliases": [
+      "MetabolomiQCsR"
+    ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
     "slug": "ramclustr",
     "name": "RAMClustR",
     "summary": "Cluster related mass-spectrometry features and export compound-level spectra and abundances.",
@@ -14253,6 +15042,96 @@
         "note": "Complementary pathway context; identifier coverage and analysis methods differ."
       }
     ]
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "rawhummus",
+    "name": "RawHummus",
+    "summary": "Inspect LC-MS instrument logs and raw QC measurements through an R Shiny interface.",
+    "description": "RawHummus summarizes chromatographic and MS-level quality measurements to help inspect system performance. It produces interactive QC reports and supports local execution; detecting a problem does not automatically correct the underlying data.",
+    "links": {
+      "primary": "https://github.com/YonghuiDong/RawHummus",
+      "repository": "https://github.com/YonghuiDong/RawHummus",
+      "documentation": "https://github.com/YonghuiDong/RawHummus"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "r_package",
+      "web_app"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "quality_control",
+      "capabilities": [
+        "interactive_dashboard"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "GPL-3.0",
+      "notes": "License checked against official package metadata or repository. Local setup requires the documented dependencies; no installation or hosted-service availability test was performed."
+    },
+    "data": {
+      "input_types": [
+        "spectra"
+      ],
+      "output_types": [
+        "report"
+      ],
+      "other_input_formats": [
+        "Supported raw QC measurements and instrument log files"
+      ],
+      "other_output_formats": [
+        "Interactive HTML quality reports"
+      ]
+    },
+    "common_uses": [
+      "Inspect run-to-run variation before downstream interpretation."
+    ],
+    "scope": {
+      "designed_for": [
+        "Inspect LC-MS instrument logs and raw QC measurements through an R Shiny interface."
+      ],
+      "not_designed_for": [
+        "Confirming compound identity or replacing study design and scientific review."
+      ],
+      "requirements": [
+        "Representative QC measurements and an R/Shiny environment for local use.",
+        "Supported raw QC measurements and instrument log files; consult the app instructions for instrument-specific import"
+      ],
+      "considerations": [
+        "The documented free hosted deployment has memory limits; local execution is recommended for larger sets.",
+        "Thresholds are diagnostic aids, not universal acceptance criteria."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1093/bioinformatics/btac040",
+        "type": "primary",
+        "citation": "RawHummus: an R Shiny app for automated raw data quality control in metabolomics. Bioinformatics (2022)."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Enveda intake candidate verified against official documentation, source/package metadata and primary-publication DOI/title/year on 2026-10-02. Editorial review only; no software execution or independent benchmark."
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-02"
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "last_verified": "2026-10-02",
+      "last_editorial_review": "2026-10-02"
+    }
   },
   {
     "$schema": "../../schemas/tool.schema.json",
@@ -14809,6 +15688,109 @@
         "Keep preprocessing parameters with output matrices for reproducibility."
       ]
     }
+  },
+  {
+    "$schema": "../../schemas/tool.schema.json",
+    "slug": "roasmi",
+    "name": "ROASMI",
+    "summary": "Predict relative LC retention behavior and combine it with MS/MS scores to rank candidate structures.",
+    "description": "ROASMI learns molecular representations and pairwise elution preferences using a neural ranking model. Its supplied scripts predict retention scores, optionally retrain models, and integrate retention evidence with MS/MS candidate scores.",
+    "links": {
+      "primary": "https://github.com/FangYuan717/ROASMI",
+      "repository": "https://github.com/FangYuan717/ROASMI",
+      "documentation": "https://github.com/FangYuan717/ROASMI"
+    },
+    "platforms": [
+      "lc_ms"
+    ],
+    "interfaces": [
+      "python_package",
+      "command_line"
+    ],
+    "resource_types": [
+      "programming_package"
+    ],
+    "functions": {
+      "primary": "annotation_identification",
+      "capabilities": [
+        "structure_elucidation"
+      ]
+    },
+    "access": {
+      "model": "open_source",
+      "license": "MIT",
+      "notes": "MIT license verified in the official repository. Software was not installed or execution-tested; dependencies and external services have their own requirements."
+    },
+    "data": {
+      "input_types": [
+        "compound_list",
+        "feature_table"
+      ],
+      "output_types": [
+        "compound_list"
+      ],
+      "input_formats": [
+        "csv_tsv"
+      ],
+      "other_output_formats": [
+        "Predicted retention scores and candidate annotation rankings"
+      ]
+    },
+    "common_uses": [
+      "Add chromatographic evidence to molecular candidate ranking.",
+      "Retrain a retention-order model with a suitable reference set."
+    ],
+    "scope": {
+      "designed_for": [
+        "Predict relative LC retention behavior and combine it with MS/MS scores to rank candidate structures."
+      ],
+      "not_designed_for": [
+        "Replacing experimental confirmation of compound identity.",
+        "Raw-data feature detection or chromatographic alignment."
+      ],
+      "requirements": [
+        "Python/Conda and the documented dependencies, model files and candidate structures.",
+        "Prepare input CSV files using the repository prediction and identification examples. Identification requires the expected retention and candidate-score information.",
+        "Select reference data and models compatible with the chromatographic mode and buffer pH."
+      ],
+      "considerations": [
+        "The supplied initial models target reversed-phase LC around pH 2.7; they are not universal retention models.",
+        "The repository supplies retraining examples, including HILIC. That does not establish general applicability of the initial RPLC models to HILIC.",
+        "CPU execution is documented; GPU acceleration is recommended for faster retraining, not required for all use.",
+        "Retention scores describe relative order, not necessarily calibrated absolute retention times."
+      ]
+    },
+    "publications": [
+      {
+        "doi": "10.1186/s13321-025-00968-8",
+        "type": "primary",
+        "citation": "ROASMI: accelerating small molecule identification by repurposing retention data. Journal of Cheminformatics (2025)."
+      }
+    ],
+    "provenance": {
+      "submitted_by": "curator",
+      "developer_verified": false,
+      "notes": "Enveda intake reviewed against the primary publication, official repository documentation and license on 2026-10-05. Editorial review only; no execution or independent benchmark."
+    },
+    "maintenance": {
+      "status": "unclear",
+      "last_checked": "2026-10-05"
+    },
+    "status": {
+      "entry": "published",
+      "review": "editorially_reviewed",
+      "created_at": "2026-10-05",
+      "updated_at": "2026-10-05",
+      "last_verified": "2026-10-05",
+      "last_editorial_review": "2026-10-05"
+    },
+    "related_tools": [
+      {
+        "slug": "lc-ms2struct",
+        "relationship": "alternative",
+        "note": "Both combine retention-order and spectral evidence; they use different models and are not interchangeable implementations."
+      }
+    ]
   },
   {
     "$schema": "../../schemas/tool.schema.json",
