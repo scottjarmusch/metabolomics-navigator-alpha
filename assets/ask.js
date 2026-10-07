@@ -61,12 +61,12 @@
     let eligible=cards;
     // Explicit tool requests must not turn incidental word overlap into a workflow claim.
     if (mentionedTools.length) eligible=eligible.filter(card => mentionedTools.every(tool => (card.dataset.tools || '').split(' ').includes(tool.dataset.slug)));
-    const nmrOnly=/\bnmr\b/i.test(value) && !/\b(?:ms|lc-ms|mass spectrometry)\b/i.test(value);
+    const nmrOnly=/\bnmr\b/i.test(value) && (!/\b(?:ms|lc-ms|mass spectrometry)\b/i.test(value) || /\b(?:not|rather than|instead of)\s+(?:mass spectrometry|(?:lc-)?ms)\b/i.test(value));
     if(nmrOnly) eligible=[];
     const bulkMeasurements = /\bbulk\b/i.test(value) && !/\b(?:spatial|imaging|maldi|histology|microscopy)\b/i.test(value);
     if (bulkMeasurements) eligible=eligible.filter(card => !(card.dataset.platforms || '').split(' ').includes('imaging_ms'));
     const flux=/\bflux(?:es)?\b/i.test(value);
-    const comparisonRequest = !mentionedTools.length && /\b(?:compar(?:e|ing|ison)|differences?|differential|changed|changes)\b/i.test(value) && /\b(?:metabolites?|metabolomics|levels?|abundances?|samples?|groups?|conditions?|treated|controls?)\b/i.test(value) && !/\b(?:spatial|imaging|maldi|histology|microscopy|biotransformations?|transformations?|proportionality|ordered|loess|network(?:ing)?|pathways?|flux|isotop(?:e|es|ologue)|retention|annotation|annotate|derivatization|fragments?|bioactivity|enrichment|double.bond|isomers?)\b/i.test(value);
+    const comparisonRequest = !mentionedTools.length && /\b(?:compar(?:e|ing|ison)|differences?|differ(?:s|ent|ing)?|distinguish|differential|changed?|changes|more abundant|less abundant)\b/i.test(value) && /\b(?:metabolites?|metabolomics|chemicals?|profiles?|levels?|abundan(?:ce|ces|t)|samples?|groups?|conditions?|treated|controls?)\b/i.test(value) && !/\b(?:spatial|imaging|maldi|histology|microscopy|biotransformations?|transformations?|proportionality|ordered|loess|network(?:ing)?|pathways?|flux|isotop(?:e|es|ologue)|retention|annotation|annotate|derivatization|fragments?|bioactivity|enrichment|double.bond|isomers?)\b/i.test(value);
     const generalOnly=tokens.length && tokens.every(t=>['new','compare','treated','untreated','cell','study','experiment','start','begin','research'].includes(t));
     const novice = generalOnly || /\b(?:beginner|can metabolomics help|where (?:do|should) we (?:start|begin)|before (?:i|we) collect|tell me which pathways changed)\b/i.test(value) || /\b(?:new to (?:metabolomics|lc-ms|mass spectrometry)|never used metabolomics|first metabolomics (?:study|experiment)|not sure|(?:do not|don['’]?t) (?:know|understand)|(?:where|how) (?:do|should) i (?:start|begin))\b/i.test(value);
     // Exclusion and missing-input requests need clarification, not positive keyword matches.
