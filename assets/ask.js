@@ -31,11 +31,17 @@
     words: new Set(tokenize(card.dataset.search || '')),
     name: new Set(tokenize(card.dataset.name || '')),
     keywords: new Set(tokenize(card.dataset.keywords || '')),
+    phrases: (card.dataset.keywordPhrases || '').split('|').map(tokenize).filter(tokens=>tokens.length>=2),
   }]));
   const weight = token => 1 + Math.log((cards.length+1)/(1+cards.filter(c=>metadata.get(c).words.has(token)).length));
   function scoreCard(card, tokens) {
     const data=metadata.get(card);
-    return tokens.reduce((score,token)=>score + (data.words.has(token) ? weight(token)*(1 + (data.name.has(token)?1:0) + (data.keywords.has(token)?1:0)) : 0),0);
+    const lexical=tokens.reduce((score,token)=>score + (data.words.has(token) ? weight(token)*(1 + (data.name.has(token)?1:0) + (data.keywords.has(token)?1:0)) : 0),0);
+    // Curated multiword method phrases distinguish related acquisition/analysis methods.
+    // Use only the strongest phrase, so repeated synonyms cannot inflate the score.
+    const query=' '+tokens.join(' ')+' ';
+    const phrase=Math.max(0,...data.phrases.filter(p=>query.includes(' '+p.join(' ')+' ')).map(p=>p.reduce((sum,t)=>sum+weight(t),0)));
+    return lexical+2*phrase;
   }
 
   const nextActions = document.querySelector('#ask-next-actions');
@@ -46,6 +52,8 @@
   }
 
   function runSearch(value) {
+    // Only common nontechnical spelling errors; never fuzzy-correct tool or chemical names.
+    value=value.replace(/\b(?:diferences|differnces|diffrences)\b/gi,'differences').replace(/\bcomparision\b/gi,'comparison');
     showActions();
     const guideMessage = document.querySelector('#ask-guide-message');
     if (guideMessage) guideMessage.textContent = '';
